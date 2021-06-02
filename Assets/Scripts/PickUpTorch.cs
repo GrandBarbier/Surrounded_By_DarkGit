@@ -8,9 +8,16 @@ public class PickUpTorch : MonoBehaviour
     public bool canBePicked;
     public GameObject player;
     public GameObject torchHandPos;
+    public GameObject t_light;
+    public GameObject particles;
     private void OnTriggerEnter(Collider other)
     {
         canBePicked = true;
+        if (other.gameObject.CompareTag("water"))
+        {
+            t_light.SetActive(false);
+            particles.SetActive(false);
+        }
     }
     
     private void OnTriggerStay(Collider other)
