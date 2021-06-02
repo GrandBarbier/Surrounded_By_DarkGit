@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class LightSensor : MonoBehaviour
 {
+    public GameplayManager gameplayManager;
+    
     public RenderTexture lightCheckTexture;
     public float lightLevel;
+    public float lightLimit;
 
     public float deathLevel;
-    public float maxDeathLevel;
+    public float deathTime;
 
     public Slider deathSlider;
     
@@ -20,7 +23,7 @@ public class LightSensor : MonoBehaviour
         Cursor.visible = false;
 
         deathLevel = 0;
-        deathSlider.maxValue = maxDeathLevel;
+        deathSlider.maxValue = deathTime;
     }
 
     void Update()
@@ -63,13 +66,13 @@ public class LightSensor : MonoBehaviour
         {
             deathLevel = 0;
         }
-        else if (deathLevel >= maxDeathLevel)
+        else if (deathLevel >= deathTime)
         {
-            Debug.Log("DED");
-            deathLevel = maxDeathLevel;
+            gameplayManager.Death();
+            deathLevel = deathTime;
         }
 
-        if (lightLevel <= 20f)
+        if (lightLevel <= lightLimit)
         {
             deathLevel += Time.deltaTime;
         }

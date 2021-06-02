@@ -1,14 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject player;
+    
+    [Header("Death")]
+    public GameObject deathUI;
+    public TMP_Text deathText;
+    public float restartTime;
+    private float _actualRestartTime;
     void Start()
     {
-        
+        deathUI.SetActive(false);
+        _actualRestartTime = restartTime;
     }
 
     // Update is called once per frame
@@ -18,5 +27,18 @@ public class GameplayManager : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Death()
+    {
+        deathUI.SetActive(true);
+        player.GetComponent<Movement>().enabled = false;
+        _actualRestartTime -= Time.deltaTime;
+        if (_actualRestartTime <= 0)
+        {
+            _actualRestartTime = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        deathText.text = "Restart in  " + Mathf.FloorToInt(_actualRestartTime);
     }
 }
