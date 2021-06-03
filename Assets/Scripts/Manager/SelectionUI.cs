@@ -67,6 +67,7 @@ public class SelectionUI : MonoBehaviour
     {
         if (menuManager.currentMap.map[posOnMap.x, posOnMap.y].TryGetComponent(out Button button) && button != null)
         {
+            //Debug.Log(button.gameObject.name);
             button.onClick?.Invoke();
         }
 
