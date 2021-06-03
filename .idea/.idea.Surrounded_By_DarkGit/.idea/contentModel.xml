@@ -868,6 +868,7 @@
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">
+          <e p="CapeEmission.shader" t="Include" />
           <e p="CustomHLSL" t="Include">
             <e p="CustomLighting.hlsl" t="Include" />
             <e p="CustomShadow.hlsl" t="Include" />
@@ -881,9 +882,6 @@
           </e>
           <e p="ToonNoShadow.shader" t="Include" />
           <e p="ToonShadow.shader" t="Include" />
-          <e p="WaterStep" t="Include">
-            <e p="SetInteractiveShaderEffects.cs" t="Include" />
-          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
