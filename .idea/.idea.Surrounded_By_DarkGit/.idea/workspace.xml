@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< 708edf170268e797f3c7afb98838f03934817105
     <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/projectSettingsUpdater.xml" afterDir="false" />
@@ -9,6 +10,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
+=======
+    <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="" />
+>>>>>>> Update mainMenu
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
