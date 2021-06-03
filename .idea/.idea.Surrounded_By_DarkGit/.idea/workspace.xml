@@ -17,7 +17,7 @@
 =======
     <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/SelectionUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/SelectionUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" afterDir="false" />
     </list>
 >>>>>>> fix UI Selection
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +34,7 @@
 =======
     <setting file="file://$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/SelectionUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" root0="FORCE_HIGHLIGHTING" />
 >>>>>>> fix UI Selection
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,6 +47,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/SelectionUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" />
       </list>
     </option>
   </component>
