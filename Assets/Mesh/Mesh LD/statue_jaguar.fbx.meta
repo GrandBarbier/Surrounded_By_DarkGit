@@ -3,7 +3,27 @@ guid: 1ee87898b2313ed4fb8a3a40948c30c8
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre
+    second: {fileID: 2100000, guid: 0d9eb2df956b1714d95ce71584606fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre blanche
+    second: {fileID: 2100000, guid: 080ce60b8c29f3b4193c610a932ed8bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre rouge
+    second: {fileID: 2100000, guid: 6067336fbb7cd2041834f25b5dc43926, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre vert
+    second: {fileID: 2100000, guid: 7842d8ce5c693174f9cef8507e866f69, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
