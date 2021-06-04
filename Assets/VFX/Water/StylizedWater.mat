@@ -96,9 +96,11 @@ Material:
     - FoamScale_1: 0
     - FoamSpeed: 1
     - FoamTAILLE: 1
+    - Metallic: 0
     - RefractionScale: 1
     - RefractionSpeed: 0.05
     - RefractionStrenght: 2
+    - Smoothness: 0
     - WaterDepth: 2
     - _AlphaClip: 0
     - _Blend: 0
