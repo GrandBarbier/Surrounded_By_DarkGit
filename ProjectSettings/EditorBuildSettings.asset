@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu Principal Test.unity
     guid: b8acf4a866d3f9146803d578051e6403
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene Gym.unity
     guid: 85b8dc78d0a06f5439c1bbf2e8ae3121
+  - enabled: 1
+    path: Assets/Scenes/Lelio.unity
+    guid: 95224ab1ca7d2f142ab386da34b9b8c9
   m_configObjects: {}
