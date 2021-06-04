@@ -36,6 +36,10 @@ public class Movement : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+        if (playerInput == null)
+        {
+            playerInput = Gears.gears.playerInput;
+        }
         playerInput.actions["Jump"].performed += context => Jump();
     }
 
