@@ -230,6 +230,10 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 action.RemoveBindingOverride(bindingIndex);
             }
             UpdateBindingDisplay();
+            
+            PlayerPrefs.SetString(action.name, action.name);
+            PlayerPrefs.SetString(action.name + " key", action.bindings[bindingIndex].effectivePath);
+            PlayerPrefs.SetInt(action.name + "bindingIndex", bindingIndex);
         }
 
         /// <summary>
@@ -311,8 +315,17 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                                 PerformInteractiveRebind(action, nextBindingIndex, true);
                         }
                         
+                        Debug.Log(action.bindings[bindingIndex].effectivePath);
+                        Debug.Log(action.name);
+
+                        //UpdateBindingDisplay();
+                        //CleanUp();
+                        
                         //Save : bindingIndex
                         //action.bindings[bindingIndex].effectivePath;
+                        PlayerPrefs.SetString(action.name, action.name);
+                        PlayerPrefs.SetString(action.name + " key", action.bindings[bindingIndex].effectivePath);
+                        PlayerPrefs.SetInt(action.name + "bindingIndex", bindingIndex);
                     });
 
             // If it's a part binding, show the name of the part in the UI.
