@@ -81,7 +81,7 @@ Material:
     - Bottom_Strengh: 5
     - Ripple_Amount: 3.5
     - VertexOffsetAmount: -0.2
-    - Vertex_Offset_Amount: 0.5
+    - Vertex_Offset_Amount: 0.15
     - Voronoi_Scale: 12
     - Voronoi_Speed: 3
     - _AlphaClip: 0
