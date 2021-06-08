@@ -349,7 +349,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67232272}
-  m_LocalRotation: {x: -0.004420309, y: -0.023273513, z: -0.00010290496, w: 0.99971944}
+  m_LocalRotation: {x: -0.0044212127, y: -0.011195398, z: -0.000049500846, w: 0.99992764}
   m_LocalPosition: {x: -4.76, y: 2.5, z: -3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 3.815748, y: 1}
+    m_SensorSize: {x: 1.8343667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6417,7 +6417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405868115}
   m_LocalRotation: {x: -0.66250455, y: -0.11480347, z: 0.7388104, w: 0.04546513}
-  m_LocalPosition: {x: -0.21098307, y: 0.15945958, z: 0.05526831}
+  m_LocalPosition: {x: -0.21, y: 0.118, z: 0.058}
   m_LocalScale: {x: 95.18396, y: 95.183945, z: 101.78021}
   m_Children:
   - {fileID: 87454976}
@@ -6546,7 +6546,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445964481}
-  m_LocalRotation: {x: 0.025841676, y: 0.0000000010750397, z: -2.779011e-11, w: 0.99966604}
+  m_LocalRotation: {x: 0.025841676, y: -0.0000000010750397, z: 2.779011e-11, w: 0.99966604}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6590,7 +6590,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 3.815748, y: 1}
+    m_SensorSize: {x: 1.8343667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6710,7 +6710,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 3.815748, y: 1}
+    m_SensorSize: {x: 1.8343667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6905,7 +6905,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655369846}
-  m_LocalRotation: {x: -0.0044202944, y: -0.023273513, z: -0.00010290464, w: 0.9997194}
+  m_LocalRotation: {x: -0.004421207, y: -0.011195398, z: -0.00004950076, w: 0.9999276}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6949,7 +6949,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 3.815748, y: 1}
+    m_SensorSize: {x: 1.8343667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18363,7 +18363,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7351799257578154286}
-  - component: {fileID: 3386761815751617174}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -18371,23 +18370,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3386761815751617174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3386761815751617173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755e55bf14bc547418e094b9cfb27511, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  torchOnGround: 0
-  torch: {fileID: 1405868115}
-  torchOnGroundPos: {fileID: 1772319768}
-  player: {fileID: 5457808952808691799}
-  animator: {fileID: 5457808952808691803}
 --- !u!4 &3418734590739320424
 Transform:
   m_ObjectHideFlags: 0
@@ -19085,6 +19067,7 @@ GameObject:
   - component: {fileID: 5457808952808691803}
   - component: {fileID: 5457808952808691800}
   - component: {fileID: 5457808952808691801}
+  - component: {fileID: 5457808952808691804}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -19186,6 +19169,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5457808952808691804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457808952808691799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e55bf14bc547418e094b9cfb27511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchOnGround: 0
+  torch: {fileID: 1405868115}
+  torchOnGroundPos: {fileID: 1772319768}
+  player: {fileID: 5457808952808691799}
+  animator: {fileID: 5457808952808691803}
 --- !u!4 &5513416617145714940
 Transform:
   m_ObjectHideFlags: 0
