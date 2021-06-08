@@ -16,6 +16,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Effects/FireLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -24,7 +25,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Assets/Scripts/Effects/FireLight.cs" />
+=======
 <<<<<<< Updated upstream
+>>>>>>> main
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" />
 =======
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" />
@@ -103,12 +108,17 @@
       <workItem from="1622722620110" duration="896000" />
 <<<<<<< Updated upstream
       <workItem from="1622814538108" duration="297000" />
+<<<<<<< HEAD
+      <workItem from="1623073316673" duration="4593000" />
+      <workItem from="1623151383950" duration="642000" />
+=======
       <workItem from="1623073316673" duration="2806000" />
 =======
       <workItem from="1622814538108" duration="905000" />
       <workItem from="1623068091147" duration="834000" />
       <workItem from="1623138524049" duration="195000" />
 >>>>>>> Stashed changes
+>>>>>>> main
     </task>
     <servers />
   </component>
