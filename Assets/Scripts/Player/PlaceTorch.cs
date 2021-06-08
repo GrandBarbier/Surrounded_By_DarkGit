@@ -18,6 +18,8 @@ public class PlaceTorch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var dropTorchEvent = new AnimationEvent();
+        dropTorchEvent.functionName = "DropTorch";
         if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
         {
             animator.SetTrigger("DropTorch");
