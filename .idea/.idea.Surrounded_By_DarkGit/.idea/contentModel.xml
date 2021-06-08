@@ -917,6 +917,9 @@
           </e>
           <e p="Water" t="Include">
             <e p="Water.shader" t="Include" />
+            <e p="WaterStep" t="Include">
+              <e p="SetInteractiveShaderEffects.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>

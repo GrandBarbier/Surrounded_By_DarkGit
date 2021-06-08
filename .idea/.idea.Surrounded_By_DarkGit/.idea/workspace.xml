@@ -15,6 +15,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Effects/FireLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -23,6 +24,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Effects/FireLight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" />
       </list>
     </option>
@@ -96,7 +98,8 @@
       <workItem from="1622720476727" duration="269000" />
       <workItem from="1622722620110" duration="896000" />
       <workItem from="1622814538108" duration="297000" />
-      <workItem from="1623073316673" duration="2806000" />
+      <workItem from="1623073316673" duration="4593000" />
+      <workItem from="1623151383950" duration="642000" />
     </task>
     <servers />
   </component>
