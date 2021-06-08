@@ -487,7 +487,7 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Move",
+                    "name": "MoveUI",
                     "type": "Button",
                     "id": "96d3c0f4-e53c-4a6a-8eb5-4ab4c3998c7b",
                     "expectedControlType": "Button",
@@ -530,7 +530,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "CustomScheme",
-                    "action": "Move",
+                    "action": "MoveUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

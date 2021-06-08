@@ -22,7 +22,7 @@ public class PickUpTorch : MonoBehaviour
     
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("quelqu'un stay ici");
+        //Debug.Log("quelqu'un stay ici");
         if (Input.GetKeyDown(KeyCode.F) && player.GetComponent<PlaceTorch>().torchOnGround && canBePicked)
         {
             Debug.Log("pickup");
