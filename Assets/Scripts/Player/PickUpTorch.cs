@@ -32,6 +32,7 @@ public class PickUpTorch : MonoBehaviour
             gameObject.transform.rotation = torchHandPos.transform.rotation;
             gameObject.transform.localEulerAngles += new Vector3(0, -90, 0);
             player.GetComponent<PlaceTorch>().torchOnGround = false;
+            animator.SetTrigger("DropTorch");
             animator.SetBool("HasTorch", true);
         }
     }
