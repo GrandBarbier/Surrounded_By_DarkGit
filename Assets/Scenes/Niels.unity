@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 61447973}
   m_Layer: 6
   m_Name: Eau
-  m_TagString: Untagged
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67232272}
-  m_LocalRotation: {x: -0.0044212127, y: -0.011195398, z: -0.000049500846, w: 0.99992764}
+  m_LocalRotation: {x: -0.0044210884, y: -0.013722491, z: -0.000060674658, w: 0.9998961}
   m_LocalPosition: {x: -4.76, y: 2.5, z: -3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8343667, y: 1}
+    m_SensorSize: {x: 2.248643, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6401,7 +6401,6 @@ GameObject:
   - component: {fileID: 1405868117}
   - component: {fileID: 1405868121}
   - component: {fileID: 1405868119}
-  - component: {fileID: 1405868120}
   m_Layer: 0
   m_Name: Torche
   m_TagString: Untagged
@@ -6416,15 +6415,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405868115}
-  m_LocalRotation: {x: -0.66250455, y: -0.11480347, z: 0.7388104, w: 0.04546513}
-  m_LocalPosition: {x: -0.21, y: 0.118, z: 0.058}
+  m_LocalRotation: {x: -0.7354527, y: -0.09098422, z: 0.6679731, w: 0.068140574}
+  m_LocalPosition: {x: -0.187, y: 0.147, z: 0.022}
   m_LocalScale: {x: 95.18396, y: 95.183945, z: 101.78021}
   m_Children:
   - {fileID: 87454976}
   - {fileID: 2130489762}
   m_Father: {fileID: 7351799257578154286}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -198.729, y: 113.004, z: -32.817017}
+  m_LocalEulerAnglesHint: {x: -181.222, y: 84.355, z: -12.997986}
 --- !u!23 &1405868117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6488,24 +6487,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011511049, y: 0.007610438, z: 0.011217166}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1405868120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405868115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0857a6145294244b8be00c7eb4ee997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePicked: 0
-  player: {fileID: 3386761815751617173}
-  torchHandPos: {fileID: 1145478346}
-  t_light: {fileID: 87454975}
-  particles: {fileID: 2130489761}
-  animator: {fileID: 5457808952808691803}
 --- !u!54 &1405868121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6590,7 +6571,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8343667, y: 1}
+    m_SensorSize: {x: 2.248643, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6710,7 +6691,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8343667, y: 1}
+    m_SensorSize: {x: 2.248643, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6905,7 +6886,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655369846}
-  m_LocalRotation: {x: -0.004421207, y: -0.011195398, z: -0.00004950076, w: 0.9999276}
+  m_LocalRotation: {x: -0.0044210777, y: -0.0137224905, z: -0.000060674505, w: 0.9998961}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6949,7 +6930,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8343667, y: 1}
+    m_SensorSize: {x: 2.248643, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19068,6 +19049,7 @@ GameObject:
   - component: {fileID: 5457808952808691800}
   - component: {fileID: 5457808952808691801}
   - component: {fileID: 5457808952808691804}
+  - component: {fileID: 5457808952808691805}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -19185,6 +19167,25 @@ MonoBehaviour:
   torch: {fileID: 1405868115}
   torchOnGroundPos: {fileID: 1772319768}
   player: {fileID: 5457808952808691799}
+  animator: {fileID: 5457808952808691803}
+--- !u!114 &5457808952808691805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457808952808691799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0857a6145294244b8be00c7eb4ee997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBePicked: 0
+  player: {fileID: 5457808952808691799}
+  torchHandPos: {fileID: 1145478346}
+  t_light: {fileID: 87454975}
+  particles: {fileID: 2130489761}
+  torch: {fileID: 1405868115}
   animator: {fileID: 5457808952808691803}
 --- !u!4 &5513416617145714940
 Transform:

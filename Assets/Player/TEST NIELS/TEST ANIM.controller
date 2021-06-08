@@ -1559,7 +1559,7 @@ AnimatorStateTransition:
     m_ConditionEvent: 'HasTorch '
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: DropTorch
+    m_ConditionEvent: PickTorch
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7912805408063430198}
