@@ -4,7 +4,8 @@
     <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PickUpTorch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PickUpTorch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PickUpTorch.cs" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -95,8 +101,14 @@
       <workItem from="1622652464525" duration="3291000" />
       <workItem from="1622720476727" duration="269000" />
       <workItem from="1622722620110" duration="896000" />
+<<<<<<< Updated upstream
       <workItem from="1622814538108" duration="297000" />
       <workItem from="1623073316673" duration="2806000" />
+=======
+      <workItem from="1622814538108" duration="905000" />
+      <workItem from="1623068091147" duration="834000" />
+      <workItem from="1623138524049" duration="195000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

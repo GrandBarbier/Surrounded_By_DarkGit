@@ -8,6 +8,7 @@ public class PlaceTorch : MonoBehaviour
     public GameObject torch;
     public GameObject torchOnGroundPos;
     public GameObject player;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlaceTorch : MonoBehaviour
             //rend la torche indépendante en mettant à jour la variable l'indiquant
             torch.transform.parent = null;
             torchOnGround = true;
+            animator.SetBool("HasTorch", false);
         }
     }
 }
