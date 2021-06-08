@@ -30,7 +30,7 @@ public class PlaceTorch : MonoBehaviour
 
     void DropTorch()
     {
-        
+        Debug.Log("poser");
         //rend la torche indépendante en mettant à jour la variable l'indiquant
         torch.transform.parent = null;
         torchOnGround = true;
