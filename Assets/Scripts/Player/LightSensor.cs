@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class LightSensor : MonoBehaviour
@@ -15,8 +17,10 @@ public class LightSensor : MonoBehaviour
     public float deathLevel;
     public float deathTime;
 
+    [Header("GameObjects")]
     public Slider deathSlider;
-    
+    //public GameObject globalVolume;
+    //private Vignette _vignette;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,6 +28,12 @@ public class LightSensor : MonoBehaviour
 
         deathLevel = 0;
         deathSlider.maxValue = deathTime;
+
+        // Vignette tmp;
+        // if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out tmp))
+        // {
+        //     
+        // }
     }
 
     void Update()
@@ -54,10 +64,10 @@ public class LightSensor : MonoBehaviour
         for (int i = 0; i < colors.Length; i++)
         {
             //lightLevel += (0.02126f * colors[i].r) + (0.07152f * colors[i].g) + (0.00722f * colors[i].b);
-            lightLevel += (colors[i].r + colors[i].g + colors[i].b);
+            lightLevel += (colors[i].r + colors[i].g + colors[i].b)/1500;
         }
 
-//        Debug.Log(lightLevel);
+        //Debug.Log(lightLevel);
     }
 
     public void DeathLevel()
@@ -74,11 +84,19 @@ public class LightSensor : MonoBehaviour
 
         if (lightLevel <= lightLimit)
         {
-            deathLevel += Time.deltaTime;
+            if (lightLevel > 0)
+            {
+                deathLevel += Time.deltaTime *(1 - lightLevel)/2;
+            }
+            else
+            {
+                deathLevel += Time.deltaTime;
+            }
+            
         }
         else
         {
-            deathLevel -= Time.deltaTime;
+            deathLevel -= Time.deltaTime * lightLevel/5;
         }
 
         deathSlider.value = deathLevel;

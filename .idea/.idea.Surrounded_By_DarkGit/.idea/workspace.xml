@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< 708edf170268e797f3c7afb98838f03934817105
-<<<<<<< 708edf170268e797f3c7afb98838f03934817105
     <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Moins Anciens/Cape &amp; Masque.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Moins Anciens/Cape &amp; Masque.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PickUpTorch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PickUpTorch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" afterDir="false" />
     </list>
-=======
-    <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="" />
->>>>>>> Update mainMenu
-=======
-    <list default="true" id="e60d05a3-ae96-4ceb-8b90-b02e7cf86fda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Surrounded_By_DarkGit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" afterDir="false" />
-    </list>
->>>>>>> fix UI Selection
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,25 +16,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
-<<<<<<< 708edf170268e797f3c7afb98838f03934817105
-=======
-    <setting file="file://$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/SelectionUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" root0="FORCE_HIGHLIGHTING" />
->>>>>>> fix UI Selection
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Effects/FireLight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/LightSensor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameplayManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/SelectionUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/SampleSceneAssets/Scripts/Gears/SavePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Assets/Scripts/Effects/FireLight.cs" />
+=======
+<<<<<<< Updated upstream
+>>>>>>> main
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightSensor.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlaceTorch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PickUpTorch.cs" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -62,7 +49,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -73,28 +63,36 @@
       <option name="WORKING_DIRECTORY" value="D:\Desktop" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="selectedOptions">
-        <set />
-      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="selectedOptions">
-        <set />
-      </option>
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -107,12 +105,25 @@
       <updated>1622652462385</updated>
       <workItem from="1622652464525" duration="3291000" />
       <workItem from="1622720476727" duration="269000" />
-      <workItem from="1622722620110" duration="287000" />
+      <workItem from="1622722620110" duration="896000" />
+<<<<<<< Updated upstream
+      <workItem from="1622814538108" duration="297000" />
+<<<<<<< HEAD
+      <workItem from="1623073316673" duration="4593000" />
+      <workItem from="1623151383950" duration="642000" />
+=======
+      <workItem from="1623073316673" duration="2806000" />
+=======
+      <workItem from="1622814538108" duration="905000" />
+      <workItem from="1623068091147" duration="834000" />
+      <workItem from="1623138524049" duration="195000" />
+>>>>>>> Stashed changes
+>>>>>>> main
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />

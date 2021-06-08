@@ -3,7 +3,87 @@ guid: 003b9a56e0082604ebce71d0d23220e2
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair
+    second: {fileID: 2100000, guid: fced7b6ed3545dd4ea0f7157f45a1d84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Corde
+    second: {fileID: 2100000, guid: 6b1fedf984532ce4fab0132fccea817d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gris_
+    second: {fileID: 2100000, guid: 8e89f9e284a3c1c43bbc9cea4338b792, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kaki
+    second: {fileID: 2100000, guid: 8e0b00753a95ac0448c7c3eae94c6827, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kaki 2
+    second: {fileID: 2100000, guid: a50b87ea004b2a34fb0253d861031e65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kaki 3
+    second: {fileID: 2100000, guid: ccd3392ce83a2f248bb362db0753d6de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marron
+    second: {fileID: 2100000, guid: cec16341c36d4c247b543d26dfdd3ab4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 5429ec848ba6bb346a6133214ce588bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Noir
+    second: {fileID: 2100000, guid: e22c673b254c88b46b665bb5b54ae356, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sombre
+    second: {fileID: 2100000, guid: 6130d8dc1c18983408607cf2b150cdd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sombre 2
+    second: {fileID: 2100000, guid: b6e41bf1123f9f544978d380069047c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chaine
+    second: {fileID: 2100000, guid: da8125d342efab9418ce9b2397fbafc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre
+    second: {fileID: 2100000, guid: 0d9eb2df956b1714d95ce71584606fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre bleu
+    second: {fileID: 2100000, guid: 525c6a21b3c8dc840aeda22e6f9af3b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre rouge
+    second: {fileID: 2100000, guid: 6067336fbb7cd2041834f25b5dc43926, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pierre vert
+    second: {fileID: 2100000, guid: 7842d8ce5c693174f9cef8507e866f69, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

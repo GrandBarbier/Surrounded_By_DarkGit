@@ -49,6 +49,15 @@ public class Movement : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
+        if (isGrounded == true)
+        {
+            animator.SetBool("IsGrounded", true);
+        }
+        else
+        {
+            animator.SetBool("IsGrounded", false);
+        }
         
         
         //float horizontal = Input.GetAxisRaw("Horizontal");
@@ -85,6 +94,7 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("jump!");
             velocity.y = Mathf.Sqrt(jumpHeight * gravity);
+            animator.SetBool("IsGrounded", false);
         }
     }
 

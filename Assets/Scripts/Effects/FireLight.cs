@@ -18,14 +18,12 @@ public class FireLight : MonoBehaviour
 	{
 		_lightComp = GetComponent<Light>();
 		_initialIntensity = _lightComp.intensity;
-		_pos = transform.localPosition;
-
 	}
 
 	void Update()
 	{
 		_lightComp.intensity = _initialIntensity * lightCurve.Evaluate(Time.time * fireSpeed) * magnitude;
 
-		transform.localPosition = _pos + transform.up * Mathf.Sin(lightCurve.Evaluate(Time.time * fireSpeed)) * magnitude;
+		transform.localPosition = _pos + transform.up * (Mathf.Sin(lightCurve.Evaluate(Time.time * fireSpeed)) * magnitude);
 	}
 }
