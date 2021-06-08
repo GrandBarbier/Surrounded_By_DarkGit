@@ -54,7 +54,7 @@ public class LightSensor : MonoBehaviour
         for (int i = 0; i < colors.Length; i++)
         {
             //lightLevel += (0.02126f * colors[i].r) + (0.07152f * colors[i].g) + (0.00722f * colors[i].b);
-            lightLevel += (colors[i].r + colors[i].g + colors[i].b);
+            lightLevel += (colors[i].r + colors[i].g + colors[i].b)/1500;
         }
 
         Debug.Log(lightLevel);
@@ -74,11 +74,19 @@ public class LightSensor : MonoBehaviour
 
         if (lightLevel <= lightLimit)
         {
-            deathLevel += Time.deltaTime;
+            if (lightLevel > 0)
+            {
+                deathLevel += Time.deltaTime *(1 - lightLevel)/2;
+            }
+            else
+            {
+                deathLevel += Time.deltaTime;
+            }
+            
         }
         else
         {
-            deathLevel -= Time.deltaTime;
+            deathLevel -= Time.deltaTime * lightLevel/5;
         }
 
         deathSlider.value = deathLevel;
