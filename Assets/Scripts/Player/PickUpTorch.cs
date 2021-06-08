@@ -10,6 +10,7 @@ public class PickUpTorch : MonoBehaviour
     public GameObject torchHandPos;
     public GameObject t_light;
     public GameObject particles;
+    public Animator animator;
     private void OnTriggerEnter(Collider other)
     {
         canBePicked = true;
@@ -25,12 +26,15 @@ public class PickUpTorch : MonoBehaviour
         Debug.Log("quelqu'un stay ici");
         if (Input.GetKeyDown(KeyCode.F) && player.GetComponent<PlaceTorch>().torchOnGround && canBePicked)
         {
+            animator.SetTrigger("PickTorch");
             Debug.Log("pickup");
             gameObject.transform.parent = player.transform;
             gameObject.transform.position = torchHandPos.transform.position;
             gameObject.transform.rotation = torchHandPos.transform.rotation;
             gameObject.transform.localEulerAngles += new Vector3(0, -90, 0);
             player.GetComponent<PlaceTorch>().torchOnGround = false;
+            
+            animator.SetBool("HasTorch", true);
         }
     }
 

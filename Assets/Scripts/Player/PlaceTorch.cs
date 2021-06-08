@@ -8,6 +8,7 @@ public class PlaceTorch : MonoBehaviour
     public GameObject torch;
     public GameObject torchOnGroundPos;
     public GameObject player;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,19 @@ public class PlaceTorch : MonoBehaviour
     {
         if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
         {
+            animator.SetTrigger("DropTorch");
+            animator.SetBool("HasTorch", false);
             Debug.Log("place");
-            //place la torche au sol
-            torch.transform.position = torchOnGroundPos.transform.position;
-            torch.transform.rotation = torchOnGroundPos.transform.rotation;
-            //rend la torche indépendante en mettant à jour la variable l'indiquant
-            torch.transform.parent = null;
-            torchOnGround = true;
+            
+            
         }
+    }
+
+    void DropTorch()
+    {
+        Debug.Log("poser");
+        //rend la torche indépendante en mettant à jour la variable l'indiquant
+        torch.transform.parent = null;
+        torchOnGround = true;
     }
 }
