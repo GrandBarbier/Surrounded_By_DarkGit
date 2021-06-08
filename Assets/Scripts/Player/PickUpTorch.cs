@@ -26,6 +26,7 @@ public class PickUpTorch : MonoBehaviour
         Debug.Log("quelqu'un stay ici");
         if (Input.GetKeyDown(KeyCode.F) && player.GetComponent<PlaceTorch>().torchOnGround && canBePicked)
         {
+            animator.SetTrigger("PickTorch");
             Debug.Log("pickup");
             gameObject.transform.parent = player.transform;
             gameObject.transform.position = torchHandPos.transform.position;
