@@ -27,28 +27,66 @@ public class RebindSaveLoad : MonoBehaviour
 
    void Awake()
    {
-      InputAction[] actionsArrray = actions.ToArray();
-      
+      InputAction[] actionsArray = actions.ToArray();
+
       for (int i = 0; i < actions.Count(); i++)
       {
-         if (!string.IsNullOrEmpty(PlayerPrefs.GetString(actionsArrray[i].name)))
-         {
-            //get saved binding index
-            int bindingIndex = PlayerPrefs.GetInt(actionsArrray[i].name + "bindingIndex");
-            
-            //create new input with saved input
-            InputBinding t = actionsArrray[i].bindings[bindingIndex];
-            t.overridePath = PlayerPrefs.GetString(actionsArrray[i].name + " key");
-            
-            //apply new input
-            actionsArrray[i].ChangeBinding(bindingIndex).To(t);
-            Debug.Log($"set saved input : {actionsArrray[i].name} -> {actionsArrray[i].bindings[bindingIndex].effectivePath}");
-         }
+         int bindingIndex = PlayerPrefs.GetInt(actionsArray[i].name + "bindingIndex");
+
+         //Debug.Log(actionsArray[i].name + " : " + actionsArray[i].bindings.Count);
+         
+         RebindSavedBind(actionsArray[i], bindingIndex);
       }
 
+      //Update display
       for (int i = 0; i < RebindActionUis.Count(); i++)
       {
          RebindActionUis[i].UpdateBindingDisplay();
       }
+   }
+
+   public void RebindSavedBind(InputAction action, int bindingIndex)
+   {
+      if (!string.IsNullOrEmpty(PlayerPrefs.GetString(action.name)))
+      {
+         //Debug.Log(action.name + " index : " + bindingIndex + " Count : " + action.bindings.Count);
+         
+         if (action.bindings[bindingIndex].isComposite || action.bindings[bindingIndex].isPartOfComposite)
+         {
+            var nextBindingIndex = bindingIndex + 1;
+            if (nextBindingIndex < action.bindings.Count && action.bindings[nextBindingIndex].isPartOfComposite)
+            {
+               //Debug.Log("rebind next composite key : " + nextBindingIndex + " binding count : " + action.bindings.Count);
+               Rebind(action, nextBindingIndex, true);
+               RebindSavedBind(action, nextBindingIndex);
+            }
+         }
+         else
+         {
+            Rebind(action, bindingIndex);
+         }
+      }
+   }
+
+   public void Rebind(InputAction action, int bindingIndex, bool allCompositePart = false)
+   {
+      //Debug.Log("Rebind Key : " + action.name + " / " + action.bindings[bindingIndex].effectivePath);
+
+      //create new input with saved input
+      //Debug.Log("Action : " + action.name + " count : " + action.bindings.Count + " index : " + bindingIndex);
+      InputBinding t = action.bindings[bindingIndex];
+      
+      if (allCompositePart)
+      {
+         t.overridePath = PlayerPrefs.GetString(action.name + " key" + bindingIndex);
+      }
+      else
+      {
+         t.overridePath = PlayerPrefs.GetString(action.name + " key");
+      }
+      
+      //apply new input
+      action.ChangeBinding(bindingIndex).To(t);
+      Debug.Log($"set saved input : {action} -> {action.bindings[bindingIndex].effectivePath}");
    }
 }

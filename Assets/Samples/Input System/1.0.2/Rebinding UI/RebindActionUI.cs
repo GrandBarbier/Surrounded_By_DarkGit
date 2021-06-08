@@ -231,9 +231,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             }
             UpdateBindingDisplay();
             
-            PlayerPrefs.SetString(action.name, action.name);
-            PlayerPrefs.SetString(action.name + " key", action.bindings[bindingIndex].effectivePath);
-            PlayerPrefs.SetInt(action.name + "bindingIndex", bindingIndex);
+            //SaveAction(action, bindingIndex);
+            DeleteSavedAction(action, bindingIndex);
         }
 
         /// <summary>
@@ -277,7 +276,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 .WithControlsExcluding("<Mouse>/rightButton")
                 .WithControlsExcluding("<Mouse>/press")
                 .WithControlsExcluding("<Pointer>/position")
-                .WithCancelingThrough("<Keyboard>/escape")
+                //.WithCancelingThrough("<Keyboard>/escape")
                 .WithCancelingThrough("<Gamepad>/start")
                 .OnCancel(
                     operation =>
@@ -315,17 +314,13 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                                 PerformInteractiveRebind(action, nextBindingIndex, true);
                         }
                         
-                        Debug.Log(action.bindings[bindingIndex].effectivePath);
-                        Debug.Log(action.name);
+                        Debug.Log(action.name + " new Binding -> " + action.bindings[bindingIndex].effectivePath);
 
-                        //UpdateBindingDisplay();
-                        //CleanUp();
-                        
-                        //Save : bindingIndex
-                        //action.bindings[bindingIndex].effectivePath;
-                        PlayerPrefs.SetString(action.name, action.name);
-                        PlayerPrefs.SetString(action.name + " key", action.bindings[bindingIndex].effectivePath);
-                        PlayerPrefs.SetInt(action.name + "bindingIndex", bindingIndex);
+                        if (bindingIndex - 1 > 0 && action.bindings[bindingIndex - 1].isComposite)
+                        {
+                            SaveAction(action, bindingIndex - 1);
+                        }
+                        SaveAction(action, bindingIndex);
                     });
 
             // If it's a part binding, show the name of the part in the UI.
@@ -385,6 +380,37 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             }
             
             return false;
+        }
+
+        public void SaveAction(InputAction action, int bindingIndex)
+        {
+            //Save : bindingIndex
+            //action.bindings[bindingIndex].effectivePath;
+            if (!action.bindings[bindingIndex].isPartOfComposite)
+            {
+                PlayerPrefs.SetString(action.name, action.name);
+                PlayerPrefs.SetString(action.name + " key", action.bindings[bindingIndex].effectivePath);
+                PlayerPrefs.SetInt(action.name + "bindingIndex", bindingIndex);
+                
+                Debug.Log(action.name + " index : " + PlayerPrefs.GetInt(action.name + "bindingIndex"));
+            }
+            else
+            {
+                PlayerPrefs.SetString(action.name + " key" + bindingIndex, action.bindings[bindingIndex].effectivePath);
+                //PlayerPrefs.SetInt(action.name + "bindingIndex" + bindingIndex, bindingIndex);
+                
+                Debug.Log("Save composite key");
+            }
+        }
+
+        public void DeleteSavedAction(InputAction action, int bindingIndex)
+        {
+            if (!action.bindings[bindingIndex].isPartOfComposite)
+            {
+                PlayerPrefs.DeleteKey(action.name);
+                PlayerPrefs.DeleteKey(action.name + " key");
+                PlayerPrefs.DeleteKey(action.name + "bindingIndex");
+            }
         }
 
         protected void OnEnable()
