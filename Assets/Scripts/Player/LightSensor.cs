@@ -57,7 +57,7 @@ public class LightSensor : MonoBehaviour
             lightLevel += (colors[i].r + colors[i].g + colors[i].b);
         }
 
-        Debug.Log(lightLevel);
+//        Debug.Log(lightLevel);
     }
 
     public void DeathLevel()
