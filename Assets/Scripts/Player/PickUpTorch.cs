@@ -29,12 +29,7 @@ public class PickUpTorch : MonoBehaviour
         {
             animator.SetTrigger("PickTorch");
             Debug.Log("pickup");
-            torch.transform.parent = player.transform;
-            torch.transform.position = torchHandPos.transform.position;
-            torch.transform.rotation = torchHandPos.transform.rotation;
-            torch.transform.localEulerAngles += new Vector3(0, -90, 0);
             player.GetComponent<PlaceTorch>().torchOnGround = false;
-            
             animator.SetBool("HasTorch", true);
         }
     }
@@ -42,5 +37,13 @@ public class PickUpTorch : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canBePicked = false;
+    }
+
+    void PickTorch()
+    {
+        torch.transform.parent = player.transform;
+        torch.transform.position = torchHandPos.transform.position;
+        torch.transform.rotation = torchHandPos.transform.rotation;
+        torch.transform.localEulerAngles += new Vector3(0, -90, 0);
     }
 }
