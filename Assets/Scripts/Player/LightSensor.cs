@@ -17,17 +17,16 @@ public class LightSensor : MonoBehaviour
     public float deathLevel;
     public float deathTime;
 
-    [Header("GameObjects")]
-    public Slider deathSlider;
+  
+    
     //public GameObject globalVolume;
     //private Vignette _vignette;
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+      
 
         deathLevel = 0;
-        deathSlider.maxValue = deathTime;
+
 
         // Vignette tmp;
         // if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out tmp))
@@ -99,6 +98,6 @@ public class LightSensor : MonoBehaviour
             deathLevel -= Time.deltaTime * lightLevel/5;
         }
 
-        deathSlider.value = deathLevel;
+       
     }
 }
