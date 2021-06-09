@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class CInemachineController : MonoBehaviour
+public class CinemachineController : MonoBehaviour
 {
     public float lookSpeedX;
     public float lookSpeedY;
