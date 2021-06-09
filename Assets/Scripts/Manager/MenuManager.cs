@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     [NonSerialized] public PanelMap currentMap;
 
     [Header("Menus")]
-    private bool pause;
+    [NonSerialized] public bool pause;
     public Menu mainMenu = new Menu(0, false);
     public Menu parametersMenu = new Menu(2, menuBackButtonIndex: 1);
     public Menu inputsMenu = new Menu(5, menuBackButtonIndex: 2);
@@ -113,9 +113,9 @@ public class MenuManager : MonoBehaviour
         englishButton?.onClick.AddListener(() => LanguageSystem.SetLanguage(LanguageSystem.Languages.English));
         frenchButton?.onClick.AddListener(() => LanguageSystem.SetLanguage(LanguageSystem.Languages.French));
 
-        playButton?.onClick.AddListener(() => StartCoroutine(LevelManager.LoadAsyncScene(1)));//() => LevelManager.LoadScene(1));
         playButton?.onClick.AddListener(() => Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay"));
         playButton?.onClick.AddListener(() => Time.timeScale = 1f);
+        playButton?.onClick.AddListener(() => StartCoroutine(LevelManager.LoadAsyncScene(1)));//() => LevelManager.LoadScene(1));
         quitButton?.onClick.AddListener(() => Application.Quit());
     }
 
@@ -139,6 +139,7 @@ public class MenuManager : MonoBehaviour
         {
             HideAllPanel();
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
+            //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
         }
         else
@@ -146,6 +147,7 @@ public class MenuManager : MonoBehaviour
             blackPanel.gameObject.SetActive(false);
             GoToPanel(mainMenu);
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
+            Gears.gears.playerInput.actions["Move"].Enable();
             Time.timeScale = 0f;
         }
 
@@ -445,6 +447,11 @@ public class MenuManager : MonoBehaviour
     public void SwitchActionMap(string s)
     {
         Gears.gears?.playerInput?.SwitchCurrentActionMap(s);
+
+        if (s == "Menu")
+        {
+            Gears.gears?.playerInput?.actions["Move"].Enable();
+        }
     }
 }
 

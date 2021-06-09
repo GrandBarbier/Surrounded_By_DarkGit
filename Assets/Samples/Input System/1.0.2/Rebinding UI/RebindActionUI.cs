@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace UnityEngine.InputSystem.Samples.RebindUI
 {
-    /// <summary>
+   /// <summary>
     /// A reusable component with a self-contained UI for rebinding a single action.
     /// </summary>
     public class RebindActionUI : MonoBehaviour
@@ -230,6 +230,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 action.RemoveBindingOverride(bindingIndex);
             }
             UpdateBindingDisplay();
+            
+            //SaveAction(action, bindingIndex);
+            DeleteSavedAction(action, bindingIndex);
         }
 
         /// <summary>
@@ -263,12 +266,22 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 m_RebindOperation?.Dispose();
                 m_RebindOperation = null;
             }
+            
+            //disable the action before use
+            action.Disable();
 
             // Configure the rebind.
             m_RebindOperation = action.PerformInteractiveRebinding(bindingIndex)
+                .WithControlsExcluding("<Mouse>/leftButton")
+                .WithControlsExcluding("<Mouse>/rightButton")
+                .WithControlsExcluding("<Mouse>/press")
+                .WithControlsExcluding("<Pointer>/position")
+                //.WithCancelingThrough("<Keyboard>/escape")
+                .WithCancelingThrough("<Gamepad>/start")
                 .OnCancel(
                     operation =>
                     {
+                        action.Enable();
                         m_RebindStopEvent?.Invoke(this, operation);
                         m_RebindOverlay?.SetActive(false);
                         UpdateBindingDisplay();
@@ -277,8 +290,18 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 .OnComplete(
                     operation =>
                     {
+                        action.Enable();
                         m_RebindOverlay?.SetActive(false);
                         m_RebindStopEvent?.Invoke(this, operation);
+
+                        if (CheckDuplicatedBinding(action, bindingIndex, allCompositeParts))
+                        {
+                            action.RemoveBindingOverride(bindingIndex);
+                            CleanUp();
+                            PerformInteractiveRebind(action, bindingIndex, allCompositeParts);
+                            return;
+                        }
+                        
                         UpdateBindingDisplay();
                         CleanUp();
 
@@ -290,6 +313,14 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                             if (nextBindingIndex < action.bindings.Count && action.bindings[nextBindingIndex].isPartOfComposite)
                                 PerformInteractiveRebind(action, nextBindingIndex, true);
                         }
+                        
+                        Debug.Log(action.name + " new Binding -> " + action.bindings[bindingIndex].effectivePath);
+
+                        if (bindingIndex - 1 > 0 && action.bindings[bindingIndex - 1].isComposite)
+                        {
+                            SaveAction(action, bindingIndex - 1);
+                        }
+                        SaveAction(action, bindingIndex);
                     });
 
             // If it's a part binding, show the name of the part in the UI.
@@ -316,6 +347,70 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindStartEvent?.Invoke(this, m_RebindOperation);
 
             m_RebindOperation.Start();
+        }
+
+        private bool CheckDuplicatedBinding(InputAction action, int bindingIndex, bool allCompositeParts)
+        {
+            InputBinding newBinding = action.bindings[bindingIndex];
+            
+            /*foreach (var binding in action.actionMap.bindings)
+            {
+                if (binding.action == newBinding.action)
+                {
+                    continue;
+                }
+
+                if (binding.effectivePath == newBinding.effectivePath)
+                {
+                    Debug.Log("DuplicatedBindingFound : " + newBinding.effectivePath);
+                    return true;
+                }
+            }*/
+            //check for duplicated composite bindings
+            if (allCompositeParts)
+            {
+                for (int i = 1; i < bindingIndex; i++)
+                {
+                    if (action.bindings[i].effectivePath == newBinding.effectivePath)
+                    {
+                        Debug.Log("DuplicatedBindingFound : " + newBinding.effectivePath);
+                        return true;
+                    }
+                }
+            }
+            
+            return false;
+        }
+
+        public void SaveAction(InputAction action, int bindingIndex)
+        {
+            //Save : bindingIndex
+            //action.bindings[bindingIndex].effectivePath;
+            if (!action.bindings[bindingIndex].isPartOfComposite)
+            {
+                PlayerPrefs.SetString(action.name, action.name);
+                PlayerPrefs.SetString(action.name + " key", action.bindings[bindingIndex].effectivePath);
+                PlayerPrefs.SetInt(action.name + "bindingIndex", bindingIndex);
+                
+                Debug.Log(action.name + " index : " + PlayerPrefs.GetInt(action.name + "bindingIndex"));
+            }
+            else
+            {
+                PlayerPrefs.SetString(action.name + " key" + bindingIndex, action.bindings[bindingIndex].effectivePath);
+                //PlayerPrefs.SetInt(action.name + "bindingIndex" + bindingIndex, bindingIndex);
+                
+                Debug.Log("Save composite key");
+            }
+        }
+
+        public void DeleteSavedAction(InputAction action, int bindingIndex)
+        {
+            if (!action.bindings[bindingIndex].isPartOfComposite)
+            {
+                PlayerPrefs.DeleteKey(action.name);
+                PlayerPrefs.DeleteKey(action.name + " key");
+                PlayerPrefs.DeleteKey(action.name + "bindingIndex");
+            }
         }
 
         protected void OnEnable()
