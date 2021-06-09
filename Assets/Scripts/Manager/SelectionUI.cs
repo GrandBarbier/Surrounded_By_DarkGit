@@ -20,29 +20,16 @@ public class SelectionUI : MonoBehaviour
 
     private Image _image;
     private RectTransform _rectTransform;
+    
+    public RectTransform selectionUi;
+    public RectTransform arrow;
 
     private Action<InputAction.CallbackContext> action1;
     private Action<InputAction.CallbackContext> action2;
 
     void Awake()
     {
-        //Gears.gears.playerInput.actions["MoveMenu"].performed += context => MoveMapPosition(
-            //new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
-        
-        //Gears.gears.playerInput.actions["Enter"].performed += context => TriggerSelection();
-        
-        action1 = context => TriggerSelection();
-        action2 = context => MoveMapPosition(new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
-
-        Gears.gears.playerInput.actions["Enter"].performed += action1;
-        //Gears.gears.playerInput.actions["MoveMenu"].performed += action2;
-        Gears.gears.playerInput.actions["Move"].performed += action2;
-
-        //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Enter"].performed -= action1;
-        //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["MoveMenu"].performed -= action2;
-        
-        _rectTransform = GetComponent<RectTransform>();
-        _image = GetComponent<Image>();
+       
     }
     
     void OnDestroy()
@@ -57,7 +44,24 @@ public class SelectionUI : MonoBehaviour
 
     void Start()
     {
+        //Gears.gears.playerInput.actions["MoveMenu"].performed += context => MoveMapPosition(
+        //new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
         
+        //Gears.gears.playerInput.actions["Enter"].performed += context => TriggerSelection();
+        
+        action1 = context => TriggerSelection();
+        action2 = context => MoveMapPosition(new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
+
+        Gears.gears.playerInput.actions["Enter"].performed += action1;
+        //Gears.gears.playerInput.actions["MoveMenu"].performed += action2;
+        Gears.gears.playerInput.actions["Move"].performed += action2;
+
+        //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Enter"].performed -= action1;
+        //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["MoveMenu"].performed -= action2;
+        
+        _rectTransform = GetComponent<RectTransform>();
+        _image = selectionUi?.GetComponent<Image>();
+        menuManager = Gears.gears.menuManager;
     }
     
     void Update()
@@ -130,7 +134,7 @@ public class SelectionUI : MonoBehaviour
         
             if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null && menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.activeSelf)
             {
-                ScaleSelection();
+                UpdateDisplayScalePosition();
             }
             else
             {
@@ -139,14 +143,27 @@ public class SelectionUI : MonoBehaviour
         }
     }
     
-    public void ScaleSelection()
+    public void UpdateDisplayScalePosition()
     {
-        _rectTransform = GetComponent<RectTransform>();
-        _rectTransform.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position;
-        _rectTransform.sizeDelta = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta;
-        
         Vector3 v = AdaptScale(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, menuManager.currentMap.map[posOnMap.x, posOnMap.y].localScale);
-        _rectTransform.localScale = new Vector3(v.x * scaleMultiplierX, v.y * scaleMultiplierY);
+        
+        //adapt selection
+        _rectTransform = GetComponent<RectTransform>();
+        if (selectionUi != null)
+        {
+            selectionUi.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position;
+            selectionUi.sizeDelta = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta;
+            
+            selectionUi.localScale = new Vector3(v.x * scaleMultiplierX, v.y * scaleMultiplierY);
+        }
+
+        if (arrow != null)
+        {
+            //position arrow
+            arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
+                             new Vector3(-menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * v.x * scaleMultiplierX / 2f - 50, 0, 0);
+        }
+
         //Debug.Log(vector2Int + " -> " + posOnMap);
     }
 
