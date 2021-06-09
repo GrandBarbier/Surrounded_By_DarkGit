@@ -842,43 +842,6 @@
         <e p="Scripts" t="Include">
           <e p="Effects" t="Include">
             <e p="FireLight.cs" t="Include" />
-<<<<<<< HEAD
-          </e>
-          <e p="Gears" t="Include">
-            <e p="Gears.cs" t="Include" />
-            <e p="InputManager.cs" t="Include" />
-            <e p="LanguageSystem.cs" t="Include" />
-            <e p="LevelManager.cs" t="Include" />
-            <e p="SavePanel.cs" t="Include" />
-          </e>
-          <e p="Manager" t="Include">
-            <e p="GameplayManager.cs" t="Include" />
-            <e p="MenuManager.cs" t="Include" />
-<<<<<<< ba2d57e086228a63fa3e0f98a9ce40b1dbb0d14e
-            <e p="SelectionUI.cs" t="Include" />
-            <e p="SetTextLanguage.cs" t="Include" />
-          </e>
-          <e p="Player" t="Include">
-            <e p="igniteBrazero.cs" t="Include" />
-            <e p="IInteractable.cs" t="Include" />
-            <e p="Interactable.cs" t="Include" />
-            <e p="LightSensor.cs" t="Include" />
-            <e p="Movement.cs" t="Include" />
-            <e p="PickUpTorch.cs" t="Include" />
-            <e p="PlaceTorch.cs" t="Include" />
-            <e p="TriggerInteraction.cs" t="Include" />
-          </e>
-          <e p="Puzzles" t="Include">
-            <e p="firststepbutton.cs" t="Include" />
-            <e p="pushableBlock.cs" t="Include" />
-            <e p="Shattering.cs" t="Include" />
-          </e>
-=======
-            <e p="ResetAllBindings.cs" t="Include" />
-            <e p="SelectionUI.cs" t="Include" />
-            <e p="SetTextLanguage.cs" t="Include" />
-          </e>
-=======
           </e>
           <e p="Gears" t="Include">
             <e p="Gears.cs" t="Include" />
@@ -894,8 +857,8 @@
             <e p="SelectionUI.cs" t="Include" />
             <e p="SetTextLanguage.cs" t="Include" />
           </e>
->>>>>>> Yoan
           <e p="Player" t="Include">
+            <e p="CInemachineController.cs" t="Include" />
             <e p="igniteBrazero.cs" t="Include" />
             <e p="IInteractable.cs" t="Include" />
             <e p="Interactable.cs" t="Include" />
@@ -910,10 +873,6 @@
             <e p="pushableBlock.cs" t="Include" />
             <e p="Shattering.cs" t="Include" />
           </e>
-<<<<<<< HEAD
->>>>>>> Update UI Rebind
-=======
->>>>>>> Yoan
           <e p="Save" t="Include">
             <e p="FileBrowserTest.cs" t="Include" />
           </e>
@@ -960,18 +919,12 @@
           <e p="Portal" t="Include">
             <e p="Portal.shader" t="Include" />
           </e>
-<<<<<<< HEAD
-<<<<<<< ba2d57e086228a63fa3e0f98a9ce40b1dbb0d14e
           <e p="Water" t="Include">
             <e p="Water.shader" t="Include" />
             <e p="WaterStep" t="Include">
               <e p="SetInteractiveShaderEffects.cs" t="Include" />
             </e>
           </e>
-=======
->>>>>>> Update UI Rebind
-=======
->>>>>>> Yoan
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
