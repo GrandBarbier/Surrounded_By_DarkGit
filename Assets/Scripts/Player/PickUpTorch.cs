@@ -5,28 +5,17 @@ using UnityEngine;
 
 public class PickUpTorch : MonoBehaviour
 {
-    public bool canBePicked;
     public GameObject player;
     public GameObject player_hand;
     public GameObject torchHandPos;
-    public GameObject t_light;
-    public GameObject particles;
     public GameObject torch;
     public Animator animator;
-    private void OnTriggerEnter(Collider other)
-    {
-        canBePicked = true;
-        if (other.gameObject.CompareTag("water"))
-        {
-            t_light.SetActive(false);
-            particles.SetActive(false);
-        }
-    }
+
     
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log("quelqu'un stay ici");
-        if (Input.GetKeyDown(KeyCode.F) && player.GetComponent<PlaceTorch>().torchOnGround && canBePicked)
+        if (Input.GetKeyDown(KeyCode.F) && player.GetComponent<PlaceTorch>().torchOnGround && torch.GetComponent<WaterTorch>().canBePicked)
         {
             animator.SetTrigger("PickTorch");
             Debug.Log("pickup");
@@ -35,10 +24,7 @@ public class PickUpTorch : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        canBePicked = false;
-    }
+
 
     void PickTorch()
     {
