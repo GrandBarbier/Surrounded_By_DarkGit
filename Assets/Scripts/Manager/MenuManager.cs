@@ -144,7 +144,7 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            blackPanel.gameObject.SetActive(false);
+            blackPanel?.gameObject?.SetActive(false);
             GoToPanel(mainMenu);
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
