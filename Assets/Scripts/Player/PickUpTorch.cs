@@ -7,6 +7,7 @@ public class PickUpTorch : MonoBehaviour
 {
     public bool canBePicked;
     public GameObject player;
+    public GameObject player_hand;
     public GameObject torchHandPos;
     public GameObject t_light;
     public GameObject particles;
@@ -41,7 +42,7 @@ public class PickUpTorch : MonoBehaviour
 
     void PickTorch()
     {
-        torch.transform.parent = player.transform;
+        torch.transform.parent = player_hand.transform;
         torch.transform.position = torchHandPos.transform.position;
         torch.transform.rotation = torchHandPos.transform.rotation;
         torch.transform.localEulerAngles += new Vector3(0, -90, 0);
