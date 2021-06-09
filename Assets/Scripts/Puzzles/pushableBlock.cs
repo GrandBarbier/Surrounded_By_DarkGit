@@ -12,7 +12,7 @@ public class pushableBlock : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("puuuuuuuute");
             if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded)
