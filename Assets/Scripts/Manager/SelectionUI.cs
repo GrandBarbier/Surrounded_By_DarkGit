@@ -72,6 +72,11 @@ public class SelectionUI : MonoBehaviour
             StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
     }
+
+    void OnEnable()
+    {
+        UpdateDisplayScalePosition();
+    }
     
     void Update()
     {

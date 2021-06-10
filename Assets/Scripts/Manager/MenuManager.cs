@@ -201,7 +201,11 @@ public class MenuManager : MonoBehaviour
         {
             selection.posOnMap = currentMap.startPos;
         }
-        selection.UpdateDisplayScalePosition();
+
+        if (selection.selectionUi.gameObject.activeSelf)
+        {
+            selection.UpdateDisplayScalePosition();
+        }
         //Debug.Log(panelMap.mapName);
     }
 
