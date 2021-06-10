@@ -870,6 +870,7 @@
           </e>
           <e p="Puzzles" t="Include">
             <e p="firststepbutton.cs" t="Include" />
+            <e p="pressingPlate.cs" t="Include" />
             <e p="pushableBlock.cs" t="Include" />
             <e p="Shattering.cs" t="Include" />
           </e>
@@ -926,6 +927,7 @@
             </e>
           </e>
         </e>
+        <e p="WaterTorch.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
