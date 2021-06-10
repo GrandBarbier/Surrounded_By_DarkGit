@@ -102,7 +102,7 @@ public class MenuManager : MonoBehaviour
         saveButton?.onClick.AddListener(() => GoToPanel(saveMenu));//, saveButton.transform.parent.gameObject, () => GoToPanel(mainMenu)));
         
         //Go to Inputs panel when you click inputs button and setup the back button to go back to parameter panel
-        inputsButton?.onClick.AddListener(() => GoToPanel(inputsMenu));//, parametersMenu, () => GoToPanel(parametersMenu)));//, parametersMenu, () => GoToPanel(mainMenu))));
+        inputsButton?.onClick.AddListener(() => GoToPanel(inputsMenu, hideArrow: true));//, parametersMenu, () => GoToPanel(parametersMenu)));//, parametersMenu, () => GoToPanel(mainMenu))));
         
         //Go to language panel when you click language button and setup the back button to go back to parameter panel
         languagesButton?.onClick.AddListener(() => GoToPanel(languageMenu));//, parametersMenu, () => GoToPanel(parametersMenu)));//, pauseMenu, () => GoToPanel(mainMenu))));
@@ -154,7 +154,7 @@ public class MenuManager : MonoBehaviour
         pause = !pause;
     }
 
-    public void GoToPanel(Menu menuToGo, bool goTo00 = false, Menu menuToGoBackButton = null, UnityAction backButtonAction = null, PanelMap panelMap = null)
+    public void GoToPanel(Menu menuToGo, bool goTo00 = false, Menu menuToGoBackButton = null, UnityAction backButtonAction = null, PanelMap panelMap = null, bool hideArrow = false)
     { 
         HideAllPanel();
         
@@ -168,6 +168,15 @@ public class MenuManager : MonoBehaviour
         }else if (menuToGo.useBackButton)
         {
             SetBackButton(GetMenu(menuToGo.menuBackButtonIndex), menuToGo.panel, () => backButton.onClick.AddListener(backButtonAction));
+        }
+        
+        if (hideArrow)
+        {
+            selection.arrow.gameObject.SetActive(false);
+        }
+        else
+        {
+            selection.arrow.gameObject.SetActive(true);
         }
 
         if (panelMap != null)

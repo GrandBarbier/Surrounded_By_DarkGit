@@ -22,6 +22,9 @@ public class SelectionUI : MonoBehaviour
     private RectTransform _rectTransform;
     
     public RectTransform selectionUi;
+    private Vector3 selectionUiBaseScale;
+    public float scaleIncrease = 1.1f;
+    public float increaseDuration = 0;
     public RectTransform arrow;
 
     private Action<InputAction.CallbackContext> action1;
@@ -60,8 +63,14 @@ public class SelectionUI : MonoBehaviour
         //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["MoveMenu"].performed -= action2;
         
         _rectTransform = GetComponent<RectTransform>();
-        _image = selectionUi?.GetComponent<Image>();
         menuManager = Gears.gears.menuManager;
+
+        if (selectionUi != null)
+        {
+            _image = selectionUi?.GetComponent<Image>();
+            selectionUiBaseScale = selectionUi.localScale;
+            StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
+        }
     }
     
     void Update()
@@ -80,6 +89,39 @@ public class SelectionUI : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(SelectionColor());
+        }
+    }
+
+    public IEnumerator RescaleOverTime(GameObject go, Vector3 startScale, Vector3 endScale, float duration, bool loop = false)
+    {
+        go.SetActive(true);
+        
+        go.transform.localScale = startScale;
+        
+        for (float t = 0f; t < duration; t += Time.deltaTime) 
+        {
+            float normalizedTime = t/duration;
+
+            if (go)
+            {
+                go.transform.localScale = Vector3.Lerp(startScale, endScale, normalizedTime);
+            }
+            else
+            {
+                break;
+            }
+         
+            yield return null;
+        }
+
+        if (go)
+        {
+            go.transform.localScale = endScale;
+
+            if (loop)
+            {
+                StartCoroutine(RescaleOverTime(go, endScale, startScale, duration, true));
+            }
         }
     }
 
@@ -155,13 +197,21 @@ public class SelectionUI : MonoBehaviour
             selectionUi.sizeDelta = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta;
             
             selectionUi.localScale = new Vector3(v.x * scaleMultiplierX, v.y * scaleMultiplierY);
+            
+            selectionUiBaseScale = selectionUi.localScale;
+            StopAllCoroutines();
+            StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
 
         if (arrow != null)
         {
+            arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.3f;
+
+            float distance = arrow.sizeDelta.x * arrow.localScale.x - 5;
+            
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
-                             new Vector3(-menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * v.x * scaleMultiplierX / 2f - 50, 0, 0);
+                             new Vector3(-menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * v.x * scaleMultiplierX / 2f - distance, 0, 0);
         }
 
         //Debug.Log(vector2Int + " -> " + posOnMap);
