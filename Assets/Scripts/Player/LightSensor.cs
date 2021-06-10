@@ -17,10 +17,9 @@ public class LightSensor : MonoBehaviour
     public float deathLevel;
     public float deathTime;
 
-  
+    [Header("Game Objects")] 
+    public GameObject panel;
     
-    //public GameObject globalVolume;
-    //private Vignette _vignette;
     private void Start()
     {
       
@@ -28,11 +27,6 @@ public class LightSensor : MonoBehaviour
         deathLevel = 0;
 
 
-        // Vignette tmp;
-        // if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out tmp))
-        // {
-        //     
-        // }
     }
 
     void Update()
@@ -98,6 +92,8 @@ public class LightSensor : MonoBehaviour
             deathLevel -= Time.deltaTime * lightLevel/5;
         }
 
+       Debug.Log(panel.GetComponent<Image>().material.GetFloat("_Bias"));
        
+       panel.GetComponent<Image>().material.SetFloat("_Bias", deathLevel - 2);
     }
 }
