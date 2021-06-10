@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _Bias: 1.0149665
+    - _Bias: -2.0344102
     - _Scale: 1
     - _TessEdgeLength: 16
     - _TessMax: 25
