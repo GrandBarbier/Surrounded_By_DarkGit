@@ -202,7 +202,7 @@ public class MenuManager : MonoBehaviour
             selection.posOnMap = currentMap.startPos;
         }
 
-        if (selection.selectionUi.gameObject.activeSelf)
+        if (selection.selectionUi.gameObject.activeInHierarchy)
         {
             selection.UpdateDisplayScalePosition();
         }
