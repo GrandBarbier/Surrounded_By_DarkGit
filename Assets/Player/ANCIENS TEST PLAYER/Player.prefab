@@ -931,7 +931,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952174619848031}
-  m_LocalRotation: {x: 0.062137432, y: -0.000000017173132, z: 0.0000000010691601, w: 0.9980676}
+  m_LocalRotation: {x: 0.06213745, y: 0.000000017173132, z: -0.0000000010691605, w: 0.9980676}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -975,7 +975,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7771684, y: 1}
+    m_SensorSize: {x: 1.6947535, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6228,7 +6228,7 @@ MonoBehaviour:
   lightLimit: 250
   deathLevel: 0
   deathTime: 5
-  deathSlider: {fileID: 0}
+  panel: {fileID: 0}
 --- !u!1 &1477952175431371074
 GameObject:
   m_ObjectHideFlags: 0
@@ -6325,7 +6325,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7771684, y: 1}
+    m_SensorSize: {x: 1.6947535, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6468,7 +6468,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952175672098633}
-  m_LocalRotation: {x: 0.025841676, y: -0.0000000010750397, z: 2.779011e-11, w: 0.99966604}
+  m_LocalRotation: {x: 0.025841676, y: 0.0000000010750395, z: -2.7790104e-11, w: 0.99966604}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6512,7 +6512,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7771684, y: 1}
+    m_SensorSize: {x: 1.6947535, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6816,7 +6816,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952175999428094}
-  m_LocalRotation: {x: -0.00442123, y: -0.010846446, z: -0.000047957914, w: 0.9999314}
+  m_LocalRotation: {x: -0.0044212537, y: -0.010343592, z: -0.00004573453, w: 0.99993676}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6860,7 +6860,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7771684, y: 1}
+    m_SensorSize: {x: 1.6947535, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18825,7 +18825,7 @@ GameObject:
   - component: {fileID: 6862560040701070805}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18975,12 +18975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0857a6145294244b8be00c7eb4ee997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBePicked: 0
   player: {fileID: 6862560040701070815}
   player_hand: {fileID: 4288144008047738653}
   torchHandPos: {fileID: 1477952175431371074}
-  t_light: {fileID: 1477952174346117495}
-  particles: {fileID: 1477952176060916777}
   torch: {fileID: 1477952175707983323}
   animator: {fileID: 6862560040701070803}
 --- !u!1 &6902315515253359791
