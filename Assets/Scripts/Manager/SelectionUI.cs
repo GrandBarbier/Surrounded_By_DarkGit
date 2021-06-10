@@ -69,7 +69,7 @@ public class SelectionUI : MonoBehaviour
         {
             _image = selectionUi?.GetComponent<Image>();
             selectionUiBaseScale = selectionUi.localScale;
-            StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
+            //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
     }
 
@@ -99,8 +99,11 @@ public class SelectionUI : MonoBehaviour
 
     public IEnumerator RescaleOverTime(GameObject go, Vector3 startScale, Vector3 endScale, float duration, bool loop = false)
     {
-        go.SetActive(true);
-        
+        if (!go.activeSelf)
+        {
+            go.SetActive(true);
+        }
+
         go.transform.localScale = startScale;
         
         for (float t = 0f; t < duration; t += Time.deltaTime) 
@@ -125,7 +128,7 @@ public class SelectionUI : MonoBehaviour
 
             if (loop)
             {
-                StartCoroutine(RescaleOverTime(go, endScale, startScale, duration, true));
+                //StartCoroutine(RescaleOverTime(go, endScale, startScale, duration, true));
             }
         }
     }
