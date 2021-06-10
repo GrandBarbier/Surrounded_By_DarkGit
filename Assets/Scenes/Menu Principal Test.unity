@@ -7204,6 +7204,8 @@ MonoBehaviour:
   idleColor: {r: 1, g: 0, b: 0, a: 0.39215687}
   pressedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
   selectionUi: {fileID: 2077250672}
+  scaleIncrease: 0.92
+  increaseDuration: 1.75
   arrow: {fileID: 254048023}
 --- !u!1 &1963286821
 GameObject:
