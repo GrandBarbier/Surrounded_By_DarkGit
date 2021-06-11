@@ -11,24 +11,27 @@ public class igniteBrazero : MonoBehaviour
 	public GameObject torch_particles;
 	private void OnTriggerStay(Collider other)
 	{
-		if (Input.GetKeyDown(KeyCode.W))
+		if (other.CompareTag("Brazero"))
 		{
-			if (torch_light.activeSelf)
+			if (Input.GetKeyDown(KeyCode.W))
 			{
-				if (!brazero_light.activeSelf)
+				if (torch_light.activeSelf)
 				{
-					//lancer animation
-					brazero_light.SetActive(true);
-					brazero_particles.SetActive(true);
+					if (!brazero_light.activeSelf)
+					{
+						//lancer animation
+						brazero_light.SetActive(true);
+						brazero_particles.SetActive(true);
+					}
 				}
-			}
-			else
-			{
-				if (brazero_light.activeSelf)
+				else
 				{
-					//lancer animation
-					torch_light.SetActive(true);
-					torch_particles.SetActive(true);
+					if (brazero_light.activeSelf)
+					{
+						//lancer animation
+						torch_light.SetActive(true);
+						torch_particles.SetActive(true);
+					}
 				}
 			}
 		}
