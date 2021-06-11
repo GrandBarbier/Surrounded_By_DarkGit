@@ -72,11 +72,6 @@ public class SelectionUI : MonoBehaviour
             //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
     }
-
-    void OnEnable()
-    {
-        UpdateDisplayScalePosition();
-    }
     
     void Update()
     {
@@ -196,6 +191,7 @@ public class SelectionUI : MonoBehaviour
     public void UpdateDisplayScalePosition()
     {
         //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
+        Debug.Log(transform.parent + " pos On Map : " + menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
         Vector3 v = AdaptScale(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, menuManager.currentMap.map[posOnMap.x, posOnMap.y].localScale);
         
         //adapt selection
