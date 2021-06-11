@@ -8,6 +8,7 @@ public class pushBox : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject player;
+    public Animator playerAnimator;
 
     private void Start()
     {
@@ -21,9 +22,10 @@ public class pushBox : MonoBehaviour
             if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
                 player.GetComponent<PlaceTorch>().torchOnGround)
             {
-                //setbool
-            }
-   
+                playerAnimator.SetBool("IsPushing", true);
+            }     
         }
-    }
+        else 
+                playerAnimator.SetBool("IsPushing", false);
+    }   
 }
