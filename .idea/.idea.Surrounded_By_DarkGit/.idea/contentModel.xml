@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\yoanl\.Rider2019.3\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\yoanl\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\yoanl\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-747650524.00" t="ExcludeRecursive" />
-    <e p="D:\Documents\Unity\Unity GIT\Surrounded_By_DarkGit" t="IncludeRecursive">
+    <e p="C:\Users\COURS\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\COURS\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-68514826.00" t="ExcludeRecursive" />
+    <e p="E:\1.MATIERE DE COURS\2eme annee\Surrounded_By_DarkGit" t="IncludeRecursive">
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -867,6 +866,7 @@
             <e p="PickUpTorch.cs" t="Include" />
             <e p="PlaceTorch.cs" t="Include" />
             <e p="TriggerInteraction.cs" t="Include" />
+            <e p="WaterTorch.cs" t="Include" />
           </e>
           <e p="Puzzles" t="Include">
             <e p="firststepbutton.cs" t="Include" />
@@ -930,7 +930,6 @@
             </e>
           </e>
         </e>
-        <e p="WaterTorch.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
