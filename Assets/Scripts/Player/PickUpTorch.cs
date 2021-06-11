@@ -20,7 +20,7 @@ public class PickUpTorch : MonoBehaviour
             animator.SetTrigger("PickTorch");
             Debug.Log("pickup");
             player.GetComponent<PlaceTorch>().torchOnGround = false;
-            animator.SetBool("HasTorch", true);
+            
         }
     }
 

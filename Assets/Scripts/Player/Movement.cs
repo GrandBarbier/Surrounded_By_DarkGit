@@ -99,8 +99,11 @@ public class Movement : MonoBehaviour
             Debug.Log("jump!");
             velocity.y = Mathf.Sqrt(jumpHeight * gravity);
             animator.SetBool("IsGrounded", false);
+            
         }
     }
+
+  
 
     public void RotateCamera()
     {
