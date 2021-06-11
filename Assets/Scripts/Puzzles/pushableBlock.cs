@@ -17,7 +17,9 @@ public class pushableBlock : MonoBehaviour
             Debug.Log("puuuuuuuute");
             if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded && player.GetComponent<PlaceTorch>().torchOnGround)
             {
-                block.transform.position += forceOfPush * (Time.deltaTime * speed);
+                block.GetComponent<Rigidbody>().AddForce(forceOfPush * (Time.deltaTime * speed));
+
+                //block.transform.position += forceOfPush * (Time.deltaTime * speed);
                 /*lancer anim pose des mains
                 while (Input.GetKey(KeyCode.A))
                 {
