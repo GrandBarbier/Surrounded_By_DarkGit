@@ -65,11 +65,8 @@ public class LightSensor : MonoBehaviour
 
     public void DeathLevel()
     {
-        if (deathLevel <= 0)
-        {
-            deathLevel = 0;
-        }
-        else if (deathLevel >= deathTime)
+       
+        if (deathLevel >= deathTime)
         {
             gameplayManager.Death();
             deathLevel = deathTime;
@@ -91,9 +88,12 @@ public class LightSensor : MonoBehaviour
         {
             deathLevel -= Time.deltaTime * lightLevel/5;
         }
-
-       Debug.Log(panel.GetComponent<Image>().material.GetFloat("_Bias"));
-       
-       panel.GetComponent<Image>().material.SetFloat("_Bias", deathLevel - 2);
+        
+        if (deathLevel <= 0)
+        {
+            deathLevel = 0;
+        }
+        
+       panel.GetComponent<Image>().material.SetFloat("_VignetteScale", deathLevel/deathTime * 5);
     }
 }
