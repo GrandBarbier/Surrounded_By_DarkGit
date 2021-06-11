@@ -23,7 +23,6 @@ public class PlaceTorch : MonoBehaviour
         if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
         {
             animator.SetTrigger("DropTorch");
-            animator.SetBool("HasTorch", false);
             Debug.Log("place");
             
             
