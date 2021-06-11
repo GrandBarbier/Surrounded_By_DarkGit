@@ -10,6 +10,7 @@ public class Shattering : MonoBehaviour
 
     private GameObject[] childs;
     private bool shatered;
+    public Vector3 breakingForce;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class Shattering : MonoBehaviour
             foreach (var child in childs)
             {
                 Rigidbody r = child.AddComponent<Rigidbody>();
-                r.AddForce(new Vector3(0, -500, 0));
+                r.AddForce(breakingForce);
 
                 if (Gears.gears?.somkeTrail)
                 {
