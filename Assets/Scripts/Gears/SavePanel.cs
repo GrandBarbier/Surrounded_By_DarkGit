@@ -1,25 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SavePanel : MonoBehaviour
 {
     public TextMeshProUGUI pathText;
     public string path;
 
-    public RectTransform scrollable;
-    public float sensibility = 1f;
-    private Vector2 startPos;
-    public Vector2 maxPos;
-    private float progress;
-
     public GameObject browseButton;
     
     PlayerInput _controls;
     public static ControlDeviceType currentControlDevice;
+    
     public enum ControlDeviceType{
         KeyboardAndMouse,
         Gamepad,
@@ -28,9 +26,6 @@ public class SavePanel : MonoBehaviour
     void Start()
     {
         UpdatePathText(Application.persistentDataPath);
-
-        startPos = scrollable.position;
-        maxPos = startPos + maxPos;
 
         if (Gamepad.current != null)
         {
@@ -47,11 +42,7 @@ public class SavePanel : MonoBehaviour
     
     void Update()
     {
-        progress += -Mouse.current.scroll.ReadValue().y * 0.001f * sensibility;
-
-        progress = Mathf.Clamp(progress, 0f, 1f);
-
-        scrollable.position = Vector2.Lerp(startPos, maxPos, progress);
+        
     }
 
     void OnEnable() {
