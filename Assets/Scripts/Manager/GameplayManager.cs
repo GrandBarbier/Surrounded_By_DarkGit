@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameplayManager : MonoBehaviour
 {
     public GameObject player;
+    public Animator playerAnimator;
     
     [Header("Death")]
     public GameObject deathUI;
@@ -44,5 +45,7 @@ public class GameplayManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         deathText.text = "Restart in  " + Mathf.FloorToInt(_actualRestartTime);
+
+        playerAnimator.SetBool("IsDead", true);
     }
 }

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1af9754adfbb5b644963f74127a860fd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Akura Popo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2067be01559edc54588bab8f71c5ece3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
