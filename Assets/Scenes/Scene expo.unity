@@ -3572,9 +3572,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathText: {fileID: 862806666}
   path: 
-  scrollable: {fileID: 1358206943}
-  sensibility: 1
-  maxPos: {x: 0, y: -1000}
   browseButton: {fileID: 0}
 --- !u!114 &783462966
 MonoBehaviour:
@@ -5342,15 +5339,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06213745
+      value: 0.062137432
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017173132
+      value: -0.000000017173132
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000010691605
+      value: 0.0000000010691601
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569391, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -5358,11 +5355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347183969268, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000010750397
+      value: 0.0000000010750397
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347183969268, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.779011e-11
+      value: -2.779011e-11
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347183969269, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -5370,19 +5367,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99993676
+      value: 0.99987596
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0044212523
+      value: -0.004420993
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.010343592
+      value: -0.015118587
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000045734512
+      value: -0.00006684745
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917454, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -7284,7 +7281,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375872294}
-  m_LocalRotation: {x: -0.0044212546, y: -0.010343593, z: -0.00004573452, w: 0.99993676}
+  m_LocalRotation: {x: -0.0044209855, y: -0.015118586, z: -0.00006684732, w: 0.99987596}
   m_LocalPosition: {x: -177.73, y: 15.814003, z: -11.149068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8015,8 +8012,8 @@ MonoBehaviour:
   mainMenu:
     panel: {fileID: 1370714351}
     startPos: {x: 0, y: 0}
-    panelMapIndex: 1
     useBackButton: 0
+    index: 0
     menuBackButtonIndex: 0
     menuMap:
     - list:
@@ -8027,8 +8024,8 @@ MonoBehaviour:
   parametersMenu:
     panel: {fileID: 2061538818}
     startPos: {x: 0, y: 1}
-    panelMapIndex: 2
     useBackButton: 1
+    index: 0
     menuBackButtonIndex: 1
     menuMap:
     - list:
@@ -8038,8 +8035,8 @@ MonoBehaviour:
   inputsMenu:
     panel: {fileID: 756069912}
     startPos: {x: 0, y: 1}
-    panelMapIndex: 5
     useBackButton: 1
+    index: 0
     menuBackButtonIndex: 2
     menuMap:
     - list:
@@ -8069,8 +8066,8 @@ MonoBehaviour:
   saveMenu:
     panel: {fileID: 783462963}
     startPos: {x: 1, y: 0}
-    panelMapIndex: 4
     useBackButton: 1
+    index: 0
     menuBackButtonIndex: 1
     menuMap:
     - list:
@@ -8082,14 +8079,15 @@ MonoBehaviour:
   languageMenu:
     panel: {fileID: 407377291}
     startPos: {x: 0, y: 1}
-    panelMapIndex: 3
     useBackButton: 1
+    index: 0
     menuBackButtonIndex: 2
     menuMap:
     - list:
       - {fileID: 373015305}
       - {fileID: 706483969}
       - {fileID: 1962628487}
+  menus: []
   resumeButton: {fileID: 1726756464}
   parameterButton: {fileID: 407689195}
   saveButton: {fileID: 1294125282}
