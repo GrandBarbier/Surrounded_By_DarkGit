@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: 0.988
     - _AlphaCutoff: 0.5
     - _Bias: -2
     - _Float0: 0.02
@@ -51,7 +51,7 @@ Material:
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 16
-    - _VignetteScale: 1.85
+    - _VignetteScale: 0
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0.7529412}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
