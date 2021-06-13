@@ -18,6 +18,7 @@ public class FireLight : MonoBehaviour
 	{
 		_lightComp = GetComponent<Light>();
 		_initialIntensity = _lightComp.intensity;
+		_pos = transform.localPosition;
 	}
 
 	void Update()
