@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class Scrollable : MonoBehaviour
+public class CustomScrollable : MonoBehaviour
 {
     public Scrollbar scrollbar;
     public RectTransform scrollable;
@@ -63,8 +63,11 @@ public class Scrollable : MonoBehaviour
         }
 
         progress = Mathf.Clamp(progress, 0f, 1f);
-        
-        scrollable.position = Vector2.Lerp(startPos, maxPos, progress);
+
+        if (scrollable != null)
+        {
+            scrollable.position = Vector2.Lerp(startPos, maxPos, progress);
+        }
     }
 
     public void UpdateProgressMenu()
