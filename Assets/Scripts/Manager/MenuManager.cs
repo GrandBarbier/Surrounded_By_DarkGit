@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -15,11 +16,11 @@ public class MenuManager : MonoBehaviour
 
     [Header("Menus")]
     [NonSerialized] public bool pause;
-    public Menu mainMenu = new Menu(0, false);
-    public Menu parametersMenu = new Menu(2, menuBackButtonIndex: 1);
-    public Menu inputsMenu = new Menu(5, menuBackButtonIndex: 2);
-    public Menu saveMenu = new Menu(4, menuBackButtonIndex: 2);
-    public Menu languageMenu = new Menu(3, menuBackButtonIndex: 2);
+    public Menu mainMenu = new Menu(false);
+    public Menu parametersMenu = new Menu( menuBackButtonIndex: 1);
+    public Menu inputsMenu = new Menu(menuBackButtonIndex: 2);
+    public Menu saveMenu = new Menu(menuBackButtonIndex: 2);
+    public Menu languageMenu = new Menu(menuBackButtonIndex: 2);
     
     public List<Menu> menus;
 
@@ -471,6 +472,83 @@ public class MenuManager : MonoBehaviour
             Gears.gears?.playerInput?.actions["Move"].Enable();
         }
     }
+    
+     #region MouseOver
+    
+    public static bool IsMouseOverUiTooltip()
+    {
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+        
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+
+        for (int i = 0; i < raycastResults.Count; i++)
+        {
+            raycastResults.RemoveAt(i);
+            i--;
+        }
+
+        return raycastResults.Count > 0;
+    }
+
+    public static bool IsMouseOverUiIgnore()
+    {
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+        
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+
+        for (int i = 0; i < raycastResults.Count; i++)
+        {
+            if (raycastResults[i].gameObject.GetComponent<IgnoreMouseOver>())
+            {
+                raycastResults.RemoveAt(i);
+                i--;
+            }
+        }
+
+        return raycastResults.Count > 0;
+    }
+
+    public static bool MouseOverGameObject(GameObject go)
+    {
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+        
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+
+        /*for (int i = 0; i < raycastResults.Count; i++)
+        {
+            if (raycastResults[i].gameObject.GetComponent<IgnoreMouseOver>())
+            {
+                raycastResults.RemoveAt(i);
+                i--;
+            }
+        }*/
+
+        return Array.Find(raycastResults.ToArray(), result => result.gameObject == go).gameObject;
+    }
+
+    public static GameObject ObjectUnderCursor()
+    {
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+        
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+        
+        if (raycastResults.Capacity == 0)
+        {
+            return null;
+        }
+        //Debug.Log(raycastResults[0].gameObject);
+        return raycastResults[0].gameObject;
+    }
+    
+    #endregion
 }
 
 public class PanelMap
@@ -492,7 +570,7 @@ public class PanelMap
 [Serializable]
 public class Menu
 {
-    public Menu(int panelMapIndex, bool useBackButton = true, int menuBackButtonIndex = 0, GameObject panel = null)
+    public Menu(bool useBackButton = true, int menuBackButtonIndex = 0, GameObject panel = null)
     {
         this.panel = panel;
         this.useBackButton = useBackButton;
