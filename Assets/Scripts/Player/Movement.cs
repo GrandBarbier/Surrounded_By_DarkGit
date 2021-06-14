@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
 
     private PlayerInput playerInput;
 
+    public bool animPlaying = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,26 +71,33 @@ public class Movement : MonoBehaviour
         Vector2 v = playerInput.actions["Move"].ReadValue<Vector2>();
         Vector3 direction = new Vector3(v.x, 0, v.y);//new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (direction.magnitude >= 0.1f)
+        if (animPlaying == false)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f,  angle, 0f);
 
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
-            
-            animator.SetBool("IsWalking", true);
-            
+
+            if (direction.magnitude >= 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
+                    turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                controller.Move(moveDir.normalized * speed * Time.deltaTime);
+
+                animator.SetBool("IsWalking", true);
+
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+            }
+
+            velocity.y -= gravity * Time.deltaTime;
+
+            controller.Move(velocity * Time.deltaTime);
+
         }
-        else
-        {
-            animator.SetBool("IsWalking", false);
-        }
-
-        velocity.y -= gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
 
     }
 
