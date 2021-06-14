@@ -4500,9 +4500,10 @@ MonoBehaviour:
     menuMap:
     - list:
       - {fileID: 1462368396}
-      - {fileID: 1850905340}
       - {fileID: 788321535}
+      - {fileID: 1850905340}
       - {fileID: 22751190}
+      - {fileID: 1525636151}
   inputsMenu:
     panel: {fileID: 2013758204}
     startPos: {x: 0, y: 1}
