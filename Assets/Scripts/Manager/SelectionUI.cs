@@ -69,7 +69,7 @@ public class SelectionUI : MonoBehaviour
         {
             _image = selectionUi?.GetComponent<Image>();
             selectionUiBaseScale = selectionUi.localScale;
-            StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
+            //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
     }
     
@@ -219,14 +219,14 @@ public class SelectionUI : MonoBehaviour
             
             selectionUiBaseScale = selectionUi.localScale;
             StopAllCoroutines();
-            StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
+            //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
 
         if (arrow != null)
         {
             arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.3f;
 
-            float distance = arrow.sizeDelta.x * arrow.localScale.x - 5;
+            float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f;
             
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
