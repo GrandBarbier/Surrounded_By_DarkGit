@@ -77,7 +77,21 @@ public class SelectionUI : MonoBehaviour
     
     void Update()
     {
-       
+        if (MenuManager.ObjectUnderCursor() != null)
+        {
+            for (int i = 0; i < menuManager.currentMap.map.GetLength(0); i++)
+            {
+                for (int j = 0; j < menuManager.currentMap.map.GetLength(1); j++)
+                {
+                    if (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
+                        MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject)
+                    {
+                        posOnMap = new Vector2Int(i, j);
+                        UpdateDisplayScalePosition();
+                    }
+                }
+            }
+        }
     }
 
     public void TriggerSelection()
