@@ -228,7 +228,7 @@ public class SelectionUI : MonoBehaviour
         {
             arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.2f;
 
-            float distance = arrow.sizeDelta.x * arrow.localScale.x - 5;
+            float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f;
             
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
