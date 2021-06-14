@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ContentModelUserStore">
     <attachedFolders>
+<<<<<<< HEAD
+=======
+      <Path>$USER_HOME$/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.mathematics@1.1.0</Path>
+      <Path>$USER_HOME$/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.searcher@4.3.1</Path>
+    </attachedFolders>
+    <explicitIncludes>
+>>>>>>> main
       <Path>$USER_HOME$/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.mathematics@1.1.0</Path>
       <Path>$USER_HOME$/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.searcher@4.3.1</Path>
     </attachedFolders>

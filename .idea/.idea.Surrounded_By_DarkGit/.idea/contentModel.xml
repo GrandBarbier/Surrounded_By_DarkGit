@@ -875,6 +875,7 @@
             <e p="firststepbutton.cs" t="Include" />
             <e p="pressingPlate.cs" t="Include" />
             <e p="pushableBlock.cs" t="Include" />
+            <e p="PushableDoor.cs" t="Include" />
             <e p="Shattering.cs" t="Include" />
             <e p="Wind.cs" t="Include" />
           </e>
