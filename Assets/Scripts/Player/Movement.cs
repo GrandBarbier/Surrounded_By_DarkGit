@@ -71,7 +71,7 @@ public class Movement : MonoBehaviour
         Vector2 v = playerInput.actions["Move"].ReadValue<Vector2>();
         Vector3 direction = new Vector3(v.x, 0, v.y);//new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (animPlaying = false)
+        if (animPlaying == false)
         {
 
 
