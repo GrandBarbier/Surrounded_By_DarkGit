@@ -17,6 +17,7 @@ public class PickUpTorch : MonoBehaviour
         //Debug.Log("quelqu'un stay ici");
         if (Input.GetKeyDown(KeyCode.F) && player.GetComponent<PlaceTorch>().torchOnGround && torch.GetComponent<WaterTorch>().canBePicked)
         {
+            player.GetComponent<Movement>().animPlaying = true;
             animator.SetTrigger("PickTorch");
             Debug.Log("pickup");
             player.GetComponent<PlaceTorch>().torchOnGround = false;
@@ -32,5 +33,6 @@ public class PickUpTorch : MonoBehaviour
         torch.transform.position = torchHandPos.transform.position;
         torch.transform.rotation = torchHandPos.transform.rotation;
         torch.transform.localEulerAngles += new Vector3(0, -90, 0);
+        
     }
 }

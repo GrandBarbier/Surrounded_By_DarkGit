@@ -1,5 +1,66 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &305286477274407080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406958253978257669}
+  - component: {fileID: 6257347420735636609}
+  - component: {fileID: 2475446025064655332}
+  m_Layer: 6
+  m_Name: SideHitBox (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406958253978257669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305286477274407080}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512093826307826648}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!65 &6257347420735636609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305286477274407080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2475446025064655332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305286477274407080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceOfPush: {x: 0, y: 1, z: 0}
+  speed: 90000
+  block: {fileID: 4206637457027021229}
+  player: {fileID: 0}
 --- !u!1 &1736381830278023546
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,6 +92,8 @@ Transform:
   - {fileID: 4613212754927946926}
   - {fileID: 499207310405948772}
   - {fileID: 7551911547628467597}
+  - {fileID: 406958253978257669}
+  - {fileID: 7572650383911679320}
   m_Father: {fileID: 4066558978485302354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -209,6 +272,7 @@ MonoBehaviour:
   forceOfPush: {x: 0, y: 0, z: 1}
   speed: 0.7
   block: {fileID: 4206637457027021229}
+  player: {fileID: 0}
 --- !u!1 &8258684616020693538
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +333,7 @@ MonoBehaviour:
   forceOfPush: {x: -1, y: 0, z: 0}
   speed: 0.7
   block: {fileID: 4206637457027021229}
+  player: {fileID: 0}
 --- !u!1 &8478142279862920496
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +394,68 @@ MonoBehaviour:
   forceOfPush: {x: 1, y: 0, z: 0}
   speed: 0.7
   block: {fileID: 4206637457027021229}
+  player: {fileID: 0}
+--- !u!1 &8771220339571573385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7572650383911679320}
+  - component: {fileID: 4132497235296208383}
+  - component: {fileID: 7166268205226030837}
+  m_Layer: 6
+  m_Name: SideHitBox (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7572650383911679320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771220339571573385}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512093826307826648}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &4132497235296208383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771220339571573385}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7166268205226030837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771220339571573385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceOfPush: {x: 0, y: -1, z: 0}
+  speed: 90000
+  block: {fileID: 4206637457027021229}
+  player: {fileID: 0}
 --- !u!1 &8953493444633777384
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,3 +516,4 @@ MonoBehaviour:
   forceOfPush: {x: 0, y: 0, z: -1}
   speed: 0.7
   block: {fileID: 4206637457027021229}
+  player: {fileID: 0}
