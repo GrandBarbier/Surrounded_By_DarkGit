@@ -25,7 +25,10 @@ public class CustomScrollable : MonoBehaviour
     
     void Start()
     {
-        startPos = scrollable.position;
+        if (scrollable != null)
+        {
+            startPos = scrollable.position;
+        }
         maxPos = startPos + maxPos;
         
         if (scrollbar != null && ScrollControls.Contains(scrollControl.ScrollBar))
