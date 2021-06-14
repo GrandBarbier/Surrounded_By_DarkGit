@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 305286477274407080}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 512093826307826648}
   m_RootOrder: 4
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfPush: {x: 0, y: 1, z: 0}
+  forceOfPush: {x: 0, y: 0, z: 1}
   speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
@@ -239,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 6945578352315102773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 512093826307826648}
   m_RootOrder: 3
@@ -269,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfPush: {x: 0, y: 0, z: 1}
-  speed: 0.7
+  forceOfPush: {x: 0, y: -1, z: 0}
+  speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
 --- !u!1 &8258684616020693538
@@ -300,7 +300,7 @@ Transform:
   m_GameObject: {fileID: 8258684616020693538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.4, z: 0.5}
   m_Children: []
   m_Father: {fileID: 512093826307826648}
   m_RootOrder: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceOfPush: {x: -1, y: 0, z: 0}
-  speed: 0.7
+  speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
 --- !u!1 &8478142279862920496
@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 8478142279862920496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.4, z: 0.5}
   m_Children: []
   m_Father: {fileID: 512093826307826648}
   m_RootOrder: 1
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceOfPush: {x: 1, y: 0, z: 0}
-  speed: 0.7
+  speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
 --- !u!1 &8771220339571573385
@@ -422,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 8771220339571573385}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 512093826307826648}
   m_RootOrder: 5
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfPush: {x: 0, y: -1, z: 0}
+  forceOfPush: {x: 0, y: 0, z: -1}
   speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
@@ -483,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 8953493444633777384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 512093826307826648}
   m_RootOrder: 2
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfPush: {x: 0, y: 0, z: -1}
-  speed: 0.7
+  forceOfPush: {x: 0, y: 1, z: 0}
+  speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
