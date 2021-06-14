@@ -83,8 +83,8 @@ public class SelectionUI : MonoBehaviour
             {
                 for (int j = 0; j < menuManager.currentMap.map.GetLength(1); j++)
                 {
-                    if (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
-                        MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject)
+                    if (menuManager.currentMap.map[i, j] != null && (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
+                                                                     MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject))
                     {
                         posOnMap = new Vector2Int(i, j);
                         UpdateDisplayScalePosition();

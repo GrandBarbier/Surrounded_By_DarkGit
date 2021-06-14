@@ -174,10 +174,12 @@ public class MenuManager : MonoBehaviour
         
         if (hideArrow)
         {
+            selection.selectionUi.gameObject.SetActive(true);
             selection.arrow.gameObject.SetActive(false);
         }
         else
         {
+            selection.selectionUi.gameObject.SetActive(false);
             selection.arrow.gameObject.SetActive(true);
         }
 

@@ -2120,13 +2120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7217c9989f1004189cc35066ea2d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollbar: {fileID: 128501508}
-  scrollable: {fileID: 649204032}
-  sensibility: 1
-  maxPos: {x: 0, y: 1500}
-  menuIndex: 0
-  columnIndex: 0
-  ScrollControls: 000000000100000003000000
 --- !u!1 &545746856
 GameObject:
   m_ObjectHideFlags: 0
@@ -5020,13 +5013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7217c9989f1004189cc35066ea2d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollbar: {fileID: 1473078655}
-  scrollable: {fileID: 445135107}
-  sensibility: 1
-  maxPos: {x: 0, y: 1000}
-  menuIndex: 3
-  columnIndex: 1
-  ScrollControls: 020000000000000003000000
 --- !u!1 &1299697068
 GameObject:
   m_ObjectHideFlags: 0
@@ -8563,8 +8549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1179053481}
-  scaleMultiplierX: 1.15
-  scaleMultiplierY: 1.5
+  scaleMultiplierX: 0.75
+  scaleMultiplierY: 1
   posOnMap: {x: 0, y: 0}
   idleColor: {r: 1, g: 0, b: 0, a: 0.39215687}
   pressedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
