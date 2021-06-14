@@ -12613,7 +12613,11 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< Updated upstream
     m_StopTime: 2.4333334
+=======
+    m_StopTime: 2.4666667
+>>>>>>> Stashed changes
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -77794,7 +77798,11 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+<<<<<<< Updated upstream
   - time: 2.4333334
+=======
+  - time: 2.4666667
+>>>>>>> Stashed changes
     functionName: AnimFinish
     data: 
     objectReferenceParameter: {fileID: 0}

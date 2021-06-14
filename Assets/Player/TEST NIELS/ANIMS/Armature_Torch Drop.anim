@@ -73546,7 +73546,11 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+<<<<<<< Updated upstream
   - time: 2.2333333
+=======
+  - time: 2.2
+>>>>>>> Stashed changes
     functionName: AnimFinish
     data: 
     objectReferenceParameter: {fileID: 0}
