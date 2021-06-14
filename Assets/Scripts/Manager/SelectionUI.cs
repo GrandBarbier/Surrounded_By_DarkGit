@@ -26,6 +26,7 @@ public class SelectionUI : MonoBehaviour
     public float scaleIncrease = 1.1f;
     public float increaseDuration = 0;
     public RectTransform arrow;
+    public float distanceDiff;
 
     private Action<InputAction.CallbackContext> action1;
     private Action<InputAction.CallbackContext> action2;
@@ -228,7 +229,7 @@ public class SelectionUI : MonoBehaviour
         {
             arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.2f;
 
-            float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f;
+            float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f + distanceDiff;
             
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
