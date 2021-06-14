@@ -2117,9 +2117,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 522398110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7217c9989f1004189cc35066ea2d00, type: 3}
+  m_Script: {fileID: 11500000, guid: dcf3ea8e90ab1d145b5e03c6ade1f833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollbar: {fileID: 0}
+  scrollable: {fileID: 0}
+  sensibility: 1
+  maxPos: {x: 0, y: 0}
+  menuIndex: 0
+  columnIndex: 0
+  ScrollControls: 
 --- !u!1 &545746856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,7 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4190,7 +4197,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1112902764
@@ -4354,7 +4361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1146095868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4364,7 +4371,7 @@ RectTransform:
   m_GameObject: {fileID: 1146095867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9090909, y: 0.9090909, z: 0.9090909}
   m_Children:
   - {fileID: 1348612750}
   m_Father: {fileID: 2013758205}
@@ -4388,7 +4395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9019608}
+  m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5010,9 +5017,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274059130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7217c9989f1004189cc35066ea2d00, type: 3}
+  m_Script: {fileID: 11500000, guid: dcf3ea8e90ab1d145b5e03c6ade1f833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollbar: {fileID: 1473078655}
+  scrollable: {fileID: 445135107}
+  sensibility: 1
+  maxPos: {x: 0, y: 1000}
+  menuIndex: 0
+  columnIndex: 0
+  ScrollControls: 0000000003000000
 --- !u!1 &1299697068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,7 +6278,7 @@ RectTransform:
   m_GameObject: {fileID: 1489201856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 696407950}
   m_RootOrder: 0
@@ -6287,7 +6301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.9795598, b: 0.5990566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8549,8 +8563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1179053481}
-  scaleMultiplierX: 1.15
-  scaleMultiplierY: 1.5
+  scaleMultiplierX: 0.75
+  scaleMultiplierY: 1
   posOnMap: {x: 0, y: 0}
   idleColor: {r: 1, g: 0, b: 0, a: 0.39215687}
   pressedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
