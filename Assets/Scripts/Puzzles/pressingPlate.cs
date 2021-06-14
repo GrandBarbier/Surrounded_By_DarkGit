@@ -23,8 +23,12 @@ public class pressingPlate : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    { 
-        isOpened = true;
+    {
+        if (other.tag == "PushableBlock")
+        {
+            isOpened = true;
+        }
+        
         
         
     }
