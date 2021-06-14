@@ -77,7 +77,21 @@ public class SelectionUI : MonoBehaviour
     
     void Update()
     {
-       
+        if (MenuManager.ObjectUnderCursor() != null)
+        {
+            for (int i = 0; i < menuManager.currentMap.map.GetLength(0); i++)
+            {
+                for (int j = 0; j < menuManager.currentMap.map.GetLength(1); j++)
+                {
+                    if (menuManager.currentMap.map[i, j] != null && (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
+                                                                     MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject))
+                    {
+                        posOnMap = new Vector2Int(i, j);
+                        UpdateDisplayScalePosition();
+                    }
+                }
+            }
+        }
     }
 
     public void TriggerSelection()
@@ -214,7 +228,7 @@ public class SelectionUI : MonoBehaviour
         {
             arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.2f;
 
-            float distance = arrow.sizeDelta.x * arrow.localScale.x - 5;
+            float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f;
             
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
