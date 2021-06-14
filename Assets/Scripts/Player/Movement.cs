@@ -136,5 +136,10 @@ public class Movement : MonoBehaviour
             angles.x = 40;
         }
     }
+
+    public void AnimFinish()
+    {
+        animPlaying = false;
+    }
 }
 
