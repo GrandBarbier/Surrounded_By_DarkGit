@@ -33,6 +33,6 @@ public class PickUpTorch : MonoBehaviour
         torch.transform.position = torchHandPos.transform.position;
         torch.transform.rotation = torchHandPos.transform.rotation;
         torch.transform.localEulerAngles += new Vector3(0, -90, 0);
-        player.GetComponent<Movement>().animPlaying = false;
+        
     }
 }

@@ -22,6 +22,7 @@ public class PlaceTorch : MonoBehaviour
         dropTorchEvent.functionName = "DropTorch";
         if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
         {
+            player.GetComponent<Movement>().animPlaying = true;
             animator.SetTrigger("DropTorch");
             Debug.Log("place");
             
