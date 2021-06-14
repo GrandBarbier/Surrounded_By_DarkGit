@@ -75,8 +75,6 @@ public class Movement : MonoBehaviour
         {
 
 
-
-
             if (direction.magnitude >= 0.1f)
             {
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -98,9 +96,8 @@ public class Movement : MonoBehaviour
             velocity.y -= gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
+
         }
-
-
 
     }
 
@@ -138,11 +135,6 @@ public class Movement : MonoBehaviour
         {
             angles.x = 40;
         }
-    }
-
-    public void AnimFinish()
-    {
-        animPlaying = false;
     }
 }
 
