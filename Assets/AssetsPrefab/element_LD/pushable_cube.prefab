@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfPush: {x: 0, y: 0, z: 1}
+  forceOfPush: {x: 0, y: 0, z: -1}
   speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df54d0bd294682444a7ace5f8724a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfPush: {x: 0, y: 0, z: -1}
+  forceOfPush: {x: 0, y: 0, z: 1}
   speed: 90000
   block: {fileID: 4206637457027021229}
   player: {fileID: 0}
