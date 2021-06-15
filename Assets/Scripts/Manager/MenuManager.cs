@@ -139,10 +139,12 @@ public class MenuManager : MonoBehaviour
     {
         if (pause)
         {
+            currentMap.map[selection.posOnMap.x, selection.posOnMap.y].transform.localScale /= selection.textScaleMulti;
             HideAllPanel();
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
+            Cursor.visible = false;
         }
         else
         {
@@ -151,6 +153,7 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
             Time.timeScale = 0f;
+            Cursor.visible = true;
         }
 
         pause = !pause;
@@ -463,6 +466,27 @@ public class MenuManager : MonoBehaviour
         }
         
         return allChilds;
+    }
+    
+    public static List<T> GetAllComponentInChilds<T>(GameObject go, bool activeChildsOnly = false, bool useParent = false)
+    {
+        List<T> componentList = new List<T>();
+        List<GameObject> allChilds = GetAllChilds(go, activeChildsOnly);
+
+        if (useParent && go.TryGetComponent(out T pComponent))
+        {
+            componentList.Add(pComponent);
+        }
+
+        foreach (var child in allChilds)
+        {
+            if (child.TryGetComponent(out T component))
+            {
+                componentList.Add(component);
+            }
+        }
+        
+        return componentList;
     }
 
     public void SwitchActionMap(string s)

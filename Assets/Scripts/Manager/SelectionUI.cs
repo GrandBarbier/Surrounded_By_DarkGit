@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,6 +14,8 @@ public class SelectionUI : MonoBehaviour
 
     public float scaleMultiplierX = 1.1f;
     public float scaleMultiplierY = 1.1f;
+
+    public float textScaleMulti = 1.1f;
 
     public Vector2Int posOnMap;
 
@@ -26,7 +30,7 @@ public class SelectionUI : MonoBehaviour
     public float scaleIncrease = 1.1f;
     public float increaseDuration = 0;
     public RectTransform arrow;
-    public float distanceDiff;
+    public bool placeArrowOnText;
 
     private Action<InputAction.CallbackContext> action1;
     private Action<InputAction.CallbackContext> action2;
@@ -72,8 +76,6 @@ public class SelectionUI : MonoBehaviour
             selectionUiBaseScale = selectionUi.localScale;
             //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
-        
-        UpdateDisplayScalePosition();
     }
     
     void Update()
@@ -87,8 +89,15 @@ public class SelectionUI : MonoBehaviour
                     if (menuManager.currentMap.map[i, j] != null && (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
                                                                      MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject))
                     {
-                        posOnMap = new Vector2Int(i, j);
-                        UpdateDisplayScalePosition();
+                        if (posOnMap != new Vector2Int(i, j))
+                        {
+                            if (MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true).Capacity > 0)
+                            {
+                                menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
+                            }
+                            posOnMap = new Vector2Int(i, j);
+                            UpdateDisplayScalePosition();
+                        }
                     }
                 }
             }
@@ -97,6 +106,14 @@ public class SelectionUI : MonoBehaviour
 
     public void TriggerSelection()
     {
+        Vector2Int v = posOnMap;
+        
+        if (MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true).Capacity > 0)
+        {
+            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
+            //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale);
+        }
+        
         if (menuManager.currentMap.map[posOnMap.x, posOnMap.y].TryGetComponent(out Button button) && button != null)
         {
             //Debug.Log(button.gameObject.name);
@@ -106,6 +123,11 @@ public class SelectionUI : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(SelectionColor());
+        }
+
+        if (posOnMap != v)
+        {
+            UpdateDisplayScalePosition();
         }
     }
 
@@ -159,6 +181,12 @@ public class SelectionUI : MonoBehaviour
     {
         if (Gears.gears.playerInput.currentActionMap.name == "Menu")
         {
+            if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null 
+                && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
+                    MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+            {
+                menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
+            }
             //Debug.Log("MoveMapPos : " + vector2I);
             Vector2Int vector2Int = new Vector2Int(vector2I.x, -vector2I.y);
         
@@ -209,7 +237,13 @@ public class SelectionUI : MonoBehaviour
     {
         //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
         //Debug.Log(transform.parent + " pos On Map : " + menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
-        Vector3 v = AdaptScale(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, menuManager.currentMap.map[posOnMap.x, posOnMap.y].localScale);
+        if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
+            MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+        {
+            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale *= textScaleMulti;
+        }
+
+        Vector3 adaptScale = AdaptScale(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, menuManager.currentMap.map[posOnMap.x, posOnMap.y].localScale);
         
         //adapt selection
         _rectTransform = GetComponent<RectTransform>();
@@ -218,22 +252,37 @@ public class SelectionUI : MonoBehaviour
             selectionUi.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position;
             selectionUi.sizeDelta = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta;
             
-            selectionUi.localScale = new Vector3(v.x * scaleMultiplierX, v.y * scaleMultiplierY);
+            selectionUi.localScale = new Vector3(adaptScale.x * scaleMultiplierX, adaptScale.y * scaleMultiplierY);
             
             selectionUiBaseScale = selectionUi.localScale;
             StopAllCoroutines();
             //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
 
-        if (arrow != null)
+        if (arrow != null && arrow.gameObject.activeInHierarchy)
         {
-            arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.2f;
+            arrow.localScale = new Vector3(adaptScale.x * scaleMultiplierX, adaptScale.x * scaleMultiplierX) * 0.2f;
 
-            float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f + distanceDiff;
+            float sizeDeltaX = 0;
+            
+            if (placeArrowOnText)
+            {
+                TextMeshProUGUI textMeshPro = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true)[0];
+
+                sizeDeltaX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x;
+                
+                /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
+                          + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 
+                          " = " + sizeDeltaX);*/
+            }
+            else
+            {
+                sizeDeltaX = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * adaptScale.x * 
+                             scaleMultiplierX / 2f + Screen.width * 0.03f + arrow.sizeDelta.x * arrow.localScale.x / 2f;
+            }
             
             //position arrow
-            arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
-                             new Vector3(-menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * v.x * scaleMultiplierX / 2f - distance, 0, 0);
+            arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + new Vector3(-sizeDeltaX, 0, 0);
         }
 
         //Debug.Log(vector2Int + " -> " + posOnMap);
