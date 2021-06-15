@@ -27,9 +27,13 @@ public class pushBox : MonoBehaviour
                 Debug.Log("launch anim");
                 playerAnimator.SetBool("IsPushing", true);
                 Debug.Log("launched anim");
-            }     
-        }
-        else 
+                
+            }
+            else
+            {
                 playerAnimator.SetBool("IsPushing", false);
+            }
+        }
+        
     }   
 }
