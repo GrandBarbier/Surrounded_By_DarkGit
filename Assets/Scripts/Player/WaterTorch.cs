@@ -9,7 +9,7 @@ public class WaterTorch : MonoBehaviour
     public GameObject particles;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.tag);
+//        Debug.Log(other.gameObject.tag);
         canBePicked = true;
         if (other.gameObject.CompareTag("water"))
         {

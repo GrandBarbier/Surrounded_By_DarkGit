@@ -24,7 +24,7 @@ public class PushableDoor : MonoBehaviour
         {
             pushable = false;
         }
-        Debug.Log(door.transform.rotation.z);
+//        Debug.Log(door.transform.rotation.z);
     }
     
     private void OnTriggerStay(Collider other)

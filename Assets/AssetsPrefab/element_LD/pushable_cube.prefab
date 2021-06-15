@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1706417629138197415}
   m_Layer: 6
   m_Name: pushable_cube
-  m_TagString: Untagged
+  m_TagString: PushableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
