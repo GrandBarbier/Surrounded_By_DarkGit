@@ -73,8 +73,6 @@ public class MenuManager : MonoBehaviour
 
     void Awake()
     {
-        Gears.gears.menuManager = this;
-
         List<Menu> allMenus = new List<Menu>{parametersMenu, mainMenu, inputsMenu, saveMenu, languageMenu};
         menus.AddRange(allMenus);
 
@@ -123,6 +121,8 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        Gears.gears.menuManager = this;
+        
         startEvent?.Invoke();
         
         SetCurrentMenuMap(ConvertListToPanelMap(mainMenu.menuMap, mainMenu.startPos));
