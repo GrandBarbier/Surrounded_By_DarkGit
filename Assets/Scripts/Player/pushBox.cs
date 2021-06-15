@@ -19,10 +19,12 @@ public class pushBox : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PushableBlock"))
         {
+            Debug.Log("tag detected");
             if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
                 player.GetComponent<PlaceTorch>().torchOnGround)
             {
                 playerAnimator.SetBool("IsPushing", true);
+                Debug.Log("launch anim");
             }     
         }
         else 
