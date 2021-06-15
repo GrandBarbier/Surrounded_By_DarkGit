@@ -12,7 +12,7 @@ public class PlaceTorch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Gears.gears.playerInput.actions["PoseTorch"].performed += context => TriggerDropTorchAnim();
     }
 
     // Update is called once per frame
@@ -20,14 +20,14 @@ public class PlaceTorch : MonoBehaviour
     {
         var dropTorchEvent = new AnimationEvent();
         dropTorchEvent.functionName = "DropTorch";
-        if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
-        {
-            player.GetComponent<Movement>().animPlaying = true;
-            animator.SetTrigger("DropTorch");
-//            Debug.Log("place");
-            
-            
-        }
+//         if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
+//         {
+//             player.GetComponent<Movement>().animPlaying = true;
+//             animator.SetTrigger("DropTorch");
+// //            Debug.Log("place");
+//             
+//             
+//         }
     }
 
     void DropTorch()
@@ -36,5 +36,14 @@ public class PlaceTorch : MonoBehaviour
         //rend la torche indépendante en mettant à jour la variable l'indiquant
         torch.transform.parent = null;
         torchOnGround = true;
+    }
+
+    public void TriggerDropTorchAnim()
+    {
+        if (torchOnGround == false && player.GetComponent<Movement>().isGrounded)
+        {
+            player.GetComponent<Movement>().animPlaying = true; animator.SetTrigger("DropTorch"); 
+            //Debug.Log("place");
+        }
     }
 }

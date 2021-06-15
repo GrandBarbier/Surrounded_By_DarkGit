@@ -282,7 +282,7 @@ public class SelectionUI : MonoBehaviour
             }
             
             //position arrow
-            arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + new Vector3(-sizeDeltaX, 0, 0);
+            arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + new Vector3(-sizeDeltaX * Screen.width / 1920, 0, 0);
         }
 
         //Debug.Log(vector2Int + " -> " + posOnMap);

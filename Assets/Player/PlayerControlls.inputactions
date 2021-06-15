@@ -30,6 +30,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "CameraMove",
+                    "type": "Value",
+                    "id": "4cf2a8c2-4f51-4abf-9549-f31ad43bbe8c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "a06355ac-dae4-4f8d-8ac7-aac28c5c6d2b",
@@ -46,10 +54,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "CameraMove",
-                    "type": "Value",
-                    "id": "4cf2a8c2-4f51-4abf-9549-f31ad43bbe8c",
-                    "expectedControlType": "Vector2",
+                    "name": "TakeTorch",
+                    "type": "Button",
+                    "id": "33bfff8b-3059-426a-b057-324725fb59c9",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -283,6 +291,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "CameraMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe6897f1-42ed-4d4b-aca8-942c9b87a973",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TakeTorch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

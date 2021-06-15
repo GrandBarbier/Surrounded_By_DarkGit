@@ -931,7 +931,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952174619848031}
-  m_LocalRotation: {x: 0.06213745, y: 0.000000017173132, z: -0.0000000010691605, w: 0.9980676}
+  m_LocalRotation: {x: 0.062137432, y: -0.000000017173132, z: 0.0000000010691601, w: 0.9980676}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -975,7 +975,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.6947535, y: 1}
+    m_SensorSize: {x: 1.2223974, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6271,6 +6271,7 @@ GameObject:
   - component: {fileID: 1477952175572288849}
   - component: {fileID: 1477952175572288848}
   - component: {fileID: 1477952175572288863}
+  - component: {fileID: 6757688969891930970}
   m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
@@ -6325,7 +6326,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.6947535, y: 1}
+    m_SensorSize: {x: 1.2223974, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6436,7 +6437,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952175572288861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb7194dc27b9df64c8beca7482ee8e0d, type: 3}
   m_Name: 
@@ -6444,6 +6445,21 @@ MonoBehaviour:
   PlayerIndex: -1
   XYAxis: {fileID: -833896827811852342, guid: b58f79af2a83f824f929dc51c65c0955, type: 3}
   ZAxis: {fileID: 0}
+--- !u!114 &6757688969891930970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477952175572288861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bc7f6a982c36849a07631f8ae294bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookSpeedX: 5
+  lookSpeedY: 0.1
+  cinemachineFreeLook: {fileID: 1477952175572288849}
 --- !u!1 &1477952175672098633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6468,7 +6484,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952175672098633}
-  m_LocalRotation: {x: 0.025841676, y: 0.0000000010750395, z: -2.7790104e-11, w: 0.99966604}
+  m_LocalRotation: {x: 0.025841676, y: -0.0000000010750397, z: 2.779011e-11, w: 0.99966604}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6512,7 +6528,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.6947535, y: 1}
+    m_SensorSize: {x: 1.2223974, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6816,7 +6832,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477952175999428094}
-  m_LocalRotation: {x: -0.0044212537, y: -0.010343592, z: -0.00004573453, w: 0.99993676}
+  m_LocalRotation: {x: -0.004421363, y: -0.0074612326, z: -0.000032990054, w: 0.9999624}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6860,7 +6876,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.6947535, y: 1}
+    m_SensorSize: {x: 1.2223974, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18819,7 +18835,6 @@ GameObject:
   - component: {fileID: 6086444832756553573}
   - component: {fileID: 6862560040701070802}
   - component: {fileID: 6862560040701070803}
-  - component: {fileID: 6862560040701070800}
   - component: {fileID: 6862560040701070801}
   - component: {fileID: 6862560040701070804}
   - component: {fileID: 6862560040701070805}
@@ -18889,36 +18904,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6862560040701070800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862560040701070815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b58f79af2a83f824f929dc51c65c0955, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Gameplay
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &6862560040701070801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18946,6 +18931,7 @@ MonoBehaviour:
   jumpHeight: 4
   cameraFollowTranfom: {fileID: 0}
   sensibility: 0
+  animPlaying: 0
 --- !u!114 &6862560040701070804
 MonoBehaviour:
   m_ObjectHideFlags: 0
