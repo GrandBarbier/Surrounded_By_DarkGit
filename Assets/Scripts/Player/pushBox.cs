@@ -15,14 +15,16 @@ public class pushBox : MonoBehaviour
         player = this.gameObject;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collision other)
     {
         if (other.gameObject.CompareTag("PushableBlock"))
         {
+            Debug.Log("tag detected");
             if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
                 player.GetComponent<PlaceTorch>().torchOnGround)
             {
                 playerAnimator.SetBool("IsPushing", true);
+                Debug.Log("launch anim");
             }     
         }
         else 

@@ -20,6 +20,4 @@ public class SetInteractiveShaderEffects : MonoBehaviour
         transform.position = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
         Shader.SetGlobalVector("_Position", transform.position);
     }
-
-
 }
