@@ -1358,6 +1358,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1340803745}
     m_Modifications:
+    - target: {fileID: 1477952175360394992, guid: b5fbe87e5bde80e48be586c8306890f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1477952175360395006, guid: b5fbe87e5bde80e48be586c8306890f7, type: 3}
       propertyPath: panel
       value: 
@@ -8574,7 +8578,7 @@ MonoBehaviour:
   scaleIncrease: 0.92
   increaseDuration: 1.75
   arrow: {fileID: 254048023}
-  distanceDiff: 0
+  distanceDiff: 10
 --- !u!1 &1963286821
 GameObject:
   m_ObjectHideFlags: 0

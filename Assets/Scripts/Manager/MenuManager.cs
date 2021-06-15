@@ -468,30 +468,14 @@ public class MenuManager : MonoBehaviour
         return allChilds;
     }
     
-    public static List<T> GetAllComponentInChilds<T>(GameObject go, bool activeChildsOnly = false)
+    public static List<T> GetAllComponentInChilds<T>(GameObject go, bool activeChildsOnly = false, bool useParent = false)
     {
         List<T> componentList = new List<T>();
-        List<GameObject> allChilds = new List<GameObject>();
+        List<GameObject> allChilds = GetAllChilds(go, activeChildsOnly);
 
-        for (int i = 0; i < go.transform.childCount; i++)
+        if (useParent && go.TryGetComponent(out T pComponent))
         {
-            if (!activeChildsOnly || go.transform.GetChild(i).gameObject.activeSelf)
-            {
-                allChilds.Add(go.transform.GetChild(i).gameObject);
-                
-                if (go.transform.GetChild(i).childCount > 0)
-                {
-                    List<GameObject> g = GetAllChilds(go.transform.GetChild(i).gameObject);
-
-                    foreach (var gj in g)
-                    {
-                        if (!allChilds.Contains(gj))
-                        {
-                            allChilds.Add(gj);
-                        }
-                    }
-                }
-            }
+            componentList.Add(pComponent);
         }
 
         foreach (var child in allChilds)

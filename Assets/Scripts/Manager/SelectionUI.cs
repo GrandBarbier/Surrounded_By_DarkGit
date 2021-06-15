@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -263,15 +264,21 @@ public class SelectionUI : MonoBehaviour
             //StartCoroutine(RescaleOverTime(selectionUi.gameObject, selectionUiBaseScale, selectionUiBaseScale * scaleIncrease, increaseDuration, true));
         }
 
-        if (arrow != null)
+        if (arrow != null && arrow.gameObject.activeInHierarchy)
         {
             arrow.localScale = new Vector3(v.x * scaleMultiplierX, v.x * scaleMultiplierX) * 0.2f;
 
             float distance = arrow.sizeDelta.x * arrow.localScale.x + Screen.width * 0.0015f + distanceDiff;
             
+            float sizeDeltaX = 0;
+
+            TextMeshProUGUI textMeshPro = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true)[0];
+
+            sizeDeltaX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize;
+
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + 
-                             new Vector3(-menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * v.x * scaleMultiplierX / 2f - distance, 0, 0);
+                             new Vector3(-sizeDeltaX * v.x * scaleMultiplierX / 2f - distance, 0, 0);
         }
 
         //Debug.Log(vector2Int + " -> " + posOnMap);
