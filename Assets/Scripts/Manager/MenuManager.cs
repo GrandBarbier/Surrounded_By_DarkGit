@@ -139,6 +139,7 @@ public class MenuManager : MonoBehaviour
     {
         if (pause)
         {
+            currentMap.map[selection.posOnMap.x, selection.posOnMap.y].transform.localScale /= selection.textScaleMulti;
             HideAllPanel();
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
