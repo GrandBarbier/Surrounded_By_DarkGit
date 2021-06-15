@@ -34,6 +34,10 @@ public class pushBox : MonoBehaviour
                 playerAnimator.SetBool("IsPushing", false);
             }
         }
+        else
+        {
+            playerAnimator.SetBool("IsPushing", false);
+        }
         
     }   
 }
