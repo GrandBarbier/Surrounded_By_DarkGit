@@ -34,10 +34,12 @@ public class pushBox : MonoBehaviour
                 playerAnimator.SetBool("IsPushing", false);
             }
         }
-        else
-        {
-            playerAnimator.SetBool("IsPushing", false);
-        }
         
-    }   
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        playerAnimator.SetBool("IsPushing", false);
+    }
 }

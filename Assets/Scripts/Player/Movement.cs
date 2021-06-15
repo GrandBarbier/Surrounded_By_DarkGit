@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
 
     public bool animPlaying = false;
 
-    public float fallMax;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -96,10 +96,7 @@ public class Movement : MonoBehaviour
             }
 
             velocity.y -= gravity * Time.deltaTime;
-            if (velocity.y > fallMax)
-            {
-                velocity.y = fallMax;
-            }
+            
 
             controller.Move(velocity * Time.deltaTime);
 
