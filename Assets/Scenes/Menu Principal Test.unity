@@ -8566,6 +8566,7 @@ MonoBehaviour:
   menuManager: {fileID: 1179053481}
   scaleMultiplierX: 0.75
   scaleMultiplierY: 1
+  textScaleMulti: 1.1
   posOnMap: {x: 0, y: 0}
   idleColor: {r: 1, g: 0, b: 0, a: 0.39215687}
   pressedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
@@ -8573,6 +8574,7 @@ MonoBehaviour:
   scaleIncrease: 0.92
   increaseDuration: 1.75
   arrow: {fileID: 254048023}
+  distanceDiff: 0
 --- !u!1 &1963286821
 GameObject:
   m_ObjectHideFlags: 0

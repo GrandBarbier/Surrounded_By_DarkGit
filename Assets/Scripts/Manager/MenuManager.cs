@@ -143,6 +143,7 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
+            Cursor.visible = false;
         }
         else
         {
@@ -151,6 +152,7 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
             Time.timeScale = 0f;
+            Cursor.visible = true;
         }
 
         pause = !pause;
@@ -463,6 +465,43 @@ public class MenuManager : MonoBehaviour
         }
         
         return allChilds;
+    }
+    
+    public static List<T> GetAllComponentInChilds<T>(GameObject go, bool activeChildsOnly = false)
+    {
+        List<T> componentList = new List<T>();
+        List<GameObject> allChilds = new List<GameObject>();
+
+        for (int i = 0; i < go.transform.childCount; i++)
+        {
+            if (!activeChildsOnly || go.transform.GetChild(i).gameObject.activeSelf)
+            {
+                allChilds.Add(go.transform.GetChild(i).gameObject);
+                
+                if (go.transform.GetChild(i).childCount > 0)
+                {
+                    List<GameObject> g = GetAllChilds(go.transform.GetChild(i).gameObject);
+
+                    foreach (var gj in g)
+                    {
+                        if (!allChilds.Contains(gj))
+                        {
+                            allChilds.Add(gj);
+                        }
+                    }
+                }
+            }
+        }
+
+        foreach (var child in allChilds)
+        {
+            if (child.TryGetComponent(out T component))
+            {
+                componentList.Add(component);
+            }
+        }
+        
+        return componentList;
     }
 
     public void SwitchActionMap(string s)

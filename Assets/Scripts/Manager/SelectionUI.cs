@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class SelectionUI : MonoBehaviour
 
     public float scaleMultiplierX = 1.1f;
     public float scaleMultiplierY = 1.1f;
+
+    public float textScaleMulti = 1.1f;
 
     public Vector2Int posOnMap;
 
@@ -87,8 +90,17 @@ public class SelectionUI : MonoBehaviour
                     if (menuManager.currentMap.map[i, j] != null && (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
                                                                      MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject))
                     {
-                        posOnMap = new Vector2Int(i, j);
-                        UpdateDisplayScalePosition();
+                        if (posOnMap != new Vector2Int(i, j))
+                        {
+                            if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null 
+                                && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
+                                    MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+                            {
+                                menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
+                            }
+                            posOnMap = new Vector2Int(i, j);
+                            UpdateDisplayScalePosition();
+                        }
                     }
                 }
             }
@@ -97,6 +109,15 @@ public class SelectionUI : MonoBehaviour
 
     public void TriggerSelection()
     {
+        Vector2Int v = posOnMap;
+        
+        if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null 
+            && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
+                MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+        {
+            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
+        }
+        
         if (menuManager.currentMap.map[posOnMap.x, posOnMap.y].TryGetComponent(out Button button) && button != null)
         {
             //Debug.Log(button.gameObject.name);
@@ -106,6 +127,11 @@ public class SelectionUI : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(SelectionColor());
+        }
+
+        if (posOnMap != v)
+        {
+            UpdateDisplayScalePosition();
         }
     }
 
@@ -159,6 +185,12 @@ public class SelectionUI : MonoBehaviour
     {
         if (Gears.gears.playerInput.currentActionMap.name == "Menu")
         {
+            if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null 
+                && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
+                    MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+            {
+                menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
+            }
             //Debug.Log("MoveMapPos : " + vector2I);
             Vector2Int vector2Int = new Vector2Int(vector2I.x, -vector2I.y);
         
@@ -209,6 +241,12 @@ public class SelectionUI : MonoBehaviour
     {
         //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
         //Debug.Log(transform.parent + " pos On Map : " + menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
+        if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
+            MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+        {
+            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale *= textScaleMulti;
+        }
+
         Vector3 v = AdaptScale(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, menuManager.currentMap.map[posOnMap.x, posOnMap.y].localScale);
         
         //adapt selection
