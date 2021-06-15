@@ -15,7 +15,7 @@ public class pushBox : MonoBehaviour
         player = this.gameObject;
     }
 
-    private void OnTriggerStay(Collision other)
+    private void OnTriggerEnter(Collision other)
     {
         if (other.gameObject.CompareTag("PushableBlock"))
         {
