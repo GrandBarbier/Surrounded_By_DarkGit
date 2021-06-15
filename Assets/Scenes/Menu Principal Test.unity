@@ -447,9 +447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Inputs
-
-'
+  m_text: Inputs
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -1358,6 +1356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1340803745}
     m_Modifications:
+    - target: {fileID: 1477952175360394992, guid: b5fbe87e5bde80e48be586c8306890f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1477952175360395006, guid: b5fbe87e5bde80e48be586c8306890f7, type: 3}
       propertyPath: panel
       value: 
@@ -2536,7 +2538,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save
+  m_text: 'Save
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -3794,9 +3798,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits
-
-'
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -5085,9 +5087,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Option
-
-'
+  m_text: Option
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -6674,7 +6674,7 @@ GameObject:
   - component: {fileID: 1575792475}
   - component: {fileID: 1575792474}
   m_Layer: 5
-  m_Name: TextTest2
+  m_Name: LoadText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7080,9 +7080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Languages
-
-'
+  m_text: Languages
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -7407,9 +7405,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Play
-
-'
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -7573,7 +7569,7 @@ GameObject:
   - component: {fileID: 1779101849}
   - component: {fileID: 1779101848}
   m_Layer: 5
-  m_Name: TextTest1
+  m_Name: SaveButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7618,7 +7614,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save
+  m_text: 'Save
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
@@ -8566,6 +8564,7 @@ MonoBehaviour:
   menuManager: {fileID: 1179053481}
   scaleMultiplierX: 0.75
   scaleMultiplierY: 1
+  textScaleMulti: 1.1
   posOnMap: {x: 0, y: 0}
   idleColor: {r: 1, g: 0, b: 0, a: 0.39215687}
   pressedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
@@ -8573,6 +8572,7 @@ MonoBehaviour:
   scaleIncrease: 0.92
   increaseDuration: 1.75
   arrow: {fileID: 254048023}
+  placeArrowOnText: 1
 --- !u!1 &1963286821
 GameObject:
   m_ObjectHideFlags: 0
