@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -34,7 +35,7 @@ public class MenuManager : MonoBehaviour
     
     public Button backButton;
 
-    [Header("RebindingButtons")] 
+    /*[Header("RebindingButtons")] 
     public RectTransform rebindingInteractKeyboard;
     public RectTransform resetInteractKeyboard;
     public RectTransform rebindingInteractController;
@@ -53,7 +54,7 @@ public class MenuManager : MonoBehaviour
     public RectTransform rebindingPoseTorchKeyboard;
     public RectTransform resetPoseTorchKeyboard;
     public RectTransform rebindingPoseTorchController;
-    public RectTransform resetPoseTorchController;
+    public RectTransform resetPoseTorchController;*/
 
     [Header("Language Buttons")]
     public Button englishButton;
@@ -71,10 +72,10 @@ public class MenuManager : MonoBehaviour
     //public UnityEvent[] Events;
     public UnityEvent startEvent;
 
+    private Action<InputAction.CallbackContext> pauseMenuAction;
+
     void Awake()
     {
-        Gears.gears.menuManager = this;
-
         List<Menu> allMenus = new List<Menu>{parametersMenu, mainMenu, inputsMenu, saveMenu, languageMenu};
         menus.AddRange(allMenus);
 
@@ -123,6 +124,8 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        Gears.gears.menuManager = this;
+        
         startEvent?.Invoke();
         
         SetCurrentMenuMap(ConvertListToPanelMap(mainMenu.menuMap, mainMenu.startPos));
@@ -130,7 +133,10 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (Gears.gears.playerInput.actions["Jump"].ReadValue<float>() > 0)
+        {
+            //Debug.LogWarning(Gears.gears.playerInput.actions["Jump"].ReadValue<float>());
+        }
     }
 
     #region MenuFunc
@@ -139,10 +145,12 @@ public class MenuManager : MonoBehaviour
     {
         if (pause)
         {
+            currentMap.map[selection.posOnMap.x, selection.posOnMap.y].transform.localScale /= selection.textScaleMulti;
             HideAllPanel();
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
+            Cursor.visible = false;
         }
         else
         {
@@ -151,6 +159,7 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
             Time.timeScale = 0f;
+            Cursor.visible = true;
         }
 
         pause = !pause;
@@ -267,13 +276,23 @@ public class MenuManager : MonoBehaviour
 
     public void EnablePause()
     {
-        Action<InputAction.CallbackContext> action = context => Pause();
+        //Action<InputAction.CallbackContext> action = context => Pause();
+        pauseMenuAction = context => Pause();
         
-        Gears.gears.playerInput.actions["Escape"].performed += action;
-        Gears.gears.playerInput.actions["EscapeMenu"].performed += action;
+        Gears.gears.playerInput.actions["Escape"].performed += pauseMenuAction;
+        Gears.gears.playerInput.actions["EscapeMenu"].performed += pauseMenuAction;
 
-        LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
-        LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
+        // LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
+        // LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
+    }
+
+    void OnDestroy()
+    {
+        if (Gears.gears.playerInput != null)
+        {
+            Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
+            Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
+        }
     }
 
     public static IEnumerator TriggerButtonColor(Button button)
@@ -463,6 +482,27 @@ public class MenuManager : MonoBehaviour
         }
         
         return allChilds;
+    }
+    
+    public static List<T> GetAllComponentInChilds<T>(GameObject go, bool activeChildsOnly = false, bool useParent = false)
+    {
+        List<T> componentList = new List<T>();
+        List<GameObject> allChilds = GetAllChilds(go, activeChildsOnly);
+
+        if (useParent && go.TryGetComponent(out T pComponent))
+        {
+            componentList.Add(pComponent);
+        }
+
+        foreach (var child in allChilds)
+        {
+            if (child.TryGetComponent(out T component))
+            {
+                componentList.Add(component);
+            }
+        }
+        
+        return componentList;
     }
 
     public void SwitchActionMap(string s)

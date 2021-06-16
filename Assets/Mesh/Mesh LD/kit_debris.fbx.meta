@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pierre
-    second: {fileID: 2100000, guid: 74df617eb0f7c8e47be0d2ccb9737781, type: 2}
+    second: {fileID: 2100000, guid: 9b9ab0334485ccf4a8025dc788ba340c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pierre bleu
-    second: {fileID: 2100000, guid: 525c6a21b3c8dc840aeda22e6f9af3b1, type: 2}
+    second: {fileID: 2100000, guid: 532f3448e1541884c9b6d91ead16a1c4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pierre rouge
-    second: {fileID: 2100000, guid: 7fa3d9645ae8d6a4eb08b680c243c039, type: 2}
+    second: {fileID: 2100000, guid: e1766211f4f39a143a281ab04ef17f45, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pierre vert
-    second: {fileID: 2100000, guid: 49f9534493b001f49ad495e2c68e0b66, type: 2}
+    second: {fileID: 2100000, guid: 32cbf7329760d814ab7f01ddd491c90b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

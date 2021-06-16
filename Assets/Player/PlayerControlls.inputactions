@@ -30,6 +30,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "CameraMove",
+                    "type": "Value",
+                    "id": "4cf2a8c2-4f51-4abf-9549-f31ad43bbe8c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "a06355ac-dae4-4f8d-8ac7-aac28c5c6d2b",
@@ -42,14 +50,6 @@
                     "type": "Button",
                     "id": "45ef7214-d708-4225-bde0-79024164f0ce",
                     "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "CameraMove",
-                    "type": "Value",
-                    "id": "4cf2a8c2-4f51-4abf-9549-f31ad43bbe8c",
-                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }

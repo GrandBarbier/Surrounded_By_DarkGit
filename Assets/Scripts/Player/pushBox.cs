@@ -35,5 +35,11 @@ public class pushBox : MonoBehaviour
             }
         }
         
-    }   
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        playerAnimator.SetBool("IsPushing", false);
+    }
 }

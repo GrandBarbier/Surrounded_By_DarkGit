@@ -33,8 +33,10 @@ public class Movement : MonoBehaviour
     private PlayerInput playerInput;
 
     public bool animPlaying = false;
+    
+    private Action<InputAction.CallbackContext> jumpAction;
 
-    public float fallMax;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,17 @@ public class Movement : MonoBehaviour
         {
             playerInput = Gears.gears.playerInput;
         }
-        playerInput.actions["Jump"].performed += context => Jump();
+
+        jumpAction = context => Jump();
+        playerInput.actions["Jump"].performed += jumpAction;
+    }
+
+    void OnDestroy()
+    {
+        if (playerInput != null)
+        {
+            playerInput.actions["Jump"].performed -= jumpAction;
+        }
     }
 
     // Update is called once per frame
@@ -96,10 +108,7 @@ public class Movement : MonoBehaviour
             }
 
             velocity.y -= gravity * Time.deltaTime;
-            if (velocity.y > fallMax)
-            {
-                velocity.y = fallMax;
-            }
+            
 
             controller.Move(velocity * Time.deltaTime);
 

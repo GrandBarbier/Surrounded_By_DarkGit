@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pierre bleu
-    second: {fileID: 2100000, guid: 1700a2745b5bc36449fecddcc740c156, type: 2}
+    second: {fileID: 2100000, guid: 532f3448e1541884c9b6d91ead16a1c4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
