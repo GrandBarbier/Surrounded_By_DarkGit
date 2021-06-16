@@ -13,17 +13,20 @@ public class PlaceTorch : MonoBehaviour
     public Animator animator;
     // Start is called before the first frame update
     
-    private Action<InputAction.CallbackContext> action1;
+    private Action<InputAction.CallbackContext> placeTorchAction;
     
     void Start()
     {
-        action1 = context => TriggerDropTorchAnim();
-        Gears.gears.playerInput.actions["PoseTorch"].performed += action1;
+        placeTorchAction = context => TriggerDropTorchAnim();
+        Gears.gears.playerInput.actions["PoseTorch"].performed += placeTorchAction;
     }
     
     void OnDestroy()
     {
-        Gears.gears.playerInput.actions["PoseTorch"].performed -= action1;
+        if (Gears.gears.playerInput != null)
+        {
+            Gears.gears.playerInput.actions["PoseTorch"].performed -= placeTorchAction;
+        }
     }
 
     // Update is called once per frame

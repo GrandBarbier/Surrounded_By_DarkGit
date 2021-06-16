@@ -12,17 +12,20 @@ public class PickUpTorch : MonoBehaviour
     public GameObject torch;
     public Animator animator;
     
-    private Action<InputAction.CallbackContext> action1;
+    private Action<InputAction.CallbackContext> pickUpTorchAction;
 
     void Start()
     {
-        action1 = context => TriggerPickUpTorch();
-        Gears.gears.playerInput.actions["PoseTorch"].performed += action1;
+        pickUpTorchAction = context => TriggerPickUpTorch();
+        Gears.gears.playerInput.actions["PoseTorch"].performed += pickUpTorchAction;
     }
 
     void OnDestroy()
     {
-        Gears.gears.playerInput.actions["PoseTorch"].performed -= action1;
+        if (Gears.gears.playerInput != null)
+        {
+            Gears.gears.playerInput.actions["PoseTorch"].performed -= pickUpTorchAction;
+        }
     }
     
     

@@ -80,6 +80,7 @@ public class SelectionUI : MonoBehaviour
     
     void Update()
     {
+        //check if mouse is on a button of the menu map
         if (MenuManager.ObjectUnderCursor() != null)
         {
             for (int i = 0; i < menuManager.currentMap.map.GetLength(0); i++)
