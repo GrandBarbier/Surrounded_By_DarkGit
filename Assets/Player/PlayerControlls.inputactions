@@ -52,14 +52,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "TakeTorch",
-                    "type": "Button",
-                    "id": "33bfff8b-3059-426a-b057-324725fb59c9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -291,17 +283,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "CameraMove",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fe6897f1-42ed-4d4b-aca8-942c9b87a973",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TakeTorch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
