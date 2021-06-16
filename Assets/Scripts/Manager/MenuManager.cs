@@ -72,6 +72,8 @@ public class MenuManager : MonoBehaviour
     //public UnityEvent[] Events;
     public UnityEvent startEvent;
 
+    private Action<InputAction.CallbackContext> pauseMenuAction;
+
     void Awake()
     {
         List<Menu> allMenus = new List<Menu>{parametersMenu, mainMenu, inputsMenu, saveMenu, languageMenu};
@@ -274,13 +276,20 @@ public class MenuManager : MonoBehaviour
 
     public void EnablePause()
     {
-        Action<InputAction.CallbackContext> action = context => Pause();
+        //Action<InputAction.CallbackContext> action = context => Pause();
+        pauseMenuAction = context => Pause();
         
-        Gears.gears.playerInput.actions["Escape"].performed += action;
-        Gears.gears.playerInput.actions["EscapeMenu"].performed += action;
+        Gears.gears.playerInput.actions["Escape"].performed += pauseMenuAction;
+        Gears.gears.playerInput.actions["EscapeMenu"].performed += pauseMenuAction;
 
-        LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
-        LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
+        // LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
+        // LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
+    }
+
+    void OnDestroy()
+    {
+        Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
+        Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
     }
 
     public static IEnumerator TriggerButtonColor(Button button)
