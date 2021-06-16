@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -34,7 +35,7 @@ public class MenuManager : MonoBehaviour
     
     public Button backButton;
 
-    [Header("RebindingButtons")] 
+    /*[Header("RebindingButtons")] 
     public RectTransform rebindingInteractKeyboard;
     public RectTransform resetInteractKeyboard;
     public RectTransform rebindingInteractController;
@@ -53,7 +54,7 @@ public class MenuManager : MonoBehaviour
     public RectTransform rebindingPoseTorchKeyboard;
     public RectTransform resetPoseTorchKeyboard;
     public RectTransform rebindingPoseTorchController;
-    public RectTransform resetPoseTorchController;
+    public RectTransform resetPoseTorchController;*/
 
     [Header("Language Buttons")]
     public Button englishButton;
@@ -130,7 +131,10 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (Gears.gears.playerInput.actions["Jump"].ReadValue<float>() > 0)
+        {
+            Debug.LogWarning(Gears.gears.playerInput.actions["Jump"].ReadValue<float>());
+        }
     }
 
     #region MenuFunc
