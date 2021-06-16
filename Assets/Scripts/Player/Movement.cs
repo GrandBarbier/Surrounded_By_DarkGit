@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour
     private PlayerInput playerInput;
 
     public bool animPlaying = false;
+    
+    private Action<InputAction.CallbackContext> jumpAction;
 
     
 
@@ -44,7 +46,17 @@ public class Movement : MonoBehaviour
         {
             playerInput = Gears.gears.playerInput;
         }
-        playerInput.actions["Jump"].performed += context => Jump();
+
+        jumpAction = context => Jump();
+        playerInput.actions["Jump"].performed += jumpAction;
+    }
+
+    void OnDestroy()
+    {
+        if (playerInput != null)
+        {
+            playerInput.actions["Jump"].performed -= jumpAction;
+        }
     }
 
     // Update is called once per frame

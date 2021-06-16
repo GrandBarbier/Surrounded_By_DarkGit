@@ -135,7 +135,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Gears.gears.playerInput.actions["Jump"].ReadValue<float>() > 0)
         {
-            Debug.LogWarning(Gears.gears.playerInput.actions["Jump"].ReadValue<float>());
+            //Debug.LogWarning(Gears.gears.playerInput.actions["Jump"].ReadValue<float>());
         }
     }
 
@@ -288,8 +288,11 @@ public class MenuManager : MonoBehaviour
 
     void OnDestroy()
     {
-        Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
-        Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
+        if (Gears.gears.playerInput != null)
+        {
+            Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
+            Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
+        }
     }
 
     public static IEnumerator TriggerButtonColor(Button button)
