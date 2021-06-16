@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PickUpTorch : MonoBehaviour
 {
@@ -10,11 +11,20 @@ public class PickUpTorch : MonoBehaviour
     public GameObject torchHandPos;
     public GameObject torch;
     public Animator animator;
+    
+    private Action<InputAction.CallbackContext> action1;
 
     void Start()
     {
-        Gears.gears.playerInput.actions["PoseTorch"].performed += context => TriggerPickUpTorch();
+        action1 = context => TriggerPickUpTorch();
+        Gears.gears.playerInput.actions["PoseTorch"].performed += action1;
     }
+
+    void OnDestroy()
+    {
+        Gears.gears.playerInput.actions["PoseTorch"].performed -= action1;
+    }
+    
     
     private void OnTriggerStay(Collider other)
     {
