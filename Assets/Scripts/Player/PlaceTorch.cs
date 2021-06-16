@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlaceTorch : MonoBehaviour
 {
@@ -10,9 +12,21 @@ public class PlaceTorch : MonoBehaviour
     public GameObject player;
     public Animator animator;
     // Start is called before the first frame update
+    
+    private Action<InputAction.CallbackContext> placeTorchAction;
+    
     void Start()
     {
-        Gears.gears.playerInput.actions["PoseTorch"].performed += context => TriggerDropTorchAnim();
+        placeTorchAction = context => TriggerDropTorchAnim();
+        Gears.gears.playerInput.actions["PoseTorch"].performed += placeTorchAction;
+    }
+    
+    void OnDestroy()
+    {
+        if (Gears.gears.playerInput != null)
+        {
+            Gears.gears.playerInput.actions["PoseTorch"].performed -= placeTorchAction;
+        }
     }
 
     // Update is called once per frame

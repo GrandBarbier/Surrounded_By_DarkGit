@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -34,7 +35,7 @@ public class MenuManager : MonoBehaviour
     
     public Button backButton;
 
-    [Header("RebindingButtons")] 
+    /*[Header("RebindingButtons")] 
     public RectTransform rebindingInteractKeyboard;
     public RectTransform resetInteractKeyboard;
     public RectTransform rebindingInteractController;
@@ -53,7 +54,7 @@ public class MenuManager : MonoBehaviour
     public RectTransform rebindingPoseTorchKeyboard;
     public RectTransform resetPoseTorchKeyboard;
     public RectTransform rebindingPoseTorchController;
-    public RectTransform resetPoseTorchController;
+    public RectTransform resetPoseTorchController;*/
 
     [Header("Language Buttons")]
     public Button englishButton;
@@ -70,6 +71,8 @@ public class MenuManager : MonoBehaviour
 
     //public UnityEvent[] Events;
     public UnityEvent startEvent;
+
+    private Action<InputAction.CallbackContext> pauseMenuAction;
 
     void Awake()
     {
@@ -130,7 +133,10 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (Gears.gears.playerInput.actions["Jump"].ReadValue<float>() > 0)
+        {
+            //Debug.LogWarning(Gears.gears.playerInput.actions["Jump"].ReadValue<float>());
+        }
     }
 
     #region MenuFunc
@@ -270,13 +276,23 @@ public class MenuManager : MonoBehaviour
 
     public void EnablePause()
     {
-        Action<InputAction.CallbackContext> action = context => Pause();
+        //Action<InputAction.CallbackContext> action = context => Pause();
+        pauseMenuAction = context => Pause();
         
-        Gears.gears.playerInput.actions["Escape"].performed += action;
-        Gears.gears.playerInput.actions["EscapeMenu"].performed += action;
+        Gears.gears.playerInput.actions["Escape"].performed += pauseMenuAction;
+        Gears.gears.playerInput.actions["EscapeMenu"].performed += pauseMenuAction;
 
-        LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
-        LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
+        // LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
+        // LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
+    }
+
+    void OnDestroy()
+    {
+        if (Gears.gears.playerInput != null)
+        {
+            Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
+            Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
+        }
     }
 
     public static IEnumerator TriggerButtonColor(Button button)
