@@ -13,6 +13,7 @@ public class FireLight : MonoBehaviour
 	private Vector3 _pos;
 
 	public float magnitude = 1f;
+	public float magnitudeIntensity = 1f;
 
 	private void Awake()
 	{
@@ -23,8 +24,11 @@ public class FireLight : MonoBehaviour
 
 	void Update()
 	{
-		_lightComp.intensity = _initialIntensity * lightCurve.Evaluate(Time.time * fireSpeed) * magnitude;
+		_lightComp.intensity = _initialIntensity * lightCurve.Evaluate(Time.time * fireSpeed) * magnitudeIntensity;
 
-		transform.localPosition = _pos + transform.up * (Mathf.Sin(lightCurve.Evaluate(Time.time * fireSpeed)) * magnitude);
+		transform.localPosition = transform.up * (Mathf.Sin(lightCurve.Evaluate(Time.time * fireSpeed)) * magnitude);
+
+		Debug.Log(lightCurve.Evaluate(Time.time));
+
 	}
 }
