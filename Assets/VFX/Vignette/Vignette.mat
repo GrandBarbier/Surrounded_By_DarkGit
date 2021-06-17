@@ -51,11 +51,15 @@ Material:
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 16
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     - _VignetteScale: 0
 =======
     - _VignetteScale: 5
 >>>>>>> main
+=======
+    - _VignetteScale: 2.9483156
+>>>>>>> Stashed changes
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0.7529412}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

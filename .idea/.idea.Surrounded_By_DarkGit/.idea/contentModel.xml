@@ -864,6 +864,7 @@
             <e p="igniteBrazero.cs" t="Include" />
             <e p="IInteractable.cs" t="Include" />
             <e p="Interactable.cs" t="Include" />
+            <e p="Levier.cs" t="Include" />
             <e p="LightSensor.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
             <e p="PickUpTorch.cs" t="Include" />
