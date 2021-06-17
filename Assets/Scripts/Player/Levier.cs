@@ -8,6 +8,7 @@ public class Levier : MonoBehaviour
     public GameObject player;
     public Animator playerAnimator;
     public Transform direction;
+    public GameObject manche;
 
     private void Start()
     {
