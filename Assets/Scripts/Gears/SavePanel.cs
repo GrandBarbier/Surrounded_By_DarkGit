@@ -17,6 +17,11 @@ public class SavePanel : MonoBehaviour
     
     PlayerInput _controls;
     public static ControlDeviceType currentControlDevice;
+
+    public Transform saveDisplayParent;
+    public int menuIndex;
+    public int columnIndex;
+    private Menu saveMenu;
     
     public enum ControlDeviceType{
         KeyboardAndMouse,
@@ -35,7 +40,9 @@ public class SavePanel : MonoBehaviour
         {
             Debug.Log("No GamePad");
         }
-        
+
+        saveMenu = Gears.gears.menuManager.menus.Find(menu1 => menu1.index == menuIndex);
+
         //_controls = Gears.gears.playerInput;
         //_controls.onControlsChanged += OnControlsChanged;
     }
@@ -51,6 +58,27 @@ public class SavePanel : MonoBehaviour
  
     void OnDisable() {
         InputUser.onChange -= onInputDeviceChange;
+    }
+
+    public void AddSaveDisplay()
+    {
+        RectTransform previousDisplayPos = null;
+        
+        if (saveMenu.menuMap[columnIndex].list.Capacity > 0)
+        {
+            previousDisplayPos = saveMenu.menuMap[columnIndex].list[saveMenu.menuMap[columnIndex].list.Count - 1];
+        }
+        
+        GameObject saveDisplay = Instantiate(Gears.gears.saveDisplayPrefab, saveDisplayParent);
+        saveMenu.menuMap[columnIndex].list.Add(saveDisplay.GetComponent<RectTransform>());
+        saveDisplay.GetComponentInChildren<TextMeshProUGUI>().text = "Save_02";
+
+        if (previousDisplayPos != null)
+        {
+            saveDisplay.GetComponent<RectTransform>().localPosition = previousDisplayPos.localPosition + new Vector3(0, -30, 0);
+        }
+
+        Gears.gears.menuManager.SetCurrentMenuMap(Gears.gears.menuManager.ConvertListToPanelMap(saveMenu.menuMap, saveMenu.startPos), true);
     }
 
     public void UpdatePathText(string s)

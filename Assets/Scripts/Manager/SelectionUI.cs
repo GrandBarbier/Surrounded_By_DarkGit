@@ -35,6 +35,8 @@ public class SelectionUI : MonoBehaviour
     private Action<InputAction.CallbackContext> action1;
     private Action<InputAction.CallbackContext> action2;
 
+    public Action onCompleteMove;
+
     void Awake()
     {
        
@@ -225,6 +227,7 @@ public class SelectionUI : MonoBehaviour
         
             if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null && menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.activeSelf)
             {
+                onCompleteMove?.Invoke();
                 UpdateDisplayScalePosition();
             }
             else
@@ -285,7 +288,8 @@ public class SelectionUI : MonoBehaviour
             //position arrow
             arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + new Vector3(-sizeDeltaX * Screen.width / 1920, 0, 0);
         }
-
+        
+        
         //Debug.Log(vector2Int + " -> " + posOnMap);
     }
 

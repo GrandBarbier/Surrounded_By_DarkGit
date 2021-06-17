@@ -11,7 +11,8 @@ public class CustomScrollable : MonoBehaviour
     public RectTransform scrollable;
     public float sensibility = 1f;
     private Vector2 startPos;
-    public Vector2 maxPos;
+    public float maxPosDiffY;
+    private Vector2 maxPos;
     private float progress;
     
     [Header("Menu parameters")]
@@ -29,7 +30,8 @@ public class CustomScrollable : MonoBehaviour
         {
             startPos = scrollable.position;
         }
-        maxPos = startPos + maxPos;
+        
+        maxPos = startPos + new Vector2(0, maxPosDiffY);
         
         if (scrollbar != null && ScrollControls.Contains(scrollControl.ScrollBar))
         {
@@ -38,7 +40,8 @@ public class CustomScrollable : MonoBehaviour
 
         if (ScrollControls.Contains(scrollControl.Menu))
         {
-            Gears.gears.playerInput.actions["Move"].performed += context => UpdateProgressMenu();
+            //Gears.gears.playerInput.actions["Move"].performed += context => UpdateProgressMenu();
+            Gears.gears.menuManager.selection.onCompleteMove += UpdateProgressMenu;
         }
 
         refMenu = Gears.gears.menuManager.menus.Find(menu => menu.index == menuIndex);
@@ -75,9 +78,12 @@ public class CustomScrollable : MonoBehaviour
 
     public void UpdateProgressMenu()
     {
-        if (Gears.gears.menuManager.selection.posOnMap.x == columnIndex)
+        if (Gears.gears.menuManager.selection.posOnMap.x == columnIndex && refMenu.menuMap[columnIndex].list.Capacity > 1)
         {
-            progress = Gears.gears.menuManager.selection.posOnMap.y / (float) (refMenu.menuMap[columnIndex].list.Count - 1);
+            progress = Gears.gears.menuManager.currentMap.map[Gears.gears.menuManager.selection.posOnMap.x, Gears.gears.menuManager.selection.posOnMap.y].localPosition.y / -230;
+            
+            Debug.LogWarning(Gears.gears.menuManager.currentMap.map[Gears.gears.menuManager.selection.posOnMap.x, Gears.gears.menuManager.selection.posOnMap.y].localPosition.y
+                             + " / " + -230 + " = " + progress);
         }
     }
 }
