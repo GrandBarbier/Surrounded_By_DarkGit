@@ -46,20 +46,23 @@ public class PickUpTorch : MonoBehaviour
 
     void PickTorch()
     {
+        torch.GetComponent<WaterTorch>().canBePicked = false;
         player.GetComponent<PlaceTorch>().torchOnGround = false;
+        
         torch.transform.parent = player_hand.transform;
         torch.transform.position = torchHandPos.transform.position;
         torch.transform.rotation = torchHandPos.transform.rotation;
         torch.transform.localEulerAngles += new Vector3(0, -90, 0);
-        
     }
 
     public void TriggerPickUpTorch()
     {
-        if (player.GetComponent<PlaceTorch>().torchOnGround && torch.GetComponent<WaterTorch>().canBePicked)
+        if (player.GetComponent<PlaceTorch>().torchOnGround && !animator.GetCurrentAnimatorStateInfo(0).IsName("Torch Drop") && 
+            !animator.GetCurrentAnimatorStateInfo(0).IsName("Empty Pick Up") && player.GetComponent<Movement>().isGrounded && torch.GetComponent<WaterTorch>().canBePicked)
         {
             player.GetComponent<Movement>().animPlaying = true;
-            animator.SetTrigger("PickTorch");
+            //animator.SetTrigger("PickTorch");
+            animator.Play("Empty Pick Up");
             Debug.Log("pickup");
         }
     }

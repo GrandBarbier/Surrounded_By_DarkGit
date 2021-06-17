@@ -10,7 +10,11 @@ public class WaterTorch : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 //        Debug.Log(other.gameObject.tag);
-        canBePicked = true;
+        if (other.tag == "Player")
+        {
+            canBePicked = true;
+        }
+        
         if (other.gameObject.CompareTag("water"))
         {
             t_light.SetActive(false);
@@ -19,6 +23,9 @@ public class WaterTorch : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        canBePicked = false;
+        if (other.tag == "Player")
+        {
+            canBePicked = false;
+        }
     }
 }

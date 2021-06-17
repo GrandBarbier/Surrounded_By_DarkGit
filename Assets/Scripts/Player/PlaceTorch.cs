@@ -14,26 +14,31 @@ public class PlaceTorch : MonoBehaviour
     // Start is called before the first frame update
     
     private Action<InputAction.CallbackContext> placeTorchAction;
+    public float poseTorchThreshHold;
+    private float _poseTorchValue;
     
     void Start()
     {
-        placeTorchAction = context => TriggerDropTorchAnim();
-        Gears.gears.playerInput.actions["PoseTorch"].performed += placeTorchAction;
+        placeTorchAction = context => _poseTorchValue = 0;
+        //placeTorchAction = context => TriggerDropTorchAnim();
+        //Gears.gears.playerInput.actions["PoseTorch"].performed += placeTorchAction;
+        Gears.gears.playerInput.actions["PoseTorch"].canceled += placeTorchAction;
     }
     
     void OnDestroy()
     {
         if (Gears.gears.playerInput != null)
         {
-            Gears.gears.playerInput.actions["PoseTorch"].performed -= placeTorchAction;
+            //Gears.gears.playerInput.actions["PoseTorch"].performed -= placeTorchAction;
+            Gears.gears.playerInput.actions["PoseTorch"].canceled -= placeTorchAction;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        var dropTorchEvent = new AnimationEvent();
-        dropTorchEvent.functionName = "DropTorch";
+        //var dropTorchEvent = new AnimationEvent();
+        //dropTorchEvent.functionName = "DropTorch";
 //         if (Input.GetKeyDown((KeyCode.E)) && torchOnGround == false && player.GetComponent<Movement>().isGrounded)
 //         {
 //             player.GetComponent<Movement>().animPlaying = true;
@@ -42,21 +47,37 @@ public class PlaceTorch : MonoBehaviour
 //             
 //             
 //         }
+
+        if (Gears.gears.playerInput.actions["PoseTorch"].ReadValue<float>() > 0)
+        {
+            _poseTorchValue += Time.deltaTime;
+
+            if (_poseTorchValue >= poseTorchThreshHold)
+            {
+                TriggerDropTorchAnim();
+            }
+        }
     }
 
     void DropTorch()
     {
 //        Debug.Log("poser");
         //rend la torche indépendante en mettant à jour la variable l'indiquant
-        torch.transform.parent = null;
+        
         torchOnGround = true;
+        torch.GetComponent<WaterTorch>().canBePicked = true;
+        
+        torch.transform.parent = null;
     }
 
     public void TriggerDropTorchAnim()
     {
-        if (torchOnGround == false && player.GetComponent<Movement>().isGrounded)
+        if (torchOnGround == false && player.GetComponent<Movement>().isGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Empty Pick Up") &&
+            !animator.GetCurrentAnimatorStateInfo(0).IsName("Torch Drop"))
         {
-            player.GetComponent<Movement>().animPlaying = true; animator.SetTrigger("DropTorch"); 
+            player.GetComponent<Movement>().animPlaying = true;
+            //animator.SetTrigger("DropTorch");
+            animator.Play("Torch Drop");
             //Debug.Log("place");
         }
     }
