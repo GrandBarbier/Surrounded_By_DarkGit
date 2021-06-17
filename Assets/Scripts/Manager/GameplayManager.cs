@@ -38,6 +38,7 @@ public class GameplayManager : MonoBehaviour
 
     public void Death()
     {
+        deathParticles.SetActive(true);
         deathUI.SetActive(true);
         player.GetComponent<Movement>().enabled = false;
         _actualRestartTime -= Time.deltaTime;
@@ -47,7 +48,6 @@ public class GameplayManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         deathText.text = "Restart in  " + Mathf.FloorToInt(_actualRestartTime);
-        deathParticles.SetActive(true);
         playerAnimator.SetBool("IsDead", true);
         
     }
