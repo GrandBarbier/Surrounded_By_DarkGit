@@ -928,7 +928,6 @@
           </e>
           <e p="Vignette" t="Include">
             <e p="Vignette 2.0.shader" t="Include" />
-            <e p="Vignette.shader" t="Include" />
           </e>
           <e p="Water" t="Include">
             <e p="Water.shader" t="Include" />
