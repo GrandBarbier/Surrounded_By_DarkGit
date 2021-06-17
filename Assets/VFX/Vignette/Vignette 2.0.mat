@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
-    - _Alpha1: 0.96583253
+    - _Alpha1: 0.886
     - _AlphaCutoff: 0.5
     - _Scale: 0.96
     - _Scale1: 0.35
@@ -40,8 +40,8 @@ Material:
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 16
-    - _VignetteScale: 1.46
-    - _VignetteScale1: 1.2151448
+    - _VignetteScale: 0
+    - _VignetteScale1: 0.36
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
