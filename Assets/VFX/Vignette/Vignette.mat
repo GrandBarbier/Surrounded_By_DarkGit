@@ -51,7 +51,11 @@ Material:
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 16
+<<<<<<< HEAD
     - _VignetteScale: 0
+=======
+    - _VignetteScale: 5
+>>>>>>> main
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0.7529412}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

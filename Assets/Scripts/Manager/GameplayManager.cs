@@ -9,6 +9,7 @@ public class GameplayManager : MonoBehaviour
 {
     public GameObject player;
     public Animator playerAnimator;
+    public GameObject deathParticles;
     
     [Header("Death")]
     public GameObject deathUI;
@@ -17,6 +18,7 @@ public class GameplayManager : MonoBehaviour
     private float _actualRestartTime;
     void Start()
     {
+        deathParticles.SetActive(false);
         deathUI.SetActive(false);
         _actualRestartTime = restartTime;
     }
@@ -45,7 +47,8 @@ public class GameplayManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         deathText.text = "Restart in  " + Mathf.FloorToInt(_actualRestartTime);
-
+        deathParticles.SetActive(true);
         playerAnimator.SetBool("IsDead", true);
+        
     }
 }
