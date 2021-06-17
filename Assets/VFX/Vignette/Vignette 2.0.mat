@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Vignette 2.0
+  m_Shader: {fileID: 4800000, guid: 3be500f72b9678246a262fc38c51000a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 23a800b35bf17504e8665a5caa1bfb9b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex1:
+        m_Texture: {fileID: 2800000, guid: 23a800b35bf17504e8665a5caa1bfb9b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _Alpha1: 0.96583253
+    - _AlphaCutoff: 0.5
+    - _Scale: 0.96
+    - _Scale1: 0.35
+    - _TessEdgeLength: 22.4
+    - _TessMax: 25
+    - _TessMaxDisp: 25
+    - _TessMin: 10
+    - _TessPhongStrength: 0.5
+    - _TessValue: 16
+    - _VignetteScale: 1.46
+    - _VignetteScale1: 1.2151448
+    m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color1: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Offset: {r: -1, g: -1, b: 0, a: 0}
+    - _Offset1: {r: -1, g: -1, b: 0, a: 0}
+    - _Tiling: {r: 2, g: 2, b: 0, a: 0}
+    - _Tiling1: {r: 2, g: 2, b: 0, a: 0}
+  m_BuildTextureStacks: []
