@@ -68,6 +68,9 @@ public class PlaceTorch : MonoBehaviour
         torch.GetComponent<WaterTorch>().canBePicked = true;
         
         torch.transform.parent = null;
+
+        torch.GetComponent<Rigidbody>().isKinematic = false;
+        torch.GetComponent<Rigidbody>().useGravity = true;
     }
 
     public void TriggerDropTorchAnim()

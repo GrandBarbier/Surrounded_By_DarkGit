@@ -48,6 +48,8 @@ public class PickUpTorch : MonoBehaviour
     {
         torch.GetComponent<WaterTorch>().canBePicked = false;
         player.GetComponent<PlaceTorch>().torchOnGround = false;
+        torch.GetComponent<Rigidbody>().useGravity = false;
+        torch.GetComponent<Rigidbody>().isKinematic = true;
         
         torch.transform.parent = player_hand.transform;
         torch.transform.position = torchHandPos.transform.position;
