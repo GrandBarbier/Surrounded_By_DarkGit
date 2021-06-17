@@ -133,10 +133,7 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Gears.gears.playerInput.actions["Jump"].ReadValue<float>() > 0)
-        {
-            //Debug.LogWarning(Gears.gears.playerInput.actions["Jump"].ReadValue<float>());
-        }
+        
     }
 
     #region MenuFunc

@@ -46,7 +46,9 @@ public class PickUpTorch : MonoBehaviour
 
     void PickTorch()
     {
-        StartCoroutine(CoolDown());
+        torch.GetComponent<WaterTorch>().canBePicked = false;
+        player.GetComponent<PlaceTorch>().torchOnGround = false;
+        
         torch.transform.parent = player_hand.transform;
         torch.transform.position = torchHandPos.transform.position;
         torch.transform.rotation = torchHandPos.transform.rotation;
@@ -63,12 +65,5 @@ public class PickUpTorch : MonoBehaviour
             animator.Play("Empty Pick Up");
             Debug.Log("pickup");
         }
-    }
-
-    public IEnumerator CoolDown()
-    {
-        yield return new WaitForSeconds(0.65f);
-        torch.GetComponent<WaterTorch>().canBePicked = false;
-        player.GetComponent<PlaceTorch>().torchOnGround = false;
     }
 }
