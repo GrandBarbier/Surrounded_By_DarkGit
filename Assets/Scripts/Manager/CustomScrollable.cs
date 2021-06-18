@@ -11,7 +11,8 @@ public class CustomScrollable : MonoBehaviour
     public RectTransform scrollable;
     public float sensibility = 1f;
     private Vector2 startPos;
-    public Vector2 maxPos;
+    public float maxPosDiffY;
+    private Vector2 maxPos;
     private float progress;
     
     [Header("Menu parameters")]
@@ -27,9 +28,11 @@ public class CustomScrollable : MonoBehaviour
     {
         if (scrollable != null)
         {
-            startPos = scrollable.position;
+            startPos = scrollable.localPosition;
         }
-        maxPos = startPos + maxPos;
+        
+        maxPos = startPos + new Vector2(0, maxPosDiffY);
+        //Debug.LogWarning(maxPos);
         
         if (scrollbar != null && ScrollControls.Contains(scrollControl.ScrollBar))
         {
@@ -38,13 +41,32 @@ public class CustomScrollable : MonoBehaviour
 
         if (ScrollControls.Contains(scrollControl.Menu))
         {
-            Gears.gears.playerInput.actions["Move"].performed += context => UpdateProgressMenu();
+            //Gears.gears.playerInput.actions["Move"].performed += context => UpdateProgressMenu();
+            Gears.gears.menuManager.selection.onCompleteMove += UpdateProgressMenu;
         }
 
         refMenu = Gears.gears.menuManager.menus.Find(menu => menu.index == menuIndex);
     }
     
     void Update()
+    {
+        UpdateScrollPos();
+    }
+
+    public void UpdateProgressMenu()
+    {
+        if (Gears.gears.menuManager.selection.posOnMap.x == columnIndex && refMenu.menuMap[columnIndex].list.Capacity > 1)
+        {
+            progress = Gears.gears.menuManager.currentMap.map[Gears.gears.menuManager.selection.posOnMap.x, Gears.gears.menuManager.selection.posOnMap.y].localPosition.y / -maxPos.y;
+            
+            // Debug.LogWarning(Gears.gears.menuManager.currentMap.map[Gears.gears.menuManager.selection.posOnMap.x, Gears.gears.menuManager.selection.posOnMap.y].localPosition.y
+            //                  + " / " + -maxPos.y + " = " + progress);
+        }
+        
+        UpdateScrollPos();
+    }
+
+    public void UpdateScrollPos()
     {
         for (int i = 0; i < ScrollControls.Count(); i++)
         {
@@ -69,15 +91,7 @@ public class CustomScrollable : MonoBehaviour
 
         if (scrollable != null)
         {
-            scrollable.position = Vector2.Lerp(startPos, maxPos, progress);
-        }
-    }
-
-    public void UpdateProgressMenu()
-    {
-        if (Gears.gears.menuManager.selection.posOnMap.x == columnIndex)
-        {
-            progress = Gears.gears.menuManager.selection.posOnMap.y / (float) (refMenu.menuMap[columnIndex].list.Count - 1);
+            scrollable.localPosition = Vector2.Lerp(startPos, maxPos, progress);
         }
     }
 }

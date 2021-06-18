@@ -128,7 +128,7 @@ public class MenuManager : MonoBehaviour
         
         startEvent?.Invoke();
         
-        SetCurrentMenuMap(ConvertListToPanelMap(mainMenu.menuMap, mainMenu.startPos));
+        SetCurrentMenuMap(ConvertListToPanelMap(mainMenu.menuMap, mainMenu.startPos), Vector2Int.zero, true);
     }
 
     void Update()
@@ -162,7 +162,7 @@ public class MenuManager : MonoBehaviour
         pause = !pause;
     }
 
-    public void GoToPanel(Menu menuToGo, bool goTo00 = false, Menu menuToGoBackButton = null, UnityAction backButtonAction = null, PanelMap panelMap = null, bool hideArrow = false)
+    public void GoToPanel(Menu menuToGo, bool useStartPos = false, Menu menuToGoBackButton = null, UnityAction backButtonAction = null, PanelMap panelMap = null, bool hideArrow = false)
     { 
         HideAllPanel();
         
@@ -191,12 +191,12 @@ public class MenuManager : MonoBehaviour
 
         if (panelMap != null)
         {
-            SetCurrentMenuMap(panelMap, goTo00);
+            SetCurrentMenuMap(panelMap,  Vector2Int.zero, useStartPos);
         }
         else
         {
             //currentMap = PanelMaps[menuToGo.panelMapIndex];
-            SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos), goTo00);
+            SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos), Vector2Int.zero, useStartPos);
         }
     }
     
@@ -217,19 +217,19 @@ public class MenuManager : MonoBehaviour
 
         selection.arrow.gameObject.SetActive(true);
 
-        SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos));
+        SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos), new Vector2Int(0, 0));
     }
 
-    public void SetCurrentMenuMap(PanelMap map, bool goTo00 = false)
+    public void SetCurrentMenuMap(PanelMap map, Vector2Int pos, bool useStartPos = false)
     {
         currentMap = map;
-        if (goTo00)
+        if (useStartPos)
         {
-            selection.posOnMap = Vector2Int.zero;
+            selection.posOnMap = currentMap.startPos;
         }
         else
         {
-            selection.posOnMap = currentMap.startPos;
+            selection.posOnMap = pos;
         }
 
         if (selection.gameObject.activeInHierarchy)
