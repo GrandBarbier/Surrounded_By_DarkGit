@@ -39,6 +39,14 @@ public class GameplayManager : MonoBehaviour
 
     public void Death()
     {
+        Debug.Log("Death");
+        
+        LevelManager.FadeDuration(Gears.gears.menuManager.blackPanel, new Color(0f,0f,0f,0f), 
+            new Color(0f,0f,0f,1f), 0.8f, onComplete: DeathEffect);
+    }
+
+    public void DeathEffect()
+    {
         deathUI.SetActive(true);
         player.GetComponent<Movement>().enabled = false;
         deathParticles.SetActive(true);
@@ -55,6 +63,5 @@ public class GameplayManager : MonoBehaviour
         }
         deathText.text = "Restart in  " + Mathf.FloorToInt(_actualRestartTime);
         playerAnimator.SetBool("IsDead", true);
-        
     }
 }

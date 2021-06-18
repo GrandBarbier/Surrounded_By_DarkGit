@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class LevelManager
 {
    public static Action preLoadingScene;
-   public static IEnumerator FadeDuration(Image image, Color start, Color end, float duration, bool setActiveFalse = true)
+   public static IEnumerator FadeDuration(Image image, Color start, Color end, float duration, bool setActiveFalse = true, Action onComplete = null)
    {
       image.gameObject.SetActive(true);
       image.color = start;
@@ -37,6 +37,8 @@ public class LevelManager
          {
             image.gameObject.SetActive(false);
          }
+         
+         onComplete?.Invoke();
       }
    }
 

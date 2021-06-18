@@ -265,10 +265,17 @@ public class MenuManager : MonoBehaviour
         //action?.Invoke();
     }
 
-    public void DefaultFadeIn()
+    public void DefaultFade(bool fadeIn)
     {
         //Debug.Log("DefaultFadeIn");
-        StartCoroutine(LevelManager.FadeDuration(blackPanel, new Color(0f,0f,0f,1f), new Color(0f,0f,0f,0f), 1f));
+        if (fadeIn)
+        {
+            StartCoroutine(LevelManager.FadeDuration(blackPanel, new Color(0f,0f,0f,1f), new Color(0f,0f,0f,0f), 1f));
+        }
+        else
+        {
+            StartCoroutine(LevelManager.FadeDuration(blackPanel, new Color(0f,0f,0f,0f), new Color(0f,0f,0f,1f), 1f));
+        }
     }
 
     public void EnablePause()
