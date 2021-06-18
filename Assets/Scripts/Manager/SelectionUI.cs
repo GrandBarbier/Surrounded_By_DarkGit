@@ -89,21 +89,34 @@ public class SelectionUI : MonoBehaviour
             {
                 for (int j = 0; j < menuManager.currentMap.map.GetLength(1); j++)
                 {
+                    //if the object in the map is the one under cursor
                     if (menuManager.currentMap.map[i, j] != null && (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
                                                                      MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject))
                     {
+                        //if selection is not on the object under cursor set selection to the object under cursor
                         if (posOnMap != new Vector2Int(i, j))
                         {
-                            if (MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true).Capacity > 0)
-                            {
-                                menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
-                            }
+                            RescaleObjectText(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject);
                             posOnMap = new Vector2Int(i, j);
                             UpdateDisplayScalePosition();
+                        }
+
+                        if (Input.GetButtonDown("Fire1"))
+                        {
+                            RescaleObjectText(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject);
                         }
                     }
                 }
             }
+        }
+    }
+
+    public void RescaleObjectText(GameObject go)
+    {
+        if (MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(go, useParent: true).Capacity > 0)
+        {
+            //Debug.LogWarning("Rescale text");
+            go.transform.localScale /= textScaleMulti;
         }
     }
 
@@ -123,6 +136,7 @@ public class SelectionUI : MonoBehaviour
             button.onClick?.Invoke();
         }
 
+        //mimic button click
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(SelectionColor());

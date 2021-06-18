@@ -21,6 +21,7 @@ public class SavePanel : MonoBehaviour
     public Transform saveDisplayParent;
     public int menuIndex;
     public int columnIndex;
+    public int saveCount;
     private Menu saveMenu;
     
     public enum ControlDeviceType{
@@ -42,6 +43,8 @@ public class SavePanel : MonoBehaviour
         }
 
         saveMenu = Gears.gears.menuManager.menus.Find(menu1 => menu1.index == menuIndex);
+
+        saveCount = saveMenu.menuMap[columnIndex].list.Capacity;
 
         //_controls = Gears.gears.playerInput;
         //_controls.onControlsChanged += OnControlsChanged;
@@ -71,14 +74,30 @@ public class SavePanel : MonoBehaviour
         
         GameObject saveDisplay = Instantiate(Gears.gears.saveDisplayPrefab, saveDisplayParent);
         saveMenu.menuMap[columnIndex].list.Add(saveDisplay.GetComponent<RectTransform>());
-        saveDisplay.GetComponentInChildren<TextMeshProUGUI>().text = "Save_02";
+        
+        //Save Name
+        saveCount++;
+        string saveName = "Save_";
+        
+        //Debug.Log(saveCount.ToString().ToCharArray().Length);
+        if (saveCount.ToString().ToCharArray().Length == 1)
+        {
+            saveName += "0" + saveCount;
+        }
+        else
+        {
+            saveName += saveCount;
+        }
+        
+        saveDisplay.GetComponentInChildren<TextMeshProUGUI>().text = saveName;
 
         if (previousDisplayPos != null)
         {
             saveDisplay.GetComponent<RectTransform>().localPosition = previousDisplayPos.localPosition + new Vector3(0, -30, 0);
         }
 
-        Gears.gears.menuManager.SetCurrentMenuMap(Gears.gears.menuManager.ConvertListToPanelMap(saveMenu.menuMap, saveMenu.startPos), true);
+        Gears.gears.menuManager.SetCurrentMenuMap(Gears.gears.menuManager.ConvertListToPanelMap(saveMenu.menuMap, saveMenu.startPos), 
+            new Vector2Int(Gears.gears.menuManager.selection.posOnMap.x, Gears.gears.menuManager.selection.posOnMap.y));
     }
 
     public void UpdatePathText(string s)
