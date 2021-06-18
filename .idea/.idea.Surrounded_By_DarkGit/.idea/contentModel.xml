@@ -879,6 +879,7 @@
             <e p="pushableBlock.cs" t="Include" />
             <e p="PushableDoor.cs" t="Include" />
             <e p="Shattering.cs" t="Include" />
+            <e p="VoidDeath.cs" t="Include" />
             <e p="Wind.cs" t="Include" />
           </e>
           <e p="Save" t="Include">
