@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -32,11 +33,12 @@ public class SelectionUI : MonoBehaviour
     public RectTransform arrow;
     public bool placeArrowOnText;
 
-    private Action<InputAction.CallbackContext> action1;
-    private Action<InputAction.CallbackContext> action2;
+    private Action<InputAction.CallbackContext> triggerSelectionAction;
+    private Action<InputAction.CallbackContext> moveMapPositionAction;
+    private Action<InputAction.CallbackContext> moveSliderAction;
 
     public Action onCompleteMove;
-
+    
     void Awake()
     {
        
@@ -46,9 +48,10 @@ public class SelectionUI : MonoBehaviour
     {
         if (Gears.gears.playerInput != null)
         {
-            Gears.gears.playerInput.actions["Enter"].performed -= action1;
+            Gears.gears.playerInput.actions["Enter"].performed -= triggerSelectionAction;
             //Gears.gears.playerInput.actions["MoveMenu"].performed -= action2;
-            Gears.gears.playerInput.actions["Move"].performed -= action2;
+            Gears.gears.playerInput.actions["Move"].performed -= moveMapPositionAction;
+            Gears.gears.playerInput.actions["Move"].performed -= moveSliderAction;
         }
     }
 
@@ -59,12 +62,14 @@ public class SelectionUI : MonoBehaviour
         
         //Gears.gears.playerInput.actions["Enter"].performed += context => TriggerSelection();
         
-        action1 = context => TriggerSelection();
-        action2 = context => MoveMapPosition(new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
+        triggerSelectionAction = context => TriggerSelection();
+        moveMapPositionAction = context => MoveMapPosition(new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
+        moveSliderAction = context => MoveSlider(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, context.ReadValue<Vector2>().x, 0.2f);
 
-        Gears.gears.playerInput.actions["Enter"].performed += action1;
+        Gears.gears.playerInput.actions["Enter"].performed += triggerSelectionAction;
         //Gears.gears.playerInput.actions["MoveMenu"].performed += action2;
-        Gears.gears.playerInput.actions["Move"].performed += action2;
+        Gears.gears.playerInput.actions["Move"].performed += moveMapPositionAction;
+        Gears.gears.playerInput.actions["Move"].performed += moveSliderAction;
 
         //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Enter"].performed -= action1;
         //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["MoveMenu"].performed -= action2;
@@ -108,6 +113,16 @@ public class SelectionUI : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void MoveSlider(GameObject go, float addedValue, float multiply = 1)
+    {
+        List<Slider> sliders = MenuManager.GetAllComponentInChilds<Slider>(go, useParent: true);
+        
+        if (sliders.Capacity > 0)
+        {
+            sliders[0].value += addedValue * multiply;
         }
     }
 
@@ -282,10 +297,12 @@ public class SelectionUI : MonoBehaviour
             arrow.localScale = new Vector3(adaptScale.x * scaleMultiplierX, adaptScale.x * scaleMultiplierX) * 0.2f;
 
             float sizeDeltaX = 0;
+
+            List<TextMeshProUGUI> textMeshPros = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true);
             
-            if (placeArrowOnText)
+            if (placeArrowOnText && textMeshPros.Capacity > 0)
             {
-                TextMeshProUGUI textMeshPro = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true)[0];
+                TextMeshProUGUI textMeshPro = textMeshPros[0];
 
                 sizeDeltaX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x;
                 
