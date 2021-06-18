@@ -20,6 +20,8 @@ public class Gears : MonoBehaviour
     [Header("References")] 
     public GameObject somkeTrail;
 
+    public GameObject saveDisplayPrefab;
+
     void Awake()
     {
         if (gears == null)

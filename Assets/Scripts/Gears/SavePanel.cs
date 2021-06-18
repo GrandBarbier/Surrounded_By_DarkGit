@@ -17,6 +17,12 @@ public class SavePanel : MonoBehaviour
     
     PlayerInput _controls;
     public static ControlDeviceType currentControlDevice;
+
+    public Transform saveDisplayParent;
+    public int menuIndex;
+    public int columnIndex;
+    public int saveCount;
+    private Menu saveMenu;
     
     public enum ControlDeviceType{
         KeyboardAndMouse,
@@ -35,7 +41,11 @@ public class SavePanel : MonoBehaviour
         {
             Debug.Log("No GamePad");
         }
-        
+
+        saveMenu = Gears.gears.menuManager.menus.Find(menu1 => menu1.index == menuIndex);
+
+        saveCount = saveMenu.menuMap[columnIndex].list.Capacity;
+
         //_controls = Gears.gears.playerInput;
         //_controls.onControlsChanged += OnControlsChanged;
     }
@@ -51,6 +61,43 @@ public class SavePanel : MonoBehaviour
  
     void OnDisable() {
         InputUser.onChange -= onInputDeviceChange;
+    }
+
+    public void AddSaveDisplay()
+    {
+        RectTransform previousDisplayPos = null;
+        
+        if (saveMenu.menuMap[columnIndex].list.Capacity > 0)
+        {
+            previousDisplayPos = saveMenu.menuMap[columnIndex].list[saveMenu.menuMap[columnIndex].list.Count - 1];
+        }
+        
+        GameObject saveDisplay = Instantiate(Gears.gears.saveDisplayPrefab, saveDisplayParent);
+        saveMenu.menuMap[columnIndex].list.Add(saveDisplay.GetComponent<RectTransform>());
+        
+        //Save Name
+        saveCount++;
+        string saveName = "Save_";
+        
+        //Debug.Log(saveCount.ToString().ToCharArray().Length);
+        if (saveCount.ToString().ToCharArray().Length == 1)
+        {
+            saveName += "0" + saveCount;
+        }
+        else
+        {
+            saveName += saveCount;
+        }
+        
+        saveDisplay.GetComponentInChildren<TextMeshProUGUI>().text = saveName;
+
+        if (previousDisplayPos != null)
+        {
+            saveDisplay.GetComponent<RectTransform>().localPosition = previousDisplayPos.localPosition + new Vector3(0, -30, 0);
+        }
+
+        Gears.gears.menuManager.SetCurrentMenuMap(Gears.gears.menuManager.ConvertListToPanelMap(saveMenu.menuMap, saveMenu.startPos), 
+            new Vector2Int(Gears.gears.menuManager.selection.posOnMap.x, Gears.gears.menuManager.selection.posOnMap.y));
     }
 
     public void UpdatePathText(string s)
