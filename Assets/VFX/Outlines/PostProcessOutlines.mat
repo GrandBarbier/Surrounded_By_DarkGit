@@ -90,12 +90,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - ColorStrength: 1
-    - ColorThickness: 1
-    - ColorThreshold: 0.37
+    - ColorStrength: 10
+    - ColorThickness: 100
+    - ColorThreshold: 1
     - DepthStrenght: 1
-    - DepthThickness: 1
-    - DepthThreshold: 0.001
+    - DepthThickness: 100
+    - DepthThreshold: 0.0005
     - REQUIRE_DEPTH_TEXTURE: 1
     - REQUIRE_OPAQUE_TEXTURE: 1
     - Thickness: 0.001
