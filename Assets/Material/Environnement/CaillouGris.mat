@@ -137,7 +137,7 @@ Material:
     - _Cull: 2
     - _CullMode: 0
     - _Cutoff: 0.5
-    - _Darkness: 0.05
+    - _Darkness: 0.045
     - _Darkness1: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
@@ -154,9 +154,9 @@ Material:
     - _GlowOffset: 0
     - _GlowOuter: 0.05
     - _GlowPower: 0.75
-    - _GradiantOffset: 0
+    - _GradiantOffset: -0.63
     - _GradiantOffset1: 0
-    - _GradiantScale: 1
+    - _GradiantScale: 11.23
     - _GradiantScale1: 1
     - _GradientScale: 5
     - _Illumination: 1

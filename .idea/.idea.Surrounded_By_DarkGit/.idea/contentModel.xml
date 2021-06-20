@@ -886,6 +886,9 @@
             <e p="FileBrowserTest.cs" t="Include" />
           </e>
         </e>
+        <e p="Settings" t="Include">
+          <e p="BlitMaterialFeature.cs" t="Include" />
+        </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
@@ -924,6 +927,9 @@
               <e p="ToonNoShadow.shader" t="Include" />
               <e p="ToonShadow.shader" t="Include" />
             </e>
+          </e>
+          <e p="Outlines" t="Include">
+            <e p="EdgeDetectionOutlinesInclude.hlsl" t="Include" />
           </e>
           <e p="Portal" t="Include">
             <e p="Portal.shader" t="Include" />
