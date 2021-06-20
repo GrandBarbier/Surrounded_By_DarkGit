@@ -50,6 +50,7 @@ public class PickUpTorch : MonoBehaviour
         player.GetComponent<PlaceTorch>().torchOnGround = false;
         torch.GetComponent<Rigidbody>().useGravity = false;
         torch.GetComponent<Rigidbody>().isKinematic = true;
+        torch.GetComponent<MeshCollider>().isTrigger = true;
         
         torch.transform.parent = player_hand.transform;
         torch.transform.position = torchHandPos.transform.position;

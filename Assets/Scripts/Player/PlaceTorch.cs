@@ -71,6 +71,7 @@ public class PlaceTorch : MonoBehaviour
 
         torch.GetComponent<Rigidbody>().isKinematic = false;
         torch.GetComponent<Rigidbody>().useGravity = true;
+        torch.GetComponent<MeshCollider>().isTrigger = false;
     }
 
     public void TriggerDropTorchAnim()
