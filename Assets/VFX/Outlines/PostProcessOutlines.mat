@@ -98,7 +98,7 @@ Material:
     - DepthThreshold: 0.0005
     - REQUIRE_DEPTH_TEXTURE: 1
     - REQUIRE_OPAQUE_TEXTURE: 1
-    - Thickness: 0.001
+    - Thickness: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
