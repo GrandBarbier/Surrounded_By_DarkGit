@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: e9199569a1e864e44b36712024c9144f, type: 2}
+      name: pierre
+    second: {fileID: 2100000, guid: 9b9ab0334485ccf4a8025dc788ba340c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pierre
-    second: {fileID: 2100000, guid: 9b9ab0334485ccf4a8025dc788ba340c, type: 2}
+      name: pierre jaune
+    second: {fileID: 2100000, guid: e9199569a1e864e44b36712024c9144f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
