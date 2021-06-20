@@ -19,8 +19,9 @@ public class WaterTorch : MonoBehaviour
         
         if (other.gameObject.CompareTag("water"))
         {
-            if (!audio.isPlaying && t_light.activeSelf)
+            if (t_light.activeSelf)
             {
+                audio.Stop();
                 audio.clip = torch_extinction;
                 audio.Play();
             }

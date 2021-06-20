@@ -9,6 +9,10 @@ public class igniteBrazero : MonoBehaviour
 	public GameObject brazero_particles;
 	public GameObject torch_light;
 	public GameObject torch_particles;
+
+	public AudioSource audio;
+	public AudioClip fire_ignition;
+
 	private void OnTriggerStay(Collider other)
 	{
 		if (other.CompareTag("Brazero"))
@@ -20,6 +24,8 @@ public class igniteBrazero : MonoBehaviour
 					if (!brazero_light.activeSelf)
 					{
 						//lancer animation
+						audio.clip = fire_ignition;
+						audio.Play();
 						brazero_light.SetActive(true);
 						brazero_particles.SetActive(true);
 					}
@@ -29,12 +35,13 @@ public class igniteBrazero : MonoBehaviour
 					if (brazero_light.activeSelf)
 					{
 						//lancer animation
+						audio.clip = fire_ignition;
+						audio.Play();
 						torch_light.SetActive(true);
 						torch_particles.SetActive(true);
 					}
 				}
 			}
 		}
-		//else allumer torche
 	}
 }
