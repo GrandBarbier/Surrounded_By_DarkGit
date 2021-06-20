@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PostProcessOutlines
   m_Shader: {fileID: -6465566751694194690, guid: 57b4df9861787574e8c8a9ff4e0ae32f, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: REQUIRE_DEPTH_TEXTURE REQUIRE_OPAQUE_TEXTURE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -90,14 +90,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - ColorStrength: 1
-    - ColorThickness: 100
-    - ColorThreshold: 0.5
+    - ColorStrength: 0.9
+    - ColorThickness: 200
+    - ColorThreshold: 3
     - DepthStrenght: 1
-    - DepthThickness: 100
-    - DepthThreshold: 0.01
-    - REQUIRE_DEPTH_TEXTURE: 0
-    - REQUIRE_OPAQUE_TEXTURE: 0
+    - DepthThickness: 0.5
+    - DepthThreshold: 0.001
+    - REQUIRE_DEPTH_TEXTURE: 1
+    - REQUIRE_OPAQUE_TEXTURE: 1
     - Thickness: 0.001
     - _AlphaClip: 0
     - _Blend: 0
