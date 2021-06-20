@@ -270,20 +270,24 @@ public class SelectionUI : MonoBehaviour
     {
         //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
         //Debug.Log(transform.parent + " pos On Map : " + menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
-        if (menuManager.currentMap.map[posOnMap.x, posOnMap.y] != null && (menuManager.currentMap.map[posOnMap.x, posOnMap.y].GetComponent<TextMeshProUGUI>() != null || 
-            MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject).Capacity > 0))
+        RectTransform rectTransform = menuManager.currentMap.map[posOnMap.x, posOnMap.y];
+        
+        List<TextMeshProUGUI> textMeshPros = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(rectTransform.gameObject, useParent: true);
+        List<Slider> sliders = MenuManager.GetAllComponentInChilds<Slider>(rectTransform.gameObject, useParent: true);
+
+        if (rectTransform != null && textMeshPros.Capacity > 0)
         {
-            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale *= textScaleMulti;
+            rectTransform.transform.localScale *= textScaleMulti;
         }
 
-        Vector3 adaptScale = AdaptScale(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, menuManager.currentMap.map[posOnMap.x, posOnMap.y].localScale);
+        Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);
         
         //adapt selection
         _rectTransform = GetComponent<RectTransform>();
         if (selectionUi != null)
         {
-            selectionUi.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position;
-            selectionUi.sizeDelta = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta;
+            selectionUi.position = rectTransform.position;
+            selectionUi.sizeDelta = rectTransform.sizeDelta;
             
             selectionUi.localScale = new Vector3(adaptScale.x * scaleMultiplierX, adaptScale.y * scaleMultiplierY);
             
@@ -296,28 +300,34 @@ public class SelectionUI : MonoBehaviour
         {
             arrow.localScale = new Vector3(adaptScale.x * scaleMultiplierX, adaptScale.x * scaleMultiplierX) * 0.2f;
 
-            float sizeDeltaX = 0;
+            float arrowPosX = 0;
 
-            List<TextMeshProUGUI> textMeshPros = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true);
-            
-            if (placeArrowOnText && textMeshPros.Capacity > 0)
+            if (sliders.Capacity == 0)
             {
-                TextMeshProUGUI textMeshPro = textMeshPros[0];
+                if (placeArrowOnText && textMeshPros.Capacity > 0)
+                {
+                    TextMeshProUGUI textMeshPro = textMeshPros[0];
 
-                sizeDeltaX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x;
+                    arrowPosX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x;
                 
-                /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
-                          + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 
-                          " = " + sizeDeltaX);*/
+                    /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
+                              + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 
+                              " = " + sizeDeltaX);*/
+                }
+                else
+                {
+                    arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX / 2f + arrow.sizeDelta.x * arrow.localScale.x / 2f - Screen.width * 0.05f;
+                    // Debug.Log($"arrowPosX : {arrowPosX} = sizeDeltaX : {rectTransform.sizeDelta.x} * adaptScaleX : {adaptScale.x} * ScaleMultiplierX : {scaleMultiplierX} / 2 + " +
+                    //           $"arrow size deltaX : {arrow.sizeDelta.x} * arrowLocalScaleX : {arrow.localScale.x} / 2 - ScreenWidth * 0.05 : {Screen.width * 0.05f}");
+                }
             }
             else
             {
-                sizeDeltaX = menuManager.currentMap.map[posOnMap.x, posOnMap.y].sizeDelta.x * adaptScale.x * 
-                             scaleMultiplierX / 2f + Screen.width * 0.03f + arrow.sizeDelta.x * arrow.localScale.x / 2f;
+                arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX / 2f + arrow.sizeDelta.x * arrow.localScale.x / 2f + Screen.width * 0.05f;
             }
-            
+
             //position arrow
-            arrow.position = menuManager.currentMap.map[posOnMap.x, posOnMap.y].position + new Vector3(-sizeDeltaX * Screen.width / 1920, 0, 0);
+            arrow.position = rectTransform.position + new Vector3(-arrowPosX * Screen.width / 1920, 0, 0);
         }
         
         
