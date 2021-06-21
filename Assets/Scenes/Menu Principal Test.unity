@@ -2753,7 +2753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4990,6 +4990,7 @@ MonoBehaviour:
     menuMap:
     - list:
       - {fileID: 1462368396}
+      - {fileID: 655472187}
   resumeButton: {fileID: 0}
   parameterButton: {fileID: 1798291876}
   saveButton: {fileID: 788321536}
@@ -7999,7 +8000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: 'Play '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
