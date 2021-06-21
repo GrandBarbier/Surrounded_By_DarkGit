@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-<<<<<<< 8276537e85e0dd8afd3e31f39244b93f85a84f06
-    <e p="C:\Users\COURS\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\COURS\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-68514826.00" t="ExcludeRecursive" />
-    <e p="E:\1.MATIERE DE COURS\2eme annee\Surrounded_By_DarkGit" t="IncludeRecursive">
-=======
     <e p="C:\Users\yoanl\.Rider2019.3\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\yoanl\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\yoanl\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-747650524.00" t="ExcludeRecursive" />
     <e p="D:\Documents\Unity\Unity GIT\Surrounded_By_DarkGit" t="IncludeRecursive">
->>>>>>> fix arrow display on slider
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -801,7 +795,6 @@
           </e>
           <e p="README.txt" t="Include" />
         </e>
-        <e p="braseroSFX.cs" t="Include" />
         <e p="Player" t="Include">
           <e p="CapeEmission.shader" t="Include" />
         </e>
@@ -969,6 +962,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="braseroSFX.cs" t="Include" />
           <e p="Effects" t="Include">
             <e p="FireLight.cs" t="Include" />
           </e>
