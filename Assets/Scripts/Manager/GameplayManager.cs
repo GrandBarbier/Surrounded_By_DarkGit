@@ -13,14 +13,14 @@ public class GameplayManager : MonoBehaviour
     public GameObject deathParticles;
     
     [Header("Death")]
-    public GameObject deathUI;
-    public TMP_Text deathText;
+    public GameObject vignette;
+   
     public float restartTime;
     private float _actualRestartTime;
+    
     void Start()
     {
         deathParticles.SetActive(false);
-        deathUI.SetActive(false);
         _actualRestartTime = restartTime;
     }
 
@@ -31,23 +31,19 @@ public class GameplayManager : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-       
-
-       
     }
 
     public void Death()
     {
         Debug.Log("Death");
-        
-        LevelManager.FadeDuration(Gears.gears.menuManager.blackPanel, new Color(0f,0f,0f,0f), 
-            new Color(0f,0f,0f,1f), 0.8f, onComplete: DeathEffect);
+
+        StartCoroutine(LevelManager.FadeDuration(Gears.gears.menuManager.blackPanel, new Color(0f, 0f, 0f, 0f),
+            new Color(0f, 0f, 0f, 1f), 0.8f, onComplete: DeathEffect));
     }
 
     public void DeathEffect()
     {
-        deathUI.SetActive(true);
+        vignette.SetActive(false);
         player.GetComponent<Movement>().enabled = false;
         deathParticles.SetActive(true);
         _actualRestartTime -= Time.deltaTime;
@@ -61,7 +57,6 @@ public class GameplayManager : MonoBehaviour
             _actualRestartTime = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        deathText.text = "Restart in  " + Mathf.FloorToInt(_actualRestartTime);
         playerAnimator.SetBool("IsDead", true);
     }
 }
