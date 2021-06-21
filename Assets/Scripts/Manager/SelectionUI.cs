@@ -157,10 +157,10 @@ public class SelectionUI : MonoBehaviour
             StartCoroutine(SelectionColor());
         }
 
-        if (posOnMap != v)
-        {
-            UpdateDisplayScalePosition();
-        }
+        // if (posOnMap != v)
+        // {
+        //     UpdateDisplayScalePosition();
+        // }
     }
 
     public IEnumerator RescaleOverTime(GameObject go, Vector3 startScale, Vector3 endScale, float duration, bool loop = false)
@@ -278,6 +278,7 @@ public class SelectionUI : MonoBehaviour
         if (rectTransform != null && textMeshPros.Capacity > 0)
         {
             rectTransform.transform.localScale *= textScaleMulti;
+            Debug.Log(rectTransform.gameObject.name);
         }
 
         Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);
