@@ -8,6 +8,7 @@ TagManager:
   - PushableBlock
   - sideBox
   - levier
+  - Brazero
   layers:
   - Default
   - TransparentFX

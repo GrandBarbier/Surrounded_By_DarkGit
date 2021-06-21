@@ -19553,9 +19553,10 @@ GameObject:
   - component: {fileID: 7663220132998504967}
   - component: {fileID: 5369933662409561008}
   - component: {fileID: 6310598696476348901}
+  - component: {fileID: 8769238059072694218}
   m_Layer: 0
   m_Name: brasero_snake
-  m_TagString: Untagged
+  m_TagString: Brazero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19637,19 +19638,19 @@ AudioSource:
   m_GameObject: {fileID: 8737143572414039406}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 32745c659ae667b44bd8eaebf4d125c5, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 64
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -19684,7 +19685,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -19758,3 +19759,16 @@ MonoBehaviour:
   torch_particles: {fileID: 0}
   audio: {fileID: 7663220132998504967}
   fire_ignition: {fileID: 8300000, guid: 5ba199a992fbb0644a8d755469533e0f, type: 3}
+--- !u!65 &8769238059072694218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737143572414039406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015, y: 0.01, z: 0.01}
+  m_Center: {x: 0.001, y: -0.001, z: -0.0042300555}

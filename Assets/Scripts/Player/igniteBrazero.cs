@@ -15,7 +15,7 @@ public class igniteBrazero : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Brazero"))
+		if (other.CompareTag("Player"))
 		{
 			if (Input.GetKeyDown(KeyCode.W))
 			{
