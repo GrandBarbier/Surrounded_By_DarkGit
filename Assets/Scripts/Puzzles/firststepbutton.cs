@@ -9,9 +9,19 @@ public class firststepbutton : MonoBehaviour
     public GameObject secondPartLights;
     public bool neverused;
     // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
+
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.A) && neverused)
+        firstPartLights.SetActive(true);
+        secondPartLights.SetActive(false);
+    }
+
+
+    void Update()
+
+    {
+
+        if (neverused)
         {
             neverused = false;
             firstPartLights.SetActive(false);
@@ -20,16 +30,6 @@ public class firststepbutton : MonoBehaviour
             //trigger animation (ou particle system
         }
     }
-    private void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.A) && neverused)
-        {
-            neverused = false;
-            firstPartLights.SetActive(false);
-            secondPartLights.SetActive(true);
-            //trigger sound
-            //trigger animation (ou particle system
-        }
-    }
+    
 
 }

@@ -14,9 +14,7 @@ public class Levier : MonoBehaviour
     public bool hanged;
     
     
-    [Header("Target")]
-    public GameObject door;
-    public Transform target;
+    
 
     private void Start()
     {
@@ -59,7 +57,8 @@ public class Levier : MonoBehaviour
                 playerAnimator.SetBool("IsHanging", false);
                 Debug.Log("good");
                 player.GetComponent<Movement>().animPlaying = false;
-                door.transform.position = Vector3.MoveTowards(door.transform.position, target.position, Time.deltaTime);
+                manche.GetComponent<LevierManche>().activated = true;
+                manche.GetComponent<firststepbutton>().neverused = true;
             }
         } 
     }
