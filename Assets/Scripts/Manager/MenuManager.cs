@@ -110,8 +110,9 @@ public class MenuManager : MonoBehaviour
         //Go to language panel when you click language button and setup the back button to go back to parameter panel
         languagesButton?.onClick.AddListener(() => GoToPanel(languageMenu));//, parametersMenu, () => GoToPanel(parametersMenu)));//, pauseMenu, () => GoToPanel(mainMenu))));
         
+        mainMenuButton?.onClick.AddListener(() => Cursor.visible = true);
         mainMenuButton?.onClick.AddListener(() => LevelManager.LoadScene(0));
-        
+
         //Change language when you click languages buttons
         englishButton?.onClick.AddListener(() => LanguageSystem.SetLanguage(LanguageSystem.Languages.English));
         frenchButton?.onClick.AddListener(() => LanguageSystem.SetLanguage(LanguageSystem.Languages.French));
