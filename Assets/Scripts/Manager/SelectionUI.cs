@@ -157,10 +157,10 @@ public class SelectionUI : MonoBehaviour
             StartCoroutine(SelectionColor());
         }
 
-        if (posOnMap != v)
-        {
-            UpdateDisplayScalePosition();
-        }
+        // if (posOnMap != v)
+        // {
+        //     UpdateDisplayScalePosition();
+        // }
     }
 
     public IEnumerator RescaleOverTime(GameObject go, Vector3 startScale, Vector3 endScale, float duration, bool loop = false)
@@ -278,6 +278,7 @@ public class SelectionUI : MonoBehaviour
         if (rectTransform != null && textMeshPros.Capacity > 0)
         {
             rectTransform.transform.localScale *= textScaleMulti;
+            Debug.Log(rectTransform.gameObject.name);
         }
 
         Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);
@@ -298,7 +299,7 @@ public class SelectionUI : MonoBehaviour
 
         if (arrow != null && arrow.gameObject.activeInHierarchy)
         {
-            arrow.localScale = new Vector3(adaptScale.x * scaleMultiplierX, adaptScale.x * scaleMultiplierX) * 0.2f;
+            arrow.localScale = new Vector3(adaptScale.x, adaptScale.x) * 0.15f;
 
             float arrowPosX = 0;
 
@@ -308,7 +309,7 @@ public class SelectionUI : MonoBehaviour
                 {
                     TextMeshProUGUI textMeshPro = textMeshPros[0];
 
-                    arrowPosX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x;
+                    arrowPosX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x * 0.65f;
                 
                     /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
                               + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 
@@ -323,7 +324,7 @@ public class SelectionUI : MonoBehaviour
             }
             else
             {
-                arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX * 1.3f + arrow.sizeDelta.x * arrow.localScale.x / 2f;// + Screen.width * 0.015f; 1.3f, 0.5f
+                arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX * 0.6f + arrow.sizeDelta.x * arrow.localScale.x / 2f;// + Screen.width * 0.015f; 1.3f, 0.5f
             }
 
             //position arrow

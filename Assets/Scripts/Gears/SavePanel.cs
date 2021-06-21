@@ -39,7 +39,7 @@ public class SavePanel : MonoBehaviour
         }
         else
         {
-            Debug.Log("No GamePad");
+            //Debug.Log("No GamePad");
         }
 
         saveMenu = Gears.gears.menuManager.menus.Find(menu1 => menu1.index == menuIndex);
