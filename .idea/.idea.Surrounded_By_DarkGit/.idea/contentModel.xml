@@ -973,6 +973,7 @@
             <e p="LevelManager.cs" t="Include" />
             <e p="SavePanel.cs" t="Include" />
           </e>
+          <e p="gestionBGM.cs" t="Include" />
           <e p="Manager" t="Include">
             <e p="CustomScrollable.cs" t="Include" />
             <e p="GameplayManager.cs" t="Include" />
