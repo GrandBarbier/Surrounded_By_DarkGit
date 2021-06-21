@@ -316,14 +316,14 @@ public class SelectionUI : MonoBehaviour
                 }
                 else
                 {
-                    arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX / 2f + arrow.sizeDelta.x * arrow.localScale.x / 2f - Screen.width * 0.05f;
+                    arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX / 2f + arrow.sizeDelta.x * arrow.localScale.x / 2f + Screen.width * 0.01f;
                     // Debug.Log($"arrowPosX : {arrowPosX} = sizeDeltaX : {rectTransform.sizeDelta.x} * adaptScaleX : {adaptScale.x} * ScaleMultiplierX : {scaleMultiplierX} / 2 + " +
                     //           $"arrow size deltaX : {arrow.sizeDelta.x} * arrowLocalScaleX : {arrow.localScale.x} / 2 - ScreenWidth * 0.05 : {Screen.width * 0.05f}");
                 }
             }
             else
             {
-                arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX / 2f + arrow.sizeDelta.x * arrow.localScale.x / 2f + Screen.width * 0.05f;
+                arrowPosX = rectTransform.sizeDelta.x * adaptScale.x * scaleMultiplierX * 1.3f + arrow.sizeDelta.x * arrow.localScale.x / 2f;// + Screen.width * 0.015f; 1.3f, 0.5f
             }
 
             //position arrow
