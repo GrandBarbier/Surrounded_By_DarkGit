@@ -16,8 +16,8 @@ public class FileBrowserTest : MonoBehaviour
     {
 	    if (Gamepad.current == null)
         {
-	        browseButton.gameObject.SetActive(true);
-	        browseButton.onClick.AddListener(StartBrowsing);
+	        browseButton?.gameObject.SetActive(true);
+	        browseButton?.onClick.AddListener(StartBrowsing);
         }
     }
 
