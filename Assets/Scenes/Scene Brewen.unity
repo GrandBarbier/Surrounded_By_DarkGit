@@ -2234,6 +2234,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 911163290714532827, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
   m_PrefabInstance: {fileID: 1103842687}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &322150786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322150784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!95 &322150789 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 571616870635549037, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
@@ -2257,14 +2271,6 @@ MonoBehaviour:
   manche: {fileID: 0}
   place: {fileID: 0}
   hanged: 0
---- !u!81 &322150793
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322150784}
-  m_Enabled: 1
 --- !u!1001 &329518720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7540,11 +7546,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: MaxDistance
       value: 5
       objectReference: {fileID: 0}
@@ -7971,31 +7977,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.18664694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1723824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.026498795
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6554886
+      value: 0.6542617
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.007231718
+      value: 0.040732868
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.75512457
+      value: -0.75371116
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569390, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008330959
+      value: 0.04692437
       objectReference: {fileID: 0}
     - target: {fileID: 5499109346063569391, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -8091,7 +8097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0028619927
+      value: -0.0028619908
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -8099,7 +8105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0033702375
+      value: -0.0033702354
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917454, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -8854,7 +8860,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -8908,6 +8914,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7485216835801118161, guid: 003b9a56e0082604ebce71d0d23220e2, type: 3}
+--- !u!114 &1231108808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231108806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Brasero
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1261550395
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,7 +9887,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375872294}
-  m_LocalRotation: {x: -0.004421236, y: -0.010854691, z: -0.000047994457, w: 0.9999314}
+  m_LocalRotation: {x: -0.004421221, y: -0.010854691, z: -0.000047994297, w: 0.9999314}
   m_LocalPosition: {x: 369.5, y: -357.2, z: 26.304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -12500,11 +12529,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: MaxDistance
       value: 5
       objectReference: {fileID: 0}
@@ -14171,11 +14200,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3006349983592721723, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
+    - target: {fileID: 0}
       propertyPath: MaxDistance
       value: 5
       objectReference: {fileID: 0}
