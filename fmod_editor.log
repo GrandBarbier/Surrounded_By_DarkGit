@@ -17,11 +17,9 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Fire_Brazero (000002626C505A08)
-[LOG] SoundI::release                          :     Fire_Brazero (000002617D178CB8)
-[LOG] SoundI::release                          :     Fire_Brazero (0000025F812F88F8)
+[LOG] SoundI::release                          : Fire_Brazero (0000025F862E1078)
+[LOG] SoundI::release                          :     Fire_Brazero (000002617D17B898)
+[LOG] SoundI::release                          :     Fire_Brazero (000002626BCF9D68)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

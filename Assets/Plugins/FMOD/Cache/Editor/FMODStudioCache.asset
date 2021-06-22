@@ -18,7 +18,7 @@ MonoBehaviour:
   lastModified: 637599564535822942
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5070866905518093110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,6 +39,25 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 744
+  Exists: 0
+--- !u!114 &-1530450198871750249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637599564535822942
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -53,17 +72,38 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5070866905518093110}
-  - {fileID: -7219872593899162085}
+  - {fileID: 1579895983569252899}
+  - {fileID: -1530450198871750249}
   EditorEvents:
   - {fileID: 6438410857714015963}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7219872593899162085}
+  - {fileID: -1530450198871750249}
   StringsBanks:
-  - {fileID: -5070866905518093110}
+  - {fileID: 1579895983569252899}
   stringsBankWriteTime: 637599564535842889
   cacheVersion: 6
+--- !u!114 &1579895983569252899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637599564535842889
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 744
+  Exists: 1
 --- !u!114 &6438410857714015963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +119,7 @@ MonoBehaviour:
   Path: event:/Brasero
   guid: b08c8f0cc0349041ab5d365199811860
   Banks:
-  - {fileID: -7219872593899162085}
+  - {fileID: -1530450198871750249}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
