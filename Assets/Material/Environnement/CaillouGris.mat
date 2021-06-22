@@ -154,9 +154,9 @@ Material:
     - _GlowOffset: 0
     - _GlowOuter: 0.05
     - _GlowPower: 0.75
-    - _GradiantOffset: -0.63
+    - _GradiantOffset: -0.3
     - _GradiantOffset1: 0
-    - _GradiantScale: 11.23
+    - _GradiantScale: 3.5
     - _GradiantScale1: 1
     - _GradientScale: 5
     - _Illumination: 1
