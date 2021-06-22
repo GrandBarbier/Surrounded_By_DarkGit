@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Cours\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Cours\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-68514826.00" t="ExcludeRecursive" />
-    <e p="E:\1.MATIERE DE COURS\2eme annee\Surrounded_By_DarkGit" t="IncludeRecursive">
+    <e p="C:\Users\yoanl\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\yoanl\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\yoanl\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-747650524.00" t="ExcludeRecursive" />
+    <e p="D:\Documents\Unity\Unity GIT\Surrounded_By_DarkGit" t="IncludeRecursive">
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -958,6 +959,58 @@
                 <e p="Unity.InputSystem.RebindingUI.asmdef" t="Include" />
               </e>
             </e>
+          </e>
+        </e>
+        <e p="SBDFMODbank" t="Include">
+          <e p="Metadata" t="Include">
+            <e p="Asset" t="Include">
+              <e p="{09b586e7-f332-40af-82b4-14632c677f1a}.xml" t="Include" />
+            </e>
+            <e p="AudioFile" t="Include">
+              <e p="{bf108dec-f3d0-4b54-ab7c-9cd41fa877d5}.xml" t="Include" />
+              <e p="{d06c6662-080c-45ff-bc20-5465bbda6d3f}.xml" t="Include" />
+            </e>
+            <e p="Bank" t="Include">
+              <e p="{8a595c3d-bb5f-4cf9-a0fe-823ab27d2b1d}.xml" t="Include" />
+            </e>
+            <e p="BankFolder" t="Include">
+              <e p="{f2a9ba8b-4cc6-46a4-b57c-ded5e5d5b221}.xml" t="Include" />
+            </e>
+            <e p="EffectPresetFolder" t="Include">
+              <e p="{5a11d4c7-f135-4766-aedd-1ee046928166}.xml" t="Include" />
+            </e>
+            <e p="EncodingSetting" t="Include">
+              <e p="{f1e7529a-8caa-491f-946f-3c2394225a52}.xml" t="Include" />
+            </e>
+            <e p="Event" t="Include">
+              <e p="{0c8f8cb0-34c0-4190-ab5d-365199811860}.xml" t="Include" />
+              <e p="{881fc057-b7ca-48d9-99d7-29b39696a39b}.xml" t="Include" />
+            </e>
+            <e p="EventFolder" t="Include">
+              <e p="{8a12734e-79fa-4b1f-be26-44874bb301de}.xml" t="Include" />
+            </e>
+            <e p="Master.xml" t="Include" />
+            <e p="Mixer.xml" t="Include" />
+            <e p="ParameterPresetFolder" t="Include">
+              <e p="{d9f41bd8-3bb7-4bee-8360-107fbe8c9970}.xml" t="Include" />
+            </e>
+            <e p="Platform" t="Include">
+              <e p="{f02396a0-2afd-46e7-a5cf-6791d02d4029}.xml" t="Include" />
+            </e>
+            <e p="ProfilerFolder" t="Include">
+              <e p="{5be5827e-3298-4967-b5e4-c631b240d45e}.xml" t="Include" />
+            </e>
+            <e p="Return" t="Include">
+              <e p="{d494ab45-2b08-47cc-a13a-d4f5329eb9b9}.xml" t="Include" />
+            </e>
+            <e p="SandboxFolder" t="Include">
+              <e p="{a1cae163-afa5-41c7-9a18-046fbfe25233}.xml" t="Include" />
+            </e>
+            <e p="SnapshotGroup" t="Include">
+              <e p="{90a23fc9-2674-4c60-bdbf-8ccbd0ee87e2}.xml" t="Include" />
+            </e>
+            <e p="Tags.xml" t="Include" />
+            <e p="Workspace.xml" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">
