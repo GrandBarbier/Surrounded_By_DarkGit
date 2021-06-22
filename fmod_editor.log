@@ -8,7 +8,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002622E364188 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002622E365AA8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,45 +17,3 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000262001BA258
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000262001BA258
-[LOG] SoundI::release                          : Fire_Brazero (000002627228D578)
-[LOG] SoundI::release                          :     Fire_Brazero (000002617D178B18)
-[LOG] SoundI::release                          :     Fire_Brazero (00000262001BA258)
-[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000002627228D3C8 : node = 0000026272721590
-[LOG] SystemI::createSound                     : add node to async list : head = 00000261EC1E6778.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002627228D3C8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1138560
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4064
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000262727216A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002627228D3C8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002622E125508
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002622E125508
-[LOG] SoundI::release                          : Water_Waterfall (000002627228D068)
-[LOG] SoundI::release                          :     Water_Waterfall (000002617D17A038)
-[LOG] SoundI::release                          :     Water_Waterfall (0000026200648448)
-[LOG] SoundI::release                          : Water_Waterfall (000002627228D3C8)
-[LOG] SoundI::release                          :     Water_Waterfall (000002617D17B078)
-[LOG] SoundI::release                          :     Water_Waterfall (000002622E125508)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
