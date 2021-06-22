@@ -6098,6 +6098,7 @@ GameObject:
   - component: {fileID: 856344914}
   - component: {fileID: 856344913}
   - component: {fileID: 856344912}
+  - component: {fileID: 856344915}
   m_Layer: 6
   m_Name: Filet Deau (2)
   m_TagString: Untagged
@@ -6183,6 +6184,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856344910}
   m_Mesh: {fileID: -8914990169745397552, guid: dece88bc507a93a439eff8ec779c4451, type: 3}
+--- !u!114 &856344915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856344910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &863352862
 GameObject:
   m_ObjectHideFlags: 0
@@ -7546,14 +7570,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: MaxDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3409443212357429552, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
       propertyPath: m_Name
       value: brasero_statue 1 (6)
@@ -8093,19 +8109,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6472863
+      value: 0.647291
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0028619908
+      value: -0.002862007
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.76223415
+      value: -0.7622302
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917441, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0033702354
+      value: -0.0033702122
       objectReference: {fileID: 0}
     - target: {fileID: 5499109347510917454, guid: 11966fd217892b445b32fee37e8f00e5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -8859,10 +8875,6 @@ PrefabInstance:
     - target: {fileID: 2762954989361721947, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
       propertyPath: m_Layer
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409443212357429552, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
       propertyPath: m_Name
@@ -9887,7 +9899,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375872294}
-  m_LocalRotation: {x: -0.004421221, y: -0.010854691, z: -0.000047994297, w: 0.9999314}
+  m_LocalRotation: {x: -0.004421221, y: -0.010848522, z: -0.000047966998, w: 0.99993145}
   m_LocalPosition: {x: 369.5, y: -357.2, z: 26.304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -12529,14 +12541,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: MaxDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3409443212357429552, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
       propertyPath: m_Name
       value: brasero_statue 1 (7)
@@ -14199,14 +14203,6 @@ PrefabInstance:
     - target: {fileID: 2762954989361721947, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
       propertyPath: m_Layer
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: MaxDistance
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3409443212357429552, guid: 4e83de30f6d13da41afeb82342028ab7, type: 3}
       propertyPath: m_Name
