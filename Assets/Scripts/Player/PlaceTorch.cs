@@ -22,7 +22,7 @@ public class PlaceTorch : MonoBehaviour
         placeTorchAction = context => _poseTorchValue = 0;
         //placeTorchAction = context => TriggerDropTorchAnim();
         //Gears.gears.playerInput.actions["PoseTorch"].performed += placeTorchAction;
-        Gears.gears.playerInput.actions["PoseTorch"].canceled += placeTorchAction;
+        Gears.gears.playerInput.actions["DropTorch"].canceled += placeTorchAction;
     }
     
     void OnDestroy()
@@ -30,7 +30,7 @@ public class PlaceTorch : MonoBehaviour
         if (Gears.gears.playerInput != null)
         {
             //Gears.gears.playerInput.actions["PoseTorch"].performed -= placeTorchAction;
-            Gears.gears.playerInput.actions["PoseTorch"].canceled -= placeTorchAction;
+            Gears.gears.playerInput.actions["DropTorch"].canceled -= placeTorchAction;
         }
     }
 
@@ -48,7 +48,7 @@ public class PlaceTorch : MonoBehaviour
 //             
 //         }
 
-        if (Gears.gears.playerInput.actions["PoseTorch"].ReadValue<float>() > 0)
+        if (Gears.gears.playerInput.actions["DropTorch"].ReadValue<float>() > 0)
         {
             _poseTorchValue += Time.deltaTime;
 

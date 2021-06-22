@@ -78,7 +78,15 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 637599655486684152
+=======
+<<<<<<< 19b847fbeacea0ff460c1c97dd2bcc40af97aa93
+  lastModified: 637599612281587286
+=======
+  lastModified: 637599596389944427
+>>>>>>> New Input, Input Rename
+>>>>>>> Yoan
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -116,7 +124,15 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 637599655486634262
+=======
+<<<<<<< 19b847fbeacea0ff460c1c97dd2bcc40af97aa93
+  lastModified: 637599612281447656
+=======
+  lastModified: 637599596388667560
+>>>>>>> New Input, Input Rename
+>>>>>>> Yoan
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -145,7 +161,15 @@ MonoBehaviour:
   - {fileID: -2872704905965676588}
   StringsBanks:
   - {fileID: -1345194932634194740}
+<<<<<<< HEAD
   stringsBankWriteTime: 637599655486634262
+=======
+<<<<<<< 19b847fbeacea0ff460c1c97dd2bcc40af97aa93
+  stringsBankWriteTime: 637599612281447656
+=======
+  stringsBankWriteTime: 637599596388667560
+>>>>>>> New Input, Input Rename
+>>>>>>> Yoan
   cacheVersion: 6
 --- !u!114 &841606569904243665
 MonoBehaviour:

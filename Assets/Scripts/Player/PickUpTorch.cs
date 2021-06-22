@@ -17,14 +17,14 @@ public class PickUpTorch : MonoBehaviour
     void Start()
     {
         pickUpTorchAction = context => TriggerPickUpTorch();
-        Gears.gears.playerInput.actions["PoseTorch"].performed += pickUpTorchAction;
+        Gears.gears.playerInput.actions["DropTorch"].performed += pickUpTorchAction;
     }
 
     void OnDestroy()
     {
         if (Gears.gears.playerInput != null)
         {
-            Gears.gears.playerInput.actions["PoseTorch"].performed -= pickUpTorchAction;
+            Gears.gears.playerInput.actions["DropTorch"].performed -= pickUpTorchAction;
         }
     }
     

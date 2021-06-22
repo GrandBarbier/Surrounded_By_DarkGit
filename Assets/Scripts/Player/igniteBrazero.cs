@@ -17,7 +17,7 @@ public class igniteBrazero : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			if (Input.GetKeyDown(KeyCode.W))
+			if (Gears.gears.playerInput.actions["LightUpTorch"].ReadValue<float>() > 0)
 			{
 				if (torch_light.activeSelf)
 				{
