@@ -225,6 +225,11 @@ public class MenuManager : MonoBehaviour
 
     public void SetCurrentMenuMap(PanelMap map, Vector2Int pos, bool useStartPos = false)
     {
+        if (currentMap != null)
+        {
+            selection.RescaleObjectText(currentMap.map[selection.posOnMap.x, selection.posOnMap.y].gameObject);   
+        }
+
         currentMap = map;
         if (useStartPos)
         {
