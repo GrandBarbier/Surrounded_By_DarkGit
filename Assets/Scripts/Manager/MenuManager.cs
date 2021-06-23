@@ -121,6 +121,8 @@ public class MenuManager : MonoBehaviour
         playButton?.onClick.AddListener(() => Time.timeScale = 1f);
         playButton?.onClick.AddListener(() => StartCoroutine(LevelManager.LoadAsyncScene(1)));//() => LevelManager.LoadScene(1));
         quitButton?.onClick.AddListener(() => Application.Quit());
+        
+        pauseMenuAction = context => Pause();
     }
 
     void Start()
@@ -223,6 +225,11 @@ public class MenuManager : MonoBehaviour
 
     public void SetCurrentMenuMap(PanelMap map, Vector2Int pos, bool useStartPos = false)
     {
+        if (currentMap != null)
+        {
+            selection.RescaleObjectText(currentMap.map[selection.posOnMap.x, selection.posOnMap.y].gameObject);   
+        }
+
         currentMap = map;
         if (useStartPos)
         {
@@ -279,13 +286,20 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void EnablePause()
+    public void EnablePause(bool enable = true)
     {
         //Action<InputAction.CallbackContext> action = context => Pause();
-        pauseMenuAction = context => Pause();
-        
-        Gears.gears.playerInput.actions["Escape"].performed += pauseMenuAction;
-        Gears.gears.playerInput.actions["EscapeMenu"].performed += pauseMenuAction;
+
+        if (enable)
+        {
+            Gears.gears.playerInput.actions["Escape"].performed += pauseMenuAction;
+            Gears.gears.playerInput.actions["EscapeMenu"].performed += pauseMenuAction;
+        }
+        else
+        {
+            Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
+            Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
+        }
 
         // LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Escape"].performed -= action;
         // LevelManager.preLoadingScene += () =>  Gears.gears.playerInput.actions["EscapeMenu"].performed -= action;
@@ -295,8 +309,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Gears.gears.playerInput != null)
         {
-            Gears.gears.playerInput.actions["Escape"].performed -= pauseMenuAction;
-            Gears.gears.playerInput.actions["EscapeMenu"].performed -= pauseMenuAction;
+            EnablePause(false);
         }
     }
 
