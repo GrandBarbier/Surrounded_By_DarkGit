@@ -155,7 +155,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             blackPanel?.gameObject?.SetActive(false);
-            GoToPanel(mainMenu);
+            GoToPanel(mainMenu, rescaleSelection: false);
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
             Time.timeScale = 0f;
@@ -165,7 +165,7 @@ public class MenuManager : MonoBehaviour
         pause = !pause;
     }
 
-    public void GoToPanel(Menu menuToGo, bool useStartPos = false, Menu menuToGoBackButton = null, UnityAction backButtonAction = null, PanelMap panelMap = null, bool hideArrow = false)
+    public void GoToPanel(Menu menuToGo, bool useStartPos = false, Menu menuToGoBackButton = null, UnityAction backButtonAction = null, bool hideArrow = false, bool rescaleSelection = true)
     { 
         HideAllPanel();
         
@@ -192,15 +192,8 @@ public class MenuManager : MonoBehaviour
             selection.arrow.gameObject.SetActive(true);
         }
 
-        if (panelMap != null)
-        {
-            SetCurrentMenuMap(panelMap,  Vector2Int.zero, useStartPos);
-        }
-        else
-        {
-            //currentMap = PanelMaps[menuToGo.panelMapIndex];
-            SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos), Vector2Int.zero, useStartPos);
-        }
+        //currentMap = PanelMaps[menuToGo.panelMapIndex];
+        SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos), Vector2Int.zero, useStartPos, rescaleSelection);
     }
     
     public void GoToPanelIndex(int index)
@@ -223,9 +216,10 @@ public class MenuManager : MonoBehaviour
         SetCurrentMenuMap(ConvertListToPanelMap(menuToGo.menuMap, menuToGo.startPos), new Vector2Int(0, 0));
     }
 
-    public void SetCurrentMenuMap(PanelMap map, Vector2Int pos, bool useStartPos = false)
+    public void SetCurrentMenuMap(PanelMap map, Vector2Int pos, bool useStartPos = false, bool rescaleSelection = true)
     {
-        if (currentMap != null)
+        //Rescale button before changing map
+        if (currentMap != null && rescaleSelection)
         {
             selection.RescaleObjectText(currentMap.map[selection.posOnMap.x, selection.posOnMap.y].gameObject);   
         }

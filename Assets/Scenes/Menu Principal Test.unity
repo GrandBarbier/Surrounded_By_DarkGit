@@ -4844,7 +4844,7 @@ MonoBehaviour:
     - list:
       - {fileID: 1462368396}
   - panel: {fileID: 759247570}
-    startPos: {x: 0, y: 0}
+    startPos: {x: 0, y: 1}
     useBackButton: 1
     index: 6
     menuBackButtonIndex: 1

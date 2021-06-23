@@ -99,17 +99,17 @@ public class SelectionUI : MonoBehaviour
                     if (menuManager.currentMap.map[i, j] != null && (MenuManager.ObjectUnderCursor() == menuManager.currentMap.map[i, j].gameObject || 
                                                                      MenuManager.ObjectUnderCursor().transform.parent.gameObject == menuManager.currentMap.map[i, j].gameObject))
                     {
+                        // if (Input.GetButtonDown("Fire1"))
+                        // {
+                        //     RescaleObjectText(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject);
+                        // }
+                        
                         //if selection is not on the object under cursor set selection to the object under cursor
                         if (posOnMap != new Vector2Int(i, j))
                         {
                             RescaleObjectText(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject);
                             posOnMap = new Vector2Int(i, j);
                             UpdateDisplayScalePosition();
-                        }
-
-                        if (Input.GetButtonDown("Fire1"))
-                        {
-                            RescaleObjectText(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject);
                         }
                     }
                 }
@@ -135,7 +135,7 @@ public class SelectionUI : MonoBehaviour
             go.transform.localScale /= textScaleMulti;
             
             // Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Down :  " + 
-            //            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
+            //                   menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
         }
     }
 
