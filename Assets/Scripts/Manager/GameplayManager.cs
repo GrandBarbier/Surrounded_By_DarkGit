@@ -36,6 +36,8 @@ public class GameplayManager : MonoBehaviour
     public void Death()
     {
         Debug.Log("Death");
+        
+        Gears.gears.menuManager.EnablePause(false);
 
         StartCoroutine(LevelManager.FadeDuration(Gears.gears.menuManager.blackPanel, new Color(0f, 0f, 0f, 0f),
             new Color(0f, 0f, 0f, 1f), 0.8f, onComplete: DeathEffect));
