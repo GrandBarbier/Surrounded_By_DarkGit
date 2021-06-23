@@ -16,7 +16,6 @@ public class LevelManager
        
       for (float t = 0f; t < duration; t += Time.deltaTime) 
       {
-         Debug.Log("OUI");
          float normalizedTime = t/duration;
 
          if (image)
