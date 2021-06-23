@@ -17,7 +17,7 @@ public class pushBox : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("tag touché par trigger player : " + other.gameObject.tag);
+        //Debug.Log("tag touché par trigger player : " + other.gameObject.tag);
         if (other.gameObject.CompareTag("sideBox"))
         {
             Debug.Log("tag detected");

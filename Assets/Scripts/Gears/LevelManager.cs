@@ -10,13 +10,11 @@ public class LevelManager
    public static Action preLoadingScene;
    public static IEnumerator FadeDuration(Image image, Color start, Color end, float duration, bool setActiveFalse = true, Action onComplete = null)
    {
-     
       image.gameObject.SetActive(true);
       image.color = start;
        
       for (float t = 0f; t < duration; t += Time.deltaTime) 
       {
-         Debug.Log("OUI");
          float normalizedTime = t/duration;
 
          if (image)

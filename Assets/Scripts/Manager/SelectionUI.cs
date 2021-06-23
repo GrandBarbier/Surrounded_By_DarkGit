@@ -141,7 +141,9 @@ public class SelectionUI : MonoBehaviour
         if (MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, useParent: true).Capacity > 0)
         {
             menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale /= textScaleMulti;
-            //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale);
+            
+            // Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " new Scale :  " + 
+            //            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
         }
         
         if (menuManager.currentMap.map[posOnMap.x, posOnMap.y].TryGetComponent(out Button button) && button != null)
