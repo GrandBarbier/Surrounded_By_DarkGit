@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>SFX</value>
 		</property>
+		<relationship name="masters">
+			<destination>{729504d6-580d-4868-a969-55417bdef0e8}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{644c664d-4d97-468a-8f45-d7530d9c5536}</destination>
 		</relationship>
@@ -11,7 +14,7 @@
 			<destination>{5c69910f-ec09-4769-8cd3-e29720c0728c}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{1e5daba5-f4c8-4196-b333-e9465619993f}</destination>
+			<destination>{86a1f4a3-7514-428b-b3d9-ad1b269f7191}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{644c664d-4d97-468a-8f45-d7530d9c5536}">
