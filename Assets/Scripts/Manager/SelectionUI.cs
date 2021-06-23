@@ -134,8 +134,8 @@ public class SelectionUI : MonoBehaviour
             //Debug.LogWarning("Rescale text");
             go.transform.localScale /= textScaleMulti;
             
-            Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Down :  " + 
-                       menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
+            // Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Down :  " + 
+            //            menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
         }
     }
 
@@ -275,8 +275,8 @@ public class SelectionUI : MonoBehaviour
         {
             rectTransform.transform.localScale *= textScaleMulti;
             
-            Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Up:  " + 
-                              menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
+            // Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Up:  " + 
+            //                   menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
         }
 
         Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);
@@ -307,7 +307,7 @@ public class SelectionUI : MonoBehaviour
                 {
                     TextMeshProUGUI textMeshPro = textMeshPros[0];
 
-                    arrowPosX = textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f * adaptScale.x * 0.65f;
+                    arrowPosX = textMeshPro.text.ToCharArray().ToList().Capacity * textMeshPro.fontSize / 2f * adaptScale.x * 0.5f;
                 
                     /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
                               + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 

@@ -4626,6 +4626,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5799244732871466335, guid: 0cf7c6693481e8e488a60d9cd90de19c, type: 3}
   m_PrefabInstance: {fileID: 5799244732602006732}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1153960363 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5799244732871466328, guid: 0cf7c6693481e8e488a60d9cd90de19c, type: 3}
+  m_PrefabInstance: {fileID: 5799244732602006732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1153960365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4807,6 +4812,8 @@ MonoBehaviour:
     - list:
       - {fileID: 1462368396}
       - {fileID: 655472187}
+      - {fileID: 1153960363}
+      - {fileID: 1253245858}
   resumeButton: {fileID: 0}
   parameterButton: {fileID: 1798291876}
   saveButton: {fileID: 788321536}
@@ -4998,6 +5005,11 @@ CanvasRenderer:
 --- !u!1 &1253245857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5799244732720722672, guid: 0cf7c6693481e8e488a60d9cd90de19c, type: 3}
+  m_PrefabInstance: {fileID: 5799244732602006732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1253245858 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5799244732720722673, guid: 0cf7c6693481e8e488a60d9cd90de19c, type: 3}
   m_PrefabInstance: {fileID: 5799244732602006732}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1253245860
@@ -8269,6 +8281,7 @@ MonoBehaviour:
   menuManager: {fileID: 1179053481}
   scaleMultiplierX: 1.15
   scaleMultiplierY: 1.4
+  arrowScaleMulty: 0.25
   textScaleMulti: 1.1
   posOnMap: {x: 3, y: 4}
   idleColor: {r: 1, g: 0, b: 0, a: 0.39215687}
@@ -9293,7 +9306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: Any Key
 --- !u!114 &690190893921395024
 MonoBehaviour:
   m_ObjectHideFlags: 0
