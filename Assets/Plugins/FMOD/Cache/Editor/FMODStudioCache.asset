@@ -133,7 +133,7 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637600447482632325
+  lastModified: 637600373159001704
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -149,15 +149,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/FootSteps/Stone
   m_EditorClassIdentifier: 
-  Name: Stone
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
---- !u!114 &7735621471509532153
+  EditorBanks:
+  - {fileID: 1086213715510296601}
+  - {fileID: -95434345761180630}
+  EditorEvents:
+  - {fileID: -7508146765685315891}
+  - {fileID: -3179364614129400183}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -95434345761180630}
+  StringsBanks:
+  - {fileID: 1086213715510296601}
+  stringsBankWriteTime: 637600373159001704
+  cacheVersion: 6
+--- !u!114 &1086213715510296601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,11 +174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/FootSteps/Water
   m_EditorClassIdentifier: 
-  Name: Water
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
+  Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637600373159001704
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 796
   Exists: 1
