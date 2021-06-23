@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,9 +14,11 @@ public class InGameToolTip : MonoBehaviour
 
     public bool playerClose;
 
+    public bool _done;
+
     void Start()
     {
-        action.action.performed += context => TryDestruction(gameObject);
+        action.action.performed += context => TryDone();
     }
     
     void Update()
@@ -23,14 +26,51 @@ public class InGameToolTip : MonoBehaviour
         
     }
 
-    public void TryDestruction(GameObject go)
+    public void TryDone()
     {
-        Debug.LogWarning("TryDestruct");
-        
         if (playerClose)
         {
-            Destroy(go);
+            _done = true;
         }
+    }
+    
+    public static IEnumerator FadeDuration(object obj, Color start, Color end, float duration, bool setActiveFalse = true, Action onComplete = null)
+    {
+        switch (obj)
+        {
+            case TextMeshProUGUI text :
+                text.gameObject.SetActive(true);
+                text.color = start;
+                
+                for (float t = 0f; t < duration; t += Time.deltaTime) 
+                {
+                    float normalizedTime = t/duration;
+
+                    if (text)
+                    {
+                        text.color = Color.Lerp(start, end, normalizedTime);
+                    }
+                    else
+                    {
+                        break;
+                    }
+         
+                    yield return null;
+                }
+                
+                if (text)
+                {
+                    text.color = end;
+
+                    if (setActiveFalse)
+                    {
+                        text.gameObject.SetActive(false);
+                    }
+                }
+                break;
+        }
+
+        onComplete?.Invoke();
     }
 
     public void OnTriggerEnter(Collider collider)
@@ -38,7 +78,9 @@ public class InGameToolTip : MonoBehaviour
         if (collider.tag == "Player")
         {
             playerClose = true;
-            TextMeshPro?.gameObject.SetActive(true);
+            
+            StartCoroutine(FadeDuration(TextMeshPro, 
+                new Color(TextMeshPro.color.r, TextMeshPro.color.g, TextMeshPro.color.b, 0), TextMeshPro.color, 0.5f, false));
         }
     }
     
@@ -47,7 +89,17 @@ public class InGameToolTip : MonoBehaviour
         if (collider.tag == "Player")
         {
             playerClose = false;
-            TextMeshPro?.gameObject.SetActive(false);
+
+            if (_done)
+            {
+                StartCoroutine(FadeDuration(TextMeshPro, TextMeshPro.color, 
+                    new Color(TextMeshPro.color.r, TextMeshPro.color.g, TextMeshPro.color.b, 0), 0.5f, false, () => Destroy(gameObject)));
+            }
+            else
+            {
+                StartCoroutine(FadeDuration(TextMeshPro, TextMeshPro.color, 
+                    new Color(TextMeshPro.color.r, TextMeshPro.color.g, TextMeshPro.color.b, 0), 0.5f, false));
+            }
         }
     }
 }
