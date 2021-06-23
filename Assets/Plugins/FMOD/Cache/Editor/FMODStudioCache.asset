@@ -61,7 +61,7 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637599712071687183
+  lastModified: 637599594721627290
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -88,7 +88,7 @@ MonoBehaviour:
   - {fileID: -95434345761180630}
   StringsBanks:
   - {fileID: 1086213715510296601}
-  stringsBankWriteTime: 637599712073331003
+  stringsBankWriteTime: 637599594721557488
   cacheVersion: 6
 --- !u!114 &1086213715510296601
 MonoBehaviour:
@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637599712073331003
+  lastModified: 637599594721557488
   LoadResult: 0
   FileSizes:
   - Name: Desktop
