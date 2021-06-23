@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{05e83692-790b-483a-9a4d-8ad93dcaaec9}">
+		<property name="name">
+			<value>WindBGM</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d9f41bd8-3bb7-4bee-8360-107fbe8c9970}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{81376d67-d39f-489c-a800-7475472c0099}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{81376d67-d39f-489c-a800-7475472c0099}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
