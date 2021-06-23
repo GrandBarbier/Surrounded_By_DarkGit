@@ -8,6 +8,9 @@ public class FireWind : MonoBehaviour
     private  ParticleSystem.VelocityOverLifetimeModule vel_1;
     private  ParticleSystem.VelocityOverLifetimeModule vel_2;
 
+    public float forceToExtinguish;
+    public GameObject light;
+
     public Vector3 velocity;
 
     public float fireMultiplier = 1;
@@ -44,5 +47,11 @@ public class FireWind : MonoBehaviour
         vel_2.x = new ParticleSystem.MinMaxCurve(velocity.x * embersMultiplier);
         vel_2.y = new ParticleSystem.MinMaxCurve(velocity.y * embersMultiplier);
         vel_2.z = new ParticleSystem.MinMaxCurve(velocity.z * embersMultiplier);
+
+        if (velocity.x > forceToExtinguish || velocity.y > forceToExtinguish || velocity.z > forceToExtinguish)
+        {
+            gameObject.SetActive(false);
+            light.SetActive(false);
+        }
     }
 }
