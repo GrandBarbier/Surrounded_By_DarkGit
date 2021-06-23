@@ -46,9 +46,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "PoseTorch",
+                    "name": "DropTorch",
                     "type": "Button",
                     "id": "45ef7214-d708-4225-bde0-79024164f0ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LightUpTorch",
+                    "type": "Button",
+                    "id": "a714fce7-4f76-4d47-b7cb-b802fdf0a148",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -58,7 +66,7 @@
                 {
                     "name": "",
                     "id": "9b8f75a2-fec4-4664-8e50-e3cac233d7af",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -249,7 +257,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PoseTorch",
+                    "action": "DropTorch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -260,7 +268,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PoseTorch",
+                    "action": "DropTorch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -283,6 +291,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "CameraMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aac3e915-eb7f-431c-8750-b3a2ef9e9251",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightUpTorch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac45bc0a-01a6-4990-8977-4cadda37fa90",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightUpTorch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

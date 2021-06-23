@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8124047099729239706
+--- !u!114 &-7508146765685315891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Waterfall
   guid: 57c01f88cab7d94899d729b39696a39b
   Banks:
-  - {fileID: -2872704905965676588}
+  - {fileID: -95434345761180630}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16968
---- !u!114 &-7219872593899162085
+--- !u!114 &-3179364614129400183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,49 +32,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Brasero
   m_EditorClassIdentifier: 
-  Path: ../../_EARSTUP2021/SBD/fmod/SBDFMODbank/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637599564535822942
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &-5070866905518093110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../_EARSTUP2021/SBD/fmod/SBDFMODbank/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637599564535842889
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 744
-  Exists: 0
---- !u!114 &-2872704905965676588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
@@ -83,6 +44,20 @@ MonoBehaviour:
   FileSizes: []
   Exists: 1
 --- !u!114 &-1530450198871750249
+=======
+  Path: event:/Brasero
+  guid: b08c8f0cc0349041ab5d365199811860
+  Banks:
+  - {fileID: -95434345761180630}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 41000
+--- !u!114 &-95434345761180630
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,10 +72,11 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637599564535822942
+  lastModified: 637599594721627290
   LoadResult: 0
   FileSizes: []
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &-1345194932634194740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +98,8 @@ MonoBehaviour:
   - Name: Desktop
     Value: 796
   Exists: 1
+=======
+>>>>>>> main
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,42 +113,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1345194932634194740}
-  - {fileID: -2872704905965676588}
+  - {fileID: 1086213715510296601}
+  - {fileID: -95434345761180630}
   EditorEvents:
-  - {fileID: -8124047099729239706}
-  - {fileID: 841606569904243665}
+  - {fileID: -7508146765685315891}
+  - {fileID: -3179364614129400183}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -2872704905965676588}
+  - {fileID: -95434345761180630}
   StringsBanks:
+<<<<<<< HEAD
   - {fileID: -1345194932634194740}
   stringsBankWriteTime: 637599592765599537
+=======
+  - {fileID: 1086213715510296601}
+  stringsBankWriteTime: 637599594721557488
+>>>>>>> main
   cacheVersion: 6
---- !u!114 &841606569904243665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Brasero
-  m_EditorClassIdentifier: 
-  Path: event:/Brasero
-  guid: b08c8f0cc0349041ab5d365199811860
-  Banks:
-  - {fileID: -2872704905965676588}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 41000
---- !u!114 &1579895983569252899
+--- !u!114 &1086213715510296601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,32 +145,9 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637599564535842889
+  lastModified: 637599594721557488
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 744
+    Value: 796
   Exists: 1
---- !u!114 &6438410857714015963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Brasero
-  m_EditorClassIdentifier: 
-  Path: event:/Brasero
-  guid: b08c8f0cc0349041ab5d365199811860
-  Banks:
-  - {fileID: -1530450198871750249}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 41000
