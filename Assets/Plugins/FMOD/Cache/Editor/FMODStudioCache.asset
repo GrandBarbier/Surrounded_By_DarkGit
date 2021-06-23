@@ -15,11 +15,11 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637600446303232991
+  lastModified: 637600447482652273
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 892
+    Value: 932
   Exists: 1
 --- !u!114 &-5164607572357041558
 MonoBehaviour:
@@ -44,6 +44,31 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16968
+--- !u!114 &-2201846714956981111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FootSteps
+  m_EditorClassIdentifier: 
+  Path: event:/FootSteps
+  guid: e9f275a4b9dd984c912218a67983e00d
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7735621471509532153}
+  - {fileID: 4652159028655756440}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 786
 --- !u!114 &-300263932285301937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,12 +110,13 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5164607572357041558}
   - {fileID: -300263932285301937}
+  - {fileID: -2201846714956981111}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1080409926957735465}
   StringsBanks:
   - {fileID: -5250188698495205214}
-  stringsBankWriteTime: 637600446303232991
+  stringsBankWriteTime: 637600447482652273
   cacheVersion: 6
 --- !u!114 &1080409926957735465
 MonoBehaviour:
@@ -107,7 +133,47 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637600446303213016
+  lastModified: 637600447482632325
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &4652159028655756440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Stone
+  m_EditorClassIdentifier: 
+  Name: Stone
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7735621471509532153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Water
+  m_EditorClassIdentifier: 
+  Name: Water
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
