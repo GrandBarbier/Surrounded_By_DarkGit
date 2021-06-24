@@ -65,7 +65,7 @@ public class SelectionUI : MonoBehaviour
         
         triggerSelectionAction = context => TriggerSelection();
         moveMapPositionAction = context => MoveMapPosition(new Vector2Int((int) context.ReadValue<Vector2>().x, (int) context.ReadValue<Vector2>().y));
-        moveSliderAction = context => MoveSlider(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, context.ReadValue<Vector2>().x, 0.2f);
+        moveSliderAction = context => MoveSlider(menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject, context.ReadValue<Vector2>().x, 0.1f);
 
         Gears.gears.playerInput.actions["Enter"].performed += triggerSelectionAction;
         //Gears.gears.playerInput.actions["MoveMenu"].performed += action2;
@@ -124,6 +124,7 @@ public class SelectionUI : MonoBehaviour
         if (sliders.Capacity > 0)
         {
             sliders[0].value += addedValue * multiply;
+            sliders[0].value = Mathf.Clamp(sliders[0].value, 0f, 1f);
         }
     }
 
@@ -262,7 +263,7 @@ public class SelectionUI : MonoBehaviour
         }
     }
     
-    public void UpdateDisplayScalePosition()
+    public void UpdateDisplayScalePosition(bool scaleSelection = true)
     {
         //Debug.Log(menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
         //Debug.Log(transform.parent + " pos On Map : " + menuManager.currentMap.map[posOnMap.x, posOnMap.y]);
@@ -271,12 +272,12 @@ public class SelectionUI : MonoBehaviour
         List<TextMeshProUGUI> textMeshPros = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(rectTransform.gameObject, useParent: true);
         List<Slider> sliders = MenuManager.GetAllComponentInChilds<Slider>(rectTransform.gameObject, useParent: true);
 
-        if (rectTransform != null && textMeshPros.Capacity > 0)
+        if (rectTransform != null && textMeshPros.Capacity > 0 && scaleSelection)
         {
             rectTransform.transform.localScale *= textScaleMulti;
             
-            // Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Up:  " + 
-            //                   menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
+            Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Up:  " + 
+                              menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
         }
 
         Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);
@@ -306,12 +307,10 @@ public class SelectionUI : MonoBehaviour
                 if (placeArrowOnText && textMeshPros.Capacity > 0)
                 {
                     TextMeshProUGUI textMeshPro = textMeshPros[0];
-
+                    
                     arrowPosX = textMeshPro.bounds.size.x / 2f * adaptScale.x * Screen.width * 0.0008f;
 
-                    /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
-                              + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 
-                              " = " + sizeDeltaX);*/
+                    //Debug.Log(arrowPosX + " = " + textMeshPro.bounds.size.x + " /2 * " + adaptScale.x + " * " + Screen.width * 0.0008f);
                 }
                 else
                 {
