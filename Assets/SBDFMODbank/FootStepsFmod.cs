@@ -8,12 +8,12 @@ public class Footsteps : MonoBehaviour
     [FMODUnity.EventRef]
     public string InputFootsteps;
     FMOD.Studio.EventInstance FootstepsEvent;
-    FMOD.Studio.ParameterInstance WoodParameter;
-    FMOD.Studio.ParameterInstance MetalParameter;
-    FMOD.Studio.ParameterInstance GrassParameter;
+    //FMOD.Studio.ParameterInstance WoodParameter;
+    //FMOD.Studio.ParameterInstance MetalParameter;
+    //FMOD.Studio.ParameterInstance GrassParameter;
 
     bool playerismoving;
-    public float walking speed
+    public float walkingspeed;
      private float WoodValue;
     private float MetalValue;
     private float GrassValue;
@@ -22,18 +22,18 @@ public class Footsteps : MonoBehaviour
     void Start()
     {
         FootstepsEvent = FMODUnity.RuntimeManager.CreateInstance(InputFootsteps);
-        FootstepsEvent.getParameter("Wood", out WoodParameter);
-        FootstepsEvent.getParameter("Metal", out MetalParameter);
-        FootstepsEvent.getParameter("Grass", out GrassParameter);
+        //FootstepsEvent.getParameter("Wood", out WoodParameter);
+        //FootstepsEvent.getParameter("Metal", out MetalParameter);
+        //FootstepsEvent.getParameter("Grass", out GrassParameter);
 
         InvokeRepeating("CallFootsteps", 0, walkingspeed);
     }
 
     void Update()
     {
-        WoodParameter.setValue(WoodValue);
-        MetalParameter.setValue(MetalValue);
-        GrassParameter.setValue(GrassValue);
+        //WoodParameter.setValue(WoodValue);
+        //MetalParameter.setValue(MetalValue);
+        //GrassParameter.setValue(GrassValue);
 
         if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
         {
