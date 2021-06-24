@@ -229,6 +229,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-7836268020502342908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LandingWater
+  m_EditorClassIdentifier: 
+  Path: event:/LandingWater
+  guid: 2d1180e58009e84e93f998790a18f427
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1088
 --- !u!114 &-7578575063522804717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +593,11 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 637601322591477134
+=======
+  lastModified: 637601319050125046
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -722,7 +749,11 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+<<<<<<< Updated upstream
 --- !u!114 &-3807250246282052394
+=======
+--- !u!114 &-4291037149863677497
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,6 +763,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< Updated upstream
   m_Name: event:/WindAMB
   m_EditorClassIdentifier: 
   Path: event:/WindAMB
@@ -745,6 +777,41 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 80170
+=======
+  m_Name: event:/LandingStone
+  m_EditorClassIdentifier: 
+  Path: event:/LandingStone
+  guid: 9295950bc4f9414b980c270c9c0d9e56
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 656
+--- !u!114 &-4147783461608603683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Stone
+  m_EditorClassIdentifier: 
+  Name: Stone
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+>>>>>>> Stashed changes
 --- !u!114 &-3712460316060542251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +832,29 @@ MonoBehaviour:
     data1: 2058305336
     data2: 3848707006
   Exists: 0
+--- !u!114 &-3682944302105170261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Lever
+  m_EditorClassIdentifier: 
+  Path: event:/Lever
+  guid: fd6d13962679044e9afba89ca7119e01
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2893
 --- !u!114 &-3583060315189365957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,8 +995,13 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 2568263057076204282}
   - {fileID: -5374563441096436878}
+=======
+  - {fileID: -1814538784421350858}
+  - {fileID: -4147783461608603683}
+>>>>>>> Stashed changes
   MinDistance: 1
   MaxDistance: 20
   Length: 786
@@ -930,6 +1025,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-1814538784421350858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Water
+  m_EditorClassIdentifier: 
+  Name: Water
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1813408199485540328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,7 +1085,34 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+<<<<<<< Updated upstream
 --- !u!114 &-1733701367876413324
+=======
+--- !u!114 &-1607864362052457648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FireIgnition
+  m_EditorClassIdentifier: 
+  Path: event:/FireIgnition
+  guid: 4d46e1dd02941f46a1cb7496933548ee
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1570
+--- !u!114 &-1293087419067622077
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -980,9 +1122,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+<<<<<<< Updated upstream
   m_Name: parameter:/BGM_Darkness/Darkness
   m_EditorClassIdentifier: 
   Name: Darkness
+=======
+  m_Name: parameter:/Music/MazeWind
+  m_EditorClassIdentifier: 
+  Name: MazeWind
+>>>>>>> Stashed changes
   Min: 0
   Max: 1
   Default: 0
@@ -990,7 +1138,11 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &-847518027686933789
+=======
+--- !u!114 &-1058010917937539810
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1100,12 +1252,25 @@ MonoBehaviour:
   - {fileID: 1921793005603953715}
   - {fileID: 1647615358211715077}
   - {fileID: 6950857859960495767}
+  - {fileID: 5769923502107602685}
+  - {fileID: -7836268020502342908}
+  - {fileID: 3578153140846960502}
+  - {fileID: -1607864362052457648}
+  - {fileID: 4288581551629097470}
+  - {fileID: 2554700363274182852}
+  - {fileID: 4096953113163855107}
+  - {fileID: -4291037149863677497}
+  - {fileID: -3682944302105170261}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1080409926957735465}
   StringsBanks:
   - {fileID: -5250188698495205214}
+<<<<<<< Updated upstream
   stringsBankWriteTime: 637601322591477134
+=======
+  stringsBankWriteTime: 637601319050125046
+>>>>>>> Stashed changes
   cacheVersion: 6
 --- !u!114 &103139561582586714
 MonoBehaviour:
@@ -1242,7 +1407,11 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 637601322593330642
+=======
+  lastModified: 637601319052073107
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1446,7 +1615,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: -1733701367876413324}
+=======
+  - {fileID: 6821325167668802362}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 63650
@@ -1493,6 +1666,7 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+<<<<<<< Updated upstream
 --- !u!114 &2241455252892463379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,6 +1714,9 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 2812
 --- !u!114 &2568263057076204282
+=======
+--- !u!114 &2133962402386188890
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1549,9 +1726,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+<<<<<<< Updated upstream
   m_Name: parameter:/FootSteps/Water
   m_EditorClassIdentifier: 
   Name: Water
+=======
+  m_Name: parameter:/Music/WaterMaze
+  m_EditorClassIdentifier: 
+  Name: WaterMaze
+>>>>>>> Stashed changes
   Min: 0
   Max: 1
   Default: 0
@@ -1559,6 +1742,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &2554700363274182852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door
+  m_EditorClassIdentifier: 
+  Path: event:/Door
+  guid: 5878cb43124dfb4a85dc3fdf9ed82a02
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2812
 --- !u!114 &2889230699509319845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,7 +1865,11 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &3802485178952923450
+=======
+--- !u!114 &3578153140846960502
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1669,10 +1879,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< Updated upstream
   m_Name: event:/LandingStone
   m_EditorClassIdentifier: 
   Path: event:/LandingStone
   guid: 9295950bc4f9414b980c270c9c0d9e56
+=======
+  m_Name: event:/Jaw
+  m_EditorClassIdentifier: 
+  Path: event:/Jaw
+  guid: 367e5fe123a2e1438033bdcaf778aecd
+>>>>>>> Stashed changes
   Banks:
   - {fileID: 1080409926957735465}
   IsStream: 0
@@ -1681,7 +1898,11 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< Updated upstream
   Length: 656
+=======
+  Length: 5074
+>>>>>>> Stashed changes
 --- !u!114 &3835883884045485549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,6 +2003,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &4096953113163855107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FireExtinction
+  m_EditorClassIdentifier: 
+  Path: event:/FireExtinction
+  guid: 5aecf6472719664a9cce428b3f3f30ea
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1575
 --- !u!114 &4144897044802487013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,6 +2046,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &4288581551629097470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cube
+  m_EditorClassIdentifier: 
+  Path: event:/Cube
+  guid: 4d9a0004a8c5cb41901a1c4a264175a0
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7625
 --- !u!114 &4403297669584334103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,7 +2312,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 8330581708987363040}
+=======
+  - {fileID: 8308091107895901245}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 128000
@@ -2069,7 +2340,11 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+<<<<<<< Updated upstream
 --- !u!114 &5832967215616893611
+=======
+--- !u!114 &5769923502107602685
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2078,6 +2353,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/FootSteps/Stone
   m_EditorClassIdentifier: 
@@ -2090,6 +2366,23 @@ MonoBehaviour:
     data2: 0
   Exists: 1
 --- !u!114 &6281298474551498751
+=======
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/WindAMB
+  m_EditorClassIdentifier: 
+  Path: event:/WindAMB
+  guid: 2188ae062ad34d4aaa53ed56fb022469
+  Banks:
+  - {fileID: 1080409926957735465}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80170
+--- !u!114 &6821325167668802362
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2099,9 +2392,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+<<<<<<< Updated upstream
   m_Name: parameter:/Music/WaterMaze
   m_EditorClassIdentifier: 
   Name: WaterMaze
+=======
+  m_Name: parameter:/BGM_Darkness/Darkness
+  m_EditorClassIdentifier: 
+  Name: Darkness
+>>>>>>> Stashed changes
   Min: 0
   Max: 1
   Default: 0
@@ -2212,9 +2511,15 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 6281298474551498751}
   - {fileID: 7798206470654362359}
   - {fileID: -2963477989061651431}
+=======
+  - {fileID: 2133962402386188890}
+  - {fileID: -1058010917937539810}
+  - {fileID: -1293087419067622077}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 352000
@@ -2441,7 +2746,11 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+<<<<<<< Updated upstream
 --- !u!114 &8330581708987363040
+=======
+--- !u!114 &8308091107895901245
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
