@@ -10,7 +10,7 @@ public class SetTextLanguage : MonoBehaviour
     
     void Start()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        text = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(gameObject, useParent: true)[0];
         SetText();
         LanguageSystem.setLanguageEvent += SetText;
     }
@@ -22,6 +22,10 @@ public class SetTextLanguage : MonoBehaviour
 
     public void SetText()
     {
-        text.text = LanguageSystem.outputData[id];
+        if (text != null && LanguageSystem.outputData.Length > id)
+        {
+             text.text = LanguageSystem.outputData[id];
+        }
+      
     }
 }

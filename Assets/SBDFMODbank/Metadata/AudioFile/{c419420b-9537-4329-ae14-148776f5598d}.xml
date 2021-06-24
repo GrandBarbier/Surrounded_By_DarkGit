@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{c419420b-9537-4329-ae14-148776f5598d}">
+		<property name="assetPath">
+			<value>Props_Bloc_Drag.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.9039999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{09b586e7-f332-40af-82b4-14632c677f1a}</destination>
+		</relationship>
+	</object>
+</objects>

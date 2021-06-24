@@ -41,7 +41,7 @@ public static class LanguageSystem
                   break;
           }
 
-          int nbrOfWord = 4;
+          int nbrOfWord = 12;
           
           outputData = new string[nbrOfWord];
           

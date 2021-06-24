@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 5799244732017620761}
   - component: {fileID: 5799244732017620763}
   - component: {fileID: 5799244732017620762}
+  - component: {fileID: 6785162283374513531}
   m_Layer: 5
   m_Name: MusicText
   m_TagString: Untagged
@@ -419,6 +420,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6785162283374513531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799244732017620760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ca1ea4053d795489375b14f531b466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 10
+  text: {fileID: 0}
 --- !u!1 &5799244732147676919
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +932,7 @@ GameObject:
   - component: {fileID: 5799244732781666177}
   - component: {fileID: 5799244732781666179}
   - component: {fileID: 5799244732781666178}
+  - component: {fileID: 5067448660054634083}
   m_Layer: 5
   m_Name: EffectText
   m_TagString: Untagged
@@ -1042,6 +1058,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5067448660054634083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799244732781666176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ca1ea4053d795489375b14f531b466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9
+  text: {fileID: 0}
 --- !u!1 &5799244732802038056
 GameObject:
   m_ObjectHideFlags: 0

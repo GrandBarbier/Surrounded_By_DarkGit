@@ -307,8 +307,8 @@ public class SelectionUI : MonoBehaviour
                 {
                     TextMeshProUGUI textMeshPro = textMeshPros[0];
 
-                    arrowPosX = textMeshPro.text.ToCharArray().ToList().Capacity * textMeshPro.fontSize / 2f * adaptScale.x * 0.5f;
-                
+                    arrowPosX = textMeshPro.bounds.size.x / 2f * adaptScale.x * Screen.width * 0.0008f;
+
                     /*Debug.Log(textMeshPro.text.ToCharArray().Count() + " X " + textMeshPro.fontSize + " = " + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize + " /2 = " 
                               + textMeshPro.text.ToCharArray().Count() * textMeshPro.fontSize / 2f + " * " + AdaptScale(textMeshPro.gameObject, textMeshPro.gameObject.transform.localScale).x + 
                               " = " + sizeDeltaX);*/
