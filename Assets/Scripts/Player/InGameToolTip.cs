@@ -30,6 +30,7 @@ public class InGameToolTip : MonoBehaviour
     {
         if (playerClose)
         {
+            Debug.LogWarning("tipsDone");
             _done = true;
         }
     }
@@ -79,8 +80,11 @@ public class InGameToolTip : MonoBehaviour
         {
             playerClose = true;
             
+            StopAllCoroutines();
+            
             StartCoroutine(FadeDuration(TextMeshPro, 
-                new Color(TextMeshPro.color.r, TextMeshPro.color.g, TextMeshPro.color.b, 0), TextMeshPro.color, 0.5f, false));
+                new Color(TextMeshPro.color.r, TextMeshPro.color.g, TextMeshPro.color.b, 0), 
+                new Color(TextMeshPro.color.r, TextMeshPro.color.g, TextMeshPro.color.b, 1), 0.5f, false));
         }
     }
     
@@ -90,6 +94,8 @@ public class InGameToolTip : MonoBehaviour
         {
             playerClose = false;
 
+            StopAllCoroutines();
+            
             if (_done)
             {
                 StartCoroutine(FadeDuration(TextMeshPro, TextMeshPro.color, 
