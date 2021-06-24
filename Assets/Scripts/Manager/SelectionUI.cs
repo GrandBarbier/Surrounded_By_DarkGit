@@ -121,7 +121,7 @@ public class SelectionUI : MonoBehaviour
     {
         List<Slider> sliders = MenuManager.GetAllComponentInChilds<Slider>(go, useParent: true);
         
-        if (sliders.Capacity > 0)
+        if (sliders.Capacity > 0 && Gears.gears.menuManager.pause)
         {
             sliders[0].value += addedValue * multiply;
             sliders[0].value = Mathf.Clamp(sliders[0].value, 0f, 1f);
@@ -276,8 +276,8 @@ public class SelectionUI : MonoBehaviour
         {
             rectTransform.transform.localScale *= textScaleMulti;
             
-            Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Up:  " + 
-                              menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
+            // Debug.LogWarning((menuManager.currentMap.map[posOnMap.x, posOnMap.y].gameObject.name + " Scale Up:  " + 
+            //                   menuManager.currentMap.map[posOnMap.x, posOnMap.y].transform.localScale));
         }
 
         Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);

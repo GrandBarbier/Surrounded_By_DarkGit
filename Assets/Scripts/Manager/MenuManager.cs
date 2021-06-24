@@ -244,7 +244,7 @@ public class MenuManager : MonoBehaviour
 
     public IEnumerator ReUpdateDisplay()
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.01f);
         
         selection.UpdateDisplayScalePosition(false);
     }
