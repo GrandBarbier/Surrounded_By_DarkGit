@@ -6,38 +6,48 @@ using UnityEngine;
 public class triggerValueFMOD : MonoBehaviour
 {
 	public bool musicChanging;
+	public bool end;
 	public bool needsToGoUp;
 	public int trackId;
+	private IEnumerator _musicChange;
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
-			MusicChange();
+		{
+			Debug.Log("début");
+			StartCoroutine(MusicChange());
+			Debug.Log("fin");
+		}
 	}
-	
+
 	public IEnumerator MusicChange() {
-		float delay = 0.2f;
+		float delay = 0.03f;
 		musicChanging = true;
+		Debug.Log("on est la");
 		if (needsToGoUp)
 		{
+			Debug.Log("dddddddddddddddddd");
 			if (trackId == 1)
 			{
+				Debug.Log("ppppppp");
 				while (GetComponentInParent<SetParameterByName>().introWater < 1) {
 					yield return new WaitForSeconds(delay);
-					GetComponentInParent<SetParameterByName>().introWater += 0.1f;
+					GetComponentInParent<SetParameterByName>().introWater += 0.01f;
 				}
 			}
 			else if (trackId == 2)
 			{
 				while (GetComponentInParent<SetParameterByName>().waterMaze < 1) {
 					yield return new WaitForSeconds(delay);
-					GetComponentInParent<SetParameterByName>().waterMaze += 0.1f;
+					GetComponentInParent<SetParameterByName>().waterMaze += 0.01f;
 				}
 			}
 			else if (trackId == 3)
 			{
 				while (GetComponentInParent<SetParameterByName>().mazeWind < 1) {
 					yield return new WaitForSeconds(delay);
-					GetComponentInParent<SetParameterByName>().mazeWind += 0.1f;
+					GetComponentInParent<SetParameterByName>().mazeWind += 0.01f;
 				}
 			}
 		}
@@ -47,21 +57,21 @@ public class triggerValueFMOD : MonoBehaviour
 			{
 				while (GetComponentInParent<SetParameterByName>().introWater > 0) {
 					yield return new WaitForSeconds(delay);
-					GetComponentInParent<SetParameterByName>().introWater -= 0.1f;
+					GetComponentInParent<SetParameterByName>().introWater -= 0.01f;
 				}
 			}
 			else if (trackId == 2)
 			{
 				while (GetComponentInParent<SetParameterByName>().waterMaze > 0) {
 					yield return new WaitForSeconds(delay);
-					GetComponentInParent<SetParameterByName>().waterMaze -= 0.1f;
+					GetComponentInParent<SetParameterByName>().waterMaze -= 0.01f;
 				}
 			}
 			else if (trackId == 3)
 			{
 				while (GetComponentInParent<SetParameterByName>().mazeWind > 0) {
 					yield return new WaitForSeconds(delay);
-					GetComponentInParent<SetParameterByName>().mazeWind -= 0.1f;
+					GetComponentInParent<SetParameterByName>().mazeWind -= 0.01f;
 				}
 			}
 		}
