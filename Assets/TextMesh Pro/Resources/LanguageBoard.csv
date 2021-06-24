@@ -1,5 +1,13 @@
 ID;Français;English;Spanish
 0 : PlayButtonText;Jouer;Play;
 1 : QuitButton;Quitter;Quit;
-2 : InteractionKey;Interaction;Interaction;
+2 : Save;Sauvegarde;Save;
 3 : Resume;Reprendre;Resume;
+4 : Inputs;Touches;Inputs;
+5: Language;Langues;Languages;
+6: Load;Charger;Load;
+7: Browse;Parcourir;Browse;
+8: Path;Chemin;Path;
+9: Effects;Effets;Effects;
+10: Music;Musique;Music;
+11: Loading;Chargement;Loading;
