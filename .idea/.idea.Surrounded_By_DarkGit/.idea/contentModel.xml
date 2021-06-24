@@ -794,7 +794,6 @@
           </e>
           <e p="README.txt" t="Include" />
         </e>
-        <e p="FireWind.cs" t="Include" />
         <e p="Player" t="Include">
           <e p="CapeEmission.shader" t="Include" />
         </e>
@@ -967,21 +966,31 @@
               <e p="{09b586e7-f332-40af-82b4-14632c677f1a}.xml" t="Include" />
             </e>
             <e p="AudioFile" t="Include">
+              <e p="{05a08430-2e86-48bd-b151-291ef1142ad0}.xml" t="Include" />
               <e p="{12b6dba6-c4b1-4efc-84b8-a6ce02944c89}.xml" t="Include" />
               <e p="{1f3527b3-6745-47b1-a905-54dc9d68dea7}.xml" t="Include" />
+              <e p="{3258e441-b2fc-432f-8dd0-27f87b5ae4b2}.xml" t="Include" />
               <e p="{3562bc34-a2f6-49ca-88a1-54727e37ed63}.xml" t="Include" />
+              <e p="{4791b233-847d-4f5b-ae10-5ca683785bee}.xml" t="Include" />
+              <e p="{4aeac8ea-a833-43ea-ab12-e257148ef535}.xml" t="Include" />
               <e p="{4be0281c-732b-421c-92e3-5c9c4da4aa58}.xml" t="Include" />
               <e p="{5a24fd5f-318c-427f-b0c1-d9198b0b707a}.xml" t="Include" />
               <e p="{6d314148-ecc4-402e-9864-9593c80f47f6}.xml" t="Include" />
+              <e p="{761b8868-5c5c-4c83-bde4-3704c192a6ae}.xml" t="Include" />
               <e p="{820fed81-5a4f-45e1-8774-c4c03244f8b8}.xml" t="Include" />
+              <e p="{922ae3fa-536a-4316-a97b-ae35c0566f59}.xml" t="Include" />
               <e p="{ba575d04-2359-4ea9-8bd1-7e933ccc10a0}.xml" t="Include" />
               <e p="{bf108dec-f3d0-4b54-ab7c-9cd41fa877d5}.xml" t="Include" />
+              <e p="{c419420b-9537-4329-ae14-148776f5598d}.xml" t="Include" />
               <e p="{c7a29d0f-99ed-4b71-98b8-b3fddc07e752}.xml" t="Include" />
+              <e p="{ca96fdc2-7e13-482d-b9e9-5996e2088840}.xml" t="Include" />
               <e p="{d06c6662-080c-45ff-bc20-5465bbda6d3f}.xml" t="Include" />
               <e p="{db79e1e6-7ef9-490b-8489-b61cf4f28f19}.xml" t="Include" />
+              <e p="{e76ae9f3-ecad-4881-87d4-379db67b6cba}.xml" t="Include" />
               <e p="{ec3b46e7-002a-4132-916a-0c27501e0cad}.xml" t="Include" />
               <e p="{efa05416-35e2-4440-9c10-fea9c680e936}.xml" t="Include" />
               <e p="{f06ba474-8681-458a-ac21-98e5cddec25d}.xml" t="Include" />
+              <e p="{f5f7fd72-7855-45be-b736-85c34ed36576}.xml" t="Include" />
             </e>
             <e p="Bank" t="Include">
               <e p="{8a595c3d-bb5f-4cf9-a0fe-823ab27d2b1d}.xml" t="Include" />
@@ -996,16 +1005,25 @@
               <e p="{f1e7529a-8caa-491f-946f-3c2394225a52}.xml" t="Include" />
             </e>
             <e p="Event" t="Include">
+              <e p="{04009a4d-c5a8-41cb-901a-1c4a264175a0}.xml" t="Include" />
+              <e p="{06ae8821-d32a-4a4d-aa53-ed56fb022469}.xml" t="Include" />
+              <e p="{0b959592-f9c4-4b41-980c-270c9c0d9e56}.xml" t="Include" />
               <e p="{0c8f8cb0-34c0-4190-ab5d-365199811860}.xml" t="Include" />
               <e p="{208a8323-d051-47fa-b656-8dd27bc653b2}.xml" t="Include" />
               <e p="{303b534b-7a91-4bf6-aa2b-ddc60804c229}.xml" t="Include" />
+              <e p="{43cb7858-4d12-4afb-85dc-3fdf9ed82a02}.xml" t="Include" />
+              <e p="{47f6ec5a-1927-4a66-9cce-428b3f3f30ea}.xml" t="Include" />
               <e p="{61a89aa3-6225-4025-833f-95583a9fa25f}.xml" t="Include" />
               <e p="{76335e38-9448-46e5-9db3-4ace386f62e1}.xml" t="Include" />
               <e p="{881fc057-b7ca-48d9-99d7-29b39696a39b}.xml" t="Include" />
+              <e p="{96136dfd-7926-4e04-9afb-a89ca7119e01}.xml" t="Include" />
               <e p="{a475f2e9-ddb9-4c98-9122-18a67983e00d}.xml" t="Include" />
               <e p="{d8f33a68-0da6-4d8e-b8cd-1b6f72f1f96e}.xml" t="Include" />
               <e p="{dc016ed1-f7e9-43a8-bcfe-e24d71911001}.xml" t="Include" />
               <e p="{dcb3131a-e28d-4ffa-ad39-71628c222542}.xml" t="Include" />
+              <e p="{dde1464d-9402-461f-a1cb-7496933548ee}.xml" t="Include" />
+              <e p="{e15f7e36-a223-43e1-8033-bdcaf778aecd}.xml" t="Include" />
+              <e p="{e580112d-0980-4ee8-93f9-98790a18f427}.xml" t="Include" />
               <e p="{f8e6762c-7015-44a0-9ced-537d3eaeb2bb}.xml" t="Include" />
             </e>
             <e p="EventFolder" t="Include">
@@ -1023,6 +1041,7 @@
               <e p="{121f5dab-ef1b-4e47-b1eb-b3d23a60d35a}.xml" t="Include" />
               <e p="{34e177a0-9375-4e73-8a33-2b0d9986b9ce}.xml" t="Include" />
               <e p="{46aea591-d4cb-4f18-aa96-f4c1f6806cd6}.xml" t="Include" />
+              <e p="{5826a09e-c77f-48d0-ac8c-99b22ca655c3}.xml" t="Include" />
               <e p="{6308c810-ec85-4e56-a306-b54f21984af7}.xml" t="Include" />
               <e p="{6f970ddf-4ea5-44fa-afe1-d30a88a698ad}.xml" t="Include" />
               <e p="{d4d320de-cf56-4f91-b016-a0a76301ae06}.xml" t="Include" />
@@ -1053,6 +1072,7 @@
             </e>
             <e p="Workspace.xml" t="Include" />
           </e>
+          <e p="SetFootstepsSound.cs" t="Include" />
           <e p="SetParameterByName.cs" t="Include" />
           <e p="VCAController.cs" t="Include" />
         </e>
@@ -1061,6 +1081,7 @@
             <e p="FireLight.cs" t="Include" />
             <e p="WindArea.cs" t="Include" />
           </e>
+          <e p="FireWind.cs" t="Include" />
           <e p="Gears" t="Include">
             <e p="Gears.cs" t="Include" />
             <e p="IgnoreMouseOver.cs" t="Include" />
@@ -1107,6 +1128,7 @@
             <e p="FileBrowserTest.cs" t="Include" />
           </e>
           <e p="torchSFX.cs" t="Include" />
+          <e p="triggerValueFMOD.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">
           <e p="BlitMaterialFeature.cs" t="Include" />
@@ -1143,7 +1165,6 @@
             <e p="EmojiOne.json" t="Include" />
           </e>
         </e>
-        <e p="triggerValueFMOD.cs" t="Include" />
         <e p="VFX" t="Include">
           <e p="Cel-Shading" t="Include">
             <e p="Shaders" t="Include">
