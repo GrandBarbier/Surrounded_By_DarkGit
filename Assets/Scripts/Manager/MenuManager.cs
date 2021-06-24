@@ -150,7 +150,7 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
-            Cursor.visible = false;
+            Cursor.visible = true;
         }
         else
         {
