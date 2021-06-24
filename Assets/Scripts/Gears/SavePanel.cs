@@ -11,6 +11,8 @@ using UnityEngine.UIElements;
 public class SavePanel : MonoBehaviour
 {
     public TextMeshProUGUI pathText;
+    public int pathTextId;
+    public int saveTextId;
     public string path;
 
     public GameObject browseButton;
@@ -32,6 +34,8 @@ public class SavePanel : MonoBehaviour
     void Start()
     {
         UpdatePathText(Application.persistentDataPath);
+        LanguageSystem.setLanguageEvent += () => UpdatePathText(path);
+        LanguageSystem.setLanguageEvent += UpdateSaveNames;
 
         if (Gamepad.current != null)
         {
@@ -63,6 +67,23 @@ public class SavePanel : MonoBehaviour
         InputUser.onChange -= onInputDeviceChange;
     }
 
+    public void UpdateSaveNames()
+    {
+        for (int i = 0; i < saveMenu.menuMap[columnIndex].list.Count; i++)
+        {
+            TextMeshProUGUI t = MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(saveMenu.menuMap[columnIndex].list[i].gameObject, useParent: true)[0];
+            
+            if (i.ToString().ToCharArray().Length == 1)
+            {
+                t.text = $"{LanguageSystem.outputData[saveTextId]}_0{i}";
+            }
+            else
+            {
+                t.text += $"{LanguageSystem.outputData[saveTextId]}_{i}";
+            }
+        }
+    }
+
     public void AddSaveDisplay()
     {
         RectTransform previousDisplayPos = null;
@@ -77,7 +98,7 @@ public class SavePanel : MonoBehaviour
         
         //Save Name
         saveCount++;
-        string saveName = "Save_";
+        string saveName = $"{LanguageSystem.outputData[saveTextId]}_";
         
         //Debug.Log(saveCount.ToString().ToCharArray().Length);
         if (saveCount.ToString().ToCharArray().Length == 1)
@@ -103,7 +124,7 @@ public class SavePanel : MonoBehaviour
     public void UpdatePathText(string s)
     {
         path = s;
-        pathText.text = $"path : {s}";
+        pathText.text = $"{LanguageSystem.outputData[pathTextId]} : {s}";
     }
     
     //Solution 1

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{4791b233-847d-4f5b-ae10-5ca683785bee}">
+		<property name="assetPath">
+			<value>Movement_Landing_Stone.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.65674999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{09b586e7-f332-40af-82b4-14632c677f1a}</destination>
+		</relationship>
+	</object>
+</objects>
