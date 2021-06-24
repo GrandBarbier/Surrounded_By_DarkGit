@@ -146,7 +146,7 @@ public class MenuManager : MonoBehaviour
         if (pause)
         {
             currentMap.map[selection.posOnMap.x, selection.posOnMap.y].transform.localScale /= selection.textScaleMulti;
-            HideAllPanel();
+            HideAllPanel(true);
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
@@ -237,12 +237,25 @@ public class MenuManager : MonoBehaviour
         if (selection.gameObject.activeInHierarchy)
         {
             selection.UpdateDisplayScalePosition();
+            StartCoroutine(ReUpdateDisplay());
         }
         //Debug.Log(panelMap.mapName);
     }
 
-    public void HideAllPanel()
+    public IEnumerator ReUpdateDisplay()
     {
+        yield return new WaitForSeconds(0.01f);
+        
+        selection.UpdateDisplayScalePosition(false);
+    }
+
+    public void HideAllPanel(bool rescaleSelection = false)
+    {
+        if (currentMap != null && rescaleSelection)
+        {
+            selection.RescaleObjectText(currentMap.map[selection.posOnMap.x, selection.posOnMap.y].gameObject);   
+        }
+        
         foreach (var menu in menus)
         {
             //Debug.Log(menu.panel);
@@ -262,7 +275,7 @@ public class MenuManager : MonoBehaviour
         backButton.onClick.RemoveAllListeners();
         
         //backButton.onClick.AddListener(() => currentPanel.SetActive(false));
-        backButton.onClick.AddListener(() => GoToPanel(menuToGo, true));
+        backButton.onClick.AddListener(() => GoToPanel(menuToGo));
 
         //action?.Invoke();
     }
