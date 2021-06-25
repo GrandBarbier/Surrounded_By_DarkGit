@@ -137,7 +137,7 @@ Material:
     m_Colors:
     - Color_27D4D743: {r: 0.3422392, g: 0.37094608, b: 0.4811321, a: 0}
     - Color_51A4B6EC: {r: 0, g: 0.7135715, b: 1, a: 0}
-    - Color_C347D0B: {r: 0.11222855, g: 0.19410822, b: 0.24528301, a: 0}
+    - Color_C347D0B: {r: 0, g: 0.055493895, b: 0.09433961, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

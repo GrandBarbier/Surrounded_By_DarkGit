@@ -12,12 +12,9 @@ public class Levier : MonoBehaviour
     public Transform manche;
     public Transform place;
     public bool hanged;
-
-    [Header("References")] 
-    public Movement playerMovement;
-    public PlaceTorch placeTorch;
-    public LevierManche levierManche;
-    public firststepbutton firstStepButton;
+    
+    
+    
 
     private void Start()
     {
@@ -34,12 +31,12 @@ public class Levier : MonoBehaviour
             direction = other.gameObject.transform.GetChild(2);
             manche = other.gameObject.transform.GetChild(1);
             place = manche.gameObject.transform.GetChild(0);
-            if (Input.GetKey(KeyCode.A) && playerMovement.isGrounded &&
-                placeTorch.torchOnGround)
+            if (Input.GetKeyDown(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
+                player.GetComponent<PlaceTorch>().torchOnGround)
             {
                 
                 playerAnimator.SetBool("IsHanging", true);
-                playerMovement.animPlaying = true;
+                player.GetComponent<Movement>().animPlaying = true;
 
             }
 
@@ -47,7 +44,6 @@ public class Levier : MonoBehaviour
             {
                 player.transform.position = Vector3.MoveTowards(player.transform.position, place.position, Time.deltaTime * 4);
                 player.transform.rotation = place.transform.rotation;
-                
             }
 
             if (player.transform.position == place.position)
@@ -60,9 +56,10 @@ public class Levier : MonoBehaviour
             {
                 playerAnimator.SetBool("IsHanging", false);
                 Debug.Log("good");
-                playerMovement.animPlaying = false;
-                levierManche.activated = true;
-                firstStepButton.neverused = true;
+                player.GetComponent<Movement>().animPlaying = false;
+                manche.GetComponent<LevierManche>().activated = true;
+                manche.GetComponent<firststepbutton>().neverused = true;
+                hanged = false;
             }
         } 
     }
@@ -76,26 +73,5 @@ public class Levier : MonoBehaviour
     {
         direction = null;
         manche = null;
-    }
-    
-    private void OnValidate()
-    {
-        GetReferenceComponents();
-    }
-
-    private void Reset()
-    {
-        GetReferenceComponents();
-    }
-
-    public void GetReferenceComponents()
-    {
-        if (manche != null)
-        {
-            levierManche = manche.GetComponent<LevierManche>();
-            firstStepButton = manche.GetComponent<firststepbutton>();
-        }
-        playerMovement = player.GetComponent<Movement>();
-        placeTorch = player.GetComponent<PlaceTorch>();
     }
 }
