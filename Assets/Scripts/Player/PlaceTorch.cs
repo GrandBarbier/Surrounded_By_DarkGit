@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Text;
 
 public class PlaceTorch : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class PlaceTorch : MonoBehaviour
     private Action<InputAction.CallbackContext> placeTorchAction;
     public float poseTorchThreshHold;
     private float _poseTorchValue;
+
+    [Header("Torch Component")]
+    public Rigidbody rb;
+    public WaterTorch waterTorch;
+    public MeshCollider torchMesh;
     
     void Start()
     {
@@ -65,24 +71,45 @@ public class PlaceTorch : MonoBehaviour
         //rend la torche indépendante en mettant à jour la variable l'indiquant
         
         torchOnGround = true;
-        torch.GetComponent<WaterTorch>().canBePicked = true;
+        waterTorch.canBePicked = true;
         
         torch.transform.parent = null;
 
-        torch.GetComponent<Rigidbody>().isKinematic = false;
-        torch.GetComponent<Rigidbody>().useGravity = true;
-        torch.GetComponent<MeshCollider>().isTrigger = false;
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        torchMesh.isTrigger = false;
     }
 
     public void TriggerDropTorchAnim()
     {
-        if (torchOnGround == false && player.GetComponent<Movement>().isGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Empty Pick Up") &&
+        player.TryGetComponent(out Movement movement);
+        if (torchOnGround == false && movement.isGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Empty Pick Up") &&
             !animator.GetCurrentAnimatorStateInfo(0).IsName("Torch Drop"))
         {
-            player.GetComponent<Movement>().animPlaying = true;
+            movement.animPlaying = true;
             //animator.SetTrigger("DropTorch");
             animator.Play("Torch Drop");
             //Debug.Log("place");
+        }
+    }
+
+    private void OnValidate()
+    {
+        GetTorchComponent();
+    }
+
+    private void Reset()
+    {
+        GetTorchComponent();
+    }
+
+    private void GetTorchComponent()
+    {
+        if (torch != null)
+        {
+            rb = torch.GetComponent<Rigidbody>();
+            waterTorch = torch.GetComponent<WaterTorch>();
+            torchMesh = torch.GetComponent<MeshCollider>();
         }
     }
 }
