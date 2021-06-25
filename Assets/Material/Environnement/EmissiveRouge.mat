@@ -140,7 +140,7 @@ Material:
     - _RefractionSpeed: 1
     - _RefractionStrenght: 0
     - _Scale: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -154,12 +154,12 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorAlbedo: {r: 0, g: 0, b: 0, a: 0}
     - _ColorEmission: {r: 0, g: 0, b: 0, a: 0}
     - _DeepWater: {r: 0.003921569, g: 0, b: 0.6313726, a: 0}
-    - _EmissionColor: {r: 0.8207547, g: 0.07418187, b: 0.05032932, a: 1}
+    - _EmissionColor: {r: 0.17677669, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
     - _Offset: {r: -1, g: -1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}

@@ -17,6 +17,8 @@ public class GameplayManager : MonoBehaviour
    
     public float restartTime;
     private float _actualRestartTime;
+
+    private bool doOnce = true;
     
     void Start()
     {
@@ -39,12 +41,20 @@ public class GameplayManager : MonoBehaviour
         
         Gears.gears.menuManager.EnablePause(false);
 
-        StartCoroutine(LevelManager.FadeDuration(Gears.gears.menuManager.blackPanel, new Color(0f, 0f, 0f, 0f),
-            new Color(0f, 0f, 0f, 1f), 0.8f, onComplete: DeathEffect));
+        if ((doOnce))
+        {
+            doOnce = false;
+            StartCoroutine(LevelManager.FadeDuration(Gears.gears.menuManager.blackPanel, new Color(0f, 0f, 0f, 0f),
+                new Color(0f, 0f, 0f, 1f), 0.8f, onComplete: DeathEffect));
+        }
+        
     }
 
     public void DeathEffect()
     {
+        StartCoroutine(DeathEffectC());
+        return;
+        
         vignette.SetActive(false);
         player.GetComponent<Movement>().enabled = false;
         deathParticles.SetActive(true);
@@ -60,5 +70,22 @@ public class GameplayManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         playerAnimator.SetBool("IsDead", true);
+    }
+
+    public IEnumerator DeathEffectC()
+    {
+        vignette.SetActive(false);
+        player.GetComponent<Movement>().enabled = false;
+        deathParticles.SetActive(true);
+        playerAnimator.SetBool("IsDead", true);
+        _actualRestartTime = 4.4f;
+        while (_actualRestartTime > 0)
+        {
+            facemask.GetComponent<Renderer>().materials[1].color = Color.black;
+            facemask.GetComponent<Renderer>().materials[1].SetColor("_EmissionColor", Color.black);
+            _actualRestartTime -= Time.deltaTime;
+            yield return null;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
