@@ -44,6 +44,7 @@ public class Levier : MonoBehaviour
             {
                 player.transform.position = Vector3.MoveTowards(player.transform.position, place.position, Time.deltaTime * 4);
                 player.transform.rotation = place.transform.rotation;
+                hanged = false;
             }
 
             if (player.transform.position == place.position)
