@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class SetFootstepsSound : MonoBehaviour
 {
 	public Movement movement;
@@ -20,34 +20,53 @@ public class SetFootstepsSound : MonoBehaviour
 	public float water;
 	public bool isInWater;
     
+	
 	// Start is called before the first frame update
 	void Start()
 	{
-		instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-		instance.start();
+		InitSound();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+
+	}
+
+	void InitSound()
+	{
+		instance = RuntimeManager.CreateInstance(fmodEvent);
+		instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
+		RuntimeManager.AttachInstanceToGameObject(instance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+	}
+	
+	void Footsteps()
+	{
 		if (isInWater)
 		{
 			water = 1;
 			stone = 0;
+			instance.setParameterByName("Stone", stone);
+			instance.setParameterByName("Water", water);
+			instance.start();
+
 		}
 		else if (movement.isGrounded)
 		{
 			stone = 1;
 			water = 0;
+			instance.setParameterByName("Stone", stone);
+			instance.setParameterByName("Water", water);
+			instance.start();
 		}
 		else
 		{
 			stone = 0;
 			water = 0;
+			instance.setParameterByName("Stone", stone);
+			instance.setParameterByName("Water", water);
+			instance.start();
 		}
-
-		instance.setParameterByName("Stone", stone);
-		instance.setParameterByName("Water", water);
 	}
 
 	private void OnTriggerEnter(Collider other)
