@@ -47,19 +47,19 @@ public class LightSensor : MonoBehaviour
         Texture2D temp2DTexture = new Texture2D(lightCheckTexture.width, lightCheckTexture.height);
         temp2DTexture.ReadPixels(new Rect(0, 0, tmpTexture.width, tmpTexture.height), 0, 0);
         temp2DTexture.Apply();
-
+        
         RenderTexture.active = previous;
         RenderTexture.ReleaseTemporary(tmpTexture);
 
         Color[] colors = temp2DTexture.GetPixels(1);
+        Destroy(temp2DTexture);
 
         lightLevel = 0;
         for (int i = 0; i < colors.Length; i++)
         {
-            //lightLevel += (0.02126f * colors[i].r) + (0.07152f * colors[i].g) + (0.00722f * colors[i].b);
             lightLevel += (colors[i].r + colors[i].g + colors[i].b)/1500;
         }
-
+        
         //Debug.Log(lightLevel);
     }
 

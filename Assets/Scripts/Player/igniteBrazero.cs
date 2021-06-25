@@ -13,26 +13,24 @@ public class igniteBrazero : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			if (Gears.gears.playerInput.actions["LightUpTorch"].ReadValue<float>() > 0)
-			{
-				if (torch_light.activeSelf)
-				{
-					if (!brazero_light.activeSelf)
-					{
-						//lancer animation
-						brazero_light.SetActive(true);
-						brazero_particles.SetActive(true);
-					}
-				}
-				else
-				{
-					if (brazero_light.activeSelf)
-					{
-						//lancer animation
 
-						torch_light.SetActive(true);
-						torch_particles.SetActive(true);
-					}
+			if (torch_light.activeSelf)
+			{
+				if (!brazero_light.activeSelf)
+				{
+					//lancer animation
+					brazero_light.SetActive(true);
+					brazero_particles.SetActive(true);
+				}
+			}
+			else
+			{
+				if (brazero_light.activeSelf)
+				{
+					//lancer animation
+
+					torch_light.SetActive(true);
+					torch_particles.SetActive(true);
 				}
 			}
 		}

@@ -61,6 +61,7 @@ public class SavePanel : MonoBehaviour
 
     void OnEnable() {
         InputUser.onChange += onInputDeviceChange;
+        InputUser.onChange += (user, change, arg3) => Debug.Log(arg3);
     }
  
     void OnDisable() {
