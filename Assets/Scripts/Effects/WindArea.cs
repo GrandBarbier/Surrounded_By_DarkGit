@@ -18,7 +18,7 @@ public class WindArea : MonoBehaviour
 
     public float speedMultiplier;
     
-    public List<GameObject> winds = new List<GameObject>();
+    public List<ParticleSystem> winds = new List<ParticleSystem>();
     public List<float> baseWindsEmi = new List<float>();
     
     private void Start()
@@ -27,7 +27,7 @@ public class WindArea : MonoBehaviour
         actualTime = time;
         foreach (var wind in winds)
         {
-            baseWindsEmi.Add(wind.GetComponent<ParticleSystem>().emission.rateOverTimeMultiplier);
+            baseWindsEmi.Add(wind.emission.rateOverTimeMultiplier);
         }
         
     }
@@ -54,17 +54,17 @@ public class WindArea : MonoBehaviour
 
         for (int i = 0; i < winds.Count; i++)
         {
-            var vel = winds[i].GetComponent<ParticleSystem>().velocityOverLifetime;
-            var emi = winds[i].GetComponent<ParticleSystem>().emission;
+            var vel = winds[i].velocityOverLifetime;
+            var emi = winds[i].emission;
             
             vel.speedModifier = new ParticleSystem.MinMaxCurve(power * speedMultiplier);
         
             
             if(power <= 0)
-                winds[i].SetActive(false);
+                winds[i].gameObject.SetActive(false);
             else
             {
-                winds[i].SetActive(true);
+                winds[i].gameObject.SetActive(true);
                 emi.rateOverTime = new ParticleSystem.MinMaxCurve(baseWindsEmi[i] * (power + 1));
             }
         }

@@ -5,6 +5,8 @@ using UnityEngine;
 using FMODUnity;
 public class SetFootstepsSound : MonoBehaviour
 {
+	public Movement movement;
+	
 	private FMOD.Studio.EventInstance instance;
 	
 	[FMODUnity.EventRef]
@@ -49,7 +51,7 @@ public class SetFootstepsSound : MonoBehaviour
 			instance.start();
 
 		}
-		else if (gameObject.GetComponent<Movement>().isGrounded)
+		else if (movement.isGrounded)
 		{
 			stone = 1;
 			water = 0;
@@ -82,5 +84,20 @@ public class SetFootstepsSound : MonoBehaviour
 		{
 			isInWater = false;
 		}
+	}
+	
+	private void OnValidate()
+	{
+		GetReferenceComponents();
+	}
+
+	private void Reset()
+	{
+		GetReferenceComponents();
+	}
+
+	public void GetReferenceComponents()
+	{
+		movement = GetComponent<Movement>();
 	}
 }

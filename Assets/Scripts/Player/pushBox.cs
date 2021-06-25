@@ -10,6 +10,10 @@ public class pushBox : MonoBehaviour
     public GameObject player;
     public Animator playerAnimator;
 
+    [Header("References")] 
+    public Movement playerMovement;
+    public PlaceTorch placeTorch;
+
     private void Start()
     {
         player = this.gameObject;
@@ -41,5 +45,21 @@ public class pushBox : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playerAnimator.SetBool("IsPushing", false);
+    }
+    
+    private void OnValidate()
+    {
+        GetReferenceComponents();
+    }
+
+    private void Reset()
+    {
+        GetReferenceComponents();
+    }
+
+    public void GetReferenceComponents()
+    {
+        playerMovement = player.GetComponent<Movement>();
+        placeTorch = player.GetComponent<PlaceTorch>();
     }
 }

@@ -46,12 +46,14 @@ public class Shattering : MonoBehaviour
                 {
                     GameObject g = Instantiate(Gears.gears.somkeTrail, child.transform.position, child.transform.rotation);
                     g.transform.SetParent(child.transform);
-                
-                    ParticleSystem particleSystem = g.GetComponent<ParticleSystem>();
-                    var v = particleSystem.shape;
-                    v.enabled = true;
-                    v.shapeType = ParticleSystemShapeType.Mesh;
-                    v.mesh = child.GetComponent<MeshFilter>().mesh;
+
+                    if (g.TryGetComponent(out ParticleSystem particleSystem))
+                    {
+                        var v = particleSystem.shape;
+                        v.enabled = true;
+                        v.shapeType = ParticleSystemShapeType.Mesh;
+                        v.mesh = child.GetComponent<MeshFilter>().mesh;
+                    }
                 }
             }
             
@@ -62,7 +64,7 @@ public class Shattering : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log($"Collision : {collision.gameObject.name}");
-        if (collision.gameObject.GetComponent<pushableBlock>() || collision.gameObject.GetComponentInChildren<pushableBlock>())
+        if (collision.gameObject.TryGetComponent(out pushableBlock pushableBlock) || MenuManager.GetAllComponentInChilds<pushableBlock>(collision.gameObject).Capacity > 0)
         {
             Shatter();
         }

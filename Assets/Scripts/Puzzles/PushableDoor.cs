@@ -12,6 +12,10 @@ public class PushableDoor : MonoBehaviour
     public float speed;
 
     public bool pushable;
+
+    [Header("References")] 
+    public Movement playerMovement;
+    public PlaceTorch placeTorch;
     
     void Start()
     {
@@ -31,10 +35,26 @@ public class PushableDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded && player.GetComponent<PlaceTorch>().torchOnGround && pushable)
+            if (Input.GetKey(KeyCode.A) && playerMovement.isGrounded && placeTorch.torchOnGround && pushable)
             {
                door.transform.Rotate(0,0,speed);
             }
         }
+    }
+    
+    private void OnValidate()
+    {
+        GetReferenceComponents();
+    }
+
+    private void Reset()
+    {
+        GetReferenceComponents();
+    }
+
+    public void GetReferenceComponents()
+    {
+        playerMovement = player.GetComponent<Movement>();
+        placeTorch = player.GetComponent<PlaceTorch>();
     }
 }

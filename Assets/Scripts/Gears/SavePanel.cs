@@ -95,7 +95,11 @@ public class SavePanel : MonoBehaviour
         }
         
         GameObject saveDisplay = Instantiate(Gears.gears.saveDisplayPrefab, saveDisplayParent);
-        saveMenu.menuMap[columnIndex].list.Add(saveDisplay.GetComponent<RectTransform>());
+
+        if (saveDisplay.TryGetComponent(out RectTransform rectTransform))
+        {
+            saveMenu.menuMap[columnIndex].list.Add(rectTransform);
+        }
         
         //Save Name
         saveCount++;
@@ -111,11 +115,11 @@ public class SavePanel : MonoBehaviour
             saveName += saveCount;
         }
         
-        saveDisplay.GetComponentInChildren<TextMeshProUGUI>().text = saveName;
+        MenuManager.GetAllComponentInChilds<TextMeshProUGUI>(saveDisplay, useParent: true)[0].text = saveName;
 
-        if (previousDisplayPos != null)
+        if (previousDisplayPos != null && saveDisplay.TryGetComponent(out RectTransform rect))
         {
-            saveDisplay.GetComponent<RectTransform>().localPosition = previousDisplayPos.localPosition + new Vector3(0, -30, 0);
+            rect.localPosition = previousDisplayPos.localPosition + new Vector3(0, -30, 0);
         }
 
         Gears.gears.menuManager.SetCurrentMenuMap(Gears.gears.menuManager.ConvertListToPanelMap(saveMenu.menuMap, saveMenu.startPos), 

@@ -1128,10 +1128,6 @@
           </e>
           <e p="Save" t="Include">
             <e p="FileBrowserTest.cs" t="Include" />
-            <e p="Player.cs" t="Include" />
-            <e p="PlayerData.cs" t="Include" />
-            <e p="SaveManager.cs" t="Include" />
-            <e p="SaveSystem.cs" t="Include" />
           </e>
           <e p="torchSFX.cs" t="Include" />
           <e p="triggerValueFMOD.cs" t="Include" />

@@ -12,9 +12,12 @@ public class Levier : MonoBehaviour
     public Transform manche;
     public Transform place;
     public bool hanged;
-    
-    
-    
+
+    [Header("References")] 
+    public Movement playerMovement;
+    public PlaceTorch placeTorch;
+    public LevierManche levierManche;
+    public firststepbutton firstStepButton;
 
     private void Start()
     {
@@ -31,12 +34,12 @@ public class Levier : MonoBehaviour
             direction = other.gameObject.transform.GetChild(2);
             manche = other.gameObject.transform.GetChild(1);
             place = manche.gameObject.transform.GetChild(0);
-            if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
-                player.GetComponent<PlaceTorch>().torchOnGround)
+            if (Input.GetKey(KeyCode.A) && playerMovement.isGrounded &&
+                placeTorch.torchOnGround)
             {
                 
                 playerAnimator.SetBool("IsHanging", true);
-                player.GetComponent<Movement>().animPlaying = true;
+                playerMovement.animPlaying = true;
 
             }
 
@@ -57,10 +60,9 @@ public class Levier : MonoBehaviour
             {
                 playerAnimator.SetBool("IsHanging", false);
                 Debug.Log("good");
-                player.GetComponent<Movement>().animPlaying = false;
-                manche.GetComponent<LevierManche>().activated = true;
-                manche.GetComponent<firststepbutton>().neverused = true;
-                hanged = false;
+                playerMovement.animPlaying = false;
+                levierManche.activated = true;
+                firstStepButton.neverused = true;
             }
         } 
     }
@@ -74,5 +76,24 @@ public class Levier : MonoBehaviour
     {
         direction = null;
         manche = null;
+    }
+    
+    private void OnValidate()
+    {
+        GetReferenceComponents();
+    }
+
+    private void Reset()
+    {
+        GetReferenceComponents();
+    }
+
+    public void GetReferenceComponents()
+    {
+        levierManche = manche.GetComponent<LevierManche>();
+        firstStepButton = manche.GetComponent<firststepbutton>();
+        
+        playerMovement = player.GetComponent<Movement>();
+        placeTorch = player.GetComponent<PlaceTorch>();
     }
 }
