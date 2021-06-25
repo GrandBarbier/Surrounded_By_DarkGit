@@ -48,8 +48,8 @@ public class pushableBlock : MonoBehaviour
 
     public void GetReferenceComponents()
     {
-        playerMovement = player.GetComponent<Movement>();
-        placeTorch = player.GetComponent<PlaceTorch>();
+        playerMovement = player?.GetComponent<Movement>();
+        placeTorch = player?.GetComponent<PlaceTorch>();
         blockRb = block.GetComponent<Rigidbody>();
     }
 }

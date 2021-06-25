@@ -105,7 +105,7 @@ public class GameplayManager : MonoBehaviour
 
     public void GetReferenceComponents()
     {
-        playerMovement = player.GetComponent<Movement>();
+        playerMovement = player?.GetComponent<Movement>();
         renderer = facemask.GetComponent<Renderer>();
     }
 }

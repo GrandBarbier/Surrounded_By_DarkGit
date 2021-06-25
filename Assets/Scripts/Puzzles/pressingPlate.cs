@@ -63,7 +63,7 @@ public class pressingPlate : MonoBehaviour
 
     public void GetReferenceComponents()
     {
-        plate = link.GetComponent<pressingPlate>();
+        plate = link?.GetComponent<pressingPlate>();
         ren = GetComponent<Renderer>();
     }
 }
