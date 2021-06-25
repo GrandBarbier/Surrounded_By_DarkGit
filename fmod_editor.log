@@ -8,7 +8,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000013A47FF0028 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000221275E3618 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,30 +17,30 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : BGM_IntroSBD (0000013A2B5D5BD8)
-[LOG] SoundI::release                          :     BGM_IntroSBD (0000013A3EAAE2D8)
-[LOG] SoundI::release                          :     BGM_IntroSBD (0000013A355AE5D8)
-[LOG] SoundI::release                          : BGM_WindSBD (0000013A481D8F38)
-[LOG] SoundI::release                          :     BGM_WindSBD (0000013A3EAADF98)
-[LOG] SoundI::release                          :     BGM_WindSBD (0000013A355AFD78)
-[LOG] SoundI::release                          : BGM_WaterSBD (0000013A481D8A28)
-[LOG] SoundI::release                          :     BGM_WaterSBD (0000013A3EAAE138)
-[LOG] SoundI::release                          :     BGM_WaterSBD (0000013A355AE428)
-[LOG] SoundI::release                          : BGM_MazeSBD (0000013A481D90E8)
-[LOG] SoundI::release                          :     BGM_MazeSBD (0000013A3EAAE478)
-[LOG] SoundI::release                          :     BGM_MazeSBD (0000013A355AEE48)
-[LOG] SoundI::release                          :  (00000139405F3138)
-[LOG] SoundI::release                          :     Movement_Walk_Stone1 (00000139409F9208)
-[LOG] SoundI::release                          :  (00000139405F3588)
-[LOG] SoundI::release                          :     Movement_Walk_Stone2 (00000139409F96E8)
-[LOG] SoundI::release                          :  (0000013933DB1C08)
-[LOG] SoundI::release                          :     Movement_Walk_Stone3 (00000139409F93A8)
-[LOG] SoundI::release                          :  (00000139405F2FC8)
-[LOG] SoundI::release                          :     WaterSteps1 (00000139409F9BC8)
-[LOG] SoundI::release                          :  (0000013933DB2618)
-[LOG] SoundI::release                          :     WaterSteps2 (00000139409F9548)
-[LOG] SoundI::release                          :  (0000013933DB1D78)
-[LOG] SoundI::release                          :     WaterSteps3 (00000139409F9888)
+[LOG] SoundI::release                          : BGM_IntroSBD (00000221277805E8)
+[LOG] SoundI::release                          :     BGM_IntroSBD (000002202C7ACE88)
+[LOG] SoundI::release                          :     BGM_IntroSBD (0000022127781878)
+[LOG] SoundI::release                          : BGM_WindSBD (000002212777E788)
+[LOG] SoundI::release                          :     BGM_WindSBD (000002202C7A69C8)
+[LOG] SoundI::release                          :     BGM_WindSBD (00000221277816C8)
+[LOG] SoundI::release                          : BGM_WaterSBD (000002212777E0C8)
+[LOG] SoundI::release                          :     BGM_WaterSBD (000002202C7A6008)
+[LOG] SoundI::release                          :     BGM_WaterSBD (0000022127780798)
+[LOG] SoundI::release                          : BGM_MazeSBD (000002212777FF28)
+[LOG] SoundI::release                          :     BGM_MazeSBD (000002202C7A5308)
+[LOG] SoundI::release                          :     BGM_MazeSBD (000002212777C778)
+[LOG] SoundI::release                          :  (000002211CA79258)
+[LOG] SoundI::release                          :     Movement_Walk_Stone1 (000002202C7A5B28)
+[LOG] SoundI::release                          :  (000002211CA78E08)
+[LOG] SoundI::release                          :     Movement_Walk_Stone2 (000002202C7A8228)
+[LOG] SoundI::release                          :  (000002211CA79538)
+[LOG] SoundI::release                          :     Movement_Walk_Stone3 (000002202C7A83C8)
+[LOG] SoundI::release                          :  (000002211CA793C8)
+[LOG] SoundI::release                          :     WaterSteps1 (000002202C7A5CC8)
+[LOG] SoundI::release                          :  (000002211CA796A8)
+[LOG] SoundI::release                          :     WaterSteps2 (000002202C7A5E68)
+[LOG] SoundI::release                          :  (000002201A45F928)
+[LOG] SoundI::release                          :     WaterSteps3 (000002202C7A6828)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
