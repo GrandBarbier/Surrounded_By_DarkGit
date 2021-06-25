@@ -370,16 +370,7 @@ public class MenuManager : MonoBehaviour
             return null;
         }
         
-        List<GameObject> allChilds = GetAllChilds(panel, true);
-        List<RectTransform> recter = new List<RectTransform>();
-
-        foreach(var child in allChilds)
-        {
-            if (child.TryGetComponent(out Button button))
-            {
-                recter.Add(button.GetComponent<RectTransform>());
-            }
-        }
+        List<RectTransform> recter = GetAllComponentInChilds<RectTransform>(panel, true, true);//new List<RectTransform>();
 
         List<List<RectTransform>> lists = new List<List<RectTransform>>();
         int currentListIndex = -1;
@@ -569,7 +560,7 @@ public class MenuManager : MonoBehaviour
 
         for (int i = 0; i < raycastResults.Count; i++)
         {
-            if (raycastResults[i].gameObject.GetComponent<IgnoreMouseOver>())
+            if (raycastResults[i].gameObject.TryGetComponent(out IgnoreMouseOver ignoreMouseOver))
             {
                 raycastResults.RemoveAt(i);
                 i--;

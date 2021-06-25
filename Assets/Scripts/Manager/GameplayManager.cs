@@ -19,6 +19,10 @@ public class GameplayManager : MonoBehaviour
     private float _actualRestartTime;
 
     private bool doOnce = true;
+
+    [Header("References")] 
+    public Movement playerMovement;
+    public Renderer renderer;
     
     void Start()
     {
@@ -75,17 +79,33 @@ public class GameplayManager : MonoBehaviour
     public IEnumerator DeathEffectC()
     {
         vignette.SetActive(false);
-        player.GetComponent<Movement>().enabled = false;
+        playerMovement.enabled = false;
         deathParticles.SetActive(true);
         playerAnimator.SetBool("IsDead", true);
         _actualRestartTime = 4.4f;
         while (_actualRestartTime > 0)
         {
-            facemask.GetComponent<Renderer>().materials[1].color = Color.black;
-            facemask.GetComponent<Renderer>().materials[1].SetColor("_EmissionColor", Color.black);
+            renderer.materials[1].color = Color.black;
+            renderer.materials[1].SetColor("_EmissionColor", Color.black);
             _actualRestartTime -= Time.deltaTime;
             yield return null;
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    private void OnValidate()
+    {
+        GetReferenceComponents();
+    }
+
+    private void Reset()
+    {
+        GetReferenceComponents();
+    }
+
+    public void GetReferenceComponents()
+    {
+        playerMovement = player.GetComponent<Movement>();
+        renderer = facemask.GetComponent<Renderer>();
     }
 }

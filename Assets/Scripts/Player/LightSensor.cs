@@ -17,13 +17,15 @@ public class LightSensor : MonoBehaviour
     public float deathLevel;
     public float deathTime;
 
+    private Image panelImage;
+
     [Header("Game Objects")] 
     public GameObject panel;
-    
+
     private void Start()
     {
-      
 
+        panelImage = panel.GetComponent<Image>();
         deathLevel = 0;
 
 
@@ -94,6 +96,6 @@ public class LightSensor : MonoBehaviour
             deathLevel = 0;
         }
         
-       panel.GetComponent<Image>().material.SetFloat("_VignetteScale", deathLevel/deathTime * 5);
+        panelImage.material.SetFloat("_VignetteScale", deathLevel/deathTime * 5);
     }
 }

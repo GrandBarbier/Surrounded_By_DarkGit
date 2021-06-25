@@ -11,6 +11,7 @@ public class pressingPlate : MonoBehaviour
     public GameObject link;
     public Transform borrow;
     public Renderer ren;
+    public pressingPlate plate;
 
     public Material[] mats;
     public Material good;
@@ -19,13 +20,12 @@ public class pressingPlate : MonoBehaviour
 
      void Start()
      {
-         ren = GetComponent<Renderer>();
          mats = ren.materials;
      }
 
     void Update()
     {
-        if (isOpened && link.GetComponent<pressingPlate>().isOpened == true)
+        if (isOpened && plate.isOpened == true)
         {
             Debug.Log("aled");
 
@@ -49,8 +49,21 @@ public class pressingPlate : MonoBehaviour
         {
             isOpened = true;
         }
-        
-        
-        
+    }
+    
+    private void OnValidate()
+    {
+        GetReferenceComponents();
+    }
+
+    private void Reset()
+    {
+        GetReferenceComponents();
+    }
+
+    public void GetReferenceComponents()
+    {
+        plate = link.GetComponent<pressingPlate>();
+        ren = GetComponent<Renderer>();
     }
 }

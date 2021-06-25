@@ -75,7 +75,11 @@ public class SelectionUI : MonoBehaviour
         //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["Enter"].performed -= action1;
         //LevelManager.preLoadingScene += () => Gears.gears.playerInput.actions["MoveMenu"].performed -= action2;
         
-        _rectTransform = GetComponent<RectTransform>();
+        if (TryGetComponent(out RectTransform rect))
+        {
+            _rectTransform = rect;
+        }
+        
         menuManager = Gears.gears.menuManager;
 
         if (selectionUi != null)
@@ -283,7 +287,11 @@ public class SelectionUI : MonoBehaviour
         Vector3 adaptScale = AdaptScale(rectTransform.gameObject, rectTransform.localScale);
         
         //adapt selection
-        _rectTransform = GetComponent<RectTransform>();
+        if (TryGetComponent(out RectTransform rect))
+        {
+            _rectTransform = rect;
+        }
+        
         if (selectionUi != null)
         {
             selectionUi.position = rectTransform.position;

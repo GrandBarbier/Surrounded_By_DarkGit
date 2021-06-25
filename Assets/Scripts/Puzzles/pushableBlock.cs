@@ -10,13 +10,18 @@ public class pushableBlock : MonoBehaviour
     public GameObject block;
     public GameObject player;
 
+    [Header("References")] 
+    public Movement playerMovement;
+    public PlaceTorch placeTorch;
+    public Rigidbody blockRb;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded && player.GetComponent<PlaceTorch>().torchOnGround)
+            if (Input.GetKey(KeyCode.A) && playerMovement.isGrounded && placeTorch.torchOnGround)
             {
-                block.GetComponent<Rigidbody>().AddRelativeForce(forceOfPush * (Time.deltaTime * speed));
+                blockRb.AddRelativeForce(forceOfPush * (Time.deltaTime * speed));
 
                 //block.transform.position += forceOfPush * (Time.deltaTime * speed);
                 /*lancer anim pose des mains
@@ -29,5 +34,22 @@ public class pushableBlock : MonoBehaviour
                 */
             }
         }
+    }
+    
+    private void OnValidate()
+    {
+        GetReferenceComponents();
+    }
+
+    private void Reset()
+    {
+        GetReferenceComponents();
+    }
+
+    public void GetReferenceComponents()
+    {
+        playerMovement = player.GetComponent<Movement>();
+        placeTorch = player.GetComponent<PlaceTorch>();
+        blockRb = block.GetComponent<Rigidbody>();
     }
 }
