@@ -67,6 +67,7 @@ public class SetFootstepsSound : MonoBehaviour
 			instance.setParameterByName("Water", water);
 			instance.start();
 		}
+		RuntimeManager.AttachInstanceToGameObject(instance, GetComponent<Transform>(), GetComponent<Rigidbody>());
 	}
 
 	private void OnTriggerEnter(Collider other)

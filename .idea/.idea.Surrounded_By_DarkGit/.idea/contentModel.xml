@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Alan Gryfs\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Alan Gryfs\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Surrounded_By_DarkGit.18726612.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Alan Gryfs\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
-    <e p="D:\GitKraken\Surrounded_By_DarkGit" t="IncludeRecursive">
+    <e p="C:\Users\luffe\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\luffe\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.130401937.00" t="ExcludeRecursive" />
+    <e p="D:\COURS\Projet fin d'année\Surrounded_By_DarkGit" t="IncludeRecursive">
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -970,6 +969,7 @@
             <e p="AudioFile" t="Include">
               <e p="{05a08430-2e86-48bd-b151-291ef1142ad0}.xml" t="Include" />
               <e p="{12b6dba6-c4b1-4efc-84b8-a6ce02944c89}.xml" t="Include" />
+              <e p="{17ca3076-da67-444e-9561-93c6ec1bdbd3}.xml" t="Include" />
               <e p="{1f3527b3-6745-47b1-a905-54dc9d68dea7}.xml" t="Include" />
               <e p="{3258e441-b2fc-432f-8dd0-27f87b5ae4b2}.xml" t="Include" />
               <e p="{3562bc34-a2f6-49ca-88a1-54727e37ed63}.xml" t="Include" />
@@ -978,6 +978,7 @@
               <e p="{4be0281c-732b-421c-92e3-5c9c4da4aa58}.xml" t="Include" />
               <e p="{5a24fd5f-318c-427f-b0c1-d9198b0b707a}.xml" t="Include" />
               <e p="{6d314148-ecc4-402e-9864-9593c80f47f6}.xml" t="Include" />
+              <e p="{72398ee6-55ec-447a-873b-4b1610e2f73a}.xml" t="Include" />
               <e p="{761b8868-5c5c-4c83-bde4-3704c192a6ae}.xml" t="Include" />
               <e p="{820fed81-5a4f-45e1-8774-c4c03244f8b8}.xml" t="Include" />
               <e p="{922ae3fa-536a-4316-a97b-ae35c0566f59}.xml" t="Include" />
@@ -1015,6 +1016,7 @@
               <e p="{303b534b-7a91-4bf6-aa2b-ddc60804c229}.xml" t="Include" />
               <e p="{43cb7858-4d12-4afb-85dc-3fdf9ed82a02}.xml" t="Include" />
               <e p="{47f6ec5a-1927-4a66-9cce-428b3f3f30ea}.xml" t="Include" />
+              <e p="{509f7cc2-5acc-44fe-be7a-0822a3327513}.xml" t="Include" />
               <e p="{61a89aa3-6225-4025-833f-95583a9fa25f}.xml" t="Include" />
               <e p="{76335e38-9448-46e5-9db3-4ace386f62e1}.xml" t="Include" />
               <e p="{881fc057-b7ca-48d9-99d7-29b39696a39b}.xml" t="Include" />
@@ -1026,6 +1028,7 @@
               <e p="{dde1464d-9402-461f-a1cb-7496933548ee}.xml" t="Include" />
               <e p="{e15f7e36-a223-43e1-8033-bdcaf778aecd}.xml" t="Include" />
               <e p="{e580112d-0980-4ee8-93f9-98790a18f427}.xml" t="Include" />
+              <e p="{f4e47182-312a-4c55-b60c-3398ac50a0a2}.xml" t="Include" />
               <e p="{f8e6762c-7015-44a0-9ced-537d3eaeb2bb}.xml" t="Include" />
             </e>
             <e p="EventFolder" t="Include">
@@ -1046,6 +1049,7 @@
               <e p="{5826a09e-c77f-48d0-ac8c-99b22ca655c3}.xml" t="Include" />
               <e p="{6308c810-ec85-4e56-a306-b54f21984af7}.xml" t="Include" />
               <e p="{6f970ddf-4ea5-44fa-afe1-d30a88a698ad}.xml" t="Include" />
+              <e p="{ccedb0f2-e6b2-475f-b34e-c7dbf711a04c}.xml" t="Include" />
               <e p="{d4d320de-cf56-4f91-b016-a0a76301ae06}.xml" t="Include" />
             </e>
             <e p="ParameterPresetFolder" t="Include">
@@ -1128,6 +1132,10 @@
           </e>
           <e p="Save" t="Include">
             <e p="FileBrowserTest.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerData.cs" t="Include" />
+            <e p="SaveManager.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
           </e>
           <e p="torchSFX.cs" t="Include" />
           <e p="triggerValueFMOD.cs" t="Include" />

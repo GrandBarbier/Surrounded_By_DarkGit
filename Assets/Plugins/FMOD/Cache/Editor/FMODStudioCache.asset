@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637601654414823779
+  lastModified: 637602444898626943
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -64,7 +64,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 80170
+  Length: 20000
 --- !u!114 &-8678897785953853417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +88,46 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16968
+--- !u!114 &-8514740354013512511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM_Darkness/Darkness
+  m_EditorClassIdentifier: 
+  Name: Darkness
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-7898561581535344237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Stone
+  m_EditorClassIdentifier: 
+  Name: Stone
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7744993807651391322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +237,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2893
+--- !u!114 &-6633183972082501952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/WaterMaze
+  m_EditorClassIdentifier: 
+  Name: WaterMaze
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6628708159957543865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,11 +438,51 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637601654411126521
+  lastModified: 637602444895496920
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2144
+    Value: 2270
+  Exists: 1
+--- !u!114 &-3828778538659809430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Water
+  m_EditorClassIdentifier: 
+  Name: Water
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3518357566620342462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Wind/Wind
+  m_EditorClassIdentifier: 
+  Name: Wind
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-2872720151956265922
 MonoBehaviour:
@@ -404,6 +504,30 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-2239108323263816195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Wind
+  m_EditorClassIdentifier: 
+  Path: event:/Wind
+  guid: c27c9f50cc5afe44be7a0822a3327513
+  Banks:
+  - {fileID: -9169610589337431288}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3518357566620342462}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 58000
 --- !u!114 &-2066933236196980700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,12 +650,14 @@ MonoBehaviour:
   - {fileID: 8434835880485566988}
   - {fileID: 2456642013245130325}
   - {fileID: -6980568475506025781}
+  - {fileID: 2335212229252825154}
+  - {fileID: -2239108323263816195}
   EditorParameters: []
   MasterBanks:
   - {fileID: -9169610589337431288}
   StringsBanks:
   - {fileID: -4291886374826034371}
-  stringsBankWriteTime: 637601654411126521
+  stringsBankWriteTime: 637602444895496920
   cacheVersion: 6
 --- !u!114 &853516911755607580
 MonoBehaviour:
@@ -548,6 +674,26 @@ MonoBehaviour:
   Name: MazeWind
   Min: 0
   Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &945818886868277760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM_MainMenu/BGM_MainMenu
+  m_EditorClassIdentifier: 
+  Name: BGM_MainMenu
+  Min: 0
+  Max: 5
   Default: 0
   ID:
     data1: 0
@@ -576,6 +722,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5074
+--- !u!114 &2335212229252825154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PPlate
+  m_EditorClassIdentifier: 
+  Path: event:/PPlate
+  guid: 8271e4f42a31554cb60c3398ac50a0a2
+  Banks:
+  - {fileID: -9169610589337431288}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 711
 --- !u!114 &2456642013245130325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,8 +765,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 2900758279043012338}
-  - {fileID: 8589336077710745534}
+  - {fileID: -3828778538659809430}
+  - {fileID: -7898561581535344237}
   MinDistance: 1
   MaxDistance: 20
   Length: 390
@@ -704,9 +873,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5345238186001978708}
-  - {fileID: -7684086850011387097}
-  - {fileID: 853516911755607580}
+  - {fileID: -6633183972082501952}
+  - {fileID: 8696640540289798736}
+  - {fileID: 7255732883489812227}
   MinDistance: 0
   MaxDistance: 0
   Length: 352000
@@ -733,6 +902,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 656
+--- !u!114 &7255732883489812227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MazeWind
+  m_EditorClassIdentifier: 
+  Name: MazeWind
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7381979269562213992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +1008,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7744720942297336997}
+  - {fileID: 945818886868277760}
   MinDistance: 0
   MaxDistance: 0
   Length: 128000
@@ -886,7 +1075,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 9066839233335469477}
+  - {fileID: -8514740354013512511}
   MinDistance: 0
   MaxDistance: 0
   Length: 63650
@@ -923,6 +1112,26 @@ MonoBehaviour:
   m_Name: parameter:/FootSteps/Stone
   m_EditorClassIdentifier: 
   Name: Stone
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &8696640540289798736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/IntroWater
+  m_EditorClassIdentifier: 
+  Name: IntroWater
   Min: 0
   Max: 1
   Default: 0

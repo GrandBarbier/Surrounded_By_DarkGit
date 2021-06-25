@@ -64,7 +64,12 @@ public class Shattering : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log($"Collision : {collision.gameObject.name}");
-        if (collision.gameObject.TryGetComponent(out pushableBlock pushableBlock) || MenuManager.GetAllComponentInChilds<pushableBlock>(collision.gameObject).Capacity > 0)
+        // if (collision.gameObject.TryGetComponent(out pushableBlock pushableBlock) || MenuManager.GetAllComponentInChilds<pushableBlock>(collision.gameObject).Capacity > 0)
+        // {
+        //     Shatter();
+        // }
+        
+        if(collision.gameObject.CompareTag("PushableBlock"))
         {
             Shatter();
         }

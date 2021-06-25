@@ -90,9 +90,11 @@ public class Levier : MonoBehaviour
 
     public void GetReferenceComponents()
     {
-        levierManche = manche.GetComponent<LevierManche>();
-        firstStepButton = manche.GetComponent<firststepbutton>();
-        
+        if (manche != null)
+        {
+            levierManche = manche.GetComponent<LevierManche>();
+            firstStepButton = manche.GetComponent<firststepbutton>();
+        }
         playerMovement = player.GetComponent<Movement>();
         placeTorch = player.GetComponent<PlaceTorch>();
     }
