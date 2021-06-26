@@ -32,4 +32,9 @@ public class SetParameterByName : MonoBehaviour
         instance.setParameterByName("waterMaze", waterMaze);
         instance.setParameterByName("mazeWind", mazeWind);
     }
+
+    void MusicStop()
+    {
+       instance.stop();
+    }
 }
