@@ -28,6 +28,7 @@ public class GameplayManager : MonoBehaviour
     {
         deathParticles.SetActive(false);
         _actualRestartTime = restartTime;
+        GetReferenceComponents();
     }
 
     // Update is called once per frame
@@ -93,11 +94,6 @@ public class GameplayManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
-    private void OnValidate()
-    {
-        GetReferenceComponents();
-    }
-
     private void Reset()
     {
         GetReferenceComponents();
@@ -105,7 +101,7 @@ public class GameplayManager : MonoBehaviour
 
     public void GetReferenceComponents()
     {
-        playerMovement = player?.GetComponent<Movement>();
+        playerMovement = player.GetComponent<Movement>();
         renderer = facemask.GetComponent<Renderer>();
     }
 }

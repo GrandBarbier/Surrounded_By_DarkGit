@@ -32,7 +32,7 @@ Material:
     - _Alpha1: 0.866
     - _AlphaCutoff: 0.5
     - _Scale1: 0.43
-    - _VignetteScale: 0
+    - _VignetteScale: 0.10436693
     m_Colors:
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

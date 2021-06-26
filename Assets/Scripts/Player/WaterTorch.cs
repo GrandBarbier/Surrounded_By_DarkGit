@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +12,12 @@ public class WaterTorch : MonoBehaviour
     public new AudioSource audio;
     private void OnTriggerEnter(Collider other)
     {
-//        Debug.Log(other.gameObject.tag);
-        if (other.tag == "Player")
+        if (other.CompareTag("Test"))
         {
+            Debug.Log("PUTE");
             canBePicked = true;
         }
-        
-        if (other.gameObject.CompareTag("water"))
+        else if (other.gameObject.CompareTag("water"))
         {
             if (t_light.activeSelf)
             {
@@ -28,11 +28,14 @@ public class WaterTorch : MonoBehaviour
             t_light.SetActive(false);
             particles.SetActive(false);
         }
+        
     }
+    
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Test"))
         {
+            Debug.Log("PAS PUTE");
             canBePicked = false;
         }
     }

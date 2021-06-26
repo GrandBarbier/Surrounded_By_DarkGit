@@ -11,6 +11,7 @@ TagManager:
   - Brazero
   - Music
   - Fire
+  - Test
   layers:
   - Default
   - TransparentFX

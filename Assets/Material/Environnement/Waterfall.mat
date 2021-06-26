@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3500
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -79,7 +79,9 @@ Material:
     m_Floats:
     - Bottom_Brightness: 2
     - Bottom_Strengh: 5
+    - Metallic: 0
     - Ripple_Amount: 3.5
+    - Smoothness: 0.5
     - VertexOffsetAmount: -0.2
     - Vertex_Offset_Amount: 0.15
     - Voronoi_Scale: 12

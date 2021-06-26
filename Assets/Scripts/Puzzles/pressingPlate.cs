@@ -21,6 +21,7 @@ public class pressingPlate : MonoBehaviour
      void Start()
      {
          mats = ren.materials;
+         GetReferenceComponents();
      }
 
     void Update()
@@ -51,19 +52,14 @@ public class pressingPlate : MonoBehaviour
         }
     }
     
-    private void OnValidate()
-    {
-        GetReferenceComponents();
-    }
-
-    private void Reset()
-    {
-        GetReferenceComponents();
-    }
+    // private void Reset()
+    // {
+    //     GetReferenceComponents();
+    // }
 
     public void GetReferenceComponents()
     {
-        plate = link?.GetComponent<pressingPlate>();
-        ren = GetComponent<Renderer>();
+        plate = link.GetComponent<pressingPlate>();
+        ren = gameObject.GetComponent<Renderer>();
     }
 }
