@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour
     private float turnSmoothVelocity;
 
     public bool isGrounded;
+    public bool isJumping;
+    public bool isWalking;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -35,6 +37,9 @@ public class Movement : MonoBehaviour
     public bool animPlaying = false;
     
     private Action<InputAction.CallbackContext> jumpAction;
+
+    public float slopeForce;
+    public float slopeForceRayLength;
 
     
 
@@ -73,6 +78,7 @@ public class Movement : MonoBehaviour
         if (isGrounded == true)
         {
             animator.SetBool("IsGrounded", true);
+            isJumping = false;
         }
         else
         {
@@ -100,17 +106,24 @@ public class Movement : MonoBehaviour
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
                 animator.SetBool("IsWalking", true);
+                isWalking = true;
 
             }
             else
             {
                 animator.SetBool("IsWalking", false);
+                isWalking = false;
             }
 
             velocity.y -= gravity * Time.deltaTime;
             
 
             controller.Move(velocity * Time.deltaTime);
+
+            if (isWalking && OnSlope())
+            {
+                controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
+            }
 
         }
 
@@ -123,7 +136,9 @@ public class Movement : MonoBehaviour
             Debug.Log("jump!");
             velocity.y = Mathf.Sqrt(jumpHeight * gravity);
             animator.SetBool("IsGrounded", false);
-            
+            isJumping = true;
+
+
         }
     }
 
@@ -155,6 +170,26 @@ public class Movement : MonoBehaviour
     public void AnimFinish()
     {
         animPlaying = false;
+    }
+
+    private bool OnSlope()
+    {
+        if (isJumping)
+        {
+            return false;
+        }
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength))
+        {
+            if (hit.normal != Vector3.up)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 

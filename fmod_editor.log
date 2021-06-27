@@ -2,6 +2,7 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20109 (115889), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+<<<<<<< HEAD
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
@@ -10,6 +11,14 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
 [LOG] AsyncManager::init                       : manager 00000223201C5CF8 isAsync 0 updatePeriod 0.02
+=======
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 000001DE3DABE968 isAsync 0 updatePeriod 0.02
+>>>>>>> main
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,6 +27,1266 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+<<<<<<< HEAD
+=======
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2D248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2D248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2F258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2F258
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E2DA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E2DA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2F258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2F258
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001DDC6306718 : node = 000001DF7B30CD20
+[LOG] SystemI::createSound                     : add node to async list : head = 000001DE3D2FFA18.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC6306718
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF7B30CE30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Torch', format=5, channels=1, frequency=48000, lengthbytes=98880, lengthpcm=543744, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.231476.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC6306718
+[LOG] SoundI::release                          : Fire_Torch (000001DF37ED0018)
+[LOG] SoundI::release                          :     Fire_Torch (000001DE3B1549A8)
+[LOG] SoundI::release                          :     Fire_Torch (000001DE20B32348)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37EC9AD8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B18B8C8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2EEF8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECE008)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1556A8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32A08)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC95C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18E308)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2F258)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECCD78)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B190BA8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2FC78)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECF298)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B151C28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B30D58)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC5908)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18DFC8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2CB88)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECE6C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18D948)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D248)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC5098)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18EB28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2B598)
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001DE2090EBE8 : node = 000001DF3054D250
+[LOG] SystemI::createSound                     : add node to async list : head = 000001DE3D2FFA18.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE2090EBE8
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE225E6718 : node = 000001DF3054B6D0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054D360
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1CFB4238 : node = 000001DF3054DB10
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF24CB70E8 : node = 000001DF3054CAD0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 2
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF3358EE48 : node = 000001DF3054B310
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 3
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF3358EFF8 : node = 000001DF3054DC50
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 4
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF3358F508 : node = 000001DF3054B810
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 5
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF3358F358 : node = 000001DF3054C710
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 6
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1D574C28 : node = 000001DF3054B1D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 7
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1D574A78 : node = 000001DF3054C990
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 8
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF32D60088 : node = 000001DF3054BF90
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 9
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF32D60238 : node = 000001DF3054DD90
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 10
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE22C260D8 : node = 000001DF3054BE50
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 11
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE22C25F28 : node = 000001DF3054D610
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 12
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE2090EBE8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE225E6718
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF3322FFE8 : node = 000001DF3054B450
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 12
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B7E0
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF33230348 : node = 000001DF3054C0D0
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 13
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE22CCE608 : node = 000001DF3054DED0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 14
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE22CCE458 : node = 000001DF3054D890
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 15
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF351087D8 : node = 000001DF3054B090
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 16
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DF351082C8 : node = 000001DF3054B590
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 17
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB91F18 : node = 000001DF3054BBD0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 18
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB92428 : node = 000001DF3054B950
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 19
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB920C8 : node = 000001DF3054C490
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 20
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB925D8 : node = 000001DF3054C210
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 21
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB92788 : node = 000001DF3054CD50
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 22
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB91858 : node = 000001DF3054CE90
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 23
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB92938 : node = 000001DF3054C5D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 24
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE225E6718
+[LOG] SystemI::createSound                     : setdata soundi = 000001DE1BB92E48 : node = 000001DF3054CFD0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1CFB4238
+[LOG] SystemI::createSound                     : add node to async list : head = 000001DE3D2FFA18.  list count = 24
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE1BB92FF8 : node = 000001DF3054BA90
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 25
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054DC20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BB9D8 : node = 000001DF3054CC10
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 26
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BBB88 : node = 000001DF3054D110
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 27
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BA598 : node = 000001DF3054D4D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 28
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1CFB4238
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF24CB70E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054CBE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF24CB70E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF3358EE48
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B420
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF3358EE48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF3358EFF8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054DD60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF3358EFF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF3358F508
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B920
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF3358F508
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF3358F358
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054C820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF3358F358
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1D574C28
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B2E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1D574C28
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1D574A78
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054CAA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1D574A78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF32D60088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054C0A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF32D60088
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF32D60238
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054DEA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF32D60238
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE22C260D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054BF60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE22C260D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE22C25F28
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054D720
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE22C25F28
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF3322FFE8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B560
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF3322FFE8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF33230348
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054C1E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF33230348
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE22CCE608
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054DFE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE22CCE608
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE22CCE458
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054D9A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE22CCE458
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF351087D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B1A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF351087D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DF351082C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054B6A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DF351082C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB91F18
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054BCE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB91F18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB92428
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054BA60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB92428
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB920C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054C5A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB920C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB925D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054C320
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB925D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB92788
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054CE60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB92788
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB91858
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054CFA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB91858
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB92938
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054C6E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB92938
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB92E48
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054D0E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB92E48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1BB92FF8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054BBA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1BB92FF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BB9D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054CD20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BB9D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BBB88
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054D220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BBB88
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BA598
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054D5E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Brazero', format=5, channels=2, frequency=48000, lengthbytes=645568, lengthpcm=2055168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.589050.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BA598
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E4DB8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E4DB8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E4F68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E4F68
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E6708
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E6708
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E6DC8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E6DC8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E61F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E61F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E4A58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E4A58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E5CE8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E5CE8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E6048
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E6048
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E63A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E63A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE254E6558
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE254E6558
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2D3F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2D3F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2D098
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2D098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2B598
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2B598
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2D248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2D248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B315C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B315C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2BFB8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2BFB8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2DE18
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2DE18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2D5A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2D5A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2C168
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2C168
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2E4D8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2E4D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2B8F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2B8F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2DAB8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2DAB8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2BAA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2BAA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2DC68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2DC68
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2E688
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2E688
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2BC58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2BC58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2C828
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2C828
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2C318
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2C318
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2F408
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2F408
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2ED48
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2ED48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2EEF8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2EEF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2C9D8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2C9D8
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ED2388)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1522A8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32198)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECF5F8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B156D68)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B31FE8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED0D98)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B151268)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B31E38)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECD0D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1563A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B32F18)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED1968)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B156548)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B326A8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED10F8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B153B08)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B32BB8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED1458)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B153E48)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B31AD8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED1CC8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1532E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B309F8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECEA28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B151F68)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B30848)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECEF38)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B153148)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B30338)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECFCB8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B154B48)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D908)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED1E78)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B153CA8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2B3E8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECDCA8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1559E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B31418)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED06D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18BF48)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2FE28)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ED12A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1906C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2EB98)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECA858)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18D7A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2CEE8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECA4F8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B190388)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2CD38)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC6688)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18D128)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D758)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC9418)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18CDE8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B30698)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC8F08)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1901E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2FAC8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC8D58)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18F008)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2E9E8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC64D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18FB68)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B31268)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC89F8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18C908)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2B238)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37ECA6A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18F828)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B310B8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC8338)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18E988)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2E328)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC55A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18DE28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2DFC8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF37EC5E18)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18C768)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2E838)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECCF28)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B155368)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32D68)
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001DE1DC4A0A8 : node = 000001DF355D6880
+[LOG] SystemI::createSound                     : add node to async list : head = 000001DE3D2FFA18.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE1DC4A0A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF355D6990
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fire_Torch', format=5, channels=1, frequency=48000, lengthbytes=98880, lengthpcm=543744, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.231476.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE1DC4A0A8
+[LOG] SoundI::release                          : Fire_Torch (000001DDC6306718)
+[LOG] SoundI::release                          :     Fire_Torch (000001DE3B151DC8)
+[LOG] SoundI::release                          :     Fire_Torch (000001DE254E41E8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECD798)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1544C8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E1CC8)
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001DDC67BA088 : node = 000001DF30547710
+[LOG] SystemI::createSound                     : add node to async list : head = 000001DE3D2FFA18.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BA088
+[LOG] SystemI::createSound                     : filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BA238 : node = 000001DF30546310
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30547820
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BA3E8 : node = 000001DF3054A2D0
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BA8F8 : node = 000001DF30549290
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 2
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BAAA8 : node = 000001DF30547D50
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 3
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DDC67BAC58 : node = 000001DF30546810
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 4
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219B0658 : node = 000001DF30547FD0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 5
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219B02F8 : node = 000001DF30549C90
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 6
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219AFF98 : node = 000001DF30547E90
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 7
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219AF578 : node = 000001DF30548750
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 8
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219B0808 : node = 000001DF30548890
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 9
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219AF218 : node = 000001DF30546590
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 10
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219B0D18 : node = 000001DF305498D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 11
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219AF728 : node = 000001DF30546950
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 12
+[LOG] SystemI::createSound                     :     filename = Assets/SBDFMODbank/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001DE219AFA88 : node = 000001DF30548B10
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001DE3D2FFA18.  list count = 13
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BA088
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BA238
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30546420
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BA238
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BA3E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF3054A3E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BA3E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BA8F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF305493A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BA8F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BAAA8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30547E60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BAAA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DDC67BAC58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30546920
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DDC67BAC58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219B0658
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF305480E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219B0658
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219B02F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30549DA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219B02F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219AFF98
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30547FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219AFF98
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219AF578
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30548860
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219AF578
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219B0808
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF305489A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219B0808
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219AF218
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF305466A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219AF218
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219B0D18
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF305499E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219B0D18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219AF728
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30546A60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219AF728
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE219AFA88
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/SBDFMODbank/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 22478208
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38400
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001DF30548C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1031
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water_Waterfall', format=5, channels=2, frequency=48000, lengthbytes=492192, lengthpcm=1853708, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.317126.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE219AFA88
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B32D68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B32D68
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B326A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B326A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B32858
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B32858
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B32F18
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B32F18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B31E38
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B31E38
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B31FE8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B31FE8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B32A08
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B32A08
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B32348
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B32348
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B32198
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B32198
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2EB98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2EB98
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B30188
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B30188
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2E9E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2E9E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2C4C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2C4C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B31928
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B31928
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DE20B2E838
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DE20B2E838
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ED01C8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B153968)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E01C8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECE1B8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B155D28)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E3E88)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ED0BE8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B153488)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E46F8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECF7A8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B156068)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E1608)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECDAF8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B154E88)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E5118)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECC508)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B155508)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE254E12A8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ED17B8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B154188)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2B748)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ECF448)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B156208)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B31C88)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37ED0888)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1566E8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B30F08)
+[LOG] SoundI::release                          : Water_Waterfall (000001DF37EC5758)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B18CC48)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2F918)
+[LOG] SoundI::release                          : BGM_DarknessSBD (000001DF37ED2DA8)
+[LOG] SoundI::release                          :     BGM_DarknessSBD (000001DE3B150F28)
+[LOG] SoundI::release                          :     BGM_DarknessSBD (000001DE254E2DA8)
+[LOG] SoundI::release                          : Fire_Torch (000001DE1DC4A0A8)
+[LOG] SoundI::release                          :     Fire_Torch (000001DE3B1559E8)
+[LOG] SoundI::release                          :     Fire_Torch (000001DE20B32BB8)
+[LOG] SoundI::release                          : BGM_IntroSBD (000001DF37ED7638)
+[LOG] SoundI::release                          :     BGM_IntroSBD (000001DE3B152AC8)
+[LOG] SoundI::release                          :     BGM_IntroSBD (000001DE254E2538)
+[LOG] SoundI::release                          : BGM_WindSBD (000001DF37ED8C28)
+[LOG] SoundI::release                          :     BGM_WindSBD (000001DE3B154328)
+[LOG] SoundI::release                          :     BGM_WindSBD (000001DE254E2028)
+[LOG] SoundI::release                          : BGM_WaterSBD (000001DF37ED7128)
+[LOG] SoundI::release                          :     BGM_WaterSBD (000001DE3B151A88)
+[LOG] SoundI::release                          :     BGM_WaterSBD (000001DE254E0F48)
+[LOG] SoundI::release                          : BGM_MazeSBD (000001DF37ED0528)
+[LOG] SoundI::release                          :     BGM_MazeSBD (000001DE3B156888)
+[LOG] SoundI::release                          :     BGM_MazeSBD (000001DE254E0528)
+[LOG] SoundI::release                          : Water_Waterfall (000001DDC67BA8F8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1563A8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32F18)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219AF728)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B154B48)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B31928)
+[LOG] SoundI::release                          : Water_Waterfall (000001DDC67BA3E8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B151268)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32858)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219B0D18)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B153148)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2C4C8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219AF218)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B152FA8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2E9E8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219B0808)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B155368)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B30188)
+[LOG] SoundI::release                          : Water_Waterfall (000001DDC67BA088)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B154CE8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32D68)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219AF578)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B152E08)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2EB98)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219B0658)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B151F68)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32A08)
+[LOG] SoundI::release                          : Water_Waterfall (000001DDC67BA238)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B156D68)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B326A8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219AFF98)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B152448)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32198)
+[LOG] SoundI::release                          : Water_Waterfall (000001DDC67BAC58)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B152C68)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B31FE8)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219B02F8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1522A8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B32348)
+[LOG] SoundI::release                          : Water_Waterfall (000001DDC67BAAA8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B153CA8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B31E38)
+[LOG] SoundI::release                          : Water_Waterfall (000001DE219AFA88)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE3B1532E8)
+[LOG] SoundI::release                          :     Water_Waterfall (000001DE20B2E838)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE22C260D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B155028)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2B598)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF32D60238)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B156BC8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D098)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB92938)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B151408)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2C828)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF32D60088)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B152108)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D3F8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB91858)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1525E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2BC58)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1D574A78)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B156F08)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E6558)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB92788)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B157588)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2E688)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1D574C28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B154668)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E63A8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB925D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B153628)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2DC68)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB920C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1573E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2BAA8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF3358F358)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B156A28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E6048)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB92428)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B157248)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2DAB8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF3358F508)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B153FE8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E5CE8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DDC67BA598)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B151C28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2C9D8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB91F18)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B155848)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2B8F8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF3358EFF8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18B8C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E4A58)
+[LOG] SoundI::release                          : Fire_Brazero (000001DDC67BBB88)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B151748)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2EEF8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF351082C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1570A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2E4D8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF3358EE48)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18EB28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E61F8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DDC67BB9D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1518E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2ED48)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF351087D8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1556A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2C168)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF24CB70E8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18E308)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E6DC8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB92FF8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1515A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2F408)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE22CCE458)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B154808)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D5A8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1CFB4238)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18DFC8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E6708)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE1BB92E48)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1549A8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2C318)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE22CCE608)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B155EC8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2DE18)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF33230348)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B1551C8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2BFB8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DF3322FFE8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B152788)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B315C8)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE225E6718)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B18D948)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E4F68)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE22C25F28)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B155B88)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE20B2D248)
+[LOG] SoundI::release                          : Fire_Brazero (000001DE2090EBE8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE3B190BA8)
+[LOG] SoundI::release                          :     Fire_Brazero (000001DE254E4DB8)
+[LOG] SoundI::release                          : bird-singing-sound-effect-free-sound-effects (000001DF37EC9FE8)
+[LOG] SoundI::release                          :     bird-singing-sound-effect-free-sound-effects (000001DE3B18E168)
+[LOG] SoundI::release                          :     bird-singing-sound-effect-free-sound-effects (000001DE20B2BE08)
+[LOG] SoundI::release                          :  (000001DF24629338)
+[LOG] SoundI::release                          :     Movement_Walk_Stone1 (000001DE3B18BDA8)
+[LOG] SoundI::release                          :  (000001DF24628EE8)
+[LOG] SoundI::release                          :     Movement_Walk_Stone2 (000001DE3B18FD08)
+[LOG] SoundI::release                          :  (000001DF246277E8)
+[LOG] SoundI::release                          :     Movement_Walk_Stone3 (000001DE3B18E648)
+[LOG] SoundI::release                          :  (000001DF24629618)
+[LOG] SoundI::release                          :     WaterSteps1 (000001DE3B190A08)
+[LOG] SoundI::release                          :  (000001DF24629D48)
+[LOG] SoundI::release                          :     WaterSteps2 (000001DE3B18ECC8)
+[LOG] SoundI::release                          :  (000001DF246270B8)
+[LOG] SoundI::release                          :     WaterSteps3 (000001DE3B18E7E8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+>>>>>>> main
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
