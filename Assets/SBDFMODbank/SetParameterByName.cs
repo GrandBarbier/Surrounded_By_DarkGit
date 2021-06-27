@@ -18,6 +18,8 @@ public class SetParameterByName : MonoBehaviour
     
     [Range(0f, 1f)]
     public float mazeWind;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class SetParameterByName : MonoBehaviour
         instance.setParameterByName("introWater", introWater);
         instance.setParameterByName("waterMaze", waterMaze);
         instance.setParameterByName("mazeWind", mazeWind);
+        
     }
 
     void MusicStop()
