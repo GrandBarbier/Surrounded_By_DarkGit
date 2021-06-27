@@ -16,6 +16,14 @@ public class SaveData
     public float[] objectRotY;
     public float[] objectRotZ;
     public float[] objectRotW;
+
+
+    public float[] levierId;
+    public float[] levierPosX;
+    public float[] levierPosY;
+    public float[] levierPosZ;
+    public bool[] levierActivated;
+    public bool[] levierNeverused;
     
     
     
@@ -55,6 +63,18 @@ public class SaveData
             objectRotW[i] = save.interactiveObjects[i].transform.rotation.w;
         }
         
+        levierId = new float[save.leviers.Count];
+        levierPosX = new float[levierId.Length];
+        levierPosY = new float[levierId.Length];
+        levierPosZ = new float[levierId.Length];
+        
+        for (int i = 0; i < levierId.Length; i++)
+        {
+            levierPosX[i] = save.leviers[i].transform.position.x;
+            levierPosY[i] = save.leviers[i].transform.position.y;
+            levierPosZ[i] = save.leviers[i].transform.position.z;
+            levierActivated[i] = save.levierManche[i].activated;
+            levierNeverused[i] = save.firststepbuttons[i].neverused;
+        }
     }
-    
 }

@@ -18,10 +18,20 @@ public class SaveManager : MonoBehaviour
     [Header("Torch")] 
     public GameObject torch;
     
+    [Header("Leviers")]
+    public List<GameObject> leviers = new List<GameObject>();
+    public List<LevierManche> levierManche = new List<LevierManche>();
+    public List<firststepbutton> firststepbuttons = new List<firststepbutton>();
+
+    public static bool load;
     
     private void Start()
     {
-        //LoadGame();
+        if (load)
+        {
+            LoadGame();
+            load = false;
+        }
     }
 
     void Update()
@@ -32,8 +42,8 @@ public class SaveManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F9))
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            LoadGame();
+            load = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -73,6 +83,18 @@ public class SaveManager : MonoBehaviour
             objectRotation.z = data.objectRotZ[i];
             objectRotation.w = data.objectRotW[i];
             interactiveObjects[i].transform.rotation = objectRotation;
+        }
+
+        for (int i = 0; i < data.levierId.Length; i++)
+        {
+            Vector3 levierPosition;
+            levierPosition.x = data.levierPosX[i];
+            levierPosition.y = data.levierPosY[i];
+            levierPosition.z = data.levierPosZ[i];
+            leviers[i].transform.position = levierPosition;
+
+            levierManche[i].activated = data.levierActivated[i];
+            firststepbuttons[i].neverused = data.levierNeverused[i];
         }
     }
 }
