@@ -95,7 +95,7 @@ Material:
     - ColorThreshold: 30
     - DepthStrenght: 1
     - DepthThickness: 200
-    - DepthThreshold: 0.002
+    - DepthThreshold: 0.02
     - REQUIRE_DEPTH_TEXTURE: 1
     - REQUIRE_OPAQUE_TEXTURE: 1
     - Thickness: 0.001

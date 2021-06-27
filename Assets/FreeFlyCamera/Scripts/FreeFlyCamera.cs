@@ -167,16 +167,16 @@ public class FreeFlyCamera : MonoBehaviour
             if (Input.GetKey(_boostSpeed))
                 currentSpeed = _boostedSpeed;
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.I))
                 deltaPosition += transform.forward;
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.K))
                 deltaPosition -= transform.forward;
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.J))
                 deltaPosition -= transform.right;
 
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.L))
                 deltaPosition += transform.right;
 
             if (Input.GetKey(_moveUp))

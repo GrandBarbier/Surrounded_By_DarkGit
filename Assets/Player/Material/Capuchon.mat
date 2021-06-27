@@ -116,9 +116,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _GradiantOffset: -0.205
+    - _GradiantOffset: 0.64
     - _GradiantOffset1: 0
-    - _GradiantScale: 1.18
+    - _GradiantScale: 1.43
     - _GradiantScale1: 1
     - _Illumination: 1
     - _Metallic: 0
