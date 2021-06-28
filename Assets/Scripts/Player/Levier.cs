@@ -19,10 +19,14 @@ public class Levier : MonoBehaviour
     private bool playerClose;
     public Action<InputAction.CallbackContext> tryTriggerAnim;
     
-    
+    public FMOD.Studio.EventInstance instance;
+    [FMODUnity.EventRef]
+    public string fmodEvent;
 
     private void Start()
     {
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        
         player = this.gameObject;
         
         tryTriggerAnim = context => TryTriggerAnimation();
@@ -69,6 +73,7 @@ public class Levier : MonoBehaviour
                 manche.GetComponent<firststepbutton>().neverused = true;
                 hanged = false;
                 leverDone.Add(currentLever);
+                instance.stop();
             }
         } 
     }
@@ -77,6 +82,9 @@ public class Levier : MonoBehaviour
     {
         if (playerClose && player.GetComponent<Movement>().isGrounded && player.GetComponent<PlaceTorch>().torchOnGround && !leverDone.Contains(currentLever))
         {
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.transform,  currentLever.GetComponent<Rigidbody>());
+            instance.start();
+            
             playerAnimator.SetBool("IsHanging", true);
             player.GetComponent<Movement>().animPlaying = true;
         }

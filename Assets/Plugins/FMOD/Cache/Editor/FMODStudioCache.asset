@@ -46,6 +46,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2812
+--- !u!114 &-8108588575006979040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Stone
+  m_EditorClassIdentifier: 
+  Name: Stone
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7830868189359069977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +86,30 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 295863069997158821}
+  - {fileID: -5481764587168610411}
   MinDistance: 0
   MaxDistance: 0
   Length: 128000
+--- !u!114 &-7600670666346919285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Water
+  m_EditorClassIdentifier: 
+  Name: Water
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7357752738884479350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +173,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5074
+--- !u!114 &-5481764587168610411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM_MainMenu/BGM_MainMenu
+  m_EditorClassIdentifier: 
+  Name: BGM_MainMenu
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5287198971940489265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +365,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-1823578065996689844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM_Darkness/Darkness
+  m_EditorClassIdentifier: 
+  Name: Darkness
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1378979395963871603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +428,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6522529346427442631}
+  - {fileID: -1823578065996689844}
   MinDistance: 0
   MaxDistance: 0
   Length: 63650
@@ -391,12 +471,13 @@ MonoBehaviour:
   - {fileID: 9052134470094937587}
   - {fileID: -4354758878945825405}
   - {fileID: 8238460220913018615}
+  - {fileID: 3597396007446902624}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5370161779368571082}
   StringsBanks:
   - {fileID: 3146781300487931615}
-  stringsBankWriteTime: 637604766348567886
+  stringsBankWriteTime: 637604855786166400
   cacheVersion: 6
 --- !u!114 &214608387865326900
 MonoBehaviour:
@@ -441,7 +522,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5030902358254901380}
+  - {fileID: 7822827511041641319}
   MinDistance: 1
   MaxDistance: 20
   Length: 58000
@@ -460,6 +541,26 @@ MonoBehaviour:
   Name: BGM_MainMenu
   Min: 0
   Max: 5
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &1175957960362585195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/WaterMaze
+  m_EditorClassIdentifier: 
+  Name: WaterMaze
+  Min: 0
+  Max: 1
   Default: 0
   ID:
     data1: 0
@@ -511,6 +612,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16968
+--- !u!114 &3043119990076939502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MazeWind
+  m_EditorClassIdentifier: 
+  Name: MazeWind
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3146781300487931615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,12 +647,35 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637604766348567886
+  lastModified: 637604855786166400
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2304
+    Value: 2348
   Exists: 1
+--- !u!114 &3597396007446902624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Torch 2
+  m_EditorClassIdentifier: 
+  Path: event:/Torch 2
+  guid: 8d3f2f5abeee274682310040007522c7
+  Banks:
+  - {fileID: 5370161779368571082}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7875
 --- !u!114 &4206175728932209990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,9 +783,29 @@ MonoBehaviour:
   Path: Assets/SBDFMODbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637604766351198171
+  lastModified: 637604855788030158
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &5797820102813363475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/IntroWater
+  m_EditorClassIdentifier: 
+  Name: IntroWater
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &6126088550627703754
 MonoBehaviour:
@@ -663,9 +827,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6469314166053238613}
-  - {fileID: -7357752738884479350}
-  - {fileID: -3551391781976321056}
+  - {fileID: 1175957960362585195}
+  - {fileID: 5797820102813363475}
+  - {fileID: 3043119990076939502}
   MinDistance: 0
   MaxDistance: 0
   Length: 352000
@@ -707,6 +871,26 @@ MonoBehaviour:
   Name: Darkness
   Min: 0
   Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7822827511041641319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Wind/Wind
+  m_EditorClassIdentifier: 
+  Name: Wind
+  Min: 0
+  Max: 1
   Default: 0
   ID:
     data1: 0
@@ -755,8 +939,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -2407456506396000827}
-  - {fileID: -2246639414379213744}
+  - {fileID: -7600670666346919285}
+  - {fileID: -8108588575006979040}
   MinDistance: 1
   MaxDistance: 20
   Length: 390
