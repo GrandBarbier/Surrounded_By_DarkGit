@@ -112,5 +112,10 @@ public class SaveManager : MonoBehaviour
         torch.transform.rotation = torchRot;
 
         placeTorch.torchOnGround = data.torchOnGround;
+
+        for (int i = 0; i < data.braseroId.Length; i++)
+        {
+            braseros[i].brazeroOn = data.braseroOn[i];
+        }
     }
 }
