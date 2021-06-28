@@ -50,20 +50,26 @@ public class PickUpTorch : MonoBehaviour
         // }
     }
 
-
+    void Update()
+    {
+        if (!placeTorch.torchOnGround)
+        {
+            waterTorch.canBePicked = false;
+            
+            torchRb.useGravity = false;
+            torchRb.isKinematic = true;
+            torchMeshCollider.isTrigger = true;
+        
+            torch.transform.parent = player_hand.transform;
+            torch.transform.position = torchHandPos.transform.position;
+            torch.transform.rotation = torchHandPos.transform.rotation;
+            torch.transform.localEulerAngles += new Vector3(0, -90, 0);
+        }
+    }
 
     void PickTorch()
     {
-        waterTorch.canBePicked = false;
         placeTorch.torchOnGround = false;
-        torchRb.useGravity = false;
-        torchRb.isKinematic = true;
-        torchMeshCollider.isTrigger = true;
-        
-        torch.transform.parent = player_hand.transform;
-        torch.transform.position = torchHandPos.transform.position;
-        torch.transform.rotation = torchHandPos.transform.rotation;
-        torch.transform.localEulerAngles += new Vector3(0, -90, 0);
     }
 
     public void TriggerPickUpTorch()

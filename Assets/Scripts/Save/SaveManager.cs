@@ -17,6 +17,7 @@ public class SaveManager : MonoBehaviour
 
     [Header("Torch")] 
     public GameObject torch;
+    public PlaceTorch PlaceTorch;
     
     [Header("Leviers")]
     public List<GameObject> leviers = new List<GameObject>();

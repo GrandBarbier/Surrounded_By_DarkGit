@@ -29,6 +29,11 @@ public class PlaceTorch : MonoBehaviour
         //placeTorchAction = context => TriggerDropTorchAnim();
         //Gears.gears.playerInput.actions["PoseTorch"].performed += placeTorchAction;
         Gears.gears.playerInput.actions["DropTorch"].canceled += placeTorchAction;
+
+        if (!torchOnGround)
+        {
+            animator.Play("Empty Pick Up");
+        }
     }
     
     void OnDestroy()
@@ -63,6 +68,17 @@ public class PlaceTorch : MonoBehaviour
                 TriggerDropTorchAnim();
             }
         }
+
+
+        if (torchOnGround)
+        {
+            torch.transform.parent = null;
+
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            torchMesh.isTrigger = false;
+            
+        }
     }
 
     void DropTorch()
@@ -71,13 +87,6 @@ public class PlaceTorch : MonoBehaviour
         //rend la torche indépendante en mettant à jour la variable l'indiquant
         
         torchOnGround = true;
-        waterTorch.canBePicked = true;
-        
-        torch.transform.parent = null;
-
-        rb.isKinematic = false;
-        rb.useGravity = true;
-        torchMesh.isTrigger = false;
     }
 
     public void TriggerDropTorchAnim()
