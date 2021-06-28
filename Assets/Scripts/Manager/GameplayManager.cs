@@ -9,6 +9,7 @@ public class GameplayManager : MonoBehaviour
 {
     public GameObject facemask;
     public GameObject player;
+    public GameObject pDark;
     public Animator playerAnimator;
     public GameObject deathParticles;
     
@@ -23,18 +24,20 @@ public class GameplayManager : MonoBehaviour
     [Header("References")] 
     public Movement playerMovement;
     public Renderer renderer;
+    public SetParameterDarkness setPDark;
     
     void Start()
     {
         deathParticles.SetActive(false);
         _actualRestartTime = restartTime;
+        Cursor.visible = false;
         GetReferenceComponents();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         
         if(Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -83,7 +86,8 @@ public class GameplayManager : MonoBehaviour
         playerMovement.enabled = false;
         deathParticles.SetActive(true);
         playerAnimator.SetBool("IsDead", true);
-        _actualRestartTime = 4.4f;
+        _actualRestartTime = 3f;
+        setPDark.MusicStop();
         while (_actualRestartTime > 0)
         {
             renderer.materials[1].color = Color.black;
@@ -103,5 +107,7 @@ public class GameplayManager : MonoBehaviour
     {
         playerMovement = player.GetComponent<Movement>();
         renderer = facemask.GetComponent<Renderer>();
+        setPDark = pDark.GetComponent<SetParameterDarkness>();
+
     }
 }

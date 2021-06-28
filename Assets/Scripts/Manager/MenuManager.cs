@@ -152,7 +152,7 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
-            Cursor.visible = true;
+            Cursor.visible = false;
         }
         else
         {
@@ -160,8 +160,9 @@ public class MenuManager : MonoBehaviour
             GoToPanel(mainMenu, rescaleSelection: false);
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
-            Time.timeScale = 0f;
             Cursor.visible = true;
+            Debug.LogWarning(Cursor.visible);
+            Time.timeScale = 0f;
         }
 
         pause = !pause;
