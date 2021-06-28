@@ -68,8 +68,13 @@ public class igniteBrazero : MonoBehaviour
 				FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
 				instance.start();
 			}
+			else
+			{
+				brazero_light.SetActive(false);
+				brazero_particles.SetActive(false);
+				brazero_SFX.SetActive(false);
+			}
 		}
 		brazeroOnLastFrame = brazeroOn;
-
 	}
 }
