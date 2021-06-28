@@ -68,13 +68,17 @@ public class SaveData
         levierPosY = new float[levierId.Length];
         levierPosZ = new float[levierId.Length];
         
-        for (int i = 0; i < levierId.Length-1; i++)
+        levierActivated = new bool[levierId.Length];
+        levierNeverused = new bool[levierId.Length];
+        
+        for (int i = 0; i < levierId.Length; i++)
         {
             levierPosX[i] = save.leviers[i].transform.position.x;
             levierPosY[i] = save.leviers[i].transform.position.y;
             levierPosZ[i] = save.leviers[i].transform.position.z;
-            //levierActivated[i] = save.levierManche[i].activated;
-            //levierNeverused[i] = save.firststepbuttons[i].neverused;
+            
+            levierActivated[i] = save.levierManche[i].activated;
+            levierNeverused[i] = save.firststepbuttons[i].neverused;
         }
     }
 }

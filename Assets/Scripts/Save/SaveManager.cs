@@ -93,8 +93,8 @@ public class SaveManager : MonoBehaviour
             levierPosition.z = data.levierPosZ[i];
             leviers[i].transform.position = levierPosition;
 
-            //levierManche[i].activated = data.levierActivated[i];
-            //firststepbuttons[i].neverused = data.levierNeverused[i];
+            levierManche[i].activated = data.levierActivated[i];
+            firststepbuttons[i].neverused = data.levierNeverused[i];
         }
     }
 }
