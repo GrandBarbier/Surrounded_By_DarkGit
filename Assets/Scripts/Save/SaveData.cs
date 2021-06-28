@@ -33,6 +33,9 @@ public class SaveData
     public bool[] braseroOn;
 
     public float[] bgm;
+
+    public float[] checkpointId;
+    public bool[] checkpointOn;
     
     
     public SaveData(SaveManager save)
@@ -47,6 +50,7 @@ public class SaveData
         playerRotation[1] = save.player.transform.rotation.y;
         playerRotation[2] = save.player.transform.rotation.z;
         playerRotation[3] = save.player.transform.rotation.w;
+        
         
         
         objectId = new float[save.interactiveObjects.Count];
@@ -71,6 +75,8 @@ public class SaveData
             objectRotW[i] = save.interactiveObjects[i].transform.rotation.w;
         }
         
+        
+        
         levierId = new float[save.leviers.Count];
         levierPosX = new float[levierId.Length];
         levierPosY = new float[levierId.Length];
@@ -89,6 +95,8 @@ public class SaveData
             levierNeverused[i] = save.firststepbuttons[i].neverused;
         }
         
+        
+        
         torchPos = new float[3];
         torchPos[0] = save.torch.transform.position.x;
         torchPos[1] = save.torch.transform.position.y;
@@ -102,6 +110,8 @@ public class SaveData
 
         torchOnGround = save.placeTorch.torchOnGround;
         
+        
+        
         braseroId = new float[save.braseros.Count];
         braseroOn = new bool[braseroId.Length];
 
@@ -110,9 +120,21 @@ public class SaveData
             braseroOn[i] = save.braseros[i].brazeroOn;
         }
         
+        
+        
         bgm = new float[3];
         bgm[0] = save.bgm.introWater;
         bgm[1] = save.bgm.waterMaze;
         bgm[2] = save.bgm.mazeWind;
+        
+        
+        
+        checkpointId = new float[save.checkpoints.Count];
+        checkpointOn = new bool[checkpointId.Length];
+
+        for (int i = 0; i < checkpointId.Length; i++)
+        {
+            checkpointOn[i] = save.checkpoints[i].brazeroOn;
+        }
     }
 }
