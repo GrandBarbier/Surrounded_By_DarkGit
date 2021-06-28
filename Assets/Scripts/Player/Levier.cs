@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Levier : MonoBehaviour
 {
@@ -12,13 +13,20 @@ public class Levier : MonoBehaviour
     public Transform manche;
     public Transform place;
     public bool hanged;
-    
+
+    private GameObject currentLever;
+    private List<GameObject> leverDone = new List<GameObject>();
+    private bool playerClose;
+    public Action<InputAction.CallbackContext> tryTriggerAnim;
     
     
 
     private void Start()
     {
         player = this.gameObject;
+        
+        tryTriggerAnim = context => TryTriggerAnimation();
+        Gears.gears.playerInput.actions["Interact"].performed += tryTriggerAnim;
     }
     
     
@@ -31,14 +39,14 @@ public class Levier : MonoBehaviour
             direction = other.gameObject.transform.GetChild(2);
             manche = other.gameObject.transform.GetChild(1);
             place = manche.gameObject.transform.GetChild(0);
-            if (Input.GetKeyDown(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
-                player.GetComponent<PlaceTorch>().torchOnGround)
-            {
-                
-                playerAnimator.SetBool("IsHanging", true);
-                player.GetComponent<Movement>().animPlaying = true;
-
-            }
+            // if (Input.GetKeyDown(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
+            //     player.GetComponent<PlaceTorch>().torchOnGround)
+            // {
+            //     
+            //     playerAnimator.SetBool("IsHanging", true);
+            //     player.GetComponent<Movement>().animPlaying = true;
+            //
+            // }
 
             if (hanged)
             {
@@ -60,8 +68,18 @@ public class Levier : MonoBehaviour
                 manche.GetComponent<LevierManche>().activated = true;
                 manche.GetComponent<firststepbutton>().neverused = true;
                 hanged = false;
+                leverDone.Add(currentLever);
             }
         } 
+    }
+
+    public void TryTriggerAnimation()
+    {
+        if (playerClose && player.GetComponent<Movement>().isGrounded && player.GetComponent<PlaceTorch>().torchOnGround && !leverDone.Contains(currentLever))
+        {
+            playerAnimator.SetBool("IsHanging", true);
+            player.GetComponent<Movement>().animPlaying = true;
+        }
     }
 
     public void JumpHang()
@@ -69,9 +87,27 @@ public class Levier : MonoBehaviour
         hanged = true;
     }
 
+    void OnDestoy()
+    {
+        Gears.gears.playerInput.actions["Interact"].performed -= tryTriggerAnim;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("levier"))
+        {
+            playerClose = true;
+            currentLever = other.gameObject;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         direction = null;
         manche = null;
+        
+        if (other.gameObject.CompareTag("levier"))
+        {
+            playerClose = false;
+        }
     }
 }

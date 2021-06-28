@@ -35,7 +35,7 @@ public class PushableDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.A) && playerMovement.isGrounded && placeTorch.torchOnGround && pushable)
+            if (Gears.gears.playerInput.actions["Interact"].ReadValue<float>() > 0 && playerMovement.isGrounded && placeTorch.torchOnGround && pushable)
             {
                door.transform.Rotate(0,0,speed);
             }

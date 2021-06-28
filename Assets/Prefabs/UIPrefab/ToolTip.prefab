@@ -70,7 +70,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1505171120567329884, guid: 52a60bbcf1934494d9b681bfe59154a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -174,7 +174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 91.687, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -210.52, y: 15.52}
+  m_AnchoredPosition: {x: -210.52002, y: 15.52002}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7908783106816836360
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7908783106816836358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   action: {fileID: -8719938915447317476, guid: b58f79af2a83f824f929dc51c65c0955, type: 3}
   TextMeshPro: {fileID: 7908783106650377662}
   playerClose: 0
-  _done: 0
+  adaptInput: 0
 --- !u!65 &7908783106816836363
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class pushableBlock : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.A) && playerMovement.isGrounded && placeTorch.torchOnGround)
+            if (Gears.gears.playerInput.actions["Interact"].ReadValue<float>() > 0 && playerMovement.isGrounded && placeTorch.torchOnGround)
             {
                 blockRb.AddRelativeForce(forceOfPush * (Time.deltaTime * speed));
 
