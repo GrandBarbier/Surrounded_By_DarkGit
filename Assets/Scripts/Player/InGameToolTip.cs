@@ -29,7 +29,26 @@ public class InGameToolTip : MonoBehaviour
     {
         action.action.performed += context => TryDone();
 
-        for (int i = 0; i < action.action.bindings.Count; i++)
+        UpdateToolTipText();
+    }
+    
+    void Update()
+    {
+        
+    }
+
+    public void TryDone()
+    {
+        if (playerClose)
+        {
+            //Debug.LogWarning("tipsDone");
+            _done = true;
+        }
+    }
+
+    public void UpdateToolTipText()
+    {
+         for (int i = 0; i < action.action.bindings.Count; i++)
         {
             string device = null;
             string key = null;
@@ -93,20 +112,6 @@ public class InGameToolTip : MonoBehaviour
                     }
                 }
             }
-        }
-    }
-    
-    void Update()
-    {
-        
-    }
-
-    public void TryDone()
-    {
-        if (playerClose)
-        {
-            //Debug.LogWarning("tipsDone");
-            _done = true;
         }
     }
     
