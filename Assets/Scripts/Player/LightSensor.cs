@@ -17,6 +17,8 @@ public class LightSensor : MonoBehaviour
     public float deathLevel;
     public float deathTime;
 
+    public float speedOffDivider;
+
     private Image panelImage;
 
     [Header("Game Objects")] 
@@ -92,7 +94,7 @@ public class LightSensor : MonoBehaviour
         }
         else
         {
-            deathLevel -= Time.deltaTime * lightLevel/5;
+            deathLevel -= Time.deltaTime * lightLevel/speedOffDivider;
         }
         
         if (deathLevel <= 0)
