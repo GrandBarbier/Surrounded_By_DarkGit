@@ -31,6 +31,8 @@ public class SaveData
 
     public float[] braseroId;
     public bool[] braseroOn;
+
+    public float[] bgm;
     
     
     public SaveData(SaveManager save)
@@ -107,5 +109,10 @@ public class SaveData
         {
             braseroOn[i] = save.braseros[i].brazeroOn;
         }
+        
+        bgm = new float[3];
+        bgm[0] = save.bgm.introWater;
+        bgm[1] = save.bgm.waterMaze;
+        bgm[2] = save.bgm.mazeWind;
     }
 }

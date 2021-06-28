@@ -7,10 +7,22 @@ public class igniteBrazero : MonoBehaviour
 {
 	public GameObject brazero_light;
 	public GameObject brazero_particles;
+	public GameObject brazero_SFX;
 	public GameObject torch_light;
 	public GameObject torch_particles;
+	public GameObject torch_SFX;
 	public bool brazeroOn;
-	private void OnTriggerStay(Collider other)
+	public bool brazeroOnLastFrame;
+	public FMOD.Studio.EventInstance instance;
+	[FMODUnity.EventRef]
+	public string fmodEvent;
+
+	private void Start()
+	{
+		instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+	}
+
+	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
 		{
@@ -19,7 +31,6 @@ public class igniteBrazero : MonoBehaviour
 			{
 				if (!brazero_light.activeSelf)
 				{
-					//lancer animation
 					brazeroOn = true;
 				}
 			}
@@ -27,10 +38,18 @@ public class igniteBrazero : MonoBehaviour
 			{
 				if (brazero_light.activeSelf)
 				{
-					//lancer animation
-
+					Debug.Log("nique ta mere");
 					torch_light.SetActive(true);
 					torch_particles.SetActive(true);
+					torch_SFX.SetActive(true);
+					//jouer ignition
+					Debug.Log("nique ta mere1");
+
+					FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+					instance.start();
+					torch_light.transform.parent.gameObject.GetComponent<WaterTorch>().torchOff = false;
+					Debug.Log("nique ta mere2");
+
 				}
 			}
 		}
@@ -38,15 +57,19 @@ public class igniteBrazero : MonoBehaviour
 
 	private void Update()
 	{
-		if (brazeroOn)
+		if (!brazeroOnLastFrame)
 		{
-			brazero_light.SetActive(true);
-			brazero_particles.SetActive(true);
+			if (brazeroOn)
+			{
+				brazero_light.SetActive(true);
+				brazero_particles.SetActive(true);
+				brazero_SFX.SetActive(true);
+				//jouer ignition
+				FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+				instance.start();
+			}
 		}
-		else
-		{
-			brazero_light.SetActive(false);
-			brazero_particles.SetActive(false);
-		}
+		brazeroOnLastFrame = brazeroOn;
+
 	}
 }

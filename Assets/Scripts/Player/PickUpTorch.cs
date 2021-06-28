@@ -10,6 +10,7 @@ public class PickUpTorch : MonoBehaviour
     public GameObject player_hand;
     public GameObject torchHandPos;
     public GameObject torch;
+    public GameObject torchSFX;
     public Animator animator;
 
     [Header("Components")] 
@@ -64,6 +65,12 @@ public class PickUpTorch : MonoBehaviour
             torch.transform.position = torchHandPos.transform.position;
             torch.transform.rotation = torchHandPos.transform.rotation;
             torch.transform.localEulerAngles += new Vector3(0, -90, 0);
+
+            if (torch.transform.GetChild(1).gameObject.activeSelf)
+            {
+                torchSFX.SetActive(true);
+                //désactiver le son 3D
+            }
         }
     }
 
