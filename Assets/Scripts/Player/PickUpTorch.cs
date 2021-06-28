@@ -11,6 +11,7 @@ public class PickUpTorch : MonoBehaviour
     public GameObject torchHandPos;
     public GameObject torch;
     public GameObject torchSFX;
+    public GameObject torchSFX2;
     public Animator animator;
 
     [Header("Components")] 
@@ -69,7 +70,7 @@ public class PickUpTorch : MonoBehaviour
             if (torch.transform.GetChild(1).gameObject.activeSelf)
             {
                 torchSFX.SetActive(true);
-                //désactiver le son 3D
+                torchSFX2.SetActive(false);
             }
         }
     }
