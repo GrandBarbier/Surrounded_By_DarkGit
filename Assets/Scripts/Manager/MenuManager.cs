@@ -161,7 +161,6 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
             Cursor.visible = true;
-            Debug.LogWarning(Cursor.visible);
             Time.timeScale = 0f;
         }
 
