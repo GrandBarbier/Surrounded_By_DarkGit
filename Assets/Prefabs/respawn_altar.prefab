@@ -14954,6 +14954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7353007407880030935}
   - component: {fileID: 5600871745588123187}
+  - component: {fileID: 2776377933727710995}
   m_Layer: 0
   m_Name: respawn_altar
   m_TagString: Untagged
@@ -15002,3 +15003,17 @@ MonoBehaviour:
   brazeroOn: 0
   brazeroOnLastFrame: 0
   fmodEvent: 
+  saveManager: {fileID: 0}
+--- !u!135 &2776377933727710995
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872558140451000429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1
+  m_Center: {x: 0, y: 1.8, z: 0}

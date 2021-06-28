@@ -27,6 +27,10 @@ public class SaveManager : MonoBehaviour
 
     [Header("BGM")] 
     public SetParameterByName bgm;
+    
+    [Header("Checkpoints")]
+    public List<Checkpoint> checkpoints = new List<Checkpoint>();
+    
 
     public static bool load;
     
@@ -126,5 +130,10 @@ public class SaveManager : MonoBehaviour
         bgm.introWater = data.bgm[0];
         bgm.waterMaze = data.bgm[1];
         bgm.mazeWind = data.bgm[2];
+
+        for (int i = 0; i < data.checkpointId.Length; i++)
+        {
+            checkpoints[i].brazeroOn = data.checkpointOn[i];
+        }
     }
 }
