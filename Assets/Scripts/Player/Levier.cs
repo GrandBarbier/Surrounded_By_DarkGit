@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,7 @@ public class Levier : MonoBehaviour
     private List<GameObject> leverDone = new List<GameObject>();
     private bool playerClose;
     public Action<InputAction.CallbackContext> tryTriggerAnim;
+    public bool audioPlaying;
     
     public FMOD.Studio.EventInstance instance;
     [FMODUnity.EventRef]
@@ -25,12 +27,11 @@ public class Levier : MonoBehaviour
 
     private void Start()
     {
-        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-        
         player = this.gameObject;
         
         tryTriggerAnim = context => TryTriggerAnimation();
         Gears.gears.playerInput.actions["Interact"].performed += tryTriggerAnim;
+        audioPlaying = false;
     }
     
     
@@ -61,6 +62,14 @@ public class Levier : MonoBehaviour
             if (player.transform.position == place.position)
             {
                 manche.transform.position = Vector3.MoveTowards(manche.transform.position, direction.position, Time.deltaTime);
+
+                if (!audioPlaying)
+                {
+                    instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+                    FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.GetComponent<Transform>(), currentLever.GetComponent<Rigidbody>());
+                    instance.start();
+                    audioPlaying = true;
+                }
             }
             
             
@@ -73,7 +82,9 @@ public class Levier : MonoBehaviour
                 manche.GetComponent<firststepbutton>().neverused = true;
                 hanged = false;
                 leverDone.Add(currentLever);
-                instance.stop();
+                
+                instance.stop(STOP_MODE.IMMEDIATE);
+                audioPlaying = false;
             }
         } 
     }
