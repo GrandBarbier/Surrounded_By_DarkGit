@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+<<<<<<< HEAD
     <e p="C:\Users\COURS\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\COURS\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Surrounded_By_DarkGit.-68514826.00" t="ExcludeRecursive" />
     <e p="E:\1.MATIERE DE COURS\2eme annee\Surrounded_By_DarkGit" t="IncludeRecursive">
+=======
+    <e p="C:\Users\Alan Gryfs\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Alan Gryfs\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Surrounded_By_DarkGit.18726612.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Alan Gryfs\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
+    <e p="D:\GitKraken\Surrounded_By_DarkGit" t="IncludeRecursive">
+>>>>>>> main
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -794,6 +801,17 @@
           </e>
           <e p="README.txt" t="Include" />
         </e>
+        <e p="FreeFlyCamera" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ToggleGameObjectEnable.cs" t="Include" />
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="FreeFlyCamera.cs" t="Include" />
+          </e>
+        </e>
         <e p="Player" t="Include">
           <e p="CapeEmission.shader" t="Include" />
         </e>
@@ -967,6 +985,7 @@
               <e p="{09b586e7-f332-40af-82b4-14632c677f1a}.xml" t="Include" />
             </e>
             <e p="AudioFile" t="Include">
+              <e p="{01a0dfa4-b0ae-4241-bf19-e2a675d1bdd0}.xml" t="Include" />
               <e p="{05a08430-2e86-48bd-b151-291ef1142ad0}.xml" t="Include" />
               <e p="{12b6dba6-c4b1-4efc-84b8-a6ce02944c89}.xml" t="Include" />
               <e p="{17ca3076-da67-444e-9561-93c6ec1bdbd3}.xml" t="Include" />
@@ -1021,6 +1040,7 @@
               <e p="{76335e38-9448-46e5-9db3-4ace386f62e1}.xml" t="Include" />
               <e p="{881fc057-b7ca-48d9-99d7-29b39696a39b}.xml" t="Include" />
               <e p="{96136dfd-7926-4e04-9afb-a89ca7119e01}.xml" t="Include" />
+              <e p="{9d8086eb-28f6-4556-82bb-2369ef538d38}.xml" t="Include" />
               <e p="{a475f2e9-ddb9-4c98-9122-18a67983e00d}.xml" t="Include" />
               <e p="{d8f33a68-0da6-4d8e-b8cd-1b6f72f1f96e}.xml" t="Include" />
               <e p="{dc016ed1-f7e9-43a8-bcfe-e24d71911001}.xml" t="Include" />
@@ -1080,6 +1100,7 @@
           </e>
           <e p="SetFootstepsSound.cs" t="Include" />
           <e p="SetParameterByName.cs" t="Include" />
+          <e p="SetParameterDarkness.cs" t="Include" />
           <e p="VCAController.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
@@ -1127,11 +1148,16 @@
             <e p="pushableBlock.cs" t="Include" />
             <e p="PushableDoor.cs" t="Include" />
             <e p="Shattering.cs" t="Include" />
+            <e p="SLWater.cs" t="Include" />
             <e p="VoidDeath.cs" t="Include" />
             <e p="Wind.cs" t="Include" />
           </e>
           <e p="Save" t="Include">
             <e p="FileBrowserTest.cs" t="Include" />
+<<<<<<< HEAD
+=======
+            <e p="SaveData.cs" t="Include" />
+>>>>>>> main
             <e p="SaveManager.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
           </e>

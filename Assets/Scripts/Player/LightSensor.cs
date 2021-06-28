@@ -22,6 +22,8 @@ public class LightSensor : MonoBehaviour
     [Header("Game Objects")] 
     public GameObject panel;
 
+    public SetParameterDarkness setParameterDarkness;
+
     private void Start()
     {
 
@@ -36,6 +38,8 @@ public class LightSensor : MonoBehaviour
         LightCheck();
         
         DeathLevel();
+
+        setParameterDarkness.darkness = deathLevel;
     }
 
     public void LightCheck()

@@ -127,6 +127,9 @@
 		<property name="length">
 			<value>0.390625</value>
 		</property>
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
@@ -161,6 +164,9 @@
 	<object class="MultiSound" id="{5eaeb292-186d-40b3-bbc8-a85c0d3a6e60}">
 		<property name="length">
 			<value>0.390625</value>
+		</property>
+		<property name="volume">
+			<value>-10</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
