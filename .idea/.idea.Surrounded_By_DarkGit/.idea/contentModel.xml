@@ -998,6 +998,7 @@
               <e p="{c419420b-9537-4329-ae14-148776f5598d}.xml" t="Include" />
               <e p="{c7a29d0f-99ed-4b71-98b8-b3fddc07e752}.xml" t="Include" />
               <e p="{ca96fdc2-7e13-482d-b9e9-5996e2088840}.xml" t="Include" />
+              <e p="{cf2d1fcd-37b9-49e0-98d3-c9af0c9b8127}.xml" t="Include" />
               <e p="{d06c6662-080c-45ff-bc20-5465bbda6d3f}.xml" t="Include" />
               <e p="{db79e1e6-7ef9-490b-8489-b61cf4f28f19}.xml" t="Include" />
               <e p="{e76ae9f3-ecad-4881-87d4-379db67b6cba}.xml" t="Include" />
@@ -1020,6 +1021,7 @@
             </e>
             <e p="Event" t="Include">
               <e p="{04009a4d-c5a8-41cb-901a-1c4a264175a0}.xml" t="Include" />
+              <e p="{05ae6595-487e-4b9f-aaef-e9cdb5c47d90}.xml" t="Include" />
               <e p="{06ae8821-d32a-4a4d-aa53-ed56fb022469}.xml" t="Include" />
               <e p="{0b959592-f9c4-4b41-980c-270c9c0d9e56}.xml" t="Include" />
               <e p="{0c8f8cb0-34c0-4190-ab5d-365199811860}.xml" t="Include" />
@@ -1097,6 +1099,7 @@
           <e p="VCAController.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="ActivateSkybox.cs" t="Include" />
           <e p="Effects" t="Include">
             <e p="FireLight.cs" t="Include" />
             <e p="WindArea.cs" t="Include" />
@@ -1148,11 +1151,13 @@
           <e p="Save" t="Include">
             <e p="Checkpoint.cs" t="Include" />
             <e p="FileBrowserTest.cs" t="Include" />
+            <e p="FirstSave.cs" t="Include" />
             <e p="SaveData.cs" t="Include" />
             <e p="SaveManager.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
             <e p="SaveVolume.cs" t="Include" />
           </e>
+          <e p="TriggerEnd.cs" t="Include" />
           <e p="triggerValueFMOD.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">
