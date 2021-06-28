@@ -9977,6 +9977,60 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &4789251883029619616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7694016505184704652}
+  - component: {fileID: 6610568666855328025}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7694016505184704652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789251883029619616}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.86, z: 0}
+  m_LocalScale: {x: 154.12708, y: 154.12706, z: 154.12701}
+  m_Children: []
+  m_Father: {fileID: 7353007407880030935}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &6610568666855328025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789251883029619616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Brasero
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5481771727753956311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14899,6 +14953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7353007407880030935}
+  - component: {fileID: 5600871745588123187}
   m_Layer: 0
   m_Name: respawn_altar
   m_TagString: Untagged
@@ -14922,6 +14977,28 @@ Transform:
   - {fileID: 7855556452039823839}
   - {fileID: 1275267597043707118}
   - {fileID: 3971714333522930533}
+  - {fileID: 7694016505184704652}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5600871745588123187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872558140451000429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e09982208663aa41a1ddc147dfaaf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brazero_light: {fileID: 3926926097404107114}
+  brazero_particles: {fileID: 3971714333522930530}
+  brazero_SFX: {fileID: 4789251883029619616}
+  torch_light: {fileID: 0}
+  torch_particles: {fileID: 0}
+  torch_SFX: {fileID: 0}
+  brazeroOn: 0
+  brazeroOnLastFrame: 0
+  fmodEvent: 
