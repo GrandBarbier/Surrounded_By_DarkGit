@@ -11,6 +11,11 @@ public class Shattering : MonoBehaviour
     private GameObject[] childs;
     private bool shatered;
     public Vector3 breakingForce;
+    
+    public FMOD.Studio.EventInstance instance;
+    [FMODUnity.EventRef]
+    public string fmodEvent;
+    public bool audioPlayed;
 
     void Start()
     {
@@ -20,6 +25,11 @@ public class Shattering : MonoBehaviour
         {
             childs[i] = transform.GetChild(i).gameObject;
         }
+        
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+        audioPlayed = false;
     }
     void Shatter()
     {
@@ -37,6 +47,11 @@ public class Shattering : MonoBehaviour
 
         if (!shatered)
         {
+            if (!audioPlayed)
+            {
+                audioPlayed = true;
+                instance.start();
+            }
             foreach (var child in childs)
             {
                 Rigidbody r = child.AddComponent<Rigidbody>();

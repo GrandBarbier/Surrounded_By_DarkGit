@@ -24,9 +24,16 @@ public class pressingPlate : MonoBehaviour
 
     public bool audioPlayed;
     
+    public FMOD.Studio.EventInstance instance2;
+    [FMODUnity.EventRef]
+    public string fmodEvent2;
+
+    public bool audioPlayed2;
+    
      void Start()
      {
          audioPlayed = false;
+         audioPlayed2 = false;
          mats = ren.materials;
          GetReferenceComponents();
      }
@@ -36,7 +43,12 @@ public class pressingPlate : MonoBehaviour
         if (isOpened && plate.isOpened == true)
         {
             door.transform.position = Vector3.MoveTowards(door.transform.position, direction.position, Time.deltaTime);
-            
+            if (!audioPlayed2)
+            {
+                instance2 = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance2,  door.GetComponent<Transform>(), door.GetComponent<Rigidbody>());
+                instance2.start();
+            }
         }
 
         if (isOpened)

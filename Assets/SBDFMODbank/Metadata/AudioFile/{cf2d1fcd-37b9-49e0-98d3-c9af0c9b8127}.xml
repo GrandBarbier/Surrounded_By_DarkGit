@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{cf2d1fcd-37b9-49e0-98d3-c9af0c9b8127}">
+		<property name="assetPath">
+			<value>concrete-break.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2277551020408164</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{09b586e7-f332-40af-82b4-14632c677f1a}</destination>
+		</relationship>
+	</object>
+</objects>
