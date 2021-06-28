@@ -28,7 +28,7 @@ public class pressingPlate : MonoBehaviour
     {
         if (isOpened && plate.isOpened == true)
         {
-            Debug.Log("aled");
+//            Debug.Log("aled");
 
             door.transform.position = Vector3.MoveTowards(door.transform.position, direction.position, Time.deltaTime);
             

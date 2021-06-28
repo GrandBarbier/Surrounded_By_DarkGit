@@ -69,6 +69,7 @@ public class MenuManager : MonoBehaviour
     public Image blackPanel;
     public GameObject loadScreen;
     public GameObject loadBarScaler;
+    public InGameToolTip[] inGameToolTips;
 
     //public UnityEvent[] Events;
     public UnityEvent startEvent;
@@ -153,6 +154,11 @@ public class MenuManager : MonoBehaviour
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
             Cursor.visible = false;
+
+            foreach (var toolTip in inGameToolTips)
+            {
+                toolTip.UpdateToolTipText();
+            }
         }
         else
         {
