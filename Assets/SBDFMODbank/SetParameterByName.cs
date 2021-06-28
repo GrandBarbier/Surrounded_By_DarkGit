@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SetParameterByName : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance instance;
+    public FMOD.Studio.EventInstance instance;
 
     [FMODUnity.EventRef]
     public string fmodEvent;
@@ -36,7 +36,7 @@ public class SetParameterByName : MonoBehaviour
         
     }
 
-    void MusicStop()
+    public void MusicStop()
     {
        instance.stop();
     }
