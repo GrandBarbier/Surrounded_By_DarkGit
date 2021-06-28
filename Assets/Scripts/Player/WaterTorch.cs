@@ -9,6 +9,7 @@ public class WaterTorch : MonoBehaviour
     public GameObject t_light;
     public GameObject particles;
     public GameObject SFX;
+    public GameObject SFX3D;
 
     public bool torchOff;
     public bool torchOffLastFrame;
@@ -31,6 +32,7 @@ public class WaterTorch : MonoBehaviour
                 t_light.SetActive(false);
                 particles.SetActive(false);
                 SFX.SetActive(false);
+                SFX3D.SetActive(false);
                 //jouer extinction
                 FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, transform, GetComponent<Rigidbody>());
                 instance.start();

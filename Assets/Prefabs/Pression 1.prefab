@@ -132,6 +132,9 @@ MonoBehaviour:
   link: {fileID: 0}
   borrow: {fileID: 0}
   ren: {fileID: 0}
+  plate: {fileID: 0}
   mats: []
   good: {fileID: 2100000, guid: d38e3e699d83c2e4ba8954a60801f1da, type: 2}
   isOpened: 0
+  fmodEvent: event:/PPlate
+  audioPlayed: 0
