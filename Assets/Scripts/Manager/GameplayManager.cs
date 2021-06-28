@@ -30,13 +30,14 @@ public class GameplayManager : MonoBehaviour
     {
         deathParticles.SetActive(false);
         _actualRestartTime = restartTime;
+        Cursor.visible = false;
         GetReferenceComponents();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         
         if(Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
