@@ -22,7 +22,7 @@ public class triggerValueFMOD : MonoBehaviour
 	public IEnumerator MusicChange() {
 		float delay = 0.03f;
 		musicChanging = true;
-		Debug.Log("on est la");
+		//Debug.Log("on est la");
 		if (needsToGoUp)
 		{
 			if (trackId == 1)

@@ -17,8 +17,13 @@ public class PushableDoor : MonoBehaviour
     public Movement playerMovement;
     public PlaceTorch placeTorch;
     
+    public FMOD.Studio.EventInstance instance;
+    [FMODUnity.EventRef]
+    public string fmodEvent;
+    
     void Start()
     {
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         pushable = true;
     }
     
@@ -37,7 +42,12 @@ public class PushableDoor : MonoBehaviour
         {
             if (Gears.gears.playerInput.actions["Interact"].ReadValue<float>() > 0 && playerMovement.isGrounded && placeTorch.torchOnGround && pushable)
             {
+                instance.start();
                door.transform.Rotate(0,0,speed);
+            }
+            else
+            {
+                instance.stop();
             }
         }
     }

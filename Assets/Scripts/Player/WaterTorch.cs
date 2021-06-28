@@ -32,7 +32,7 @@ public class WaterTorch : MonoBehaviour
                 particles.SetActive(false);
                 SFX.SetActive(false);
                 //jouer extinction
-                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, transform, GetComponent<Rigidbody>());
                 instance.start();
             }
         }
