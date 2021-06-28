@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -111,6 +112,7 @@ public class MenuManager : MonoBehaviour
         languagesButton?.onClick.AddListener(() => GoToPanel(languageMenu));//, parametersMenu, () => GoToPanel(parametersMenu)));//, pauseMenu, () => GoToPanel(mainMenu))));
         
         mainMenuButton?.onClick.AddListener(() => Cursor.visible = true);
+        mainMenuButton?.onClick.AddListener(() => Gears.gears.setParameter?.instance.stop(STOP_MODE.IMMEDIATE));
         mainMenuButton?.onClick.AddListener(() => LevelManager.LoadScene(0));
 
         //Change language when you click languages buttons

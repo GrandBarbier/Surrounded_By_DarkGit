@@ -22,6 +22,8 @@ public class Gears : MonoBehaviour
 
     public GameObject saveDisplayPrefab;
 
+    public SetParameterByName setParameter;
+
     void Awake()
     {
         if (gears == null)
