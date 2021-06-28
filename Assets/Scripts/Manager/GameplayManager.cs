@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,8 @@ public class GameplayManager : MonoBehaviour
     public GameObject pDark;
     public Animator playerAnimator;
     public GameObject deathParticles;
+
+    public SetParameterByName setParameterByName;
     
     [Header("Death")]
     public GameObject vignette;
@@ -19,12 +22,15 @@ public class GameplayManager : MonoBehaviour
     public float restartTime;
     private float _actualRestartTime;
 
+    public SaveManager SaveManager;
+
     private bool doOnce = true;
 
     [Header("References")] 
     public Movement playerMovement;
     public Renderer renderer;
     public SetParameterDarkness setPDark;
+    
     
     void Start()
     {
@@ -95,6 +101,9 @@ public class GameplayManager : MonoBehaviour
             _actualRestartTime -= Time.deltaTime;
             yield return null;
         }
+
+        setParameterByName.instance.stop(STOP_MODE.ALLOWFADEOUT);
+        SaveManager.load = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
@@ -108,6 +117,5 @@ public class GameplayManager : MonoBehaviour
         playerMovement = player.GetComponent<Movement>();
         renderer = facemask.GetComponent<Renderer>();
         setPDark = pDark.GetComponent<SetParameterDarkness>();
-
     }
 }
