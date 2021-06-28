@@ -69,6 +69,7 @@ public class MenuManager : MonoBehaviour
     public Image blackPanel;
     public GameObject loadScreen;
     public GameObject loadBarScaler;
+    public InGameToolTip[] inGameToolTips;
 
     //public UnityEvent[] Events;
     public UnityEvent startEvent;
@@ -152,7 +153,12 @@ public class MenuManager : MonoBehaviour
             Gears.gears.playerInput.SwitchCurrentActionMap("Gameplay");
             //Debug.Log(Gears.gears.playerInput.currentActionMap.name);
             Time.timeScale = 1f;
-            Cursor.visible = true;
+            Cursor.visible = false;
+
+            foreach (var toolTip in inGameToolTips)
+            {
+                toolTip.UpdateToolTipText();
+            }
         }
         else
         {
@@ -160,8 +166,8 @@ public class MenuManager : MonoBehaviour
             GoToPanel(mainMenu, rescaleSelection: false);
             Gears.gears.playerInput.SwitchCurrentActionMap("Menu");
             Gears.gears.playerInput.actions["Move"].Enable();
-            Time.timeScale = 0f;
             Cursor.visible = true;
+            Time.timeScale = 0f;
         }
 
         pause = !pause;

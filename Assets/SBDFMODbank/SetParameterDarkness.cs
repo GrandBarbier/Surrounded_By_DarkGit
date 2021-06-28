@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class SetParameterDarkness : MonoBehaviour
@@ -31,8 +32,8 @@ public class SetParameterDarkness : MonoBehaviour
         
     }
 
-    void MusicStop()
+    public void MusicStop()
     {
-       instance.stop();
+        instance.stop(STOP_MODE.IMMEDIATE);
     }
 }

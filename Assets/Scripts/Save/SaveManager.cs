@@ -17,7 +17,7 @@ public class SaveManager : MonoBehaviour
 
     [Header("Torch")] 
     public GameObject torch;
-    public PlaceTorch PlaceTorch;
+    public PlaceTorch placeTorch;
     
     [Header("Leviers")]
     public List<GameObject> leviers = new List<GameObject>();
@@ -96,6 +96,26 @@ public class SaveManager : MonoBehaviour
 
             levierManche[i].activated = data.levierActivated[i];
             firststepbuttons[i].neverused = data.levierNeverused[i];
+        }
+
+        Vector3 torchPos;
+        torchPos.x = data.torchPos[0];
+        torchPos.y = data.torchPos[1];
+        torchPos.z = data.torchPos[2];
+        torch.transform.position = torchPos;
+
+        Quaternion torchRot;
+        torchRot.x = data.torchRot[0];
+        torchRot.y = data.torchRot[1];
+        torchRot.z = data.torchRot[2];
+        torchRot.w = data.torchRot[3];
+        torch.transform.rotation = torchRot;
+
+        placeTorch.torchOnGround = data.torchOnGround;
+
+        for (int i = 0; i < data.braseroId.Length; i++)
+        {
+            braseros[i].brazeroOn = data.braseroOn[i];
         }
     }
 }
