@@ -28,7 +28,9 @@ public class SaveData
     public float[] torchPos;
     public float[] torchRot;
     public bool torchOnGround;
-    
+
+    public float[] braseroId;
+    public bool[] braseroOn;
     
     
     public SaveData(SaveManager save)
@@ -97,5 +99,13 @@ public class SaveData
         torchRot[3] = save.torch.transform.rotation.w;
 
         torchOnGround = save.placeTorch.torchOnGround;
+        
+        braseroId = new float[save.braseros.Count];
+        braseroOn = new bool[braseroId.Length];
+
+        for (int i = 0; i < braseroId.Length; i++)
+        {
+            braseroOn[i] = save.braseros[i].brazeroOn;
+        }
     }
 }
