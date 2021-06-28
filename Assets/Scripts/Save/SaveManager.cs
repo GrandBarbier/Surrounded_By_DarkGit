@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,9 @@ public class SaveManager : MonoBehaviour
     public List<LevierManche> levierManche = new List<LevierManche>();
     public List<firststepbutton> firststepbuttons = new List<firststepbutton>();
 
+    [Header("BGM")] 
+    public SetParameterByName bgm;
+
     public static bool load;
     
     private void Start()
@@ -43,6 +47,7 @@ public class SaveManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F9))
         {
+            bgm.instance.stop(STOP_MODE.IMMEDIATE);
             load = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -117,5 +122,9 @@ public class SaveManager : MonoBehaviour
         {
             braseros[i].brazeroOn = data.braseroOn[i];
         }
+
+        bgm.introWater = data.bgm[0];
+        bgm.waterMaze = data.bgm[1];
+        bgm.mazeWind = data.bgm[2];
     }
 }
