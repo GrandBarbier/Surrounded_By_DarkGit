@@ -24,6 +24,10 @@ public class SaveData
     public float[] levierPosZ;
     public bool[] levierActivated;
     public bool[] levierNeverused;
+
+    public float[] torchPos;
+    public float[] torchRot;
+    public bool torchOnGround;
     
     
     
@@ -80,5 +84,18 @@ public class SaveData
             levierActivated[i] = save.levierManche[i].activated;
             levierNeverused[i] = save.firststepbuttons[i].neverused;
         }
+        
+        torchPos = new float[3];
+        torchPos[0] = save.torch.transform.position.x;
+        torchPos[1] = save.torch.transform.position.y;
+        torchPos[2] = save.torch.transform.position.z;
+        
+        torchRot = new float[4];
+        torchRot[0] = save.torch.transform.rotation.x;
+        torchRot[1] = save.torch.transform.rotation.y;
+        torchRot[2] = save.torch.transform.rotation.z;
+        torchRot[3] = save.torch.transform.rotation.w;
+
+        torchOnGround = save.placeTorch.torchOnGround;
     }
 }
