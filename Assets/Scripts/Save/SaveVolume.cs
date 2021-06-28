@@ -23,7 +23,6 @@ public class SaveVolume : MonoBehaviour
 
     public void SaveSliderValue(Slider slider)
     {
-        Debug.Log(slider.name);
         PlayerPrefs.SetFloat(slider.name, slider.value);
     }
 }

@@ -101,16 +101,16 @@ public class MenuManager : MonoBehaviour
         resumeButton?.onClick.AddListener(Pause);
         
         //Go to parameter panel when you click parameter button
-        parameterButton?.onClick.AddListener(() => GoToPanel(parametersMenu));//, pauseMenu//, () => GoToPanel(mainMenu)));
+        parameterButton?.onClick.AddListener(() => GoToPanel(parametersMenu, true));//, pauseMenu//, () => GoToPanel(mainMenu)));
         
         //Go to save panel when you click save button
-        saveButton?.onClick.AddListener(() => GoToPanel(saveMenu));//, saveButton.transform.parent.gameObject, () => GoToPanel(mainMenu)));
+        saveButton?.onClick.AddListener(() => GoToPanel(saveMenu, true));//, saveButton.transform.parent.gameObject, () => GoToPanel(mainMenu)));
         
         //Go to Inputs panel when you click inputs button and setup the back button to go back to parameter panel
-        inputsButton?.onClick.AddListener(() => GoToPanel(inputsMenu, hideArrow: true));//, parametersMenu, () => GoToPanel(parametersMenu)));//, parametersMenu, () => GoToPanel(mainMenu))));
+        inputsButton?.onClick.AddListener(() => GoToPanel(inputsMenu, true, hideArrow: true));//, parametersMenu, () => GoToPanel(parametersMenu)));//, parametersMenu, () => GoToPanel(mainMenu))));
         
         //Go to language panel when you click language button and setup the back button to go back to parameter panel
-        languagesButton?.onClick.AddListener(() => GoToPanel(languageMenu));//, parametersMenu, () => GoToPanel(parametersMenu)));//, pauseMenu, () => GoToPanel(mainMenu))));
+        languagesButton?.onClick.AddListener(() => GoToPanel(languageMenu, true));//, parametersMenu, () => GoToPanel(parametersMenu)));//, pauseMenu, () => GoToPanel(mainMenu))));
         
         mainMenuButton?.onClick.AddListener(() => Cursor.visible = true);
         mainMenuButton?.onClick.AddListener(() => Gears.gears.setParameter?.instance.stop(STOP_MODE.IMMEDIATE));
