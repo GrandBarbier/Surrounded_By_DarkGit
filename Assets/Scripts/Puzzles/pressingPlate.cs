@@ -18,8 +18,15 @@ public class pressingPlate : MonoBehaviour
 
     public bool isOpened = false;
 
+    public FMOD.Studio.EventInstance instance;
+    [FMODUnity.EventRef]
+    public string fmodEvent;
+
+    public bool audioPlayed;
+    
      void Start()
      {
+         audioPlayed = false;
          mats = ren.materials;
          GetReferenceComponents();
      }
@@ -28,8 +35,6 @@ public class pressingPlate : MonoBehaviour
     {
         if (isOpened && plate.isOpened == true)
         {
-//            Debug.Log("aled");
-
             door.transform.position = Vector3.MoveTowards(door.transform.position, direction.position, Time.deltaTime);
             
         }
@@ -49,6 +54,13 @@ public class pressingPlate : MonoBehaviour
         if (other.tag == "PushableBlock")
         {
             isOpened = true;
+            if (!audioPlayed)
+            {
+                instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+                instance.start();
+                audioPlayed = true;
+            }
         }
     }
     

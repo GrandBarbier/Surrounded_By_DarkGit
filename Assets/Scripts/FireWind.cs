@@ -10,6 +10,7 @@ public class FireWind : MonoBehaviour
     public float forceToExtinguish;
     public GameObject light;
     public GameObject SFX;
+    public GameObject SFX3D;
 
     public Vector3 velocity;
 
@@ -55,6 +56,7 @@ public class FireWind : MonoBehaviour
             gameObject.SetActive(false);
             light.SetActive(false);
             SFX.SetActive(false);
+            SFX3D.SetActive(false);
             //jouer extinction
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
             instance.start();
