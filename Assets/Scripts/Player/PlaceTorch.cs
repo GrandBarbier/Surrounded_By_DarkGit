@@ -10,6 +10,7 @@ public class PlaceTorch : MonoBehaviour
     public bool torchOnGround;
     public GameObject torch;
     public GameObject torchSFX;
+    public GameObject torchSFX2;
     public GameObject torchOnGroundPos;
     public GameObject player;
     public Animator animator;
@@ -79,8 +80,7 @@ public class PlaceTorch : MonoBehaviour
             rb.useGravity = true;
             torchMesh.isTrigger = false;
             torchSFX.SetActive(false);
-            //activer le son 3D
-
+            torchSFX2.SetActive(true);
         }
     }
 
