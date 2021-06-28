@@ -11,15 +11,9 @@ public class Shattering : MonoBehaviour
     private GameObject[] childs;
     private bool shatered;
     public Vector3 breakingForce;
-    
-    public FMOD.Studio.EventInstance instance;
-    [FMODUnity.EventRef]
-    public string fmodEvent;
 
     void Start()
     {
-        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-        
         childs = new GameObject[transform.childCount];
 
         for (int i = 0; i < transform.childCount; i++)
@@ -43,9 +37,6 @@ public class Shattering : MonoBehaviour
 
         if (!shatered)
         {
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, GetComponent<Transform>(), GetComponent<Rigidbody>());
-            instance.start();
-            
             foreach (var child in childs)
             {
                 Rigidbody r = child.AddComponent<Rigidbody>();
