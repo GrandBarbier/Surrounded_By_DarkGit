@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class PushableDoor : MonoBehaviour
@@ -20,10 +22,14 @@ public class PushableDoor : MonoBehaviour
     public FMOD.Studio.EventInstance instance;
     [FMODUnity.EventRef]
     public string fmodEvent;
+    public bool audioPlayed;
     
     void Start()
     {
         instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+        audioPlayed = false;
         pushable = true;
     }
     
@@ -32,8 +38,15 @@ public class PushableDoor : MonoBehaviour
         if (door.transform.rotation.z < limit)
         {
             pushable = false;
+            instance.stop(STOP_MODE.ALLOWFADEOUT);
         }
-//        Debug.Log(door.transform.rotation.z);
+    }
+    
+    PLAYBACK_STATE PlaybackState(EventInstance instance)
+    {
+        PLAYBACK_STATE pS;
+        instance.getPlaybackState(out pS);
+        return pS;        
     }
     
     private void OnTriggerStay(Collider other)
@@ -42,16 +55,27 @@ public class PushableDoor : MonoBehaviour
         {
             if (Gears.gears.playerInput.actions["Interact"].ReadValue<float>() > 0 && playerMovement.isGrounded && placeTorch.torchOnGround && pushable)
             {
-                instance.start();
-               door.transform.Rotate(0,0,speed);
+                if (!audioPlayed)
+                {
+                    audioPlayed = true;
+                    instance.start();
+                }
+                door.transform.Rotate(0,0,speed);
             }
             else
             {
-                instance.stop();
+                instance.stop(STOP_MODE.IMMEDIATE);
+                audioPlayed = false;
             }
         }
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        instance.stop(STOP_MODE.IMMEDIATE);
+        audioPlayed = false;
+    }
+
     private void OnValidate()
     {
         GetReferenceComponents();

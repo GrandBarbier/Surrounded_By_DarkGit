@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class pushableBlock : MonoBehaviour
@@ -15,29 +16,45 @@ public class pushableBlock : MonoBehaviour
     public PlaceTorch placeTorch;
     public Rigidbody blockRb;
 
+    public FMOD.Studio.EventInstance instance;
+    [FMODUnity.EventRef]
+    public string fmodEvent;
+    public bool audioPlayed;
+    
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             if (Gears.gears.playerInput.actions["Interact"].ReadValue<float>() > 0 && playerMovement.isGrounded && placeTorch.torchOnGround)
             {
-                blockRb.AddRelativeForce(forceOfPush * (Time.deltaTime * speed));
-
-                //block.transform.position += forceOfPush * (Time.deltaTime * speed);
-                /*lancer anim pose des mains
-                while (Input.GetKey(KeyCode.A))
+                if (!audioPlayed)
                 {
-                    boucler anim effort
-                    block.transform.position += forceOfPush * (Time.deltaTime * speed);
+                    audioPlayed = true;
+                    instance.start();
                 }
-                lancer anim enlevage des mains
-                */
+                blockRb.AddRelativeForce(forceOfPush * (Time.deltaTime * speed));
+            }
+            else
+            {
+                instance.stop(STOP_MODE.ALLOWFADEOUT);
+                audioPlayed = false;
             }
         }
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        audioPlayed = false;
+    }
+
     private void Start()
     {
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+        audioPlayed = false;
         GetReferenceComponents();
     }
 
