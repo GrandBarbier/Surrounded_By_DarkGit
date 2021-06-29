@@ -38,17 +38,23 @@ public class igniteBrazero : MonoBehaviour
 			{
 				if (brazero_light.activeSelf)
 				{
-					Debug.Log("nique ta mere");
+					//Debug.Log("nique ta mere");
 					torch_light.SetActive(true);
 					torch_particles.SetActive(true);
 					torch_SFX.SetActive(true);
 					//jouer ignition
-					Debug.Log("nique ta mere1");
+					//Debug.Log("nique ta mere1");
 
 					FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
 					instance.start();
-					torch_light.transform.parent.gameObject.GetComponent<WaterTorch>().torchOff = false;
-					Debug.Log("nique ta mere2");
+					//torch_light.transform.parent.gameObject.GetComponent<WaterTorch>().torchOff = false;
+
+					if (torch_light.transform.parent.gameObject.TryGetComponent(out WaterTorch waterTorch))
+					{
+						waterTorch.torchOff = false;
+					}
+					
+					//Debug.Log("nique ta mere2");
 
 				}
 			}

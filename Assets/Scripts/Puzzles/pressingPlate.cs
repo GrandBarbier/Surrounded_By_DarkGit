@@ -12,6 +12,8 @@ public class pressingPlate : MonoBehaviour
     public Transform borrow;
     public Renderer ren;
     public pressingPlate plate;
+    public Rigidbody doorRigidbody;
+    public Rigidbody rigidbody;
 
     public Material[] mats;
     public Material good;
@@ -46,7 +48,7 @@ public class pressingPlate : MonoBehaviour
             if (!audioPlayed2)
             {
                 instance2 = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance2,  door.GetComponent<Transform>(), door.GetComponent<Rigidbody>());
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance2,  door.transform, doorRigidbody);
                 instance2.start();
             }
         }
@@ -69,7 +71,7 @@ public class pressingPlate : MonoBehaviour
             if (!audioPlayed)
             {
                 instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  GetComponent<Transform>(), GetComponent<Rigidbody>());
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,  transform, rigidbody);
                 instance.start();
                 audioPlayed = true;
             }
@@ -85,5 +87,7 @@ public class pressingPlate : MonoBehaviour
     {
         plate = link.GetComponent<pressingPlate>();
         ren = gameObject.GetComponent<Renderer>();
+        doorRigidbody = door.GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 }

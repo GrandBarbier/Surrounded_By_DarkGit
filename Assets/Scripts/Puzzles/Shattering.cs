@@ -52,7 +52,11 @@ public class Shattering : MonoBehaviour
                         var v = particleSystem.shape;
                         v.enabled = true;
                         v.shapeType = ParticleSystemShapeType.Mesh;
-                        v.mesh = child.GetComponent<MeshFilter>().mesh;
+
+                        if (child.TryGetComponent(out MeshFilter meshFilter))
+                        {
+                            v.mesh = meshFilter.mesh;
+                        }
                     }
                 }
             }

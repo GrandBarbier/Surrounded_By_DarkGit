@@ -16,6 +16,11 @@ public class Levier : MonoBehaviour
     public bool hanged;
 
     private GameObject currentLever;
+    private Rigidbody currentLeverRigidBody;
+    private Movement playerMovement;
+    private LevierManche levierManche;
+    private firststepbutton firststepbutton;
+    
     private List<GameObject> leverDone = new List<GameObject>();
     private bool playerClose;
     public Action<InputAction.CallbackContext> tryTriggerAnim;
@@ -44,6 +49,7 @@ public class Levier : MonoBehaviour
             direction = other.gameObject.transform.GetChild(2);
             manche = other.gameObject.transform.GetChild(1);
             place = manche.gameObject.transform.GetChild(0);
+            
             // if (Input.GetKeyDown(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
             //     player.GetComponent<PlaceTorch>().torchOnGround)
             // {
@@ -66,7 +72,7 @@ public class Levier : MonoBehaviour
                 if (!audioPlaying)
                 {
                     instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-                    FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.GetComponent<Transform>(), currentLever.GetComponent<Rigidbody>());
+                    FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.transform, currentLeverRigidBody);
                     instance.start();
                     audioPlaying = true;
                 }
@@ -77,9 +83,9 @@ public class Levier : MonoBehaviour
             {
                 playerAnimator.SetBool("IsHanging", false);
                 Debug.Log("good");
-                player.GetComponent<Movement>().animPlaying = false;
-                manche.GetComponent<LevierManche>().activated = true;
-                manche.GetComponent<firststepbutton>().neverused = true;
+                playerMovement.animPlaying = false;
+                levierManche.activated = true;
+                firststepbutton.neverused = true;
                 hanged = false;
                 leverDone.Add(currentLever);
                 
@@ -91,13 +97,14 @@ public class Levier : MonoBehaviour
 
     public void TryTriggerAnimation()
     {
-        if (playerClose && player.GetComponent<Movement>().isGrounded && player.GetComponent<PlaceTorch>().torchOnGround && !leverDone.Contains(currentLever))
+        if (playerClose && playerMovement.isGrounded && player.TryGetComponent(out PlaceTorch placeTorch) && placeTorch.torchOnGround 
+            && !leverDone.Contains(currentLever))
         {
             //FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.transform,  currentLever.GetComponent<Rigidbody>());
             instance.start();
             
             playerAnimator.SetBool("IsHanging", true);
-            player.GetComponent<Movement>().animPlaying = true;
+            playerMovement.animPlaying = true;
         }
     }
 
@@ -106,7 +113,7 @@ public class Levier : MonoBehaviour
         hanged = true;
     }
 
-    void OnDestoy()
+    void OnDestroy()
     {
         Gears.gears.playerInput.actions["Interact"].performed -= tryTriggerAnim;
     }
@@ -115,8 +122,15 @@ public class Levier : MonoBehaviour
     {
         if (other.gameObject.CompareTag("levier"))
         {
+            direction = other.gameObject.transform.GetChild(2);
+            manche = other.gameObject.transform.GetChild(1);
+            place = manche.gameObject.transform.GetChild(0);
+            
             playerClose = true;
             currentLever = other.gameObject;
+            currentLeverRigidBody = currentLever.GetComponent<Rigidbody>();
+            levierManche = manche.GetComponent<LevierManche>();
+            firststepbutton = manche.GetComponent<firststepbutton>();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -127,6 +141,24 @@ public class Levier : MonoBehaviour
         if (other.gameObject.CompareTag("levier"))
         {
             playerClose = false;
+        }
+    }
+    
+    private void OnValidate()
+    {
+        GetReferencesComponent();
+    }
+
+    private void Reset()
+    {
+        GetReferencesComponent();
+    }
+
+    private void GetReferencesComponent()
+    {
+        if (player != null)
+        {
+            playerMovement = player.GetComponent<Movement>();
         }
     }
 }

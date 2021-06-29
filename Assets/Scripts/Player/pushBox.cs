@@ -25,8 +25,7 @@ public class pushBox : MonoBehaviour
         if (other.gameObject.CompareTag("sideBox"))
         {
             Debug.Log("tag detected");
-            if (Input.GetKey(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
-                player.GetComponent<PlaceTorch>().torchOnGround)
+            if (Input.GetKey(KeyCode.A) && playerMovement && placeTorch.torchOnGround)
             {
                 Debug.Log("launch anim");
                 playerAnimator.SetBool("IsPushing", true);
