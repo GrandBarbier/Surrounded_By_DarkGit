@@ -16,11 +16,6 @@ public class Levier : MonoBehaviour
     public bool hanged;
 
     private GameObject currentLever;
-    private Rigidbody currentLeverRigidBody;
-    private Movement playerMovement;
-    private LevierManche levierManche;
-    private firststepbutton firststepbutton;
-    
     private List<GameObject> leverDone = new List<GameObject>();
     private bool playerClose;
     public Action<InputAction.CallbackContext> tryTriggerAnim;
@@ -49,7 +44,6 @@ public class Levier : MonoBehaviour
             direction = other.gameObject.transform.GetChild(2);
             manche = other.gameObject.transform.GetChild(1);
             place = manche.gameObject.transform.GetChild(0);
-            
             // if (Input.GetKeyDown(KeyCode.A) && player.GetComponent<Movement>().isGrounded &&
             //     player.GetComponent<PlaceTorch>().torchOnGround)
             // {
@@ -72,7 +66,7 @@ public class Levier : MonoBehaviour
                 if (!audioPlaying)
                 {
                     instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-                    FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.transform, currentLeverRigidBody);
+                    FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.GetComponent<Transform>(), currentLever.GetComponent<Rigidbody>());
                     instance.start();
                     audioPlaying = true;
                 }
@@ -82,10 +76,22 @@ public class Levier : MonoBehaviour
             if(manche.position == direction.position)
             {
                 playerAnimator.SetBool("IsHanging", false);
-                Debug.Log("good");
-                playerMovement.animPlaying = false;
-                levierManche.activated = true;
-                firststepbutton.neverused = true;
+                //Debug.Log("good");
+                if (player.TryGetComponent(out Movement movement))
+                {
+                    movement.animPlaying = false;
+                }
+                
+                if (manche.TryGetComponent(out LevierManche levierManche))
+                {
+                    levierManche.activated = true;
+                }
+
+                if (manche.TryGetComponent(out firststepbutton firststepbutton))
+                {
+                    firststepbutton.neverused = true;
+                }
+                
                 hanged = false;
                 leverDone.Add(currentLever);
                 
@@ -97,14 +103,14 @@ public class Levier : MonoBehaviour
 
     public void TryTriggerAnimation()
     {
-        if (playerClose && playerMovement.isGrounded && player.TryGetComponent(out PlaceTorch placeTorch) && placeTorch.torchOnGround 
-            && !leverDone.Contains(currentLever))
+        if (playerClose && player.TryGetComponent(out Movement movement) && movement.isGrounded && player.TryGetComponent(out PlaceTorch placeTorch) && 
+            placeTorch.torchOnGround && !leverDone.Contains(currentLever))
         {
             //FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, currentLever.transform,  currentLever.GetComponent<Rigidbody>());
             instance.start();
             
             playerAnimator.SetBool("IsHanging", true);
-            playerMovement.animPlaying = true;
+            movement.animPlaying = true;
         }
     }
 
@@ -122,15 +128,8 @@ public class Levier : MonoBehaviour
     {
         if (other.gameObject.CompareTag("levier"))
         {
-            direction = other.gameObject.transform.GetChild(2);
-            manche = other.gameObject.transform.GetChild(1);
-            place = manche.gameObject.transform.GetChild(0);
-            
             playerClose = true;
             currentLever = other.gameObject;
-            currentLeverRigidBody = currentLever.GetComponent<Rigidbody>();
-            levierManche = manche.GetComponent<LevierManche>();
-            firststepbutton = manche.GetComponent<firststepbutton>();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -141,24 +140,6 @@ public class Levier : MonoBehaviour
         if (other.gameObject.CompareTag("levier"))
         {
             playerClose = false;
-        }
-    }
-    
-    private void OnValidate()
-    {
-        GetReferencesComponent();
-    }
-
-    private void Reset()
-    {
-        GetReferencesComponent();
-    }
-
-    private void GetReferencesComponent()
-    {
-        if (player != null)
-        {
-            playerMovement = player.GetComponent<Movement>();
         }
     }
 }
