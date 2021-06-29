@@ -31,10 +31,9 @@ public class SaveManager : MonoBehaviour
     [Header("Checkpoints")]
     public List<Checkpoint> checkpoints = new List<Checkpoint>();
     
-
     public static bool load;
     
-    private void Start()
+    private void Awake()
     {
         if (load)
         {
